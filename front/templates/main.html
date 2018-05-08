@@ -1,0 +1,65 @@
+<html>
+
+<head>
+    <title>Hello!</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('front.static', filename='css/main.css') }}">
+
+    <link href='http://fonts.googleapis.com/css?family=Work%20Sans' rel='stylesheet' type='text/css'>
+
+
+</head>
+<body>
+
+
+<div class="title">
+    <span class="large">Short</span><span class="small"> link generator</span>
+</div>
+
+<div class="icons">
+
+
+    <a href="javascript:void(0)" onclick="changeLink()" class="btn" style="text-decoration-line: none;">
+        <img class="icon_selected" id="link_btn" src="{{ url_for('front.static', filename='img/link.png') }}">
+    </a>
+    <span class="label_for_btn" id="link_label">Link</span>
+
+    <a href="javascript:void(0)" onclick="changeFile()" class="btn" style="text-decoration-line: none;">
+        <img class="icon" id="file_btn" src="{{ url_for('front.static', filename='img/file.png') }}">
+    </a>
+    <span class="label_for_btn" id="file_label">File</span>
+
+    <a href="javascript:void(0)" onclick="changeText()" class="btn" style="text-decoration-line: none;">
+        <img class="icon" id="text_btn" src="{{ url_for('front.static', filename='img/text.png') }}">
+    </a>
+    <span class="label_for_btn" id="text_label">Text</span>
+
+
+</div>
+
+<div class="func_areas">
+
+    <div class="make_link" id="link">       <! links*/>
+        <input class="link_input" id="link_input">
+        <div class="link_hover_btn" onclick="genLink()"></div>
+
+
+    </div>
+
+    <div class="hidden" id="file">
+        <input class="file_input">
+    </div>
+
+    <div class="hidden" id="text">
+        <input class="text_input">
+    </div>
+
+</div>
+
+<script src="{{ url_for('front.static', filename='js/main.js') }}"></script>
+<script src="{{ url_for('front.static', filename='js/business_process.js') }}"></script>
+<script>changeLink();</script>
+
+</body>
+
+
+</html>
