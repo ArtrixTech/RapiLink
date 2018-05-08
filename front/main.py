@@ -17,9 +17,9 @@ def url_visit(url_name):
     print("==========" + url_name + "=============")
 
     try:
-        response = requests.get("http://api.rapi.link/get_url?url_name="+ url_name, timeout=5).text
-        print(response.url)
+        response = requests.get("http://api.rapi.link/get_url?url_name=" + url_name, timeout=5).text
+        response_page = requests.get(response).text
     except requests.ReadTimeout:
         return "TIMEOUT"
 
-    return response
+    return response_page
