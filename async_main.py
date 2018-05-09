@@ -11,8 +11,9 @@ monkey.patch_all()
 app = project_blueprints.bind_blueprints(Flask(__name__, static_folder="", static_url_path=None))
 app.config.update({
     'SERVER_NAME': 'rapi.link',
-    'DEBUG':'True'
+    'DEBUG': 'True'
 })
+app.debug = True
 
 # app.run(host="45.76.102.168", port=80)
 

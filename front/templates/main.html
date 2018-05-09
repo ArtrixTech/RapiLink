@@ -3,6 +3,7 @@
 <head>
     <title>Hello!</title>
     <link rel="stylesheet" type="text/css" href="{{ url_for('front.static', filename='css/main.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('front.static', filename='css/float_window.css') }}">
 
     <link href='http://fonts.googleapis.com/css?family=Work%20Sans' rel='stylesheet' type='text/css'>
 
@@ -41,7 +42,7 @@
     <div class="make_link" id="link">       <! links*/>
         <input class="link_input" id="link_input">
         <div class="link_hover_btn" onclick="genLink()"></div>
-
+        <div class="float_window link_gen" id="link_gen_window"></div>
 
     </div>
 

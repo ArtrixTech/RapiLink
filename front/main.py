@@ -1,4 +1,3 @@
-from flask import Flask
 from flask import Blueprint
 from flask import render_template
 import requests
@@ -18,8 +17,16 @@ def url_visit(url_name):
 
     try:
         response = requests.get("http://api.rapi.link/get_url?url_name=" + url_name, timeout=5).text
-        response_page = requests.get(response).text
+        print("[Got URL]=" + response)
+
+        if not response == "URL_NOT_EXIST":
+            print(response)
+            response_page = render_template('jump.html', target=response)
+        else:
+            response_page = render_template('error_code/404.html')
+        print("[Load URL]OK")
+
     except requests.ReadTimeout:
-        return "TIMEOUT"
+        response_page = render_template('error_code/503.html')
 
     return response_page
