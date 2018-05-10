@@ -13,8 +13,9 @@ def get_name():
     return "OK"
 
 
-@back_blueprint.route('/name_available/<name>')
-def name_available(name):
+@back_blueprint.route('/name_available')
+def name_available():
+    name = request.args.get("name")
     if name in all_urls:
         return "URL_EXIST"
     return "OK"
@@ -34,7 +35,7 @@ def add_url():
 @back_blueprint.route('/get_url')
 def get_url():
     url_name = request.args.get("url_name")
-    print("Get:UrlName="+url_name)
+    print("Get:UrlName=" + url_name)
     if url_name in all_urls:
         return all_urls[url_name]
     else:

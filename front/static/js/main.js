@@ -10,11 +10,11 @@ var obj = {
     file_label: document.getElementById("file_label"),
     link_label: document.getElementById("link_label"),
     text_label: document.getElementById("text_label")
-    };
+};
 
 
 
-function changeFile(){
+function changeFile() {
 
     obj.file.className = "make_file";
     obj.link.className = "hidden";
@@ -24,14 +24,14 @@ function changeFile(){
     obj.file_icon.className = "icon_selected";
     obj.text_icon.className = "icon right1";
 
-     obj.file_label.className = "label_for_btn";
-            obj.link_label.className = "hidden";
-            obj.text_label.className = "hidden";
+    obj.file_label.className = "label_for_btn";
+    obj.link_label.className = "hidden";
+    obj.text_label.className = "hidden";
     return false
 
 };
 
-function changeLink(){
+function changeLink() {
 
     obj.file.className = "hidden";
     obj.link.className = "make_link";
@@ -42,13 +42,13 @@ function changeLink(){
     obj.text_icon.className = "icon right";
 
     obj.file_label.className = "hidden";
-            obj.link_label.className = "label_for_btn";
-            obj.text_label.className = "hidden";
+    obj.link_label.className = "label_for_btn";
+    obj.text_label.className = "hidden";
     return false
 
 };
 
-function changeText(){
+function changeText() {
 
     obj.file.className = "hidden";
     obj.link.className = "hidden";
@@ -59,8 +59,9 @@ function changeText(){
     obj.text_icon.className = "icon_selected";
 
     obj.file_label.className = "hidden";
-            obj.link_label.className = "hidden";
-            obj.text_label.className = "label_for_btn";
+    obj.link_label.className = "hidden";
+    obj.text_label.className = "label_for_btn";
     return false
 
 };
+

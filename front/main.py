@@ -1,5 +1,7 @@
 from flask import Blueprint
 from flask import render_template
+from flask import request
+import json
 import requests
 
 front_blueprint = Blueprint('front', __name__, template_folder="templates", static_folder="static")
@@ -9,6 +11,21 @@ front_blueprint = Blueprint('front', __name__, template_folder="templates", stat
 def hello():
     print(front_blueprint.root_path)
     return render_template('main.html')
+
+
+@front_blueprint.route('/get')
+def get_request():
+    url, params = request.args.get("url"), request.args.get("params")
+
+    params_json=json.loads(params)
+
+    try:
+        response = requests.get(url, params=params_json, timeout=5).text
+
+    except requests.ReadTimeout:
+        response = "ERROR@TIMEOUT"
+
+    return response
 
 
 @front_blueprint.route('/<url_name>')
