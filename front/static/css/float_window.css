@@ -1,0 +1,63 @@
+.float_window{
+
+    background:white;
+
+}
+
+.float_window_config_link{
+
+    background: white;
+    width: 548px;
+    height: 156px;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    top: -32px;
+    border-bottom-left-radius: 18px;
+    border-bottom-right-radius: 18px;
+    z-index: -1;
+
+}
+.round_bar{
+
+    width: 660px;
+    height: 64px;
+    background-color: white;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+    box-shadow: 0px 25px 71px #d475794a;
+    border: 2px;
+    border-radius: 44px;
+
+}
+.bar_config2{
+
+    width:200px;
+
+}
+
+.bar_config1{
+
+    top: -20px;
+    position: relative;
+
+}
+
+.bar_input{
+    background: white;
+    outline: none;
+    border: none;
+    width: 520px;
+    margin-left: 20px;
+    height: 42;
+    margin-top: 11px;
+    font-size: 39px;
+    font-weight: 100;
+    color: #f5948f;
+    font-family: Work Sans,Avenir,Ostrich Sans,Flexo Light,Microsoft Yahei UI Light;
+}
+
+.bar_input_config2{
+   width:100px;
+}
