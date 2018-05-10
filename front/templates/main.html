@@ -43,12 +43,24 @@
     <div class="make_link" id="link"> <! links*/>
 
         <div class="round_bar bar_config1">
-            <input class="link_input" id="link_input">
+
+            <input class="link_input" id="link_input" placeholder="Input your long link here">
             <div class="link_hover_btn" onclick="genLink()"></div>
+
         </div>
 
 
-        <div class="float_window float_window_config_link" id="link_gen_window"></div>
+        <div class="float_window float_window_config_link" id="link_gen_window">
+
+            <div id="f_window_bar1">
+                <span class="float_window_label">http://rapi.link/</span>
+                <input class="customize_link_input" id="customize_link_input" placeholder="<Your Customized link>">
+                <div class="indicator good" id="indicator1" ></div>
+            </div>
+
+
+
+        </div>
         <div class="round_bar bar_config2" id="link_gen_bar">
             <input class="bar_input bar_input_config2" id="round_bar_input2">
         </div>
