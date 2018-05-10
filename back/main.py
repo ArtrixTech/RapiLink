@@ -27,7 +27,10 @@ def add_url():
     if url_name in all_urls:
         return "URL_EXIST"
     else:
-        all_urls[url_name] = str(target)
+        target = str(target)
+        if not "http://" or not "https://" or not "ftp://" in target:
+            target = "http://" + target
+        all_urls[url_name] = target
         print(all_urls[url_name])
         return "OK"
 

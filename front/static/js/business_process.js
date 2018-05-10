@@ -11,7 +11,7 @@ var business_obj = {
 var timer1;
 var ok = true;
 var lastText = "";
-var isLinkFloatWindowFold=true;
+var isLinkFloatWindowFold = true;
 
 function startTimer1() {
 
@@ -30,7 +30,7 @@ function updAllState() {
     linkHoverBtnState();
     indicator1State();
     updLinkFloatWindow();
-    
+
 }
 
 function onTimer1() {
@@ -49,30 +49,30 @@ function updLinkFloatWindow() {
 
     business_obj.link_gen_window.className = "float_window";
 
-    if (isLinkFloatWindowFold){
-        business_obj.link_gen_window.className+=" float_window_config_link";
-    }else{
-        business_obj.link_gen_window.className+=" float_window_config_link_expand";
+    if (isLinkFloatWindowFold) {
+        business_obj.link_gen_window.className += " float_window_config_link";
+    } else {
+        business_obj.link_gen_window.className += " float_window_config_link_expand";
     }
 
-    if (ok){
-        business_obj.link_gen_window.className+=" f_good";
-    }else{
-        business_obj.link_gen_window.className+=" f_bad";
+    if (ok) {
+        business_obj.link_gen_window.className += " f_good";
+    } else {
+        business_obj.link_gen_window.className += " f_bad";
     }
 
 }
 
 function linkFloatWindowFold() {
 
-    isLinkFloatWindowFold=true;
+    isLinkFloatWindowFold = true;
     updLinkFloatWindow();
 
 }
 
 function linkFloatWindowExpand() {
 
-    isLinkFloatWindowFold=false;
+    isLinkFloatWindowFold = false;
     updLinkFloatWindow();
 
 }
@@ -92,15 +92,13 @@ function indicator1State() {
 
 function genLink() {
 
-    if (business_obj.link_gen_window.className == "float_window float_window_config_link") {
+    if (ok) {
 
-        business_obj.link_gen_window.className = "float_window float_window_config_link_expand";
-
-    } else {
-
-        business_obj.link_gen_window.className = "float_window float_window_config_link";
-
+        $.get("/get", { url: "http://api.rapi.link/add_url", params: "{\"url_name\":\"" + business_obj.customize_link_input.value + "\",\"target_url\":\"" + business_obj.link_input.value + "\"}" }, function (data) {
+          
+        });
     }
+
     return false
 
 };
