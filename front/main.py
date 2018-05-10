@@ -20,6 +20,7 @@ def get_request():
     if "api.rapi.link" in url:
 
         params_json = json.loads(params)
+        print("[Ajax]" + url)
 
         try:
             response = requests.get(url, params=params_json, timeout=5).text

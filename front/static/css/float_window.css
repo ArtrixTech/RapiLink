@@ -4,6 +4,17 @@
     margin-right: auto;
     border-bottom-left-radius: 15px;
     border-bottom-right-radius: 15px;
+    box-shadow: 0px 9px 20px #d475796e;
+}
+
+.f_good{
+    border-bottom: 3px solid;
+    border-bottom-color: #4a93c7;
+}
+
+.f_bad{
+    border-bottom: 3px solid;
+    border-bottom-color: #d24848;
 }
 
 /* Config Link-Expanded*/
@@ -21,7 +32,7 @@
 
 .float_window_config_link {
     background: white;
-    width: 548px;
+    width: 518px;
     height: 0px;
     top: -20px;
     z-index: -1;
@@ -46,7 +57,7 @@ input.link_input::-webkit-input-placeholder {
     color: #999;
     font-size: 24px;
     position: relative;
-    top: -14%;
+    top: -8%;
 }
 
 .round_bar {
