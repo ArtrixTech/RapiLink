@@ -17,15 +17,18 @@ def hello():
 def get_request():
     url, params = request.args.get("url"), request.args.get("params")
 
-    params_json=json.loads(params)
+    if "api.rapi.link" in url:
 
-    try:
-        response = requests.get(url, params=params_json, timeout=5).text
+        params_json = json.loads(params)
 
-    except requests.ReadTimeout:
-        response = "ERROR@TIMEOUT"
+        try:
+            response = requests.get(url, params=params_json, timeout=5).text
 
-    return response
+        except requests.ReadTimeout:
+            response = "ERROR@TIMEOUT"
+
+        return response
+    return False
 
 
 @front_blueprint.route('/<url_name>')
