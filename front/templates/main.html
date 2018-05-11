@@ -10,7 +10,7 @@
 
 </head>
 
-<body>
+<body id="b">
 
     <div class="background_board"></div>
 
@@ -48,7 +48,7 @@
 
             <div class="round_bar bar_config1">
 
-                <input class="link_input" id="link_input" placeholder="Input your long link here" onfocus="linkFloatWindowExpand()">
+                <input class="link_input" id="link_input" placeholder="Input your long link here">
                 <div class="link_hover_btn" id="link_hover_btn" onclick="genLink()"></div>
 
             </div>
@@ -57,7 +57,7 @@
             <div class="float_window float_window_config_link f_good" id="link_gen_window">
 
                 <div id="f_window_bar1">
-                    <span class="float_window_label">http://rapi.link/</span>
+                    <span class="float_window_label" id="customize_link_label">http://rapi.link/</span>
                     <input class="customize_link_input" id="customize_link_input" placeholder="<Your Customized link>" onfocus="startTimer1() "
                         onblur="stopTimer1()">
                     <div class="indicator good" id="indicator1"></div>

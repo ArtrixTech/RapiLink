@@ -77,6 +77,29 @@ function linkFloatWindowExpand() {
 
 }
 
+function isInTargetList(inputTarget, inputTargetList) {
+
+    for (var t in inputTargetList) {
+
+        if ($(inputTarget).is(inputTargetList[t])) return true;
+
+    }
+    return false;
+
+}
+
+var targetList1 = ['#link_input', '#link_gen_window', '#f_window_bar1',
+    '#customize_link_label', '#customize_link_input', '#indicator1'];
+
+// Handle click event of #body
+$('#b').click(function (e) {
+    if (isInTargetList(e.target, targetList1)) {
+        linkFloatWindowExpand();
+    } else {
+        linkFloatWindowFold();
+    }
+})
+
 function linkHoverBtnState() {
     if (ok) business_obj.link_hover_btn.className = "link_hover_btn";
     else business_obj.link_hover_btn.className = "link_hover_btn deactivated";
@@ -95,7 +118,7 @@ function genLink() {
     if (ok) {
 
         $.get("/get", { url: "http://api.rapi.link/add_url", params: "{\"url_name\":\"" + business_obj.customize_link_input.value + "\",\"target_url\":\"" + business_obj.link_input.value + "\"}" }, function (data) {
-          
+
         });
     }
 

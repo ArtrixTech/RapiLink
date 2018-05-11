@@ -5,7 +5,7 @@ import requests
 
 back_blueprint = Blueprint('back', __name__, subdomain="api")
 
-all_urls = {"a": "2"}
+all_urls = {}
 
 
 @back_blueprint.route('/get_name')
