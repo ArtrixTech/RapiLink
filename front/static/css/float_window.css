@@ -7,17 +7,22 @@
     box-shadow: 0px 9px 20px #d475796e;
 }
 
-.f_good{
+.f_good {
     border-bottom: 3px solid;
     border-bottom-color: #4a93c7;
 }
 
-.f_bad{
+.f_finished {
+    border-bottom: 3px solid;
+    border-bottom-color: #49a064;
+}
+
+.f_bad {
     border-bottom: 3px solid;
     border-bottom-color: #d24848;
 }
 
-/* Config Link-Expanded*/
+/* Config link_Expanded*/
 
 .float_window_config_link_expand {
     background: white;
@@ -25,7 +30,7 @@
     height: 62px;
     top: -20px;
     z-index: -1;
-    transition: height cubic-bezier(0, 0, 0, 0.99) 0.5s, opacity cubic-bezier(0, 0, 0, 1.06) 0.5s;
+    transition: height cubic-bezier(0, 0, 0, 0.99) 0.5s, opacity cubic-bezier(0, 0, 0, 1.06) 0.5s, border-bottom-color cubic-bezier(0, 0, 0, 1.06) 0.4s;
 }
 
 /* Config Link */
@@ -36,11 +41,32 @@
     height: 0px;
     top: -20px;
     z-index: -1;
-    transition: height cubic-bezier(0, 0, 0, 0.99) 0.5s, opacity cubic-bezier(0, 0, 0, 1.06) 0.5s;
+    transition: height cubic-bezier(0, 0, 0, 0.99) 0.5s, opacity cubic-bezier(0, 0, 0, 1.06) 0.5s, border-bottom-color cubic-bezier(0, 0, 0, 1.06) 0.4s;
     opacity: 0;
 }
 
+/* Config link_Expanded_Finished*/
+
+.float_window_config_link_expand_finished {
+    background: white;
+    width: 518px;
+    height: 82px;
+    top: -20px;
+    z-index: -1;
+    transition: height cubic-bezier(0, 0, 0, 0.99) 0.5s, opacity cubic-bezier(0, 0, 0, 1.06) 0.5s, border-bottom-color cubic-bezier(0, 0, 0, 1.06) 0.4s;
+}
+
 /* Labels in float window*/
+
+.float_window_label_2 {
+    color: #f58f8fc7;
+    left: 23.2%;
+    top: 12px;
+    position: relative;
+    margin-right: auto;
+    font-family: Work Sans, Avenir, Ostrich Sans, Flexo Light, Microsoft Yahei UI Light;
+    font-size: 14px;
+}
 
 .float_window_label {
     color: #f5948f;
@@ -133,14 +159,24 @@ input.customize_link_input::-webkit-input-placeholder {
     position: relative;
     top: 5%;
     left: -14px;
+    transition: display 0.3s;
 }
 
 .indicator {
     width: 29px;
     height: 29px;
+}
+
+#indicator1 {
     position: relative;
     left: 440;
     top: -9px;
+}
+
+#indicator2 {
+    position: relative;
+    left: 79.7%;
+    margin-top: 5.4%;
 }
 
 .good {
@@ -151,4 +187,31 @@ input.customize_link_input::-webkit-input-placeholder {
 .bad {
     background: url(../img/float_window/bad.png) no-repeat;
     background-size: 20px 20px;
+}
+
+.finished {
+    background: url(../img/float_window/finished.png) no-repeat;
+    background-size: 20px 20px;
+}
+
+/* Customize Link Input Placeholder */
+
+#link_whole_link {
+    background: #aabfb62e;
+    border-radius: 33px;
+    padding-left: 10px;
+    padding-right: 25px;
+    outline: none;
+    border: none;
+    position: absolute;
+    border-bottom: none;
+    width: 358px;
+    left: 15%;
+    height: 26px;
+    top: 50%;
+    font-size: 19px;
+    font-weight: 100;
+    color: #f5948f;
+    font-family: Work Sans, Avenir, Ostrich Sans, Flexo Light, Microsoft Yahei UI Light;
+    text-align: center;
 }

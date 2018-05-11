@@ -48,7 +48,7 @@
 
             <div class="round_bar bar_config1">
 
-                <input class="link_input" id="link_input" placeholder="Input your long link here">
+                <input class="link_input" id="link_input" placeholder="http://rapi.link">
                 <div class="link_hover_btn" id="link_hover_btn" onclick="genLink()"></div>
 
             </div>
@@ -56,11 +56,17 @@
 
             <div class="float_window float_window_config_link f_good" id="link_gen_window">
 
-                <div id="f_window_bar1">
+                <div id="f_window_bar1" class="">
                     <span class="float_window_label" id="customize_link_label">http://rapi.link/</span>
-                    <input class="customize_link_input" id="customize_link_input" placeholder="<Your Customized link>" onfocus="startTimer1() "
+                    <input class="customize_link_input" id="customize_link_input" placeholder="<Your Customized link>" onfocus="startTimer1()"
                         onblur="stopTimer1()">
                     <div class="indicator good" id="indicator1"></div>
+                </div>
+
+                <div id="f_window_bar2" class="hidden">
+                    <span class="float_window_label_2" id="link_whole_link_label">The Link will be available for 2 hours</span>
+                    <input class="link_whole_link_label" id="link_whole_link" readonly ="readonly" value="<Whole-Link>" onclick="this.select();">
+                    <div class="indicator finished" id="indicator2"></div>
                 </div>
 
 
@@ -85,7 +91,7 @@
 
     <script src="{{ url_for('front.static', filename='js/jquery-3.3.1.min.js') }}"></script>
     <script src="{{ url_for('front.static', filename='js/main.js') }}"></script>
-    <script src="{{ url_for('front.static', filename='js/business_process.js') }}"></script>
+    <script src="{{ url_for('front.static', filename='js/link_process.js') }}"></script>
     <script>changeLink();</script>
 
 </body>
