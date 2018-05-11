@@ -2,6 +2,19 @@ body {
     background-image: linear-gradient(-45deg, #FFC796 0%, #FF6B95 100%);
 }
 
+.background_board{
+
+    width: 1000px;
+    height:1000px;
+
+    z-index: -1;
+
+    float: left;
+
+    display: none;
+
+}
+
 .hidden {
     display: none;
 }
