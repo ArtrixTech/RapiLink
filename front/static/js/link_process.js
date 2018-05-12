@@ -46,8 +46,8 @@ function onTimer1() {
         lastText = business_obj.customize_link_input.value
         isLinkAvailable(false);
 
-        while (!availableLoadFinished){}
-        updAllState();
+        //while (!availableLoadFinished){}
+        //updAllState();
         //setTimeout("updAllState()", 50);
         //setTimeout("updAllState()", 200);
 
@@ -204,7 +204,7 @@ function isLinkAvailable(result) {
         //alert(result);
         if (result == "OK") { ok = true; }
         else { ok = false; }
-        availableLoadFinished=true;
+        updAllState();
     } else {
         $.get("/get", { url: "http://api.rapi.link/alias_available", params: "{\"alias\":\"" + business_obj.customize_link_input.value + "\"}" }, function (data) {
             isLinkAvailable(data);
