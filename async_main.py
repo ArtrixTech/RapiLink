@@ -1,10 +1,13 @@
 from gevent import monkey
 from gevent.pywsgi import WSGIServer
-
 from geventwebsocket.handler import WebSocketHandler
-
 from flask import Flask
 import project_blueprints
+
+from threading import Thread
+
+from util import timing_tasks
+import time
 
 monkey.patch_all()
 
@@ -20,4 +23,15 @@ app.debug = True
 print(app.url_map)
 
 http_server = WSGIServer(('127.0.0.1', 80), app, handler_class=WebSocketHandler)
-http_server.serve_forever()
+
+
+def start():
+    http_server.serve_forever()
+
+
+tr = Thread(target=start)
+tr.start()
+
+while 1:
+    timing_tasks.check()
+    time.sleep(timing_tasks.check_interval)

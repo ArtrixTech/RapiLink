@@ -179,7 +179,7 @@ function genLink() {
 
         $.get("/get", {
             url: "http://api.rapi.link/add_url",
-            params: "{\"url_name\":\"" + business_obj.customize_link_input.value + "\",\"target_url\":\"" + business_obj.link_input.value + "\"}"
+            params: "{\"alias\":\"" + business_obj.customize_link_input.value + "\",\"target\":\"" + business_obj.link_input.value + "\"}"
         },
             function (data) {
                 if (data == "OK") {
@@ -203,7 +203,7 @@ function isLinkAvailable(result) {
         if (result == "OK") { ok = true; }
         else { ok = false; }
     } else {
-        $.get("/get", { url: "http://api.rapi.link/name_available", params: "{\"name\":\"" + business_obj.customize_link_input.value + "\"}" }, function (data) {
+        $.get("/get", { url: "http://api.rapi.link/alias_available", params: "{\"alias\":\"" + business_obj.customize_link_input.value + "\"}" }, function (data) {
             isLinkAvailable(data);
         });
     }

@@ -18,9 +18,9 @@ def get_request():
     url, params = request.args.get("url"), request.args.get("params")
 
     if "api.rapi.link" in url:
-
         params_json = json.loads(params)
-        print("[Ajax]" + url)
+        print("[Ajax-get]" + url)
+        print("[Ajax-get]" + params)
 
         try:
             response = requests.get(url, params=params_json, timeout=5).text
@@ -32,20 +32,20 @@ def get_request():
     return False
 
 
-@front_blueprint.route('/<url_name>')
-def url_visit(url_name):
-    print("==========" + url_name + "=============")
+@front_blueprint.route('/<alias>')
+def url_visit(alias):
+    print("==========Visit:" + alias + "=============")
 
     try:
-        response = requests.get("http://api.rapi.link/get_url?url_name=" + url_name, timeout=5).text
-        print("[Got URL]=" + response)
+        response = requests.get("http://api.rapi.link/get_url", params={"alias": alias}, timeout=5).text
+        print("[url_visit]" + alias + " -> " + response)
 
         if not response == "URL_NOT_EXIST":
             print(response)
             response_page = render_template('jump.html', target=response)
         else:
             response_page = render_template('error_code/404.html')
-        print("[Load URL]OK")
+        print("[url_visit]OK")
 
     except requests.ReadTimeout:
         response_page = render_template('error_code/503.html')
