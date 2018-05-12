@@ -94,7 +94,8 @@ class ShortLinkPool:
         if isinstance(short_link_obj, ShortLink):
 
             if self.is_exist_by_alias(short_link_obj.alias):
-                obj = self.get_by_alias(short_link_obj.alias)
+                obj = self.get_by_alias(short_link_obj.alias)[0]
+                assert isinstance(obj, ShortLink)
                 if obj:
                     assert isinstance(obj, ShortLink)
                     if not obj.is_outdated(time.time()):
