@@ -68,6 +68,8 @@
     font-size: 14px;
 }
 
+/* Labels in float window*/
+
 .float_window_label {
     color: #f5948f;
     position: relative;
