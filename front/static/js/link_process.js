@@ -46,8 +46,10 @@ function onTimer1() {
         lastText = business_obj.customize_link_input.value
         isLinkAvailable(false);
 
-        setTimeout("updAllState()", 50);
-        setTimeout("updAllState()", 200);
+        while (!availableLoadFinished){}
+        updAllState();
+        //setTimeout("updAllState()", 50);
+        //setTimeout("updAllState()", 200);
 
     }
 
@@ -195,13 +197,14 @@ function genLink() {
 };
 
 
-
+var availableLoadFinished=false;
 function isLinkAvailable(result) {
 
     if (result) {
         //alert(result);
         if (result == "OK") { ok = true; }
         else { ok = false; }
+        availableLoadFinished=true;
     } else {
         $.get("/get", { url: "http://api.rapi.link/alias_available", params: "{\"alias\":\"" + business_obj.customize_link_input.value + "\"}" }, function (data) {
             isLinkAvailable(data);
