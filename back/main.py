@@ -35,7 +35,7 @@ def add_url():
         return "URL_EXIST"
     else:
         target = str(target)
-        if not "http://" and not "https://" and "ftp://" not in target:
+        if "http://" not in target and "https://" not in target and "ftp://" not in target:
             target = "http://" + target
 
         result = all_urls.add(ShortLink(alias, target, 7200))
