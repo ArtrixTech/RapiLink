@@ -35,11 +35,11 @@ def add_url():
         return "URL_EXIST"
     else:
         target = str(target)
-        if "http://" and "https://" and "ftp://" not in target:
+        if not "http://" and not "https://" and "ftp://" not in target:
             target = "http://" + target
 
         result = all_urls.add(ShortLink(alias, target, 7200))
-        print("[add_url]" + str(all_urls.get_by_alias(alias)[0]))
+        print("[add_url]" + str(all_urls.get_by_alias(alias)[0]) + " -> " + target)
         return result
 
 
