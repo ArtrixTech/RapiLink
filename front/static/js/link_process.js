@@ -35,9 +35,11 @@ function stopTimer1() {
 function updAllState() {
 
     linkHoverBtnState();
+    //alert("1");
     indicator1State();
-    updLinkFloatWindow(false);
-
+    //alert("2");
+    updLinkFloatWindow();
+    //alert("3");
 }
 
 function onTimer1() {
@@ -204,6 +206,7 @@ function isLinkAvailable(result) {
         //alert(result);
         if (result == "OK") { ok = true; }
         else { ok = false; }
+        //alert("ok");
         updAllState();
     } else {
         $.get("/get", { url: "http://api.rapi.link/alias_available", params: "{\"alias\":\"" + business_obj.customize_link_input.value + "\"}" }, function (data) {
