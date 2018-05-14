@@ -2,11 +2,14 @@ from flask import Flask, request
 from flask import Blueprint
 from flask import render_template
 import requests
+
+from back.user_system.user_manager import UserManager, User, Permission
 from back.classes.class_ShortLink import ShortLink, ShortLinkPool
 
 back_blueprint = Blueprint('back', __name__, subdomain="api")
 
 all_urls = ShortLinkPool()
+user_manager = UserManager()
 
 
 @back_blueprint.route('/get_name')
@@ -31,7 +34,7 @@ def name_available():
 @back_blueprint.route('/add_url')
 def add_url():
     alias, target = request.args.get("alias"), request.args.get("target")
-    request.args.get("target")
+
     if all_urls.is_exist_by_alias(alias):
         return "ALIAS_EXIST"
     else:
@@ -57,3 +60,26 @@ def get_url():
         return all_urls.get_by_alias(alias)[0].target
     else:
         return "URL_NOT_EXIST"
+
+
+@back_blueprint.route('/add_user')
+def add_user():
+    username = request.args.get("username")
+    permission_text = request.args.get("permission")
+    permission = Permission.USER_COMMON
+    if permission_text == "ADMINISTRATOR":
+        permission = Permission.ADMINISTRATOR
+
+    user_manager.add(User(username, permission))
+    return "OK"
+
+
+@back_blueprint.route('/get_user')
+def get_user():
+    username = request.args.get("username")
+    usr = user_manager.get_by_username(username)[0]
+    print(type(usr))
+    assert isinstance(usr, User)
+    print(usr.permission)
+
+    return str(usr.permission)

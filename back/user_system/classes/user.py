@@ -6,6 +6,8 @@ class User:
 
     def __init__(self, username, permission):
 
+        self.permission = Permission.USER_COMMON
+        self.username = "NONE"
         if isinstance(permission, Permission):
             self.permission = permission
             self.username = username
