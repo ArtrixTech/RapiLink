@@ -31,9 +31,14 @@ def name_available():
 @back_blueprint.route('/add_url')
 def add_url():
     alias, target = request.args.get("alias"), request.args.get("target")
+    request.args.get("target")
     if all_urls.is_exist_by_alias(alias):
-        return "URL_EXIST"
+        return "ALIAS_EXIST"
     else:
+        if len(alias) == 0:
+            return "EMPTY_ALIAS"
+        if len(target) == 0:
+            return "EMPTY_TARGET_URL"
         target = str(target)
         if "http://" not in target and "https://" not in target and "ftp://" not in target:
             target = "http://" + target
