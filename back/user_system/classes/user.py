@@ -3,11 +3,8 @@ from back.user_system.classes.behaviors import Behaviors, Behavior
 
 
 class User:
+    def __init__(self, username, permission=Permission.UnregisteredUser):
 
-    def __init__(self, username, permission):
-
-        self.permission = Permission.USER_COMMON
-        self.username = "NONE"
         if isinstance(permission, Permission):
             self.permission = permission
             self.username = username
@@ -18,4 +15,11 @@ class User:
 
     def judge_behavior(self, behavior):
         if isinstance(behavior, Behavior):
-            print(behavior)
+            if self.permission == Permission.UnregisteredUser:
+                return behavior.UnregisteredUser
+            if self.permission == Permission.CommonUser:
+                return behavior.CommonUser
+            if self.permission == Permission.VipUser:
+                return behavior.VipUser
+            if self.permission == Permission.Administrator:
+                return behavior.Administrator

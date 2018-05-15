@@ -60,19 +60,13 @@ class UserManager:
         """
         - To add a ShortLink object to the pool
         :param user_object: An object which is in the type of "ShortLink"
-        :return: [0](str)Status code, "OK" -> Ok, "ALIAS_EXIST" -> Error:The alias is exist in the pool
+        :return: [0](str)Status code, "OK" -> Ok, "USERNAME_EXIST" -> Error:The alias is exist in the pool
         """
 
         if isinstance(user_object, User):
 
             if self.is_exist_by_username(user_object.username):
-                obj = self.get_by_username(user_object.username)[0]
-                assert isinstance(obj, User)
-                if obj:
-                    assert isinstance(obj, User)
-                    print("    [UserPool]Add=" + user_object.username)
-                    self.all_users.append(user_object)
-                    return "OK"
+                return "USERNAME_EXIST"
             else:
                 print("    [UserPool]Add=" + user_object.username)
                 self.all_users.append(user_object)

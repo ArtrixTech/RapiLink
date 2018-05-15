@@ -1,10 +1,11 @@
-from flask import Flask, request
 from flask import Blueprint
-from flask import render_template
-import requests
+from flask import request
 
-from back.user_system.user_manager import UserManager, User, Permission
 from back.classes.class_ShortLink import ShortLink, ShortLinkPool
+from back.user_system.user_manager import UserManager, User, Permission
+from back.user_system.classes.behaviors import *
+
+import json
 
 back_blueprint = Blueprint('back', __name__, subdomain="api")
 
@@ -66,20 +67,36 @@ def get_url():
 def add_user():
     username = request.args.get("username")
     permission_text = request.args.get("permission")
-    permission = Permission.USER_COMMON
-    if permission_text == "ADMINISTRATOR":
-        permission = Permission.ADMINISTRATOR
+    permission = Permission.CommonUser
+
+    if permission_text.lower() == "administrator":
+        permission = Permission.Administrator
+
+    if permission_text.lower() == "unregistereduser":
+        permission = Permission.UnregisteredUser
+
+    if permission_text.lower() == "vipuser":
+        permission = Permission.VipUser
+
+    if permission_text.lower() == "commonuser":
+        permission = Permission.CommonUser
+
+    print(type(permission))
 
     user_manager.add(User(username, permission))
     return "OK"
 
 
-@back_blueprint.route('/get_user')
-def get_user():
+@back_blueprint.route('/get_user_data')
+def get_user_message():
     username = request.args.get("username")
     usr = user_manager.get_by_username(username)[0]
-    print(type(usr))
     assert isinstance(usr, User)
-    print(usr.permission)
 
-    return str(usr.permission)
+    ret_message = {"username": usr.username, "permission": str(usr.permission)}
+    ret_json = json.dumps(ret_message)
+    print(ret_json)
+
+    print(usr.judge_behavior(get_behavior_by_name("AddLink")))
+
+    return ret_json

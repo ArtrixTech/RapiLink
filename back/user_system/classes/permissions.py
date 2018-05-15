@@ -2,8 +2,8 @@ from enum import Enum
 
 
 class Permission(Enum):
-    USER_COMMON = 0
-    USER_VIP = 1
-    USER_UN_REGISTERED = 2
+    CommonUser = "CommonUser"
+    VipUser = "VipUser"
+    UnregisteredUser = "UnregisteredUser"
 
-    ADMINISTRATOR = 3
+    Administrator = "Administrator"
