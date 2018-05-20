@@ -65,6 +65,10 @@ def get_url():
 
 @back_blueprint.route('/add_user')
 def add_user():
+    """
+    Add a user to the database with permission
+    :return: [0](str)Status Code, "OK" -> Ok
+    """
     username = request.args.get("username")
     permission_text = request.args.get("permission")
     permission = Permission.CommonUser
