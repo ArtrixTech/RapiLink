@@ -22,6 +22,7 @@ def get_name():
 def name_available():
     """
     - Is alias available
+    @param: alias
     :return: [0](str)Status Code, "OK" -> Ok, "ALIAS_EXIST" -> ERROR:The alias is already in the pool
     """
 
@@ -34,6 +35,12 @@ def name_available():
 
 @back_blueprint.route('/add_url')
 def add_url():
+    """
+    - Add an URL by alias and target
+    @param: alias, target
+    :return: [0](str)Status code, "OK" -> Ok, "ALIAS_EXIST" -> Error:The alias is exist in the pool,
+                                "EMPTY_ALIAS" -> Alias is empty, "EMPTY_TARGET_URL" -> The target url is empty
+    """
     alias, target = request.args.get("alias"), request.args.get("target")
 
     if all_urls.is_exist_by_alias(alias):
@@ -47,6 +54,8 @@ def add_url():
         if "http://" not in target and "https://" not in target and "ftp://" not in target:
             target = "http://" + target
 
+        # Inner exception values:
+        # [0](str)Status code, "OK" -> Ok, "ALIAS_EXIST" -> Error:The alias is exist in the pool
         result = all_urls.add(ShortLink(alias, target, 7200))
         print("[add_url]" + str(all_urls.get_by_alias(alias)[0]) + " -> " + target)
         return result
@@ -54,6 +63,11 @@ def add_url():
 
 @back_blueprint.route('/get_url')
 def get_url():
+    """
+    - Get the derive URL which was represented by the alias name
+    @param: alias
+    :return: [0](str)Status Code, "OK" -> Ok
+    """
     alias = request.args.get("alias")
     print("[get_url]" + alias)
     if all_urls.is_exist_by_alias(alias):
@@ -66,7 +80,7 @@ def get_url():
 @back_blueprint.route('/add_user')
 def add_user():
     """
-    Add a user to the database with permission
+    - Add a user to the database with permission
     :return: [0](str)Status Code, "OK" -> Ok
     """
     username = request.args.get("username")
