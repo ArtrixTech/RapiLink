@@ -26,7 +26,7 @@ def get_request():
             response = requests.get(url, params=params_json, timeout=5).text
 
         except requests.ReadTimeout:
-            response = "ERROR@TIMEOUT"
+            response = "TIMEOUT"
 
         return response
     return False
