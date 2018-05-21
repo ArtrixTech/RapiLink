@@ -158,7 +158,7 @@ function genLink() {
         link_showBar = 2;
         isOnFinish = true;
 
-        business_obj.link_whole_link.value = "http://rapi.link/" + business_obj.customize_link_input.value;
+        business_obj.link_whole_link.value = "https://rapi.link/" + business_obj.customize_link_input.value;
 
         updLinkFloatWindow();
 
