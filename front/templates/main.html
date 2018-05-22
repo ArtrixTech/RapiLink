@@ -1,4 +1,4 @@
-<html>
+<html style="overflow-x: hidden;overflow-y: hidden;">
 
 <head>
     <title>RapiLink - Your data transition center</title>
@@ -13,7 +13,21 @@
 
 <body id="b">
 
-    <a href="https://rapi.link"><img src="{{ url_for('front.static', filename='img/site_branding/logo_small.png') }}" class="logo_small"></a>
+    <canvas id="canv"></canvas>
+    <script src="{{ url_for('front.static', filename='js/animations/stars_no_mouse.js') }}"></script>
+
+    <style>
+        #canv {
+            position: absolute;
+            z-index: 0;
+            top: -5%;
+            left: -2%;
+        }
+    </style>
+
+    <a href="https://rapi.link">
+        <img src="{{ url_for('front.static', filename='img/site_branding/logo_small.png') }}" class="logo_small">
+    </a>
 
     <div class="background_board"></div>
 
@@ -96,13 +110,31 @@
 
     <script src="{{ url_for('front.static', filename='js/link_process_new.js') }}"></script>
     <script src="{{ url_for('front.static', filename='js/animations/link_process_animation.js') }}"></script>
-    
+
     <script src="{{ url_for('front.static', filename='js/utils/utils.js') }}"></script>
     <script>
         changeLink();
     </script>
 
+
+
+
 </body>
+
+<footer>
+    <style>
+        .footer_box {
+            position: absolute;
+            bottom: 28px;
+            text-align: center;
+            width: 100%;
+        }
+    </style>
+    <div class="footer_box">
+        <div class="copyright unselective">Copyright © 2018 Artrix Technologies CO.,LTD All rights reserved.</div>
+    </div>
+
+</footer>
 
 
 </html>

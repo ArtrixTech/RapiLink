@@ -271,9 +271,9 @@ var trans = {
             var g = this.$.createRadialGradient(this.varr[i].transOut.x, this.varr[i].transOut.y, this.varr[i].transOut
                 .p, this.varr[i].transOut.x, this.varr[i].transOut.y, this.varr[i].transOut.p * 2);
             this.$.globalCompositeOperation = 'lighter';
-            g.addColorStop(0, 'hsla(255, 255%, 255%, 0.3)');
-            g.addColorStop(.5, 'hsla(255, 255%, 255%, 0.3)');
-            g.addColorStop(1, 'hsla(255, 255%, 255%, 0.3)');
+            g.addColorStop(0, 'hsla(255, 255%, 255%, 0.25)');
+            g.addColorStop(.5, 'hsla(255, 255%, 255%, 0.25)');
+            g.addColorStop(1, 'hsla(255, 255%, 255%, 0.25)');
             this.$.fillStyle = g;
             this.$.beginPath();
             this.$.arc(this.varr[i].transOut.x, this.varr[i].transOut.y, this.varr[i].transOut.p * 2, 0, Math.PI * 2,
