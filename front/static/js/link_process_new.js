@@ -176,21 +176,23 @@ function genLink() {
 
     function error(input) {
         //alert(input);
-        if (input=="EMPTY_TARGET_URL")alert("The target link is blank!");
-        if (input=="ALIAS_EXIST")alert("The customized link is already in use!");
+        if (input == "EMPTY_TARGET_URL") alert("The target link is blank!");
+        if (input == "ALIAS_EXIST") alert("The customized link is already in use!");
     }
 
-    if (ok) {
 
-        apiGet("add_url",
-            { alias: business_obj.customize_link_input.value, target: business_obj.link_input.value },
-            function (data) {
-                if (data == "OK") {
-                    finished();
-                } else {
-                    error(data);
-                }
-            });
+    if (ok) {
+        if (!business_obj.link_input.value == "" && !business_obj.customize_link_input.value == "") {
+            apiGet("add_url",
+                { alias: business_obj.customize_link_input.value, target: business_obj.link_input.value },
+                function (data) {
+                    if (data == "OK") {
+                        finished();
+                    } else {
+                        error(data);
+                    }
+                });
+        }
     }
 
     return false
@@ -202,10 +204,8 @@ var availableLoadFinished = false;
 function isLinkAvailable(result) {
 
     if (result) {
-        //alert(result);
         if (result == "OK") { ok = true; }
         else { ok = false; }
-        //alert("ok");
         updAllState();
     } else {
         apiGet("alias_available",
