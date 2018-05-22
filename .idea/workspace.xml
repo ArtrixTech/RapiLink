@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="9b6db23e-911b-4915-8873-41e9f6fa0745" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/static/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/front/static/css/main.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/front/templates/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/front/templates/main.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -51,7 +52,7 @@
         <entry file="file://$PROJECT_DIR$/front/static/css/main.css">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="365">
-              <caret line="225" column="14" selection-start-line="225" selection-start-column="14" selection-end-line="225" selection-end-column="14" />
+              <caret line="228" column="14" selection-start-line="228" selection-start-column="14" selection-end-line="228" selection-end-column="14" />
             </state>
           </provider>
         </entry>
@@ -289,26 +290,26 @@
       <option name="project" value="LOCAL" />
       <updated>1526991666921</updated>
     </task>
-    <task id="LOCAL-00005" summary="[+]Back add_url function added http header detection&#10;[+]Front finished add_url process">
-      <created>1525968484061</created>
+    <task id="LOCAL-00005" summary="[Front]Homepage animation added">
+      <created>1526992177284</created>
       <option name="number" value="00005" />
       <option name="presentableId" value="LOCAL-00005" />
       <option name="project" value="LOCAL" />
-      <updated>1525968484061</updated>
+      <updated>1526992177284</updated>
     </task>
-    <task id="LOCAL-00006" summary="[Fix]Fixed a bug that will cause link generate exception">
-      <created>1526037948917</created>
+    <task id="LOCAL-00006" summary="[Front]CSS Update">
+      <created>1526992284766</created>
       <option name="number" value="00006" />
       <option name="presentableId" value="LOCAL-00006" />
       <option name="project" value="LOCAL" />
-      <updated>1526037948917</updated>
+      <updated>1526992284766</updated>
     </task>
-    <task id="LOCAL-00007" summary="[UI]UI Change">
-      <created>1526038077222</created>
+    <task id="LOCAL-00007" summary="[Front]CSS Update">
+      <created>1526992479416</created>
       <option name="number" value="00007" />
       <option name="presentableId" value="LOCAL-00007" />
       <option name="project" value="LOCAL" />
-      <updated>1526038077222</updated>
+      <updated>1526992479416</updated>
     </task>
     <task id="LOCAL-00008" summary="[Save]Version Snapshot">
       <created>1526038701674</created>
@@ -429,7 +430,7 @@
       <option name="project" value="LOCAL" />
       <updated>1526779286250</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -464,7 +465,8 @@
     <MESSAGE value="[Front]Updated Ajax-Get request method, compressed into a function" />
     <MESSAGE value="[Front]Updated UI&#10;[Front]Updated Animations" />
     <MESSAGE value="[Front]Homepage animation added" />
-    <option name="LAST_COMMIT_MESSAGE" value="[Front]Homepage animation added" />
+    <MESSAGE value="[Front]CSS Update" />
+    <option name="LAST_COMMIT_MESSAGE" value="[Front]CSS Update" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/async_main.py" />
@@ -790,7 +792,7 @@
     <entry file="file://$PROJECT_DIR$/front/static/css/main.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="365">
-          <caret line="225" column="14" selection-start-line="225" selection-start-column="14" selection-end-line="225" selection-end-column="14" />
+          <caret line="228" column="14" selection-start-line="228" selection-start-column="14" selection-end-line="228" selection-end-column="14" />
         </state>
       </provider>
     </entry>
