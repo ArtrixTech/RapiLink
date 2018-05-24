@@ -4,6 +4,7 @@
     <title>RapiLink - Your data transition center</title>
     <link rel="stylesheet" type="text/css" href="{{ url_for('front.static', filename='css/main.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ url_for('front.static', filename='css/float_window.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('front.static', filename='css/file_process.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ url_for('front.static', filename='css/link_process_animation.css') }}">
 
     <link href='https://fonts.googleapis.com/css?family=Work%20Sans' rel='stylesheet' type='text/css'>
@@ -100,7 +101,8 @@
         <div class="hidden" id="file">
             <input type="file" id="file_input">
             <button onclick="uploadFile()">UPLOAD</button>
-            <span id="progress">0</span>
+            <span id="progress_text">0</span>
+            <progress value=0 max=100 id="progress_bar">100</progress>
         </div>
 
         <div class="hidden" id="text">

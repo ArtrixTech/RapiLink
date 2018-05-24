@@ -5,6 +5,7 @@ from flask import jsonify, make_response
 from back.classes.class_ShortLink import ShortLink, ShortLinkPool
 from back.user_system.user_manager import UserManager, User, Permission
 from back.user_system.classes.behaviors import *
+from back.file_process import get_save_location
 
 import json
 
@@ -135,7 +136,8 @@ def upload():
         if file:
             print("    [FileUpload]Get BatchID:" + batch_id)
             print("    [FileUpload]Get File:" + file.filename)
-            file.save(file.filename)
+            file.save(get_save_location(file.filename, batch_id))
+            print("    [FileUpload]File Saved TO " + get_save_location(file.filename, batch_id))
             resp = jsonify({'error': False})
         else:
             resp = jsonify({'error': True})

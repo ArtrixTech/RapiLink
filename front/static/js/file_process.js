@@ -35,7 +35,12 @@ $('.media')[0].ondrop = function(ev) {
     oEvent.preventDefault();
 }*/
 function setProgress(prog) {
-    $("#progress").innerHTML = prog;
+    progress_text = $("#progress_text");
+    progress_bar = $("#progress_bar");
+
+    progress_text.text(prog);
+    progress_bar.val(prog);
+    //alert(progress_text);
 
 }
 var file_batch_id = "";
@@ -43,7 +48,7 @@ var file_batch_id = "";
 function uploadFile() {
 
     var files = document.getElementById("file_input").files; //files是文件选择框选择的文件对象数组  
-    file_batch_id = Math.random().toString(36).substr(2).slice(0, 8).toUpperCase();
+    file_batch_id = Math.round(new Date().getTime() / 1000) + Math.random().toString(36).substr(2).slice(0, 12).toUpperCase();
 
     if (files.length == 0) return;
 
@@ -63,6 +68,7 @@ function uploadFile() {
         if (result.lengthComputable) {
             //上传进度  
             var percent = (result.loaded / result.total * 100).toFixed(2);
+            //alert(percent);
             setProgress(percent);
         }
     }, false);
