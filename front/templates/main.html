@@ -99,8 +99,16 @@
         </div>
 
         <div class="hidden" id="file">
-            <input type="file" id="file_input">
-            <button onclick="uploadFile()">UPLOAD</button>
+            <div id="file_input_div">
+                <script>
+                    function clickTheUploadInput(){
+                        document.getElementById("file_input").click();
+                    }
+                </script>
+                <span id="file_input_span" class="unselective" onclick="clickTheUploadInput()">Select File</span>
+                <input type="file" id="file_input">
+            </div>
+            <button onclick="uploadFile()" id="upload_btn">UPLOAD</button>
             <span id="progress_text">0</span>
             <progress value=0 max=100 id="progress_bar">100</progress>
         </div>

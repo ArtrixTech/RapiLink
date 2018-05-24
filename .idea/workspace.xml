@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9b6db23e-911b-4915-8873-41e9f6fa0745" name="Default" comment="">
+    <list default="true" id="9b6db23e-911b-4915-8873-41e9f6fa0745" name="Default" comment="[Back Add]Directory Managing System&#10;[Front Add]Batch ID generating system">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/back/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/static/js/animations/stars_no_mouse.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/static/js/animations/stars_no_mouse.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/static/css/file_process.css" beforeDir="false" afterPath="$PROJECT_DIR$/front/static/css/file_process.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/static/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/front/static/css/main.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/front/templates/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/front/templates/main.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/util/timing_tasks.py" beforeDir="false" afterPath="$PROJECT_DIR$/util/timing_tasks.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -56,8 +55,8 @@
       <file leaf-file-name="main.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/back/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="331">
-              <caret line="147" column="43" selection-start-line="147" selection-start-column="43" selection-end-line="147" selection-end-column="43" />
+            <state relative-caret-position="59">
+              <caret line="121" column="19" lean-forward="true" selection-start-line="121" selection-start-column="19" selection-end-line="121" selection-end-column="19" />
               <folding>
                 <element signature="e#0#27#0" expanded="true" />
                 <element signature="e#2456#3172#0" />
@@ -67,11 +66,20 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="file_process.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/back/file_process.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="128">
+              <caret line="8" column="93" selection-start-line="8" selection-start-column="93" selection-end-line="8" selection-end-column="93" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="timing_tasks.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/util/timing_tasks.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="192">
-              <caret line="14" column="16" lean-forward="true" selection-start-line="14" selection-start-column="16" selection-end-line="14" selection-end-column="16" />
+              <caret line="14" column="16" selection-start-line="14" selection-start-column="16" selection-end-line="14" selection-end-column="16" />
             </state>
           </provider>
         </entry>
@@ -85,16 +93,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="file_upload.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/back/file_upload.py">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
       <file leaf-file-name="main.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/front/static/css/main.css">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="3648">
-              <caret line="228" column="14" selection-start-line="228" selection-start-column="14" selection-end-line="228" selection-end-column="14" />
+              <caret line="229" column="14" selection-start-line="229" selection-start-column="14" selection-end-line="229" selection-end-column="14" />
             </state>
           </provider>
         </entry>
@@ -102,8 +105,8 @@
       <file leaf-file-name="main.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/front/templates/main.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="140">
-              <caret line="20" column="31" selection-start-line="20" selection-start-column="31" selection-end-line="20" selection-end-column="31" />
+            <state relative-caret-position="156">
+              <caret line="21" column="31" selection-start-line="21" selection-start-column="31" selection-end-line="21" selection-end-column="31" />
             </state>
           </provider>
         </entry>
@@ -172,6 +175,8 @@
         <option value="$PROJECT_DIR$/front/templates/main.html" />
         <option value="$PROJECT_DIR$/back/file_upload.py" />
         <option value="$PROJECT_DIR$/util/timing_tasks.py" />
+        <option value="$PROJECT_DIR$/file_process.py" />
+        <option value="$PROJECT_DIR$/back/file_process.py" />
         <option value="$PROJECT_DIR$/back/main.py" />
       </list>
     </option>
@@ -237,6 +242,11 @@
   </component>
   <component name="PropertiesComponent">
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\ProjectFiles\BigProjects\RapiLink\Program\back" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -380,26 +390,26 @@
       <option name="project" value="LOCAL" />
       <updated>1527002542032</updated>
     </task>
-    <task id="LOCAL-00012" summary="[UI]UI Updated&#10;[Front+]Link generated page&#10;[Project]Front js structure change">
-      <created>1526055507465</created>
+    <task id="LOCAL-00012" summary="[Back Add]File UPLOAD API&#10;[Front Add]File UPLOAD Module">
+      <created>1527174084671</created>
       <option name="number" value="00012" />
       <option name="presentableId" value="LOCAL-00012" />
       <option name="project" value="LOCAL" />
-      <updated>1526055507465</updated>
+      <updated>1527174084671</updated>
     </task>
-    <task id="LOCAL-00013" summary="[Back+]Reformatted structure">
-      <created>1526100020678</created>
+    <task id="LOCAL-00013" summary="[Back Add]Directory Managing System&#10;[Front Add]Batch ID generating system">
+      <created>1527175721512</created>
       <option name="number" value="00013" />
       <option name="presentableId" value="LOCAL-00013" />
       <option name="project" value="LOCAL" />
-      <updated>1526100020678</updated>
+      <updated>1527175721512</updated>
     </task>
-    <task id="LOCAL-00014" summary="[Back+]Added time task processing&#10;[Main+]Added Multi-Thread processing&#10;[Main+]Added docstring&#10;[Back+]Added ShortLink class&#10;[Back+]Added ShortLinkPool class">
-      <created>1526108754671</created>
+    <task id="LOCAL-00014" summary="[Back Add]Directory Managing System&#10;[Front Add]Batch ID generating system">
+      <created>1527175753374</created>
       <option name="number" value="00014" />
       <option name="presentableId" value="LOCAL-00014" />
       <option name="project" value="LOCAL" />
-      <updated>1526108754671</updated>
+      <updated>1527175753374</updated>
     </task>
     <task id="LOCAL-00015" summary="[Back]Fixed a bug that will cause value error">
       <created>1526123584977</created>
@@ -471,7 +481,7 @@
       <option name="project" value="LOCAL" />
       <updated>1526779286250</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -511,16 +521,11 @@
     <MESSAGE value="[Add]Pressure Test Module" />
     <MESSAGE value="[Front]UI Compatible Fix" />
     <MESSAGE value="[Front]UI Compatibility Fix" />
-    <option name="LAST_COMMIT_MESSAGE" value="[Front]UI Compatibility Fix" />
+    <MESSAGE value="[Back Add]File UPLOAD API&#10;[Front Add]File UPLOAD Module" />
+    <MESSAGE value="[Back Add]Directory Managing System&#10;[Front Add]Batch ID generating system" />
+    <option name="LAST_COMMIT_MESSAGE" value="[Back Add]Directory Managing System&#10;[Front Add]Batch ID generating system" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/front/static/css/float_window.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="12" column="22" selection-start-line="12" selection-start-column="22" selection-end-line="12" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/front/templates/main.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="103">
@@ -808,14 +813,14 @@
     <entry file="file://$PROJECT_DIR$/front/static/css/main.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3648">
-          <caret line="228" column="14" selection-start-line="228" selection-start-column="14" selection-end-line="228" selection-end-column="14" />
+          <caret line="229" column="14" selection-start-line="229" selection-start-column="14" selection-end-line="229" selection-end-column="14" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/front/templates/main.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="20" column="31" selection-start-line="20" selection-start-column="31" selection-end-line="20" selection-end-column="31" />
+        <state relative-caret-position="156">
+          <caret line="21" column="31" selection-start-line="21" selection-start-column="31" selection-end-line="21" selection-end-column="31" />
         </state>
       </provider>
     </entry>
@@ -862,14 +867,21 @@
     <entry file="file://$PROJECT_DIR$/util/timing_tasks.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="192">
-          <caret line="14" column="16" lean-forward="true" selection-start-line="14" selection-start-column="16" selection-end-line="14" selection-end-column="16" />
+          <caret line="14" column="16" selection-start-line="14" selection-start-column="16" selection-end-line="14" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/back/file_process.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="128">
+          <caret line="8" column="93" selection-start-line="8" selection-start-column="93" selection-end-line="8" selection-end-column="93" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/back/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="331">
-          <caret line="147" column="43" selection-start-line="147" selection-start-column="43" selection-end-line="147" selection-end-column="43" />
+        <state relative-caret-position="59">
+          <caret line="121" column="19" lean-forward="true" selection-start-line="121" selection-start-column="19" selection-end-line="121" selection-end-column="19" />
           <folding>
             <element signature="e#0#27#0" expanded="true" />
             <element signature="e#2456#3172#0" />

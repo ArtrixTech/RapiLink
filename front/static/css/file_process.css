@@ -1,10 +1,39 @@
-#progress_bar{
+#progress_bar {}
 
+#file_input_div {
+    width: 108px;
+    height: 38px;
+    border-radius: 10px;
+    position: relative;
+    left: 20;
+    top: 20;
+    background-color: #F69590;
+    text-align: center;
+    cursor: pointer;
+}
+progress::-webkit-progress-inner-element { border-radius: 4px; }
+progress::-webkit-progress-value { border-radius: 4px; }
+progress::-webkit-progress-bar { border-radius: 4px; } 
 
-
+#file_input_span {
+    font-family: Work Sans, Avenir, Ostrich Sans, Flexo Light, Microsoft Yahei UI Light;
+    color: white;
+    cursor: pointer;
+    position: relative;
+    top: 9px;
+    font-size: 16px;
+    padding: 8px;
+    z-index: 1;
 }
 
-#progress_text{
+#file_input {
+    width: 100%;
+    opacity: 0;
+    cursor: pointer;
+}
 
+#upload_btn {}
+
+#progress_text {
     font-family: Work Sans, Avenir, Ostrich Sans, Flexo Light, Microsoft Yahei UI Light;
 }
