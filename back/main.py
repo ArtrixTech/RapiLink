@@ -1,5 +1,6 @@
 from flask import Blueprint
 from flask import request
+from flask import jsonify, make_response
 
 from back.classes.class_ShortLink import ShortLink, ShortLinkPool
 from back.user_system.user_manager import UserManager, User, Permission
@@ -118,3 +119,38 @@ def get_user_message():
     print(usr.judge_behavior(get_behavior_by_name("AddLink")))
 
     return ret_json
+
+
+@back_blueprint.route('/upload', methods=['GET', 'POST', 'OPTIONS'])
+def upload():
+    if request.method == 'POST':
+        print("[FileUpload]Handling POST")
+        try:
+            file = request.files['file']
+            batch_id = request.values.get("batch_id")
+        except:
+            file = None
+            batch_id = "NONE"
+
+        if file:
+            print("    [FileUpload]Get BatchID:" + batch_id)
+            print("    [FileUpload]Get File:" + file.filename)
+            file.save(file.filename)
+            resp = jsonify({'error': False})
+        else:
+            resp = jsonify({'error': True})
+
+        resp.headers['Access-Control-Allow-Origin'] = '*'
+        return resp
+
+    elif request.method == 'OPTIONS':
+        print("[FileUpload]Handling OPTIONS")
+        resp = make_response()
+        resp.headers['Access-Control-Allow-Origin'] = '*'
+        print("    [FileUpload]" + str(resp))
+        return resp
+
+    else:
+        resp = make_response(503)
+        resp.headers['Access-Control-Allow-Origin'] = '*'
+        return "NONE"

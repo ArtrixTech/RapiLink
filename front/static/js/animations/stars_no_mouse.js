@@ -276,7 +276,7 @@ var trans = {
             g.addColorStop(1, 'hsla(255, 255%, 255%, 0.25)');
             this.$.fillStyle = g;
             this.$.beginPath();
-            this.$.arc(this.varr[i].transOut.x, this.varr[i].transOut.y, this.varr[i].transOut.p * 2, 0, Math.PI * 2,
+            this.$.arc(this.varr[i].transOut.x, this.varr[i].transOut.y, this.varr[i].transOut.p * 2.5, 0, Math.PI * 2,
                 false);
             this.$.fill();
             this.$.closePath();

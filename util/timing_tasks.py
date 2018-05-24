@@ -19,4 +19,5 @@ def check():
     if len(out):
         print(out)
     else:
-        print("<No Object>")
+        pass
+        # print("<No Object>")

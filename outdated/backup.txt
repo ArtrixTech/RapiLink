@@ -1,0 +1,134 @@
+@app.route('/upload', methods=['GET', 'POST', 'options'])
+def upload():
+    print(flask.request.method)
+    if flask.request.method == 'POST':
+        print("--Handling POST")
+        try:
+            file = flask.request.files['file']
+        except:
+            file = None
+
+        if file:
+            print("#FILE!!" + file.filename)
+            file.save(file.filename)
+            print("Saved:" + file.filename)
+            resp = jsonify({'error': False})
+        else:
+            resp = jsonify({'error': True})
+        return resp
+
+    elif flask.request.method == 'OPTIONS':
+        print("--Handling OPTIONS")
+        resp = make_response()
+        print(resp)
+        resp.headers['Access-Control-Allow-Origin'] = '*'
+        return resp
+    else:
+        return "NONE"
+
+
+@app.route('/upload', methods=['GET', 'POST', 'options'])
+def upload():
+    print("GET FILE")
+    try:
+        file = flask.request.files['file']
+    except:
+        file=None
+    print(1)
+    resp = make_response()
+    print(2)
+    # 跨域设置
+    print(resp)
+
+    if file:
+        print("#FILE!!"+file.filename)
+        file.save(file.filename)
+        print("Saved:" + file.filename)
+        resp = jsonify({'error': False})
+    else:
+        pass  # resp = jsonify({'error': True})
+
+    resp.headers['Access-Control-Allow-Origin'] = '*'
+    return resp
+
+
+
+print(flask.request.method)
+    if flask.request.method == 'POST':
+        print("--Handling POST")
+        try:
+            file = flask.request.files['file']
+        except:
+            file = None
+        print(file)
+
+        if file:
+            print("#FILE!!" + file.filename)
+            file.save(file.filename)
+            print("Saved:" + file.filename)
+            resp = jsonify({'error': False})
+        else:
+            resp = jsonify({'error': True})
+
+        resp.headers['Access-Control-Allow-Origin'] = '*'
+        return resp
+
+    elif flask.request.method == 'OPTIONS':
+        print("--Handling OPTIONS")
+        resp = make_response()
+        resp.headers['Access-Control-Allow-Origin'] = '*'
+        print(resp)
+        return resp
+
+    else:
+        print("BAD!!!!!!!!!!!!!!!!")
+        return "NONE"'
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            if request.method == 'POST':
+        print("")
+        print("[FileUpload]Handling POST")
+        try:
+            print(request)
+            file = request.files['file']
+            batch_id = request.args.get("batch_id")
+            print("    [FileUpload]Get Batch:" + batch_id)
+        except:
+            file = None
+            batch_id = None
+
+
+
+        if file:
+            print("    [FileUpload]Get File:" + file.filename)
+            file.save(file.filename)
+            resp = jsonify({'error': False})
+        else:
+            resp = jsonify({'error': True})
+
+        resp.headers['Access-Control-Allow-Origin'] = '*'
+        return resp
+
+    elif request.method == 'OPTIONS':
+        print("")
+        print("[FileUpload]Handling OPTIONS")
+        resp = make_response()
+        resp.headers['Access-Control-Allow-Origin'] = '*'
+        print(resp)
+        return resp
+
+    else:
+        print("BAD!!!!!!!!!!!!!!!!")
+        return "NONE"

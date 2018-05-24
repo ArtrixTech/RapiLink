@@ -98,7 +98,9 @@
         </div>
 
         <div class="hidden" id="file">
-            <input class="file_input">
+            <input type="file" id="file_input">
+            <button onclick="uploadFile()">UPLOAD</button>
+            <span id="progress">0</span>
         </div>
 
         <div class="hidden" id="text">
@@ -112,6 +114,8 @@
 
     <script src="{{ url_for('front.static', filename='js/link_process_new.js') }}"></script>
     <script src="{{ url_for('front.static', filename='js/animations/link_process_animation.js') }}"></script>
+
+    <script src="{{ url_for('front.static', filename='js/file_process.js') }}"></script>
 
     <script src="{{ url_for('front.static', filename='js/utils/utils.js') }}"></script>
     <script>
