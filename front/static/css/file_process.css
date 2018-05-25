@@ -1,8 +1,8 @@
 #progress_bar {}
 
 #file_input_div {
-    width: 108px;
-    height: 38px;
+    width: 102px;
+    height: 35px;
     border-radius: 10px;
     position: relative;
     left: 20;
@@ -20,7 +20,7 @@ progress::-webkit-progress-bar { border-radius: 4px; }
     color: white;
     cursor: pointer;
     position: relative;
-    top: 9px;
+    top: 8px;
     font-size: 16px;
     padding: 8px;
     z-index: 1;
@@ -36,4 +36,6 @@ progress::-webkit-progress-bar { border-radius: 4px; }
 
 #progress_text {
     font-family: Work Sans, Avenir, Ostrich Sans, Flexo Light, Microsoft Yahei UI Light;
+    position: relative;
+    top: 50;
 }

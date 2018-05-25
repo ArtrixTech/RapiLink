@@ -34,16 +34,68 @@ $('.media')[0].ondrop = function(ev) {
     
     oEvent.preventDefault();
 }*/
-function setProgress(prog) {
+var lastLoaded = 0;
+var lastTime = 0;
+
+var queueLength = 50;
+var queue = [];
+
+function smoother(now) {
+
+    if (now == Infinity) now = 0;
+
+    if (queue.length >= queueLength) {
+        queue.reverse();
+        queue.pop();
+        queue.reverse();
+        queue.push(now);
+    } else {
+        queue.push(now);
+    }
+
+    var count = 0;
+    queue.forEach(element => {
+        count += element;
+    });
+    return count / queue.length;
+}
+
+function onProgress(result) {
+
+    if (lastTime == 0) {
+        lastTime = result.timeStamp;
+    }
+
+
+    var percent = (result.loaded / result.total * 100).toFixed(2);
+    var prog = percent;
+
+    var speed = 0;
+
+    if (result.loaded != lastLoaded) {
+        speed = smoother((result.loaded - lastLoaded) / (result.timeStamp - lastTime));
+        lastLoaded = result.loaded;
+        lastTime = result.timeStamp;
+    }
+
+    // Finished
+    if (result.loaded == result.total) {
+        lastLoaded = 0;
+        lastTime = 0;
+    }
+
     progress_text = $("#progress_text");
     progress_bar = $("#progress_bar");
 
-    progress_text.text(prog);
+    progress_text.text(prog + "% | " + (speed / 1000).toFixed(1) + "mb/s | " + result.timeStamp);
     progress_bar.val(prog);
     //alert(progress_text);
-
 }
 var file_batch_id = "";
+
+function getUnixTimeStamp() {
+    return Math.round(new Date().getTime() / 1000);
+}
 
 function uploadFile() {
 
@@ -67,9 +119,9 @@ function uploadFile() {
     xhr.upload.addEventListener("progress", function (result) {
         if (result.lengthComputable) {
             //上传进度  
-            var percent = (result.loaded / result.total * 100).toFixed(2);
+
             //alert(percent);
-            setProgress(percent);
+            onProgress(result);
         }
     }, false);
 
