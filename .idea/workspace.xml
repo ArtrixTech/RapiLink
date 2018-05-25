@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9b6db23e-911b-4915-8873-41e9f6fa0745" name="Default" comment="[Back Add]Directory Managing System&#10;[Front Add]Batch ID generating system">
+    <list default="true" id="9b6db23e-911b-4915-8873-41e9f6fa0745" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/static/css/file_process.css" beforeDir="false" afterPath="$PROJECT_DIR$/front/static/css/file_process.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/static/css/error_code/404.css" beforeDir="false" afterPath="$PROJECT_DIR$/front/static/css/error_code/404.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/front/static/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/front/static/css/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/templates/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/front/templates/main.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -31,7 +30,7 @@
       <file leaf-file-name="main_process.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main_process.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="32">
+            <state relative-caret-position="16">
               <caret line="2" selection-start-line="2" selection-end-line="2" />
               <folding>
                 <element signature="e#0#23#0" expanded="true" />
@@ -43,7 +42,7 @@
       <file leaf-file-name="pressure_test.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pressure_test/pressure_test.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="304">
+            <state relative-caret-position="272">
               <caret line="19" column="38" selection-start-line="19" selection-start-column="38" selection-end-line="19" selection-end-column="38" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
@@ -55,12 +54,10 @@
       <file leaf-file-name="main.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/back/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="59">
-              <caret line="121" column="19" lean-forward="true" selection-start-line="121" selection-start-column="19" selection-end-line="121" selection-end-column="19" />
+            <state relative-caret-position="439">
+              <caret line="114" selection-start-line="114" selection-end-line="114" />
               <folding>
                 <element signature="e#0#27#0" expanded="true" />
-                <element signature="e#2456#3172#0" />
-                <element signature="e#3243#3592#0" />
               </folding>
             </state>
           </provider>
@@ -87,7 +84,7 @@
       <file leaf-file-name="backup.txt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/outdated/backup.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="144">
+            <state relative-caret-position="1680">
               <caret line="105" column="51" selection-start-line="105" selection-start-column="12" selection-end-line="105" selection-end-column="51" />
             </state>
           </provider>
@@ -96,7 +93,7 @@
       <file leaf-file-name="main.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/front/static/css/main.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3648">
+            <state relative-caret-position="3664">
               <caret line="229" column="14" selection-start-line="229" selection-start-column="14" selection-end-line="229" selection-end-column="14" />
             </state>
           </provider>
@@ -105,7 +102,7 @@
       <file leaf-file-name="main.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/front/templates/main.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="156">
+            <state relative-caret-position="336">
               <caret line="21" column="31" selection-start-line="21" selection-start-column="31" selection-end-line="21" selection-end-column="31" />
             </state>
           </provider>
@@ -195,6 +192,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -231,13 +229,17 @@
             <path>
               <item name="RapiLink-Front" type="b2602c69:ProjectViewProjectNode" />
               <item name="Program" type="462c0819:PsiDirectoryNode" />
+              <item name="saved_files" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="RapiLink-Front" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Program" type="462c0819:PsiDirectoryNode" />
               <item name="util" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -411,12 +413,12 @@
       <option name="project" value="LOCAL" />
       <updated>1527175753374</updated>
     </task>
-    <task id="LOCAL-00015" summary="[Back]Fixed a bug that will cause value error">
-      <created>1526123584977</created>
+    <task id="LOCAL-00015" summary="[Front Add]Upload speed indicating module">
+      <created>1527254470732</created>
       <option name="number" value="00015" />
       <option name="presentableId" value="LOCAL-00015" />
       <option name="project" value="LOCAL" />
-      <updated>1526123584977</updated>
+      <updated>1527254470732</updated>
     </task>
     <task id="LOCAL-00016" summary="[Front]Fixed a bug caused by latency">
       <created>1526126588984</created>
@@ -481,19 +483,18 @@
       <option name="project" value="LOCAL" />
       <updated>1526779286250</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="22" width="1936" height="1066" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1515625" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.119791664" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.32947367" />
       <window_info anchor="bottom" id="Python Console" order="7" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32947367" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32912722" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info id="Favorites" order="2" side_tool="true" />
@@ -523,9 +524,20 @@
     <MESSAGE value="[Front]UI Compatibility Fix" />
     <MESSAGE value="[Back Add]File UPLOAD API&#10;[Front Add]File UPLOAD Module" />
     <MESSAGE value="[Back Add]Directory Managing System&#10;[Front Add]Batch ID generating system" />
-    <option name="LAST_COMMIT_MESSAGE" value="[Back Add]Directory Managing System&#10;[Front Add]Batch ID generating system" />
+    <MESSAGE value="[Front Add]Upload speed indicating module" />
+    <option name="LAST_COMMIT_MESSAGE" value="[Front Add]Upload speed indicating module" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/back/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1792">
+          <caret line="121" column="19" lean-forward="true" selection-start-line="121" selection-start-column="19" selection-end-line="121" selection-end-column="19" />
+          <folding>
+            <element signature="e#0#27#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/front/templates/main.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="103">
@@ -589,8 +601,6 @@
           <caret line="45" lean-forward="true" selection-start-line="45" selection-end-line="45" />
           <folding>
             <element signature="e#0#27#0" expanded="true" />
-            <element signature="e#2456#3172#0" />
-            <element signature="e#3243#3592#0" />
           </folding>
         </state>
       </provider>
@@ -615,8 +625,6 @@
           <caret line="30" column="37" selection-start-line="30" selection-start-column="37" selection-end-line="30" selection-end-column="37" />
           <folding>
             <element signature="e#0#27#0" expanded="true" />
-            <element signature="e#2456#3172#0" />
-            <element signature="e#3243#3592#0" />
           </folding>
         </state>
       </provider>
@@ -699,8 +707,6 @@
           <caret line="28" column="9" lean-forward="true" selection-start-line="28" selection-start-column="9" selection-end-line="28" selection-end-column="9" />
           <folding>
             <element signature="e#0#27#0" expanded="true" />
-            <element signature="e#2456#3172#0" />
-            <element signature="e#3243#3592#0" />
           </folding>
         </state>
       </provider>
@@ -783,9 +789,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1072">
           <caret line="68" column="39" selection-start-line="68" selection-start-column="39" selection-end-line="68" selection-end-column="39" />
-          <folding>
-            <element signature="e#0#59#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -812,21 +815,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/front/static/css/main.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3648">
+        <state relative-caret-position="3664">
           <caret line="229" column="14" selection-start-line="229" selection-start-column="14" selection-end-line="229" selection-end-column="14" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/front/templates/main.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="156">
+        <state relative-caret-position="336">
           <caret line="21" column="31" selection-start-line="21" selection-start-column="31" selection-end-line="21" selection-end-column="31" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pressure_test/pressure_test.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
+        <state relative-caret-position="272">
           <caret line="19" column="38" selection-start-line="19" selection-start-column="38" selection-end-line="19" selection-end-column="38" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
@@ -846,7 +849,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/main_process.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="32">
+        <state relative-caret-position="16">
           <caret line="2" selection-start-line="2" selection-end-line="2" />
           <folding>
             <element signature="e#0#23#0" expanded="true" />
@@ -854,12 +857,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/back/file_upload.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/outdated/backup.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
+        <state relative-caret-position="1680">
           <caret line="105" column="51" selection-start-line="105" selection-start-column="12" selection-end-line="105" selection-end-column="51" />
         </state>
       </provider>
@@ -880,12 +880,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/back/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="59">
-          <caret line="121" column="19" lean-forward="true" selection-start-line="121" selection-start-column="19" selection-end-line="121" selection-end-column="19" />
+        <state relative-caret-position="439">
+          <caret line="114" selection-start-line="114" selection-end-line="114" />
           <folding>
             <element signature="e#0#27#0" expanded="true" />
-            <element signature="e#2456#3172#0" />
-            <element signature="e#3243#3592#0" />
           </folding>
         </state>
       </provider>
