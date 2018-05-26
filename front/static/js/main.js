@@ -84,7 +84,7 @@ function fetchColor(refresh = false) {
         color = "rgb(" + sourceColor + ")";
         var deltaVal = -55,
             deltaVal2 = -10,
-            deltaVal3 = -35;
+            deltaVal3 = -15;
 
         // Dim Color
         colorAlpha = "rgba(" + ((sourceColor[0] + deltaVal) >= 0 ? (sourceColor[0] + deltaVal) : 0) +
@@ -102,7 +102,7 @@ function fetchColor(refresh = false) {
         colorAlpha3 = "rgba(" + ((sourceColor[0] + deltaVal3) >= 0 ? (sourceColor[0] + deltaVal3) : 0) +
             "," + ((sourceColor[1] + deltaVal3) >= 0 ? (sourceColor[1] + deltaVal3) : 0) +
             "," + ((sourceColor[2] + deltaVal3) >= 0 ? (sourceColor[2] + deltaVal3) : 0) +
-            ",0.75)";
+            ",0.79)";
         console.log("Fetch Succeed")
         console.log(colorAlpha);
 
@@ -131,41 +131,6 @@ function eventColorChange() {
         $(this).css("background", "rgba(0,0,0,0)");
     });
 
-    var p_right = 609;
-
-    function fileIconHover() {
-        $("#file_icon").css("background", colorAlpha3);
-        $("#file_input_span").css("opacity", 1);
-
-        $("#file_icon").css("padding-right", p_right);
-
-    }
-
-    function fileIconUnhover() {
-        $("#file_icon").css("background", colorAlpha2);
-
-        // Var "isHoldFileIconLength" is in file_process.js
-        if (isHoldFileIconLength) {
-            $("#file_icon").css("padding-right", p_right);
-        } else {
-            $("#file_icon").css("padding-right", 16);
-            $("#file_input_span").css("opacity", 0);
-        }
-    }
-
-    $("#file_icon").mouseover(function () {
-        fileIconHover();
-    });
-    $("#file_icon").mouseout(function () {
-        fileIconUnhover();
-    });
-
-    $("#file_input_span").mouseover(function () {
-        fileIconHover();
-    });
-    $("#file_input_span").mouseout(function () {
-        fileIconUnhover();
-    });
 }
 
 function colorChange() {
@@ -174,6 +139,7 @@ function colorChange() {
     $(".float_window_label").css("color", color);
     $(".link_input").css("color", color);
     $("#file_input_div").css("background-color", "rgba(0,0,0,0)");
+    $("#file_input_span").css("color", color);
     //$(".customize_link_input").css("background-color", colorAlpha);
     $(".customize_link_input").css("color", color);
 
@@ -183,4 +149,5 @@ function colorChange() {
     $("body").css("background-color", color);
 
     $("#file_icon").css("background", colorAlpha2);
+    
 }

@@ -40,18 +40,15 @@ progress::-webkit-progress-bar { border-radius: 4px; }
 
 #file_input_span {
     font-family: Work Sans, Avenir, Ostrich Sans, Flexo Light, Microsoft Yahei UI Light;
-    color: white;
     cursor: pointer;
     position: absolute;
     top: 6px;
     font-size: 16px;
     padding: 8px;
-    /* padding-right: 498px; */
     z-index: 12;
-    left: 41px;
-    transition: opacity 0.4s cubic-bezier(0.03, 0.55, 0.57, 1);
-    opacity: 0;
-    white-space: nowrap; 
+    left: 57px;
+    transition: opacity 0.4s cubic-bezier(0.03, 0.55, 0.57, 1),color 0.4s cubic-bezier(0.99, 0, 0.57, 1),left 0.4s cubic-bezier(0.03, 0.55, 0.57, 1);
+    white-space: nowrap;
 }
 
 #file_input {

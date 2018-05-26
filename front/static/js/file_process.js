@@ -149,7 +149,7 @@ $("#file_input").bind('change', function () {
         fWindow_link.classList.remove("float_window_config_file")
         fWindow_link.classList.remove("float_window_config_file_expand_finished")
         fWindow_link.classList.add("float_window_config_file_expand")
-        
+
         isHoldFileIconLength = true;
         $("#file_input_span").text(file.name + " | Click to upload");
 
@@ -176,8 +176,48 @@ function selectBtnClick() {
 
     clickTheUploadInput();
    
+}
+
+//Click event listening
+$("#file_icon").click(selectBtnClick);
+$("#file_input_span").click(selectBtnClick);
+
+var p_right = 609;
+
+function fileIconHover() {
+    $("#file_icon").css("background", colorAlpha3);
+    $("#file_input_span").css("opacity", 1);
+
+    $("#file_icon").css("padding-right", p_right);
+
+    $("#file_input_span").css("color", "white");
+    $("#file_input_span").css("left", "41");
 
 }
 
-$("#file_icon").click(selectBtnClick);
-$("#file_input_span").click(selectBtnClick);
+function fileIconUnhover() {
+    $("#file_icon").css("background", colorAlpha2);
+
+    // Var "isHoldFileIconLength" is in file_process.js
+    if (isHoldFileIconLength) {
+        $("#file_icon").css("padding-right", p_right);
+    } else {
+        $("#file_icon").css("padding-right", 16);
+        $("#file_input_span").css("color", color);
+        $("#file_input_span").css("left", "57");
+    }
+}
+
+$("#file_icon").mouseover(function () {
+    fileIconHover();
+});
+$("#file_icon").mouseout(function () {
+    fileIconUnhover();
+});
+
+$("#file_input_span").mouseover(function () {
+    fileIconHover();
+});
+$("#file_input_span").mouseout(function () {
+    fileIconUnhover();
+});

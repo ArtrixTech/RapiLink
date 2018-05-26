@@ -3,9 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="9b6db23e-911b-4915-8873-41e9f6fa0745" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/front/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/front/static/css/file_process.css" beforeDir="false" afterPath="$PROJECT_DIR$/front/static/css/file_process.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/static/css/float_window.css" beforeDir="false" afterPath="$PROJECT_DIR$/front/static/css/float_window.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/front/static/js/file_process.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/static/js/file_process.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/front/static/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/static/js/main.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/front/templates/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/front/templates/main.html" afterDir="false" />
@@ -430,12 +428,12 @@
       <option name="project" value="LOCAL" />
       <updated>1527341992357</updated>
     </task>
-    <task id="LOCAL-00020" summary="[Main]Supported HTTPS">
-      <created>1526132581073</created>
+    <task id="LOCAL-00020" summary="[Front]UI Change | Upload function update | business logic change">
+      <created>1527350243261</created>
       <option name="number" value="00020" />
       <option name="presentableId" value="LOCAL-00020" />
       <option name="project" value="LOCAL" />
-      <updated>1526132581073</updated>
+      <updated>1527350243261</updated>
     </task>
     <task id="LOCAL-00021" summary="[Main]Supported HTTPS">
       <created>1526132715864</created>
@@ -465,7 +463,7 @@
       <option name="project" value="LOCAL" />
       <updated>1526779286250</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -512,7 +510,8 @@
     <MESSAGE value="[Project Front]New UI prepare, OLD version moved to /old" />
     <MESSAGE value="[Front]UI Change&#10;[Front]Previous commit: Auto color detection" />
     <MESSAGE value="[Front]UI Change" />
-    <option name="LAST_COMMIT_MESSAGE" value="[Front]UI Change" />
+    <MESSAGE value="[Front]UI Change | Upload function update | business logic change" />
+    <option name="LAST_COMMIT_MESSAGE" value="[Front]UI Change | Upload function update | business logic change" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/front/templates/main.html">
