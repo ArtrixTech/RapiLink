@@ -16,7 +16,7 @@
 
 </head>
 
-<body id="b" style="background:url({{img_url}});/*background-size: 129%;*/">
+<body id="b" style="background: url({{img_url}});background-repeat: no-repeat;background-size: 100%;">
 
     <img id="bgimg" src="{{img_url}}" class="hidden">
 
@@ -114,14 +114,15 @@
                             document.getElementById("file_input").click();
                         }
                     </script>
+                    <img class="icon" id="file_icon" src="{{ url_for('front.static', filename='img/file.png') }}">
                     <span id="file_input_span" class="unselective" onclick="clickTheUploadInput()">Select File</span>
                     <input type="file" id="file_input">
                 </div>
-                <button onclick="uploadFile()" id="upload_btn">UPLOAD</button>
+               
                 <span id="progress_text">0</span>
 
-                <!<input class="link_input" id="link_input" placeholder="https://rapi.link">>
-                <div class="link_hover_btn" id="link_hover_btn" onclick="genLink()" onmousedown="btnMouseDown()" onmouseup="btnMouseUp()"></div>
+                
+                <div class="link_hover_btn" id="link_hover_btn" onclick="uploadFile()" onmousedown="btnMouseDown()" onmouseup="btnMouseUp()"></div>
 
             </div>
 

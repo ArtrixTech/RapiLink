@@ -125,4 +125,5 @@ function colorChange() {
     $(".icon_selected").css("background", colorAlpha);
 
     $(".icon").css("background", "rgba(0,0,0,0)");
+    $("body").css("background-color", color);
 }

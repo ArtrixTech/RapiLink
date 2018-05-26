@@ -1,15 +1,22 @@
 #progress_bar {}
 
 #file_input_div {
-    width: 102px;
-    height: 35px;
-    border-radius: 10px;
+    width: 143px;
+    height: 50px;
+    border-radius: 32px;
     position: relative;
-    left: 20;
-    top: 20;
+    left: 8px;
+    top: 7px;
     background-color: #F69590;
     text-align: center;
     cursor: pointer;
+}
+
+#file_icon {
+    width: 23px;
+    position: relative;
+    left: 8px;
+    top: 5px;
 }
 progress::-webkit-progress-inner-element { border-radius: 4px; }
 progress::-webkit-progress-value { border-radius: 4px; }
@@ -20,10 +27,11 @@ progress::-webkit-progress-bar { border-radius: 4px; }
     color: white;
     cursor: pointer;
     position: relative;
-    top: 8px;
+    top: -9px;
     font-size: 16px;
     padding: 8px;
     z-index: 1;
+    left: -4px;
 }
 
 #file_input {

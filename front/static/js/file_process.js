@@ -85,10 +85,10 @@ function onProgress(result) {
     }
 
     progress_text = $("#progress_text");
-    progress_bar = $("#progress_bar");
+    //progress_bar = $("#progress_bar");
 
     progress_text.text(prog + "% | " + (speed / 1000).toFixed(1) + "mb/s | " + result.timeStamp);
-    progress_bar.val(prog);
+    //progress_bar.val(prog);
     //alert(progress_text);
 }
 var file_batch_id = "";
