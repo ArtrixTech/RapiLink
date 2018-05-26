@@ -27,6 +27,8 @@ function changeFile() {
     obj.file_label.className = "label_for_btn";
     obj.link_label.className = "hidden";
     obj.text_label.className = "hidden";
+    colorChange();
+    eventColorChange();
     return false
 
 };
@@ -44,6 +46,8 @@ function changeLink() {
     obj.file_label.className = "hidden";
     obj.link_label.className = "label_for_btn";
     obj.text_label.className = "hidden";
+    colorChange();
+    eventColorChange();
     return false
 
 };
@@ -61,7 +65,64 @@ function changeText() {
     obj.file_label.className = "hidden";
     obj.link_label.className = "hidden";
     obj.text_label.className = "label_for_btn";
+    colorChange();
+    eventColorChange();
     return false
 
 };
+var color = "#00000014",
+    colorAlpha = "#00000014";
 
+function fetchColor(refresh = false) {
+    try {
+        var colorThief = new ColorThief();
+        var img = document.getElementById("bgimg");
+        img.crossOrigin = "*";
+
+        var sourceColor = colorThief.getColor(img)
+        color = "rgb(" + sourceColor + ")";
+        var deltaVal = -55;
+        colorAlpha = "rgba(" + ((sourceColor[0] + deltaVal) >= 0 ? (sourceColor[0] + deltaVal) : 0) +
+            "," + ((sourceColor[1] + deltaVal) >= 0 ? (sourceColor[1] + deltaVal) : 0) +
+            "," + ((sourceColor[2] + deltaVal) >= 0 ? (sourceColor[2] + deltaVal) : 0) +
+            ",0.12)";
+        console.log("Fetch Succeed")
+        console.log(colorAlpha);
+
+        if (refresh) colorChange();
+
+    } catch (err) {
+        console.log("Fetch Error.Retry")
+        setTimeout(fetchColor, 250, refresh);
+    }
+}
+
+function eventColorChange() {
+    $(".icon_selected").mouseover(function () {
+        $(this).css("background", colorAlpha);
+    });
+    $(".icon_selected").mouseout(function () {
+        $(this).css("background", colorAlpha);
+    });
+
+    $(".icon").mouseover(function () {
+        $(this).css("background", colorAlpha);
+    });
+    $(".icon").mouseout(function () {
+        $(this).css("background", "rgba(0,0,0,0)");
+    });
+}
+
+function colorChange() {
+    //alert(color);
+
+    $(".float_window_label").css("color", color);
+    $(".link_input").css("color", color);
+    $("#file_input_div").css("background-color", color);
+    //$(".customize_link_input").css("background-color", colorAlpha);
+    $(".customize_link_input").css("color", color);
+
+    $(".icon_selected").css("background", colorAlpha);
+
+    $(".icon").css("background", "rgba(0,0,0,0)");
+}

@@ -1,6 +1,6 @@
 from flask import Blueprint
 from flask import render_template
-from flask import request
+from flask import request, url_for
 import json
 import requests
 
@@ -15,8 +15,13 @@ def hello():
 
 @front_blueprint.route('/')
 def main():
-    print(front_blueprint.root_path)
-    return render_template('main.html')
+    img = request.args.get("img")
+    if img == "" or not img:
+        img = url_for('front.static', filename="img/backgrounds/1.jpg")
+    elif "http" not in img:
+        img = url_for('front.static', filename='img/backgrounds/' + str(img) + ".jpg")
+
+    return render_template('main.html', img_url=img)
 
 
 @front_blueprint.route('/get')

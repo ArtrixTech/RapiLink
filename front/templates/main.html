@@ -10,9 +10,15 @@
     <link href='https://fonts.googleapis.com/css?family=Work%20Sans' rel='stylesheet' type='text/css'>
 
 
+    <script src="{{ url_for('front.static', filename='js/jquery-3.3.1.min.js') }}"></script>
+    <script src="{{ url_for('front.static', filename='js/utils/color-thief.min.js') }}"></script>
+
+
 </head>
 
-<body id="b">
+<body id="b" style="background:url({{img_url}});/*background-size: 129%;*/">
+
+    <img id="bgimg" src="{{img_url}}" class="hidden">
 
     <canvas id="canv"></canvas>
     <script src="{{ url_for('front.static', filename='js/animations/stars_no_mouse.js') }}"></script>
@@ -150,21 +156,21 @@
 
     </div>
 
-    <script src="{{ url_for('front.static', filename='js/jquery-3.3.1.min.js') }}"></script>
     <script src="{{ url_for('front.static', filename='js/main.js') }}"></script>
 
     <script src="{{ url_for('front.static', filename='js/link_process_new.js') }}"></script>
     <script src="{{ url_for('front.static', filename='js/animations/link_process_animation.js') }}"></script>
 
+
     <script src="{{ url_for('front.static', filename='js/file_process.js') }}"></script>
 
     <script src="{{ url_for('front.static', filename='js/utils/utils.js') }}"></script>
+
     <script>
         changeLink();
+        fetchColor(true);
+        colorChange();
     </script>
-
-
-
 
 </body>
 
