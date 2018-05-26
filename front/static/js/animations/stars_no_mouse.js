@@ -1,4 +1,4 @@
-var num = 200;
+var num = 120;
 var w = window.innerWidth;
 var h = window.innerHeight;
 var max = 100;
@@ -45,9 +45,9 @@ var cam = {
         z: 0
     },
     upd: function () {
-        cam.dist.x = cam.dest.x - cam.obj.x;
-        cam.dist.y = cam.dest.y - cam.obj.y;
-        cam.dist.z = cam.dest.z - cam.obj.z;
+        cam.dist.x = cam.dest.x - cam.obj.x-50;
+        cam.dist.y = cam.dest.y - cam.obj.y-50;
+        cam.dist.z = cam.dest.z - cam.obj.z-50;
         cam.ang.cplane = -cam.dist.z / Math.sqrt(cam.dist.x * cam.dist.x + cam.dist.z * cam.dist.z);
         cam.ang.splane = cam.dist.x / Math.sqrt(cam.dist.x * cam.dist.x + cam.dist.z * cam.dist.z);
         cam.ang.ctheta = Math.sqrt(cam.dist.x * cam.dist.x + cam.dist.z * cam.dist.z) / Math.sqrt(cam.dist.x * cam.dist
@@ -174,9 +174,9 @@ var trans = {
     };
 
     var Build = function () {
-        this.vel = 0.04;
+        this.vel = 0;
         this.lim = 360;
-        this.diff = 200;
+        this.diff = 500;
         this.initPos = 100;
         this.toX = _x;
         this.toY = _y;
@@ -203,9 +203,9 @@ var trans = {
             z: 0
         };
         this.objSz = {
-            x: w / 5,
-            y: h / 5,
-            z: w / 5
+            x: w / 3,
+            y: h / 3,
+            z: w / 3
         };
     };
 
@@ -271,9 +271,9 @@ var trans = {
             var g = this.$.createRadialGradient(this.varr[i].transOut.x, this.varr[i].transOut.y, this.varr[i].transOut
                 .p, this.varr[i].transOut.x, this.varr[i].transOut.y, this.varr[i].transOut.p * 2);
             this.$.globalCompositeOperation = 'lighter';
-            g.addColorStop(0, 'hsla(255, 255%, 255%, 0.25)');
-            g.addColorStop(.5, 'hsla(255, 255%, 255%, 0.25)');
-            g.addColorStop(1, 'hsla(255, 255%, 255%, 0.25)');
+            g.addColorStop(0, 'hsla(255, 255%, 255%, 0.2)');
+            g.addColorStop(.5, 'hsla(255, 255%, 255%, 0.2)');
+            g.addColorStop(1, 'hsla(255, 255%, 255%, 0.2)');
             this.$.fillStyle = g;
             this.$.beginPath();
             this.$.arc(this.varr[i].transOut.x, this.varr[i].transOut.y, this.varr[i].transOut.p * 2.5, 0, Math.PI * 2,
