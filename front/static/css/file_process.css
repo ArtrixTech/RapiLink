@@ -13,10 +13,26 @@
 }
 
 #file_icon {
-    width: 23px;
+    /*width: 23px;
     position: relative;
-    left: 8px;
-    top: 5px;
+    left: -20px;
+    top: 4px;
+    
+    padding: 8px;
+    padding-right: 58px;
+    border-radius: 10px; */
+
+    width: 23px;
+    position: absolute;
+    left: -2px;
+    top: -2px;
+    padding-right: 16px;
+    padding-top: 15px;
+    padding-left: 16px;
+    padding-bottom: 16px;
+    border-radius: 32px;
+    transition: background 0.4s cubic-bezier(0.03, 0.55, 0.57, 1),padding-right 0.4s cubic-bezier(0.74, 0.1, 0.57, 1);
+    z-index: 10;
 }
 progress::-webkit-progress-inner-element { border-radius: 4px; }
 progress::-webkit-progress-value { border-radius: 4px; }
@@ -27,11 +43,14 @@ progress::-webkit-progress-bar { border-radius: 4px; }
     color: white;
     cursor: pointer;
     position: relative;
-    top: -9px;
+    top: 15px;
     font-size: 16px;
     padding: 8px;
-    z-index: 1;
-    left: -4px;
+    /*padding-right: 498px;*/
+    z-index: 12;
+    left: 16px;
+    transition: opacity 0.4s cubic-bezier(0.03, 0.55, 0.57, 1);
+    opacity: 0;
 }
 
 #file_input {
@@ -40,7 +59,20 @@ progress::-webkit-progress-bar { border-radius: 4px; }
     cursor: pointer;
 }
 
-#upload_btn {}
+#file_hover_btn {
+    background: url(../img/plane_pink.png) no-repeat;
+    transition: background cubic-bezier(0.65, 0.05, 0.36, 1) 0.16s, box-shadow 0.16s, filter cubic-bezier(0.65, 0.05, 0.36, 1) 0.3s, transform cubic-bezier(0, 0, 0.21, 1.01) 0.15s;
+    width: 48px;
+    height: 48px;
+    border-radius: 50px;
+    border: 0px solid;
+    background-size: 54px 54px;
+    background-position: -2.8px -3px;
+    position: relative;
+    left: 602px;
+    top: -61px;
+    box-shadow: 0px 0px 19px #d2797e45;
+}
 
 #progress_text {
     font-family: Work Sans, Avenir, Ostrich Sans, Flexo Light, Microsoft Yahei UI Light;

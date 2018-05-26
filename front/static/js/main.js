@@ -71,7 +71,8 @@ function changeText() {
 
 };
 var color = "#00000014",
-    colorAlpha = "#00000014";
+    colorAlpha = "#00000014",
+    colorAlpha2 = "#00000014";
 
 function fetchColor(refresh = false) {
     try {
@@ -81,11 +82,27 @@ function fetchColor(refresh = false) {
 
         var sourceColor = colorThief.getColor(img)
         color = "rgb(" + sourceColor + ")";
-        var deltaVal = -55;
+        var deltaVal = -55,
+            deltaVal2 = -10,
+            deltaVal3 = -35;
+
+        // Dim Color
         colorAlpha = "rgba(" + ((sourceColor[0] + deltaVal) >= 0 ? (sourceColor[0] + deltaVal) : 0) +
             "," + ((sourceColor[1] + deltaVal) >= 0 ? (sourceColor[1] + deltaVal) : 0) +
             "," + ((sourceColor[2] + deltaVal) >= 0 ? (sourceColor[2] + deltaVal) : 0) +
             ",0.12)";
+
+        // Deep Color1
+        colorAlpha2 = "rgba(" + ((sourceColor[0] + deltaVal2) >= 0 ? (sourceColor[0] + deltaVal2) : 0) +
+            "," + ((sourceColor[1] + deltaVal2) >= 0 ? (sourceColor[1] + deltaVal2) : 0) +
+            "," + ((sourceColor[2] + deltaVal2) >= 0 ? (sourceColor[2] + deltaVal2) : 0) +
+            ",0.75)";
+
+        // Deep Color2 - Deeper than color1
+        colorAlpha3 = "rgba(" + ((sourceColor[0] + deltaVal3) >= 0 ? (sourceColor[0] + deltaVal3) : 0) +
+            "," + ((sourceColor[1] + deltaVal3) >= 0 ? (sourceColor[1] + deltaVal3) : 0) +
+            "," + ((sourceColor[2] + deltaVal3) >= 0 ? (sourceColor[2] + deltaVal3) : 0) +
+            ",0.75)";
         console.log("Fetch Succeed")
         console.log(colorAlpha);
 
@@ -111,6 +128,34 @@ function eventColorChange() {
     $(".icon").mouseout(function () {
         $(this).css("background", "rgba(0,0,0,0)");
     });
+
+    var p_right = 538;
+
+    function fileIconHover() {
+        $("#file_icon").css("background", colorAlpha3);
+        $("#file_icon").css("padding-right", p_right);
+        $("#file_input_span").css("opacity", 1);
+    }
+
+    function fileIconUnhover() {
+        $("#file_icon").css("background", colorAlpha2);
+        $("#file_icon").css("padding-right", 16);
+        $("#file_input_span").css("opacity", 0);
+    }
+
+    $("#file_icon").mouseover(function () {
+        fileIconHover();
+    });
+    $("#file_icon").mouseout(function () {
+        fileIconUnhover();
+    });
+
+    $("#file_input_span").mouseover(function () {
+        fileIconHover();
+    });
+    $("#file_input_span").mouseout(function () {
+        fileIconUnhover();
+    });
 }
 
 function colorChange() {
@@ -118,7 +163,7 @@ function colorChange() {
 
     $(".float_window_label").css("color", color);
     $(".link_input").css("color", color);
-    $("#file_input_div").css("background-color", color);
+    $("#file_input_div").css("background-color", "rgba(0,0,0,0)");
     //$(".customize_link_input").css("background-color", colorAlpha);
     $(".customize_link_input").css("color", color);
 
@@ -126,4 +171,6 @@ function colorChange() {
 
     $(".icon").css("background", "rgba(0,0,0,0)");
     $("body").css("background-color", color);
+
+    $("#file_icon").css("background", colorAlpha2);
 }
