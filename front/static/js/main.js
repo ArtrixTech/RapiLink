@@ -114,6 +114,8 @@ function fetchColor(refresh = false) {
     }
 }
 
+var isHoldFileIconLength = false;
+
 function eventColorChange() {
     $(".icon_selected").mouseover(function () {
         $(this).css("background", colorAlpha);
@@ -129,18 +131,26 @@ function eventColorChange() {
         $(this).css("background", "rgba(0,0,0,0)");
     });
 
-    var p_right = 538;
+    var p_right = 609;
 
     function fileIconHover() {
         $("#file_icon").css("background", colorAlpha3);
-        $("#file_icon").css("padding-right", p_right);
         $("#file_input_span").css("opacity", 1);
+
+        $("#file_icon").css("padding-right", p_right);
+
     }
 
     function fileIconUnhover() {
         $("#file_icon").css("background", colorAlpha2);
-        $("#file_icon").css("padding-right", 16);
-        $("#file_input_span").css("opacity", 0);
+
+        // Var "isHoldFileIconLength" is in file_process.js
+        if (isHoldFileIconLength) {
+            $("#file_icon").css("padding-right", p_right);
+        } else {
+            $("#file_icon").css("padding-right", 16);
+            $("#file_input_span").css("opacity", 0);
+        }
     }
 
     $("#file_icon").mouseover(function () {

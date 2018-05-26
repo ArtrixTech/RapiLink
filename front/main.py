@@ -17,7 +17,7 @@ def hello():
 def main():
     img = request.args.get("img")
     if img == "" or not img:
-        img = url_for('front.static', filename="img/backgrounds/1.jpg")
+        img = url_for('front.static', filename="img/backgrounds/4.jpg")
     elif "http" not in img:
         img = url_for('front.static', filename='img/backgrounds/' + str(img) + ".jpg")
 

@@ -135,3 +135,49 @@ function uploadFile() {
     });
     xhr.send(form); //开始上传  }
 }
+
+
+var onUpload = false;
+$("#file_input").bind('change', function () {
+    var files = document.getElementById("file_input").files;
+    var file = files[0];
+    //alert(file);
+    if (files.length > 0) {
+
+        fWindow_link = document.getElementById("link_gen_window_file")
+
+        fWindow_link.classList.remove("float_window_config_file")
+        fWindow_link.classList.remove("float_window_config_file_expand_finished")
+        fWindow_link.classList.add("float_window_config_file_expand")
+        
+        isHoldFileIconLength = true;
+        $("#file_input_span").text(file.name + " | Click to upload");
+
+        $("#file_icon").click(uploadFile);
+        $("#file_input_span").click(uploadFile);
+
+        // TODO: after finished, set this value to false;
+        // Use for preventing double event-trigger
+        onUpload = true;
+    } else {
+        isHoldFileIconLength = false;
+
+        $("#file_icon").click(selectBtnClick);
+        $("#file_input_span").click(selectBtnClick);
+
+    }
+});
+
+function clickTheUploadInput() {
+    if (!onUpload) document.getElementById("file_input").click();
+}
+
+function selectBtnClick() {
+
+    clickTheUploadInput();
+   
+
+}
+
+$("#file_icon").click(selectBtnClick);
+$("#file_input_span").click(selectBtnClick);

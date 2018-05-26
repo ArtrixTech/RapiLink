@@ -42,15 +42,16 @@ progress::-webkit-progress-bar { border-radius: 4px; }
     font-family: Work Sans, Avenir, Ostrich Sans, Flexo Light, Microsoft Yahei UI Light;
     color: white;
     cursor: pointer;
-    position: relative;
-    top: 15px;
+    position: absolute;
+    top: 6px;
     font-size: 16px;
     padding: 8px;
-    /*padding-right: 498px;*/
+    /* padding-right: 498px; */
     z-index: 12;
-    left: 16px;
+    left: 41px;
     transition: opacity 0.4s cubic-bezier(0.03, 0.55, 0.57, 1);
     opacity: 0;
+    white-space: nowrap; 
 }
 
 #file_input {

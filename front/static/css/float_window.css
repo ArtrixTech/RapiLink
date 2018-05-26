@@ -45,6 +45,38 @@
     opacity: 0;
 }
 
+/* Config File_expand */
+.float_window_config_file_expand {
+    background: white;
+    width: 518px;
+    height: 62px;
+    top: -20px;
+    z-index: -1;
+    transition: height cubic-bezier(0, 0, 0, 0.99) 0.5s, opacity cubic-bezier(0, 0, 0, 1.06) 0.5s, border-bottom-color cubic-bezier(0, 0, 0, 1.06) 0.4s;
+}
+
+/* Config File */
+.float_window_config_file {
+    background: white;
+    width: 518px;
+    height: 0px;
+    top: -20px;
+    z-index: -1;
+    transition: height cubic-bezier(0, 0, 0, 0.99) 0.5s, opacity cubic-bezier(0, 0, 0, 1.06) 0.5s, border-bottom-color cubic-bezier(0, 0, 0, 1.06) 0.4s;
+    opacity: 0;
+}
+
+/* Config file_expand_finished*/
+
+.float_window_config_file_expand_finished {
+    background: white;
+    width: 518px;
+    height: 82px;
+    top: -20px;
+    z-index: -1;
+    transition: height cubic-bezier(0, 0, 0, 0.99) 0.5s, opacity cubic-bezier(0, 0, 0, 1.06) 0.5s, border-bottom-color cubic-bezier(0, 0, 0, 1.06) 0.4s;
+}
+
 /* Config link_Expanded_Finished*/
 
 .float_window_config_link_expand_finished {
