@@ -1,0 +1,219 @@
+.float_window {
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    box-shadow: 0px 9px 20px #d475796e;
+}
+
+.f_good {
+    border-bottom: 3px solid;
+    border-bottom-color: #4a93c7;
+}
+
+.f_finished {
+    border-bottom: 3px solid;
+    border-bottom-color: #49a064;
+}
+
+.f_bad {
+    border-bottom: 3px solid;
+    border-bottom-color: #d24848;
+}
+
+/* Config link_Expanded*/
+
+.float_window_config_link_expand {
+    background: white;
+    width: 518px;
+    height: 62px;
+    top: -20px;
+    z-index: -1;
+    transition: height cubic-bezier(0, 0, 0, 0.99) 0.5s, opacity cubic-bezier(0, 0, 0, 1.06) 0.5s, border-bottom-color cubic-bezier(0, 0, 0, 1.06) 0.4s;
+}
+
+/* Config Link */
+
+.float_window_config_link {
+    background: white;
+    width: 518px;
+    height: 0px;
+    top: -20px;
+    z-index: -1;
+    transition: height cubic-bezier(0, 0, 0, 0.99) 0.5s, opacity cubic-bezier(0, 0, 0, 1.06) 0.5s, border-bottom-color cubic-bezier(0, 0, 0, 1.06) 0.4s;
+    opacity: 0;
+}
+
+/* Config link_Expanded_Finished*/
+
+.float_window_config_link_expand_finished {
+    background: white;
+    width: 518px;
+    height: 82px;
+    top: -20px;
+    z-index: -1;
+    transition: height cubic-bezier(0, 0, 0, 0.99) 0.5s, opacity cubic-bezier(0, 0, 0, 1.06) 0.5s, border-bottom-color cubic-bezier(0, 0, 0, 1.06) 0.4s;
+}
+
+/* Labels in float window*/
+
+.float_window_label_2 {
+    color: #f58f8fc7;
+    left: 23.2%;
+    top: 12px;
+    position: relative;
+    margin-right: auto;
+    font-family: Work Sans, Avenir, Ostrich Sans, Flexo Light, Microsoft Yahei UI Light;
+    font-size: 14px;
+}
+
+/* Labels in float window*/
+
+.float_window_label {
+    color: #f5948f;
+    position: relative;
+    left: 13%;
+    top: 13px;
+    font-family: Work Sans, Avenir, Ostrich Sans, Flexo Light, Microsoft Yahei UI Light;
+    font-size: 22px;
+}
+
+/* Link Input Placeholder*/
+
+input.link_input::-webkit-input-placeholder {
+    color: #999;
+    font-size: 24px;
+    position: relative;
+    top: -8%;
+}
+
+.round_bar {
+    width: 660px;
+    height: 64px;
+    background-color: white;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+    box-shadow: 0px 25px 71px #d475794a;
+    border: 2px;
+    border-radius: 44px;
+}
+
+.bar_config2 {
+    width: 200px;
+}
+
+.bar_config1 {
+    top: -20px;
+    position: relative;
+}
+
+.bar_input {
+    background: white;
+    outline: none;
+    border: none;
+    width: 520px;
+    margin-left: 20px;
+    height: 42;
+    margin-top: 11px;
+    font-size: 39px;
+    font-weight: 100;
+    color: #f5948f;
+    font-family: Work Sans, Avenir, Ostrich Sans, Flexo Light, Microsoft Yahei UI Light;
+}
+
+.bar_input_config2 {
+    width: 100px;
+}
+
+/* Customize Link Input Placeholder */
+
+.customize_link_input {
+    background: #88878724;
+    border-radius: 33px;
+    padding-left: 10px;
+    padding-right: 25px;
+    outline: none;
+    border: none;
+    position: absolute;
+    border-bottom: none;
+    width: 220px;
+    left: 47%;
+    height: 26px;
+    top: 25%;
+    font-size: 20px;
+    font-weight: 100;
+    color: #f5948f;
+    font-family: Work Sans, Avenir, Ostrich Sans, Flexo Light, Microsoft Yahei UI Light;
+}
+
+/* Customize Link Input Placeholder */
+
+input.customize_link_input::-webkit-input-placeholder {
+    color: #AAAAAA;
+    position: relative;
+    top: -14%;
+    font-size: 12px;
+}
+
+#f_window_bar1 {
+    position: relative;
+    top: 5%;
+    left: -14px;
+    transition: display 0.3s;
+}
+
+.indicator {
+    width: 29px;
+    height: 29px;
+}
+
+#indicator1 {
+    position: relative;
+    left: 440;
+    top: -9px;
+}
+
+#indicator2 {
+    position: relative;
+    left: 79.7%;
+    margin-top: 5.4%;
+}
+
+.good {
+    background: url(../img/float_window/ok.png) no-repeat;
+    background-size: 20px 20px;
+}
+
+.bad {
+    background: url(../img/float_window/bad.png) no-repeat;
+    background-size: 20px 20px;
+}
+
+.finished {
+    background: url(../img/float_window/finished.png) no-repeat;
+    background-size: 20px 20px;
+}
+
+/* Customize Link Input Placeholder */
+
+#link_whole_link {
+    background: #aabfb62e;
+    border-radius: 33px;
+    padding-left: 10px;
+    padding-right: 25px;
+    outline: none;
+    border: none;
+    position: absolute;
+    border-bottom: none;
+    width: 358px;
+    left: 15%;
+    height: 26px;
+    top: 50%;
+    font-size: 19px;
+    font-weight: 100;
+    color: #f5948f;
+    font-family: Work Sans, Avenir, Ostrich Sans, Flexo Light, Microsoft Yahei UI Light;
+    text-align: center;
+}

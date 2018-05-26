@@ -7,8 +7,14 @@ import requests
 front_blueprint = Blueprint('front', __name__, template_folder="templates", static_folder="static")
 
 
-@front_blueprint.route('/')
+@front_blueprint.route('/old')
 def hello():
+    print(front_blueprint.root_path)
+    return render_template('old/main.html')
+
+
+@front_blueprint.route('/')
+def main():
     print(front_blueprint.root_path)
     return render_template('main.html')
 
