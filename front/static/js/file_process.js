@@ -144,21 +144,29 @@ $("#file_input").bind('change', function () {
     //alert(file);
     if (files.length > 0) {
 
-        fWindow_link = document.getElementById("link_gen_window_file")
+        var file_size = file.size / (1024 * 1024);
+        var max_size = 20; // Unit: MB
 
-        fWindow_link.classList.remove("float_window_config_file")
-        fWindow_link.classList.remove("float_window_config_file_expand_finished")
-        fWindow_link.classList.add("float_window_config_file_expand")
+        if (file_size > max_size) {
+            //alert("File too big ! Maximium is 20MB, Your file is " + file_size.toFixed(1) + "MB.");
+            showMessageBar("msg_bar", "File too big ! Maximium is 20MB, Your file is " + file_size.toFixed(1) + "MB.", "WARNING");
+        } else {
+            fWindow_link = document.getElementById("link_gen_window_file")
 
-        isHoldFileIconLength = true;
-        $("#file_input_span").text(file.name + " | Click to upload");
+            fWindow_link.classList.remove("float_window_config_file")
+            fWindow_link.classList.remove("float_window_config_file_expand_finished")
+            fWindow_link.classList.add("float_window_config_file_expand")
 
-        $("#file_icon").click(uploadFile);
-        $("#file_input_span").click(uploadFile);
+            isHoldFileIconLength = true;
+            $("#file_input_span").text(file.name + " | Click to upload");
 
-        // TODO: after finished, set this value to false;
-        // Use for preventing double event-trigger
-        onUpload = true;
+            $("#file_icon").click(uploadFile);
+            $("#file_input_span").click(uploadFile);
+
+            // TODO: after finished, set this value to false;
+            // Use for preventing double event-trigger
+            onUpload = true;
+        }
     } else {
         isHoldFileIconLength = false;
 
@@ -175,14 +183,15 @@ function clickTheUploadInput() {
 function selectBtnClick() {
 
     clickTheUploadInput();
-   
+
 }
 
 //Click event listening
 $("#file_icon").click(selectBtnClick);
 $("#file_input_span").click(selectBtnClick);
 
-var p_right_fully_expand = 609,p_right_middle_expand=116;
+var p_right_fully_expand = 609,
+    p_right_middle_expand = 116;
 
 function fileIconHover() {
     $("#file_icon").css("background", colorAlpha3);

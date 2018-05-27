@@ -139,7 +139,11 @@ function colorChange() {
     $(".float_window_label").css("color", color);
     $(".link_input").css("color", color);
     $("#file_input_div").css("background-color", "rgba(0,0,0,0)");
-    $("#file_input_span").css("color", color);
+
+    // Var "isHoldFileIconLength" is in file_process.js
+    if (!isHoldFileIconLength) $("#file_input_span").css("color", color);
+    else $("#file_input_span").css("color", "white");
+
     //$(".customize_link_input").css("background-color", colorAlpha);
     $(".customize_link_input").css("color", color);
 
@@ -149,5 +153,5 @@ function colorChange() {
     $("body").css("background-color", color);
 
     $("#file_icon").css("background", colorAlpha2);
-    
+
 }
