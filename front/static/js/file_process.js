@@ -182,13 +182,17 @@ function selectBtnClick() {
 $("#file_icon").click(selectBtnClick);
 $("#file_input_span").click(selectBtnClick);
 
-var p_right = 609;
+var p_right_fully_expand = 609,p_right_middle_expand=116;
 
 function fileIconHover() {
     $("#file_icon").css("background", colorAlpha3);
     $("#file_input_span").css("opacity", 1);
 
-    $("#file_icon").css("padding-right", p_right);
+    if (isHoldFileIconLength) {
+        $("#file_icon").css("padding-right", p_right_fully_expand);
+    } else {
+        $("#file_icon").css("padding-right", p_right_middle_expand);
+    }
 
     $("#file_input_span").css("color", "white");
     $("#file_input_span").css("left", "41");
@@ -200,7 +204,7 @@ function fileIconUnhover() {
 
     // Var "isHoldFileIconLength" is in file_process.js
     if (isHoldFileIconLength) {
-        $("#file_icon").css("padding-right", p_right);
+        $("#file_icon").css("padding-right", p_right_fully_expand);
     } else {
         $("#file_icon").css("padding-right", 16);
         $("#file_input_span").css("color", color);
