@@ -1,4 +1,4 @@
-function showMessageBar(id, message, message_type) {
+function showMessageBar(id, message, message_type, hideDelay = 3000) {
 
   var barHeight = 30;
 
@@ -14,21 +14,26 @@ function showMessageBar(id, message, message_type) {
 
   if (message_type == "GOOD") {
 
+    var barColor = "rgb(46, 176, 243)";
+    $("#" + id).css("background", barColor);
+    $("#" + id).css("border-bottom", "2px solid white");
+
   }
 
   if (message_type == "WARNING") {
-    var barColor = "#ff3f32fa"
 
-    $("#" + id).css("background", color);
+    var barColor = "rgb(220, 67, 67)";
+    $("#" + id).css("background", barColor);
     $("#" + id).css("border-bottom", "2px solid white");
+
   }
 
-  setTimeout(closeMessageBar, 3000, id);
+  setTimeout(closeMessageBar, hideDelay, id);
 }
 
 function closeMessageBar(id) {
   $("#" + id).css("height", 0);
-  $("#" + id).css("border-bottom", "0px solid rgb(255, 42, 42)");
+  $("#" + id).css("border-bottom", "0px solid white");
   $("#bar_text").css("opacity", 0);
   var hideAnimationDuration = 0.5; // Unit: Second
 

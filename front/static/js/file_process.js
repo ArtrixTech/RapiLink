@@ -59,7 +59,7 @@ function smoother(now) {
     });
     return count / queue.length;
 }
-
+var percentInt = 0;
 function onProgress(result) {
 
     if (lastTime == 0) {
@@ -84,6 +84,9 @@ function onProgress(result) {
         lastTime = 0;
     }
 
+    percentInt = parseInt(percent);
+    updateProgressBar();
+
     progress_text = $("#progress_text");
     //progress_bar = $("#progress_bar");
 
@@ -97,6 +100,7 @@ function getUnixTimeStamp() {
     return Math.round(new Date().getTime() / 1000);
 }
 
+var showProgressBar = false;
 function uploadFile() {
 
     var files = document.getElementById("file_input").files; //files是文件选择框选择的文件对象数组  
@@ -104,8 +108,12 @@ function uploadFile() {
 
     if (files.length == 0) return;
 
+    var url;
+    if (window.location.protocol == "http:") url = 'http://api.rapi.link/upload';
+    if (window.location.protocol == "https:") url = 'https://api.rapi.link/upload';
+
     var form = new FormData(),
-        url = 'http://api.rapi.link/upload',
+        url = url,
         //url = 'http://localhost:5000/upload',
         file = files[0];
     form.append('file', file);
@@ -131,13 +139,15 @@ function uploadFile() {
             console.log('上传失败', result.status, result.statusText, result.response);
         } else if (result.readyState == 4) { //finished  
             console.log('上传成功', result);
+            showMessageBar("msg_bar_succeed", "File upload succeed!", "GOOD", 2500);
         }
     });
+    showProgressBar = true;
     xhr.send(form); //开始上传  }
 }
 
 
-var onUpload = false;
+var inUploadProcess = false;
 $("#file_input").bind('change', function () {
     var files = document.getElementById("file_input").files;
     var file = files[0];
@@ -148,8 +158,12 @@ $("#file_input").bind('change', function () {
         var max_size = 20; // Unit: MB
 
         if (file_size > max_size) {
-            //alert("File too big ! Maximium is 20MB, Your file is " + file_size.toFixed(1) + "MB.");
-            showMessageBar("msg_bar", "File too big ! Maximium is 20MB, Your file is " + file_size.toFixed(1) + "MB.", "WARNING");
+            // Show file size
+            showMessageBar("msg_bar",
+                "File too big ! Maximium is 20MB, Your file is " + file_size.toFixed(1) + "MB.",
+                "WARNING",
+                3000);
+            //linear-gradient(120deg, #4b9ae8 0%, #4b9ae8 70%, #c5cfdb 70%)
         } else {
             fWindow_link = document.getElementById("link_gen_window_file")
 
@@ -165,7 +179,7 @@ $("#file_input").bind('change', function () {
 
             // TODO: after finished, set this value to false;
             // Use for preventing double event-trigger
-            onUpload = true;
+            inUploadProcess = true;
         }
     } else {
         isHoldFileIconLength = false;
@@ -177,7 +191,7 @@ $("#file_input").bind('change', function () {
 });
 
 function clickTheUploadInput() {
-    if (!onUpload) document.getElementById("file_input").click();
+    if (!inUploadProcess) document.getElementById("file_input").click();
 }
 
 function selectBtnClick() {
@@ -193,8 +207,24 @@ $("#file_input_span").click(selectBtnClick);
 var p_right_fully_expand = 609,
     p_right_middle_expand = 116;
 
+function updateProgressBar() {
+
+    if (onHover){
+        $("#file_icon").css("background", "linear-gradient(120deg, rgb(61, 140, 218) 0%, rgb(61, 140, 218) " + percentInt + "%, " + color + " " + percentInt + "%)");
+    }
+    else{
+        $("#file_icon").css("background", "linear-gradient(120deg, #4b9ae8 0%, #4b9ae8 " + percentInt + "%, " + color + " " + percentInt + "%)");
+    }
+
+}
+
+var onHover = false;
 function fileIconHover() {
-    $("#file_icon").css("background", colorAlpha3);
+
+    onHover = true;
+    if (!showProgressBar) $("#file_icon").css("background", colorAlpha3);
+    else updateProgressBar();
+
     $("#file_input_span").css("opacity", 1);
 
     if (isHoldFileIconLength) {
@@ -209,8 +239,10 @@ function fileIconHover() {
 }
 
 function fileIconUnhover() {
-    $("#file_icon").css("background", colorAlpha2);
 
+    onHover = false;
+    if (!showProgressBar) $("#file_icon").css("background", colorAlpha2);
+    else updateProgressBar();
     // Var "isHoldFileIconLength" is in file_process.js
     if (isHoldFileIconLength) {
         $("#file_icon").css("padding-right", p_right_fully_expand);
