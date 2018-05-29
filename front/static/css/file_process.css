@@ -1,4 +1,16 @@
-#progress_bar {}
+#progress_text {
+
+    font-family: Work Sans, Avenir, Ostrich Sans, Flexo Light, Microsoft Yahei UI Light;
+    position: absolute;
+    top: 6px;
+    font-size: 16px;
+    left: 548px;/*548*/
+    padding: 8px;
+    z-index: 13;
+    transition: opacity 0.4s cubic-bezier(0.03, 0.55, 0.57, 1),color 0.4s cubic-bezier(0.99, 0, 0.57, 1),left 0.4s cubic-bezier(0.03, 0.55, 0.57, 1);
+    white-space: nowrap;
+
+}
 
 #file_input_div {
     width: 143px;
@@ -70,10 +82,4 @@ progress::-webkit-progress-bar { border-radius: 4px; }
     left: 602px;
     top: -61px;
     box-shadow: 0px 0px 19px #d2797e45;
-}
-
-#progress_text {
-    font-family: Work Sans, Avenir, Ostrich Sans, Flexo Light, Microsoft Yahei UI Light;
-    position: relative;
-    top: 50;
 }

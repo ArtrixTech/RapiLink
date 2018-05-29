@@ -90,7 +90,7 @@ function onProgress(result) {
     progress_text = $("#progress_text");
     //progress_bar = $("#progress_bar");
 
-    progress_text.text(prog + "% | " + (speed / 1000).toFixed(1) + "mb/s | " + result.timeStamp);
+    progress_text.text((speed / 1000).toFixed(1) + "MB/s");
     //progress_bar.val(prog);
     //alert(progress_text);
 }
@@ -141,8 +141,13 @@ function uploadFile() {
             console.log('上传成功', result);
             showMessageBar("msg_bar_succeed", "File upload succeed!", "GOOD", 2500);
         }
+        $("#progress_text").text("Finished!");
     });
     showProgressBar = true;
+    $("#progress_text").css("opacity", 1);
+
+    //TODO: Change Color of the #progress_text!
+
     xhr.send(form); //开始上传  }
 }
 
@@ -209,10 +214,10 @@ var p_right_fully_expand = 609,
 
 function updateProgressBar() {
 
-    if (onHover){
+    if (onHover) {
         $("#file_icon").css("background", "linear-gradient(120deg, rgb(61, 140, 218) 0%, rgb(61, 140, 218) " + percentInt + "%, " + color + " " + percentInt + "%)");
     }
-    else{
+    else {
         $("#file_icon").css("background", "linear-gradient(120deg, #4b9ae8 0%, #4b9ae8 " + percentInt + "%, " + color + " " + percentInt + "%)");
     }
 

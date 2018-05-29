@@ -114,10 +114,11 @@
                 <div id="file_input_div">
                     <img id="file_icon" src="{{ url_for('front.static', filename='img/file.png') }}">
                     <span id="file_input_span" class="unselective">Select File</span>
+                    <span id="progress_text" style="opacity: 0;">0.0MB/s</span>
                     <input type="file" id="file_input">
                 </div>
 
-                <span id="progress_text">0</span>
+
 
                 <div id="file_hover_btn" onclick="uploadFile()" onmousedown="btnMouseDown()" onmouseup="btnMouseUp()" class="hidden"></div>
 
