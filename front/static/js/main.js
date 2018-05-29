@@ -146,7 +146,7 @@ function colorChange() {
 
     //$(".customize_link_input").css("background-color", colorAlpha);
     $(".customize_link_input").css("color", color);
-    $("#progress_text").css("color", color);
+    $("#progress_text").css("color", "white");
 
 
     $(".icon_selected").css("background", colorAlpha);
