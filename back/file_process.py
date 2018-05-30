@@ -1,4 +1,4 @@
-import os
+import os,sys
 
 
 def get_save_location(file_name, batch_id):
@@ -11,7 +11,16 @@ def get_save_location(file_name, batch_id):
     if not os.path.exists("saved_files"):
         os.makedirs("saved_files")
 
-    if not os.path.exists("saved_files\\" + batch_id):
-        os.makedirs("saved_files\\" + batch_id)
+    if "linux" in sys.platform:
 
-    return "saved_files\\" + batch_id + "\\" + file_name
+        if not os.path.exists("saved_files/" + batch_id):
+            os.makedirs("saved_files/" + batch_id)
+
+        return "saved_files/" + batch_id + "/" + file_name
+
+    else:
+
+        if not os.path.exists("saved_files\\" + batch_id):
+            os.makedirs("saved_files\\" + batch_id)
+
+        return "saved_files\\" + batch_id + "\\" + file_name
