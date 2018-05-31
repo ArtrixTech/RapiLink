@@ -168,6 +168,7 @@ $("#file_input").bind('change', function () {
                 "File too big ! Maximium is 20MB, Your file is " + file_size.toFixed(1) + "MB.",
                 "WARNING",
                 3000);
+            document.getElementById("file_input").value="";
             //linear-gradient(120deg, #4b9ae8 0%, #4b9ae8 70%, #c5cfdb 70%)
         } else {
             fWindow_link = document.getElementById("link_gen_window_file")
