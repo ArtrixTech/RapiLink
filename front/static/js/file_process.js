@@ -183,6 +183,8 @@ $("#file_input").bind('change', function () {
             isHoldFileIconLength = true;
             $("#file_input_span").text(file.name + " | Click to upload");
 
+            fileIconUnhover();
+
             // TODO: after finished, set this value to false;
             // Use for preventing double event-trigger
             inUploadProcess = true;
