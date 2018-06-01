@@ -12,6 +12,7 @@ import time
 monkey.patch_all()
 
 app = project_blueprints.bind_blueprints(Flask(__name__, static_folder="", static_url_path=None))
+app.url_map.default_subdomain = 'www'
 app.config.update({
     'SERVER_NAME': 'rapi.link',
     'DEBUG': 'True'

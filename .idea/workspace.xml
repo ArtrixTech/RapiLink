@@ -3,7 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="b48e428e-e6ff-4082-91c7-18900ef82915" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/back/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/async_main_local.py" beforeDir="false" afterPath="$PROJECT_DIR$/async_main_local.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/async_main_remote.py" beforeDir="false" afterPath="$PROJECT_DIR$/async_main_remote.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/front/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project_blueprints.py" beforeDir="false" afterPath="$PROJECT_DIR$/project_blueprints.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -17,7 +20,8 @@
       <file leaf-file-name="async_main_remote.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/async_main_remote.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
+            <state relative-caret-position="224">
+              <caret line="14" column="37" selection-start-line="14" selection-start-column="37" selection-end-line="14" selection-end-column="37" />
               <folding>
                 <element signature="e#0#25#0" expanded="true" />
               </folding>
@@ -28,7 +32,8 @@
       <file leaf-file-name="async_main_local.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/async_main_local.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
+            <state relative-caret-position="224">
+              <caret line="14" column="37" selection-start-line="14" selection-start-column="37" selection-end-line="14" selection-end-column="37" />
               <folding>
                 <element signature="e#0#25#0" expanded="true" />
               </folding>
@@ -36,22 +41,42 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="file_process.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/front/static/js/file_process.js">
+      <file leaf-file-name="main.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/back/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="224">
-              <caret line="156" selection-start-line="156" selection-end-line="156" />
+            <state relative-caret-position="1246">
+              <caret line="175" column="35" lean-forward="true" selection-start-line="175" selection-start-column="35" selection-end-line="175" selection-end-column="35" />
+              <folding>
+                <element signature="e#0#27#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/back/main.py">
+      <file leaf-file-name="main.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/front/templates/main.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="446">
-              <caret line="179" column="33" selection-start-line="179" selection-start-column="33" selection-end-line="179" selection-end-column="33" />
+            <state relative-caret-position="112">
+              <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
               <folding>
-                <element signature="e#0#27#0" expanded="true" />
+                <element signature="n#style#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#a#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#a#1;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#a#2;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#1;n#div#0;n#div#0;n#div#1;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="project_blueprints.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/project_blueprints.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="112">
+              <caret line="7" column="37" lean-forward="true" selection-start-line="7" selection-start-column="37" selection-end-line="7" selection-end-column="37" />
+              <folding>
+                <element signature="e#0#23#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -93,11 +118,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="main.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/front/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="80">
-              <caret line="15" column="43" lean-forward="true" selection-start-line="15" selection-start-column="43" selection-end-line="15" selection-end-column="43" />
+            <state relative-caret-position="240">
+              <caret line="15" column="64" selection-start-line="15" selection-start-column="64" selection-end-line="15" selection-end-column="64" />
               <folding>
                 <element signature="e#0#27#0" expanded="true" />
               </folding>
@@ -129,8 +154,12 @@
         <option value="$PROJECT_DIR$/back/classes/class_FileLink.py" />
         <option value="$PROJECT_DIR$/util/timing_tasks.py" />
         <option value="$PROJECT_DIR$/back/file_process.py" />
-        <option value="$PROJECT_DIR$/front/main.py" />
         <option value="$PROJECT_DIR$/back/main.py" />
+        <option value="$PROJECT_DIR$/front/templates/main.html" />
+        <option value="$PROJECT_DIR$/async_main_local.py" />
+        <option value="$PROJECT_DIR$/async_main_remote.py" />
+        <option value="$PROJECT_DIR$/project_blueprints.py" />
+        <option value="$PROJECT_DIR$/front/main.py" />
       </list>
     </option>
   </component>
@@ -171,6 +200,12 @@
               <item name="RapiLink" type="b2602c69:ProjectViewProjectNode" />
               <item name="RapiLink" type="462c0819:PsiDirectoryNode" />
               <item name="front" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="RapiLink" type="b2602c69:ProjectViewProjectNode" />
+              <item name="RapiLink" type="462c0819:PsiDirectoryNode" />
+              <item name="front" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="RapiLink" type="b2602c69:ProjectViewProjectNode" />
@@ -381,7 +416,28 @@
       <option name="project" value="LOCAL" />
       <updated>1527864538215</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="[Back]Bug fix">
+      <created>1527864958373</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1527864958373</updated>
+    </task>
+    <task id="LOCAL-00007" summary="[Front]UE fix">
+      <created>1527865154661</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1527865154661</updated>
+    </task>
+    <task id="LOCAL-00008" summary="[Baidu Union Verify]Main.html">
+      <created>1527867020235</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1527867020235</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -415,28 +471,12 @@
     <MESSAGE value="[Back]Uploaded file pool added&#10;[Front]Logic change&#10;[All]Bug fix" />
     <MESSAGE value="[Back Add]Download module" />
     <MESSAGE value="[Back]Bug fix" />
-    <option name="LAST_COMMIT_MESSAGE" value="[Back]Bug fix" />
+    <MESSAGE value="[Front]UE fix" />
+    <MESSAGE value="[Baidu Union Verify]Main.html" />
+    <option name="LAST_COMMIT_MESSAGE" value="[Baidu Union Verify]Main.html" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/async_main_remote.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#25#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/async_main_local.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#25#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/async_main_remote.py">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -509,6 +549,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/async_main_remote.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="224">
+          <caret line="14" column="37" selection-start-line="14" selection-start-column="37" selection-end-line="14" selection-end-column="37" />
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/async_main_local.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="224">
+          <caret line="14" column="37" selection-start-line="14" selection-start-column="37" selection-end-line="14" selection-end-column="37" />
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/back/file_process.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
@@ -519,20 +579,45 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/front/main.py">
+    <entry file="file://$PROJECT_DIR$/front/templates/main.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="15" column="43" lean-forward="true" selection-start-line="15" selection-start-column="43" selection-end-line="15" selection-end-column="43" />
+        <state relative-caret-position="112">
+          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
           <folding>
-            <element signature="e#0#27#0" expanded="true" />
+            <element signature="n#style#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#1;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#2;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#1;n#div#0;n#div#0;n#div#1;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project_blueprints.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="112">
+          <caret line="7" column="37" lean-forward="true" selection-start-line="7" selection-start-column="37" selection-end-line="7" selection-end-column="37" />
+          <folding>
+            <element signature="e#0#23#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/back/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="446">
-          <caret line="179" column="33" selection-start-line="179" selection-start-column="33" selection-end-line="179" selection-end-column="33" />
+        <state relative-caret-position="1246">
+          <caret line="175" column="35" lean-forward="true" selection-start-line="175" selection-start-column="35" selection-end-line="175" selection-end-column="35" />
+          <folding>
+            <element signature="e#0#27#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/front/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="15" column="64" selection-start-line="15" selection-start-column="64" selection-end-line="15" selection-end-column="64" />
           <folding>
             <element signature="e#0#27#0" expanded="true" />
           </folding>
