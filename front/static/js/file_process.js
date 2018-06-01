@@ -60,6 +60,7 @@ function smoother(now) {
     return count / queue.length;
 }
 var percentInt = 0;
+
 function onProgress(result) {
 
     if (lastTime == 0) {
@@ -101,6 +102,7 @@ function getUnixTimeStamp() {
 }
 
 var showProgressBar = false;
+
 function uploadFile() {
 
     var files = document.getElementById("file_input").files; //files是文件选择框选择的文件对象数组  
@@ -118,6 +120,7 @@ function uploadFile() {
         file = files[0];
     form.append('file', file);
     form.append('batch_id', file_batch_id);
+    form.append('alias', $("#customize_link_input_file").val());
 
     var xhr = new XMLHttpRequest();
     xhr.open("POST", url, true);
@@ -168,7 +171,7 @@ $("#file_input").bind('change', function () {
                 "File too big ! Maximium is 20MB, Your file is " + file_size.toFixed(1) + "MB.",
                 "WARNING",
                 3000);
-            document.getElementById("file_input").value="";
+            document.getElementById("file_input").value = "";
             //linear-gradient(120deg, #4b9ae8 0%, #4b9ae8 70%, #c5cfdb 70%)
         } else {
             fWindow_link = document.getElementById("link_gen_window_file")
@@ -179,9 +182,6 @@ $("#file_input").bind('change', function () {
 
             isHoldFileIconLength = true;
             $("#file_input_span").text(file.name + " | Click to upload");
-
-            $("#file_icon").click(uploadFile);
-            $("#file_input_span").click(uploadFile);
 
             // TODO: after finished, set this value to false;
             // Use for preventing double event-trigger
@@ -202,7 +202,16 @@ function clickTheUploadInput() {
 
 function selectBtnClick() {
 
-    clickTheUploadInput();
+    var cus_link = $("#customize_link_input_file").val();
+
+    if (inUploadProcess) {
+        if (cus_link) uploadFile();
+        else showMessageBar("msg_bar",
+            "Please input the customized link first!",
+            "WARNING",
+            3000);
+    } else clickTheUploadInput();
+
 
 }
 
@@ -217,14 +226,14 @@ function updateProgressBar() {
 
     if (onHover) {
         $("#file_icon").css("background", "linear-gradient(120deg, rgb(61, 140, 218) 0%, rgb(61, 140, 218) " + percentInt + "%, " + color + " " + percentInt + "%)");
-    }
-    else {
+    } else {
         $("#file_icon").css("background", "linear-gradient(120deg, #4b9ae8 0%, #4b9ae8 " + percentInt + "%, " + color + " " + percentInt + "%)");
     }
 
 }
 
 var onHover = false;
+
 function fileIconHover() {
 
     onHover = true;

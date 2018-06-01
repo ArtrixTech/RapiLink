@@ -3,6 +3,7 @@ from flask import request
 from flask import jsonify, make_response
 
 from back.classes.class_ShortLink import ShortLink, ShortLinkPool
+from back.classes.class_FileLink import FileLink, FileLinkPool
 from back.user_system.user_manager import UserManager, User, Permission
 from back.user_system.classes.behaviors import *
 from back.file_process import get_save_location
@@ -12,12 +13,16 @@ import json
 back_blueprint = Blueprint('back', __name__, subdomain="api")
 
 all_urls = ShortLinkPool()
+all_files = FileLinkPool()
 user_manager = UserManager()
 
 
-@back_blueprint.route('/get_name')
-def get_name():
-    return "OK"
+def is_alias_exist(alias):
+    if all_urls.is_exist_by_alias(alias):
+        return True
+    if all_files.is_exist_by_alias(alias):
+        return True
+    return False
 
 
 @back_blueprint.route('/alias_available')
@@ -28,9 +33,9 @@ def name_available():
     :return: [0](str)Status Code, "OK" -> Ok, "ALIAS_EXIST" -> ERROR:The alias is already in the pool
     """
 
-    name = request.args.get("alias")
-    print("[alias_available]" + name)
-    if all_urls.is_exist_by_alias(name):
+    alias = request.args.get("alias")
+    print("[alias_available]" + alias)
+    if is_alias_exist(alias):
         return "ALIAS_EXIST"
     return "OK"
 
@@ -45,7 +50,7 @@ def add_url():
     """
     alias, target = request.args.get("alias"), request.args.get("target")
 
-    if all_urls.is_exist_by_alias(alias):
+    if is_alias_exist(alias):
         return "ALIAS_EXIST"
     else:
         if len(alias) == 0:
@@ -129,14 +134,25 @@ def upload():
         try:
             file = request.files['file']
             batch_id = request.values.get("batch_id")
+            alias = request.values.get("alias")
         except:
             file = None
-            batch_id = "NONE"
+            alias = None
+            batch_id = None
+
+        if not batch_id or not alias or not file:
+            resp = make_response(400)
+            resp.headers['Access-Control-Allow-Origin'] = '*'
+            return resp
 
         if file:
             print("    [FileUpload]Get BatchID:" + batch_id)
             print("    [FileUpload]Get File:" + file.filename)
+
             file.save(get_save_location(file.filename, batch_id))
+            f_link_obj = FileLink(alias, batch_id,6)
+            all_files.add(f_link_obj)
+
             print("    [FileUpload]File Saved TO " + get_save_location(file.filename, batch_id))
             resp = jsonify({'error': False})
         else:
