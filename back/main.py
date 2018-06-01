@@ -25,6 +25,14 @@ def is_alias_exist(alias):
     return False
 
 
+def alias_type(alias):
+    if all_urls.is_exist_by_alias(alias):
+        return "URL"
+    if all_files.is_exist_by_alias(alias):
+        return "FILE"
+    return False
+
+
 @back_blueprint.route('/alias_available')
 def name_available():
     """
@@ -150,7 +158,7 @@ def upload():
             print("    [FileUpload]Get File:" + file.filename)
 
             file.save(get_save_location(file.filename, batch_id))
-            f_link_obj = FileLink(alias, batch_id,6)
+            f_link_obj = FileLink(alias, batch_id, 60)
             all_files.add(f_link_obj)
 
             print("    [FileUpload]File Saved TO " + get_save_location(file.filename, batch_id))

@@ -1,4 +1,4 @@
-from back.main import all_urls,all_files
+from back.main import all_urls, all_files
 from back.classes.class_ShortLink import ShortLink
 from back.classes.class_FileLink import FileLink
 import time
