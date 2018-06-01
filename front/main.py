@@ -1,10 +1,11 @@
 from flask import Blueprint
 from flask import render_template
-from flask import request, url_for, send_file, make_response
+from flask import request, url_for, send_from_directory, make_response
 import json
 import requests
 
 from back.main import is_alias_exist, alias_type, all_files
+from back import file_process
 
 front_blueprint = Blueprint('front', __name__, template_folder="templates", static_folder="static")
 
@@ -47,7 +48,7 @@ def get_request():
 
 @front_blueprint.route('/<alias>')
 def url_visit(alias):
-    print("==========Visit:" + alias + "=============")
+    print("==========Outer Visit:" + alias + "=============")
 
     if is_alias_exist(alias):
         type = alias_type(alias)
@@ -68,15 +69,16 @@ def url_visit(alias):
 
             return response_page
         elif type == "FILE":
+            print("[type]File")
             import os
 
-            loc = "saved_files\\" + all_files.get_by_alias(alias)[0].batch_id
-            print(loc)
-            for rt, dirs, files in os.walk(loc):
+            batch_id = all_files.get_by_alias(alias)[0].batch_id
+            root = file_process.get_location_by_batch_id(batch_id)
+            print(root)
+            for rt, dirs, files in os.walk(root):
                 for file in files:
-                    full_loc = loc + "\\" + file
-                    print(full_loc)
-                    response = make_response(send_file(full_loc, as_attachment=True, attachment_filename=file))
+                    response = make_response(
+                        send_from_directory(root, file, as_attachment=True, attachment_filename=file))
                     response.headers["Content-Disposition"] = "attachment; filename={}".format(
                         file.encode().decode('latin-1'))
                     return response

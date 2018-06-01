@@ -158,7 +158,7 @@ def upload():
             print("    [FileUpload]Get File:" + file.filename)
 
             file.save(get_save_location(file.filename, batch_id))
-            f_link_obj = FileLink(alias, batch_id, 60)
+            f_link_obj = FileLink(alias, batch_id)
             all_files.add(f_link_obj)
 
             print("    [FileUpload]File Saved TO " + get_save_location(file.filename, batch_id))

@@ -2,8 +2,6 @@ import os, sys
 import shutil
 
 
-
-
 def get_save_location(file_name, batch_id):
     """
     - Generate the proper directory and return the location
@@ -27,6 +25,14 @@ def get_save_location(file_name, batch_id):
             os.makedirs("saved_files\\" + batch_id)
 
         return "saved_files\\" + batch_id + "\\" + file_name
+
+
+def get_location_by_batch_id(batch_id):
+    if "linux" in sys.platform:
+        return "saved_files/" + batch_id
+
+    else:
+        return "saved_files\\" + batch_id
 
 
 def kill_dir_by_batch_id(batch_id):
