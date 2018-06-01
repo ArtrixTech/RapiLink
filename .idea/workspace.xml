@@ -4,8 +4,6 @@
     <list default="true" id="b48e428e-e6ff-4082-91c7-18900ef82915" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/back/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/back/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/front/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/util/timing_tasks.py" beforeDir="false" afterPath="$PROJECT_DIR$/util/timing_tasks.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -47,11 +45,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="main.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/back/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="142">
-              <caret line="160" column="53" selection-start-line="160" selection-start-column="53" selection-end-line="160" selection-end-column="53" />
+            <state relative-caret-position="446">
+              <caret line="179" column="33" selection-start-line="179" selection-start-column="33" selection-end-line="179" selection-end-column="33" />
               <folding>
                 <element signature="e#0#27#0" expanded="true" />
               </folding>
@@ -95,11 +93,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="main.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/front/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
-              <caret line="81" column="35" selection-start-line="81" selection-start-column="35" selection-end-line="81" selection-end-column="35" />
+            <state relative-caret-position="80">
+              <caret line="15" column="43" lean-forward="true" selection-start-line="15" selection-start-column="43" selection-end-line="15" selection-end-column="43" />
               <folding>
                 <element signature="e#0#27#0" expanded="true" />
               </folding>
@@ -110,8 +108,8 @@
       <file leaf-file-name="file_process.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/back/file_process.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="174">
-              <caret line="35" column="31" selection-start-line="35" selection-start-column="31" selection-end-line="35" selection-end-column="31" />
+            <state relative-caret-position="270">
+              <caret line="31" column="27" selection-start-line="31" selection-start-column="27" selection-end-line="31" selection-end-column="27" />
               <folding>
                 <element signature="e#0#14#0" expanded="true" />
               </folding>
@@ -128,11 +126,11 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/front/static/js/file_process.js" />
-        <option value="$PROJECT_DIR$/back/file_process.py" />
         <option value="$PROJECT_DIR$/back/classes/class_FileLink.py" />
         <option value="$PROJECT_DIR$/util/timing_tasks.py" />
-        <option value="$PROJECT_DIR$/back/main.py" />
+        <option value="$PROJECT_DIR$/back/file_process.py" />
         <option value="$PROJECT_DIR$/front/main.py" />
+        <option value="$PROJECT_DIR$/back/main.py" />
       </list>
     </option>
   </component>
@@ -178,11 +176,6 @@
               <item name="RapiLink" type="b2602c69:ProjectViewProjectNode" />
               <item name="RapiLink" type="462c0819:PsiDirectoryNode" />
               <item name="pressure_test" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="RapiLink" type="b2602c69:ProjectViewProjectNode" />
-              <item name="RapiLink" type="462c0819:PsiDirectoryNode" />
-              <item name="saved_files" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="RapiLink" type="b2602c69:ProjectViewProjectNode" />
@@ -374,7 +367,21 @@
       <option name="project" value="LOCAL" />
       <updated>1527862476873</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="[Back Add]Download module">
+      <created>1527863981930</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1527863981930</updated>
+    </task>
+    <task id="LOCAL-00005" summary="[Back]Bug fix">
+      <created>1527864538215</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1527864538215</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -406,7 +413,10 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="[Project]Structure optimization" />
     <MESSAGE value="[Back]Uploaded file pool added&#10;[Front]Logic change&#10;[All]Bug fix" />
-    <option name="LAST_COMMIT_MESSAGE" value="[Back]Uploaded file pool added&#10;[Front]Logic change&#10;[All]Bug fix" />
+    <MESSAGE value="[Back Add]Download module" />
+    <MESSAGE value="[Back]Bug fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="[Back]Bug fix" />
+    <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/async_main_remote.py">
@@ -469,16 +479,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/back/file_process.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="174">
-          <caret line="35" column="31" selection-start-line="35" selection-start-column="31" selection-end-line="35" selection-end-column="31" />
-          <folding>
-            <element signature="e#0#14#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pressure_test/pressure_test.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="80">
@@ -499,16 +499,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/back/main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="142">
-          <caret line="160" column="53" selection-start-line="160" selection-start-column="53" selection-end-line="160" selection-end-column="53" />
-          <folding>
-            <element signature="e#0#27#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/util/timing_tasks.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="64">
@@ -519,10 +509,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/back/file_process.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="31" column="27" selection-start-line="31" selection-start-column="27" selection-end-line="31" selection-end-column="27" />
+          <folding>
+            <element signature="e#0#14#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/front/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="81" column="35" selection-start-line="81" selection-start-column="35" selection-end-line="81" selection-end-column="35" />
+        <state relative-caret-position="80">
+          <caret line="15" column="43" lean-forward="true" selection-start-line="15" selection-start-column="43" selection-end-line="15" selection-end-column="43" />
+          <folding>
+            <element signature="e#0#27#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/back/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="446">
+          <caret line="179" column="33" selection-start-line="179" selection-start-column="33" selection-end-line="179" selection-end-column="33" />
           <folding>
             <element signature="e#0#27#0" expanded="true" />
           </folding>

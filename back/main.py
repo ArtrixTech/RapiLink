@@ -1,5 +1,5 @@
 from flask import Blueprint
-from flask import request
+from flask import request, render_template
 from flask import jsonify, make_response
 
 from back.classes.class_ShortLink import ShortLink, ShortLinkPool
@@ -149,7 +149,7 @@ def upload():
             batch_id = None
 
         if not batch_id or not alias or not file:
-            resp = make_response(400)
+            resp = make_response("400")
             resp.headers['Access-Control-Allow-Origin'] = '*'
             return resp
 
@@ -177,6 +177,6 @@ def upload():
         return resp
 
     else:
-        resp = make_response(503)
+        resp = make_response("503")
         resp.headers['Access-Control-Allow-Origin'] = '*'
         return "NONE"
