@@ -126,17 +126,20 @@
 
             <div class="float_window float_window_config_file f_good" id="link_gen_window_file">
 
-                <div id="f_window_bar1" class="">
+                <div id="file_message_bar_stage1" class="">
                     <span class="float_window_label" id="customize_link_label">https://rapi.link/</span>
-                    <input class="customize_link_input" id="customize_link_input_file" placeholder="<Your Customized link>" onfocus="startTimer1()"
-                        onblur="stopTimer1()">
-                    <div class="indicator good" id="indicator1"></div>
+                    <input class="customize_link_input" id="customize_link_input_file"
+                           placeholder="<Your Customized link>" onfocus="startTimer2()"
+                           onblur="stopTimer2()">
+                    <div class="indicator good" id="indicator_file"></div>
                 </div>
 
-                <div id="f_window_bar2" class="hidden">
-                    <span class="float_window_label_2" id="link_whole_link_label">The Link will be available for 2 hours</span>
-                    <input class="link_whole_link_label" id="link_whole_link" readonly="readonly" value="<Whole-Link>" onclick="this.select();">
-                    <div class="indicator finished" id="indicator2"></div>
+                <div id="file_message_bar_stage2" class="hidden">
+                    <span class="float_window_label_2"
+                          id="file_whole_link_label">The Link will be available for 2 hours</span>
+                    <input class="link_whole_link_label" id="file_whole_link" readonly="readonly" value="<Whole-Link>"
+                           onclick="this.select();">
+                    <div class="indicator finished" id="indicator_file_finished"></div>
                 </div>
 
 

@@ -83,3 +83,42 @@ progress::-webkit-progress-bar { border-radius: 4px; }
     top: -61px;
     box-shadow: 0px 0px 19px #d2797e45;
 }
+
+#indicator_file_finished {
+    position: relative;
+    left: 79.7%;
+    margin-top: 5.4%;
+}
+
+#indicator_file {
+    position: relative;
+    left: 440;
+    top: -9px;
+}
+
+#file_message_bar_stage1 {
+    position: relative;
+    top: 5%;
+    left: -14px;
+    transition: display 0.3s;
+}
+
+#file_whole_link {
+    background: #aabfb62e;
+    border-radius: 33px;
+    padding-left: 10px;
+    padding-right: 25px;
+    outline: none;
+    border: none;
+    position: absolute;
+    border-bottom: none;
+    width: 358px;
+    left: 15%;
+    height: 26px;
+    top: 50%;
+    font-size: 19px;
+    font-weight: 100;
+    color: #f5948f;
+    font-family: Work Sans, Avenir, Ostrich Sans, Flexo Light, Microsoft Yahei UI Light;
+    text-align: center;
+}

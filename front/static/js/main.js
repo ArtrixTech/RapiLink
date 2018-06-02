@@ -138,8 +138,13 @@ function colorChange() {
 
     $(".float_window_label").css("color", color);
     $(".link_input").css("color", color);
+
     $("#link_whole_link_label").css("color", color);
     $("#link_whole_link").css("color", color);
+
+    $("#file_whole_link_label").css("color", color);
+    $("#file_whole_link").css("color", color);
+
     $("#file_input_div").css("background-color", "rgba(0,0,0,0)");
 
     // Var "isHoldFileIconLength" is in file_process.js

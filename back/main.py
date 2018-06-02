@@ -154,18 +154,25 @@ def upload():
             return resp
 
         if file:
+            resp = "OK"
+
             print("    [FileUpload]Get BatchID:" + batch_id)
             print("    [FileUpload]Get File:" + file.filename)
 
-            file.save(get_save_location(file.filename, batch_id))
-            f_link_obj = FileLink(alias, batch_id)
-            all_files.add(f_link_obj)
+            if is_alias_exist(alias):
+                print("    ##[FileUpload]AliasExist!")
+                resp = "ALIAS_EXIST"
+            else:
 
-            print("    [FileUpload]File Saved TO " + get_save_location(file.filename, batch_id))
-            resp = jsonify({'error': False})
+                file.save(get_save_location(file.filename, batch_id))
+                f_link_obj = FileLink(alias, batch_id)
+                all_files.add(f_link_obj)
+                print("    [FileUpload]File Saved TO " + get_save_location(file.filename, batch_id))
+
         else:
-            resp = jsonify({'error': True})
+            resp = "BAD"
 
+        resp = make_response(resp)
         resp.headers['Access-Control-Allow-Origin'] = '*'
         return resp
 

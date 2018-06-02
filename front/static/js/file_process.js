@@ -105,57 +105,92 @@ var showProgressBar = false;
 
 function uploadFile() {
 
-    var files = document.getElementById("file_input").files; //files是文件选择框选择的文件对象数组  
-    file_batch_id = Math.round(new Date().getTime() / 1000) + Math.random().toString(36).substr(2).slice(0, 12).toUpperCase();
-
-    if (files.length == 0) return;
-
-    var url;
-    if (window.location.protocol == "http:") url = 'http://api.rapi.link/upload';
-    if (window.location.protocol == "https:") url = 'https://api.rapi.link/upload';
-
-    var form = new FormData(),
-        url = url,
-        //url = 'http://localhost:5000/upload',
-        file = files[0];
-    form.append('file', file);
-    form.append('batch_id', file_batch_id);
-    form.append('alias', $("#customize_link_input_file").val());
-
-    var xhr = new XMLHttpRequest();
-    xhr.open("POST", url, true);
-    //xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded;");
-
-    //上传进度事件  
-    xhr.upload.addEventListener("progress", function (result) {
-        if (result.lengthComputable) {
-            //上传进度  
-
-            //alert(percent);
-            onProgress(result);
+    function error(input) {
+        if (input == "EMPTY_TARGET_URL") {
+            alert("The target link is blank!");
+            $("#progress_text").text("");
         }
-    }, false);
 
-    xhr.addEventListener("readystatechange", function () {
-        var result = xhr;
-        if (result.status != 200) { //error  
-            console.log('上传失败', result.status, result.statusText, result.response);
-        } else if (result.readyState == 4) { //finished  
-            console.log('上传成功', result);
-            showMessageBar("msg_bar_succeed", "File upload succeed!", "GOOD", 2500);
+        if (input == "ALIAS_EXIST") {
+            showMessageBar("msg_bar_error2", "The customized link is already in use!", "WARNING", 3000);
+            isAliasAvailable_File = false;
+            updateFloatWindow_File();
+            $("#progress_text").text(" Failed!");
         }
-        $("#progress_text").text("Finished!");
-    });
-    showProgressBar = true;
-    $("#progress_text").css("opacity", 1);
+    }
 
-    //TODO: Change Color of the #progress_text!
+    if (isAliasAvailable_File) {
+        onError_File = false;
 
-    xhr.send(form); //开始上传  }
+        var files = document.getElementById("file_input").files; //files是文件选择框选择的文件对象数组  
+        file_batch_id = Math.round(new Date().getTime() / 1000) + Math.random().toString(36).substr(2).slice(0, 12).toUpperCase();
+
+        if (files.length == 0) return;
+
+        var url;
+        if (window.location.protocol == "http:") url = 'http://api.rapi.link/upload';
+        if (window.location.protocol == "https:") url = 'https://api.rapi.link/upload';
+
+        var form = new FormData(),
+            url = url,
+            //url = 'http://localhost:5000/upload',
+            file = files[0];
+        form.append('file', file);
+        form.append('batch_id', file_batch_id);
+        form.append('alias', $("#customize_link_input_file").val());
+
+        var xhr = new XMLHttpRequest();
+        xhr.open("POST", url, true);
+        //xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded;");
+
+        //上传进度事件  
+        xhr.upload.addEventListener("progress", function (result) {
+            if (result.lengthComputable) {
+                //上传进度  
+
+                //alert(percent);
+                onProgress(result);
+            }
+        }, false);
+
+        xhr.addEventListener("readystatechange", function () {
+            var result = xhr;
+            if (result.status != 200) { //error  
+                console.log('Upload Failed!', result.status, result.statusText, result.response);
+            } else if (result.readyState == 4) { //finished  
+                if (result.responseText == "OK") {
+                    console.log('Upload Succeed', result);
+                    onError_File = false;
+                    isOnFinish_File = true;
+                    updateProgressBar();
+                    updateFloatWindow_File();
+                    showMessageBar("msg_bar_succeed", "File upload succeed!", "GOOD", 2500);
+
+                    $("#file_whole_link").val("https://rapi.link/" + $("#customize_link_input_file").val());
+                    $("#progress_text").text("Finished!");
+                } else {
+                    error(result.responseText);
+                    onError_File = true;
+                    updateProgressBar();
+                    showMessageBar("msg_bar_error", "Upload Failed. Please retry.", "WARNING", 3000);
+                }
+            }
+
+        });
+        showProgressBar = true;
+        $("#progress_text").css("opacity", 1);
+
+        //TODO: Change Color of the #progress_text!
+
+        xhr.send(form); //开始上传  }
+    } else {
+        error("ALIAS_EXIST");
+    }
 }
 
 
 var inUploadProcess = false;
+var isFileFloatWindowFold = true;
 $("#file_input").bind('change', function () {
     var files = document.getElementById("file_input").files;
     var file = files[0];
@@ -166,7 +201,7 @@ $("#file_input").bind('change', function () {
         var max_size = 20; // Unit: MB
 
         if (file_size > max_size) {
-            // Show file size
+            // Show file sizes
             showMessageBar("msg_bar",
                 "File too big ! Maximium is 20MB, Your file is " + file_size.toFixed(1) + "MB.",
                 "WARNING",
@@ -174,16 +209,12 @@ $("#file_input").bind('change', function () {
             document.getElementById("file_input").value = "";
             //linear-gradient(120deg, #4b9ae8 0%, #4b9ae8 70%, #c5cfdb 70%)
         } else {
-            fWindow_link = document.getElementById("link_gen_window_file")
-
-            fWindow_link.classList.remove("float_window_config_file")
-            fWindow_link.classList.remove("float_window_config_file_expand_finished")
-            fWindow_link.classList.add("float_window_config_file_expand")
-
+            isFileFloatWindowFold = false;
             isHoldFileIconLength = true;
-            $("#file_input_span").text(file.name + " | Click to upload");
+            updateFloatWindow_File();
+            updateProgressBar();
 
-            fileIconUnhover();
+            $("#file_input_span").text(file.name + " | Click to upload");
 
             // TODO: after finished, set this value to false;
             // Use for preventing double event-trigger
@@ -224,12 +255,17 @@ $("#file_input_span").click(selectBtnClick);
 var p_right_fully_expand = 609,
     p_right_middle_expand = 116;
 
+var onError_File = false;
+
 function updateProgressBar() {
 
     if (onHover) {
-        $("#file_icon").css("background", "linear-gradient(120deg, rgb(61, 140, 218) 0%, rgb(61, 140, 218) " + percentInt + "%, " + color + " " + percentInt + "%)");
+        if (onError_File) $("#file_icon").css("background", "linear-gradient(120deg, rgb(205, 81, 81) 0%, rgb(232, 99, 75) " + percentInt + "%, " + color + " " + percentInt + "%)");
+        else $("#file_icon").css("background", "linear-gradient(120deg, rgb(61, 140, 218) 0%, rgb(61, 140, 218) " + percentInt + "%, " + color + " " + percentInt + "%)");
     } else {
-        $("#file_icon").css("background", "linear-gradient(120deg, #4b9ae8 0%, #4b9ae8 " + percentInt + "%, " + color + " " + percentInt + "%)");
+        if (onError_File) $("#file_icon").css("background", "linear-gradient(120deg, rgb(205, 81, 81) 0%, rgb(232, 99, 75) " + percentInt + "%, " + color + " " + percentInt + "%)");
+        else $("#file_icon").css("background", "linear-gradient(120deg, #4b9ae8 0%, #4b9ae8 " + percentInt + "%, " + color + " " + percentInt + "%)");
+
     }
 
 }
@@ -283,3 +319,103 @@ $("#file_input_span").mouseover(function () {
 $("#file_input_span").mouseout(function () {
     fileIconUnhover();
 });
+
+function startTimer2() {
+
+    timer2 = self.setInterval("onTimer2()", 100);
+
+}
+
+function stopTimer2() {
+
+    timer2 = window.clearInterval(timer2);
+
+}
+
+var lastText2 = "";
+
+function onTimer2() {
+
+    if ($("#customize_link_input_file").val() != lastText2) {
+        lastText2 = $("#customize_link_input_file").val();
+        aliasAvailable(false);
+    }
+
+}
+
+var isOnFinish_File = false;
+var isAliasAvailable_File = true;
+
+function updateFloatWindow_File() {
+
+    function removeAllWindowState() {
+        $("#link_gen_window_file").removeClass("float_window_config_file_expand_finished");
+        $("#link_gen_window_file").removeClass("float_window_config_file");
+        $("#link_gen_window_file").removeClass("f_finished");
+        $("#link_gen_window_file").removeClass("float_window_config_file_expand");
+        $("#link_gen_window_file").removeClass("f_good");
+        $("#link_gen_window_file").removeClass("f_bad");
+    }
+
+    removeAllWindowState();
+
+
+    if (isOnFinish_File) {
+        $("#link_gen_window_file").addClass("f_finished");
+        $("#link_gen_window_file").addClass("float_window_config_file_expand_finished");
+
+        $("#file_message_bar_stage1").addClass("hidden");
+        $("#file_message_bar_stage2").removeClass("hidden");
+
+
+    } else {
+
+        $("#file_message_bar_stage2").addClass("hidden");
+        $("#file_message_bar_stage1").removeClass("hidden");
+
+        if (isFileFloatWindowFold) {
+
+            $("#link_gen_window_file").addClass("float_window_config_file");
+
+        } else {
+
+            $("#link_gen_window_file").addClass("float_window_config_file_expand");
+
+        }
+
+        if (isAliasAvailable_File) {
+            $("#link_gen_window_file").addClass("f_good");
+            $("#indicator_file").attr("class", "indicator good");
+        } else {
+            $("#link_gen_window_file").addClass("f_bad");
+            $("#indicator_file").attr("class", "indicator bad");
+        }
+
+        if (isHoldFileIconLength) {
+            $("#file_icon").css("padding-right", p_right_fully_expand);
+        }
+
+    }
+}
+
+
+function aliasAvailable(result) {
+
+    if (result) {
+        if (result == "OK") {
+            isAliasAvailable_File = true;
+        } else {
+            isAliasAvailable_File = false;
+        }
+        updateFloatWindow_File();
+    } else {
+        apiGet("alias_available", {
+                alias: $("#customize_link_input_file").val()
+            },
+            function (data) {
+                aliasAvailable(data);
+            });
+    }
+
+
+};

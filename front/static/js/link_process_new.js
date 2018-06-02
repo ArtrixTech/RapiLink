@@ -175,7 +175,6 @@ function genLink() {
     }
 
     function error(input) {
-        //alert(input);
         if (input == "EMPTY_TARGET_URL") alert("The target link is blank!");
         if (input == "ALIAS_EXIST") alert("The customized link is already in use!");
     }
