@@ -15,12 +15,12 @@ def get_bing_img(full_url):
 
 
 def get_bing_url():
-    request_url = "http://cn.bing.com/HPImageArchive.aspx?idx=%index%&n=1"
+    request_url = "https://cn.bing.com/HPImageArchive.aspx?idx=%index%&n=1"
     request_url = request_url.replace("%index%", str(random.randint(-1, 8)))
 
     xml = requests.get(request_url).text
 
     result = cut_string(xml, "<urlBase>", "</urlBase>")
-    full_url = "http://cn.bing.com" + result + "_1920x1080.jpg"
+    full_url = "https://cn.bing.com" + result + "_1920x1080.jpg"
 
     return full_url
