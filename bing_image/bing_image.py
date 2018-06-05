@@ -1,6 +1,6 @@
 import requests
 import random
-from io import StringIO, BytesIO
+from io import BytesIO
 from flask import send_file
 
 from utils.cut_string import cut_string
