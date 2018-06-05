@@ -7,7 +7,7 @@ import requests
 from back.main import is_alias_exist, alias_type, all_files
 from back import file_process
 
-from bing_image.bing_image import get_bing_img
+from bing_image.bing_image import get_bing_img_small
 
 front_blueprint = Blueprint('front', __name__, template_folder="templates", static_folder="static")
 www_jump_blueprint = Blueprint('jump', __name__, template_folder="templates", static_folder="static", subdomain="www")
@@ -23,7 +23,7 @@ def jump():
 @front_blueprint.route('/bing_img')
 def bing_img():
     url = request.args.get("u")
-    return get_bing_img(url)
+    return get_bing_img_small(url)
 
 
 @front_blueprint.route('/old')
@@ -50,7 +50,9 @@ def get_request():
     if "api.rapi.link" in url:
         params_json = json.loads(params)
         print("[Ajax-get]" + url)
-        print("[Ajax-get]" + params)
+
+        if len(params.replace("\"", "")) > 1:
+            print("[Ajax-get]" + params)
 
         try:
             response = requests.get(url, params=params_json, timeout=5).text
