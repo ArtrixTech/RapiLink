@@ -5,9 +5,15 @@ from flask import send_file
 
 from utils.cut_string import cut_string
 
+all_image = {}
+
 
 def get_bing_img(full_url):
-    img = requests.get(full_url).content
+    if full_url in all_image:
+        img = all_image[full_url]
+    else:
+        img = requests.get(full_url).content
+        all_image[full_url] = img
 
     img_io = BytesIO(img)
     img_io.seek(0)
