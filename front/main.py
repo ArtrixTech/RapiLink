@@ -7,6 +7,8 @@ import requests
 from back.main import is_alias_exist, alias_type, all_files
 from back import file_process
 
+from bing_image.bing_image import get_bing_img
+
 front_blueprint = Blueprint('front', __name__, template_folder="templates", static_folder="static")
 www_jump_blueprint = Blueprint('jump', __name__, template_folder="templates", static_folder="static", subdomain="www")
 
@@ -16,6 +18,12 @@ def jump():
     response_page = render_template('jump.html', target="http://rapi.link")
 
     return response_page
+
+
+@front_blueprint.route('/bing_img')
+def bing_img():
+    url = request.args.get("u")
+    return get_bing_img(url)
 
 
 @front_blueprint.route('/old')

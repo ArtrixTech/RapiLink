@@ -15,13 +15,23 @@
 
     <script src="{{ url_for('front.static', filename='js/jquery-3.3.1.min.js') }}"></script>
     <script src="{{ url_for('front.static', filename='js/utils/color-thief.min.js') }}"></script>
+
+    <script src="{{ url_for('front.static', filename='js/utils/utils.js') }}"></script>
+    <script src="{{ url_for('front.static', filename='js/bing_bg.js') }}"></script>
+
     <meta name="baidu_union_verify" content="c721b3e897ec62cd65314154d9335be1">
+
 
 </head>
 
-<body id="b" style="background: url({{img_url}});background-repeat: no-repeat;background-size: 100%;">
+<body id="b" style="background-repeat: no-repeat;background-size: 100%;">
 
-    <img id="bgimg" src="{{img_url}}" class="hidden">
+<img id="bgimg" src="" class="hidden" crossorigin="https://cn.bing.com">
+
+<script>
+        changeBG();
+
+</script>
 
     <canvas id="canv"></canvas>
     <script src="{{ url_for('front.static', filename='js/animations/stars_no_mouse.js') }}"></script>
@@ -162,14 +172,14 @@
 
     <script src="{{ url_for('front.static', filename='js/file_process.js') }}"></script>
 
-    <script src="{{ url_for('front.static', filename='js/utils/utils.js') }}"></script>
+
 
     <script src="{{ url_for('front.static', filename='js/animations/message/bar.js') }}"></script>
 
 
     <script>
         changeLink();
-        fetchColor(true);
+        //fetchColor(true);
         colorChange();
     </script>
 

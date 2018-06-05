@@ -78,9 +78,9 @@ function fetchColor(refresh = false) {
     try {
         var colorThief = new ColorThief();
         var img = document.getElementById("bgimg");
-        img.crossOrigin = "*";
+        img.crossOrigin = "https://cn.bing.com";
 
-        var sourceColor = colorThief.getColor(img)
+        var sourceColor = colorThief.getColor(img);
         color = "rgb(" + sourceColor + ")";
         var deltaVal = -55,
             deltaVal2 = -10,

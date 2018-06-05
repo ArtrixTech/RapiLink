@@ -1,12 +1,14 @@
 from flask import Blueprint
-from flask import request, render_template
-from flask import jsonify, make_response
+from flask import request
+from flask import make_response
 
 from back.classes.class_ShortLink import ShortLink, ShortLinkPool
 from back.classes.class_FileLink import FileLink, FileLinkPool
 from back.user_system.user_manager import UserManager, User, Permission
 from back.user_system.classes.behaviors import *
 from back.file_process import get_save_location
+
+from bing_image.bing_image import get_bing_url
 
 import json
 
@@ -31,6 +33,11 @@ def alias_type(alias):
     if all_files.is_exist_by_alias(alias):
         return "FILE"
     return False
+
+
+@back_blueprint.route('/bing_url')
+def bing_url():
+    return get_bing_url()
 
 
 @back_blueprint.route('/alias_available')

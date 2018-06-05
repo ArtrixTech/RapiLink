@@ -6,7 +6,7 @@ import project_blueprints
 
 from threading import Thread
 
-from util import timing_tasks
+from utils import timing_tasks
 import time
 
 monkey.patch_all()
