@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="b48e428e-e6ff-4082-91c7-18900ef82915" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/timing_tasks.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/timing_tasks.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/static/js/file_process.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/static/js/file_process.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -26,7 +26,7 @@
       <file leaf-file-name="main.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/back/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1328">
+            <state relative-caret-position="-320">
               <caret line="31" column="20" selection-start-line="31" selection-start-column="20" selection-end-line="31" selection-end-column="20" />
               <folding>
                 <element signature="e#0#27#0" expanded="true" />
@@ -84,8 +84,8 @@
       <file leaf-file-name="timing_tasks.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/utils/timing_tasks.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="558">
-              <caret line="80" column="33" selection-start-line="80" selection-start-column="33" selection-end-line="80" selection-end-column="33" />
+            <state relative-caret-position="446">
+              <caret line="83" column="31" selection-start-line="83" selection-start-column="31" selection-end-line="83" selection-end-column="31" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
               </folding>
@@ -413,7 +413,21 @@
       <option name="project" value="LOCAL" />
       <updated>1528255345335</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="[Back Add]Bing image cache flush strategy">
+      <created>1528255796959</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1528255796959</updated>
+    </task>
+    <task id="LOCAL-00017" summary="[Front]Logic change">
+      <created>1528258175967</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1528258175967</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -466,7 +480,9 @@
     <MESSAGE value="[Back Add]Image thumbnail" />
     <MESSAGE value="[Back Add]Timing task Class&#10;[Front Add]Favicon&#10;[Front]Optimized bing img loading speed (500+ms -&gt; 30-100ms)&#10;[Debugging]Added timer module" />
     <MESSAGE value="[Front]Change Font source to ustclug" />
-    <option name="LAST_COMMIT_MESSAGE" value="[Front]Change Font source to ustclug" />
+    <MESSAGE value="[Back Add]Bing image cache flush strategy" />
+    <MESSAGE value="[Front]Logic change" />
+    <option name="LAST_COMMIT_MESSAGE" value="[Front]Logic change" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="editorHistoryManager">
@@ -886,16 +902,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/back/main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1328">
-          <caret line="31" column="20" selection-start-line="31" selection-start-column="20" selection-end-line="31" selection-end-column="20" />
-          <folding>
-            <element signature="e#0#27#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/front/templates/main.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="224">
@@ -920,10 +926,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/back/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-320">
+          <caret line="31" column="20" selection-start-line="31" selection-start-column="20" selection-end-line="31" selection-end-column="20" />
+          <folding>
+            <element signature="e#0#27#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/utils/timing_tasks.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="558">
-          <caret line="80" column="33" selection-start-line="80" selection-start-column="33" selection-end-line="80" selection-end-column="33" />
+        <state relative-caret-position="446">
+          <caret line="83" column="31" selection-start-line="83" selection-start-column="31" selection-end-line="83" selection-end-column="31" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
           </folding>
