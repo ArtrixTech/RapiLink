@@ -67,10 +67,20 @@ def upd_main():
         print(out_files)
 
 
-timingTask_main = TimingTask(upd_main, 1)
-timingTask_bing = TimingTask(upd_bing_links, 3600)
+def flush_bing():
+    from bing_image import bing_image
+
+    bing_image.all_image = {}
+    bing_image.all_thumbs_pil = {}
+    print("[Bing]Flushed!")
 
 
 def check():
     timingTask_main.check()
     timingTask_bing.check()
+    timingTask_flush_bing.check()
+
+
+timingTask_main = TimingTask(upd_main, 1)
+timingTask_bing = TimingTask(upd_bing_links, 3600)
+timingTask_flush_bing = TimingTask(flush_bing, 86400 * 5)
