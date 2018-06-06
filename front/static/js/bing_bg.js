@@ -1,6 +1,5 @@
 function changeBG() {
 
-
     function setBG(url) {
 
         var model = "url(%rep%)";

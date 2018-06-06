@@ -4,9 +4,8 @@ from io import BytesIO
 from flask import send_file
 from PIL import Image
 
-from utils.cut_string import cut_string
-
 all_image = {}
+all_thumbs_pil = {}
 
 
 def get_bing_img(full_url):
@@ -22,33 +21,42 @@ def get_bing_img(full_url):
 
 
 def get_bing_img_small(full_url):
-    if full_url in all_image:
-        img = all_image[full_url]
+    if full_url in all_thumbs_pil:
+
+        img_pil = all_thumbs_pil[full_url]
+
+        temp_io = BytesIO()
+        img_pil.save(temp_io, format="PNG")
+        temp_io.seek(0)
+
+        return send_file(temp_io, mimetype='image/png', cache_timeout=0)
+
     else:
         img = requests.get(full_url).content
         all_image[full_url] = img
 
     img_io = BytesIO(img)
     img_pil = Image.open(img_io)
-    # print(img_pil.thumbnail)
-    img_pil.thumbnail((128, 128), Image.ANTIALIAS)
+
+    img_pil.thumbnail((64, 64), Image.ANTIALIAS)
+    all_thumbs_pil[full_url] = img_pil
 
     save_img_io = BytesIO()
     img_pil.save(save_img_io, format="PNG")
 
-    # print(img_pil.width)
-
     save_img_io.seek(0)
+
     return send_file(save_img_io, mimetype='image/png', cache_timeout=0)
 
 
+all_image_url = ["https://cn.bing.com/az/hprichbg/rb/Liverpool_ZH-CN12418492140_1920x1080.jpg"]
+
+
 def get_bing_url():
-    request_url = "https://cn.bing.com/HPImageArchive.aspx?idx=%index%&n=1"
-    request_url = request_url.replace("%index%", str(random.randint(-1, 8)))
+    # prevent failure when the image is refreshing
+    if len(all_image_url) > 3:
+        result = all_image_url[random.randint(0, 7)]
+    else:
+        result = all_image_url[0]
 
-    xml = requests.get(request_url).text
-
-    result = cut_string(xml, "<urlBase>", "</urlBase>")
-    full_url = "https://cn.bing.com" + result + "_1920x1080.jpg"
-
-    return full_url
+    return result
