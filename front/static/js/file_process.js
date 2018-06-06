@@ -261,7 +261,7 @@ function updateProgressBar() {
 
     if (onHover) {
         if (onError_File) $("#file_icon").css("background", "linear-gradient(120deg, rgb(205, 81, 81) 0%, rgb(232, 99, 75) " + percentInt + "%, " + color + " " + percentInt + "%)");
-        else $("#file_icon").css("background", "linear-gradient(120deg, rgb(61, 140, 218) 0%, rgb(69, 124, 212) " + percentInt + "%, " + color + " " + percentInt + "%)");
+        else $("#file_icon").css("background", "linear-gradient(120deg, rgb(61, 140, 218) 0%, rgb(60, 114, 202) " + percentInt + "%, " + color + " " + percentInt + "%)");
     } else {
         if (onError_File) $("#file_icon").css("background", "linear-gradient(120deg, rgb(205, 81, 81) 0%, rgb(232, 99, 75) " + percentInt + "%, " + color + " " + percentInt + "%)");
         else $("#file_icon").css("background", "linear-gradient(120deg, #4b9ae8 0%, rgb(69, 124, 212) " + percentInt + "%, " + color + " " + percentInt + "%)");
