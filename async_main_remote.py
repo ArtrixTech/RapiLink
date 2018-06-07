@@ -15,9 +15,9 @@ app = project_blueprints.bind_blueprints(Flask(__name__, static_folder="", stati
 app.url_map.default_subdomain = ''
 app.config.update({
     'SERVER_NAME': 'rapi.link',
-    'DEBUG': 'True'
+    'DEBUG': 'False'
 })
-app.debug = True
+app.debug = False
 
 # app.run(host="45.76.102.168", port=80)
 

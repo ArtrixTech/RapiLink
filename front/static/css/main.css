@@ -8,6 +8,10 @@ body {
     background-attachment: fixed;
 }
 
+::selection {
+    background: rgba(0, 0, 0, 0.116); 
+}
+
 .background_board {
     width: 1000px;
     height: 1000px;

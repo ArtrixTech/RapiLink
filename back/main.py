@@ -41,7 +41,7 @@ def bing_url():
 
 
 @back_blueprint.route('/alias_available')
-def name_available():
+def alias_available():
     """
     - Is alias available
     @param: alias
@@ -49,7 +49,7 @@ def name_available():
     """
 
     alias = request.args.get("alias")
-    print("[alias_available]" + alias)
+    # print("[alias_available]" + alias)
     if is_alias_exist(alias):
         return "ALIAS_EXIST"
     return "OK"
