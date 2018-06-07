@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b48e428e-e6ff-4082-91c7-18900ef82915" name="Default" comment="[Front]UI change">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/async_main_remote.py" beforeDir="false" afterPath="$PROJECT_DIR$/async_main_remote.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/back/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/static/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/front/static/css/main.css" afterDir="false" />
-    </list>
+    <list default="true" id="b48e428e-e6ff-4082-91c7-18900ef82915" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -31,8 +26,8 @@
       <file leaf-file-name="main.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/back/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="192">
-              <caret line="51" column="6" selection-start-line="51" selection-start-column="6" selection-end-line="51" selection-end-column="6" />
+            <state relative-caret-position="-1424">
+              <caret line="49" lean-forward="true" selection-start-line="49" selection-end-line="49" />
               <folding>
                 <element signature="e#0#27#0" expanded="true" />
               </folding>
@@ -458,7 +453,14 @@
       <option name="project" value="LOCAL" />
       <updated>1528258660496</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="[Front]UI change&#10;[Back]Efficiency optimization&#10;[Flask-Gevent]Release mode in remote server">
+      <created>1528334608077</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1528334608078</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -504,7 +506,8 @@
     <MESSAGE value="[Back Add]Bing image cache flush strategy" />
     <MESSAGE value="[Front]Logic change" />
     <MESSAGE value="[Front]UI change" />
-    <option name="LAST_COMMIT_MESSAGE" value="[Front]UI change" />
+    <MESSAGE value="[Front]UI change&#10;[Back]Efficiency optimization&#10;[Flask-Gevent]Release mode in remote server" />
+    <option name="LAST_COMMIT_MESSAGE" value="[Front]UI change&#10;[Back]Efficiency optimization&#10;[Flask-Gevent]Release mode in remote server" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="editorHistoryManager">
@@ -953,8 +956,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/back/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="51" column="6" selection-start-line="51" selection-start-column="6" selection-end-line="51" selection-end-column="6" />
+        <state relative-caret-position="-1424">
+          <caret line="49" lean-forward="true" selection-start-line="49" selection-end-line="49" />
           <folding>
             <element signature="e#0#27#0" expanded="true" />
           </folding>

@@ -109,6 +109,7 @@ function uploadFile() {
         if (input == "EMPTY_TARGET_URL") {
             alert("The target link is blank!");
             $("#progress_text").text("");
+            return 0;
         }
 
         if (input == "ALIAS_EXIST") {
@@ -116,7 +117,10 @@ function uploadFile() {
             isAliasAvailable_File = false;
             updateFloatWindow_File();
             $("#progress_text").text(" Failed!");
+            return 0;
         }
+
+        showMessageBar("msg_bar_error", "Upload Failed. Please retry.", "WARNING", 3000);
     }
 
     if (isAliasAvailable_File) {
@@ -172,7 +176,6 @@ function uploadFile() {
                     error(result.responseText);
                     onError_File = true;
                     updateProgressBar();
-                    showMessageBar("msg_bar_error", "Upload Failed. Please retry.", "WARNING", 3000);
                 }
             }
 
