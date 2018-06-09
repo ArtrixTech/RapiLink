@@ -1,0 +1,113 @@
+body {
+    /*background-image: linear-gradient(169deg, rgb(59, 167, 255) 0%,rgb(59, 167, 255) 16%, rgb(73, 171, 250) 20%, rgb(255, 255, 255) 20.13%);*/
+    /*background-image: linear-gradient(175deg, #d9afd9 0%, #97d9e1 20%, rgb(255, 255, 255) 20.13%);
+    background-image: linear-gradient(175deg, #d9afd9 0, #97d9e1 459px, rgb(255, 255, 255) 462px);
+    background-image: linear-gradient(175deg, #13547a 0, #80d0c7 459px, rgb(255, 255, 255) 462px);
+    background-image: linear-gradient(175deg, #9fcee9 0, #80c0d0 459px, rgb(255, 255, 255) 462px);*/
+    text-align: center;
+    overflow: hidden;
+}
+
+.unselective {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.copyright {
+    color: #ffffff;
+    font-family: Work Sans;
+    font-size: 20px;
+    top: 30%;
+    position: relative;
+}
+
+#rplink-index-header {
+    background-image: linear-gradient(175deg, #9fcee9 0, #80c0d0 80%, rgb(255, 255, 255) 80.5%);
+    background-image: linear-gradient(175deg, #6ccdff 0, #13afff 80%, rgb(255, 255, 255) 80.5%);
+    background-image: linear-gradient(161deg, #6c11cb 0%, #258cfc 100%);
+    height: 520px;
+}
+
+.hidden {
+    display: none;
+}
+
+#rplink-box {
+    background: rgb(59, 167, 255);
+    width: 100%;
+    height: 100px;
+}
+
+#slogan {
+    display: inline-block;
+    /* transform: rotate(-5deg); */
+    color: white;
+    position: relative;
+    left: -5px;
+    font-size: 28px;
+    top: 42px;
+    font-family: Microsoft Yahei UI Light;
+    font-weight: 100;
+    letter-spacing: 10;
+}
+
+.rplink-icon-for-btn {
+    font-size: 42px !important;
+    left: 10px;
+    color: #5140de;
+    border-radius: 189px;
+    position: relative;
+}
+
+.rplink-box-type {
+    width: 100%;
+    text-align: left;
+    position: relative;
+    top: 100px;
+}
+
+.rplink-title-type {
+    font-size: 104px;
+    color: #FFFFFF;
+    font-family: Noto Sans;
+    font-weight: 600;
+    position: relative;
+    left: 64px;
+}
+
+.rplink-title-type-eng {
+    font-size: 34px;
+    color: #9ed4e0;
+    color: #5637da;
+    font-family: Noto Sans Light;
+    font-weight: 400;
+    position: relative;
+    left: 77px;
+    padding: 14px;
+    background-color: white;
+    border-radius: 8px;
+    top: 3px;
+}
+
+.rplink-btn-normal {
+    height: 82px;
+    width: 300px;
+    left: 64px;
+    top: 30px;
+    position: relative;
+    border-radius: 22px;
+    text-align: left;
+}
+
+.rplink-span-for-btn {
+    font-size: 28px;
+    color: #FFFFFF;
+    font-family: Noto Sans;
+    font-weight: 600;
+    position: relative;
+    left: 26px;
+}

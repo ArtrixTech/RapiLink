@@ -1,0 +1,200 @@
+<html style="overflow-x: hidden;overflow-y: hidden;">
+
+<head>
+
+    <script>
+        response.setHeader("Cache-Control", "no-cache");
+        response.setHeader("Pragma", "no-cache");
+        response.setDateHeader("Expires", 0);
+
+
+
+    </script>
+
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=8">
+    <meta http-equiv="Expires" content="0">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-control" content="no-cache">
+    <meta http-equiv="Cache" content="no-cache">
+
+
+    <title>RapiLink - Your data transition center</title>
+    <link rel="shortcut icon" href="{{ url_for('mobile.static', filename='favicon_small.png') }}">
+
+    <link href='https://fonts.proxy.ustclug.org/css?family=Noto%20Sans' rel='stylesheet' type='text/css'>
+
+
+    <link rel="stylesheet" type="text/css" href="{{ url_for('mobile.static', filename='layui/css/layui.css') }}">
+
+
+    <link rel="stylesheet" type="text/css" href="{{ url_for('mobile.static', filename='css/message/bar.css') }}">
+
+
+    <link href='https://fonts.proxy.ustclug.org/css?family=Work%20Sans' rel='stylesheet' type='text/css'>
+
+
+    <script src="{{ url_for('mobile.static', filename='js/jquery-3.3.1.min.js') }}"></script>
+    <script src="{{ url_for('mobile.static', filename='layui/layui.js') }}"></script>
+
+    <script src="{{ url_for('mobile.static', filename='js/utils/utils.js') }}"></script>
+
+
+</head>
+
+<body id="b" style="background-repeat: no-repeat;background-size: 100%;">
+
+<div id="rplink-index-header">
+    <style>
+            #logo {
+                width: 310px;
+                left: 30px;
+                position: relative;
+                top: 28px;
+            }
+
+
+
+    </style>
+
+    <script src="{{ url_for('mobile.static', filename='js/layui_load.js') }}"></script>
+
+    <div style="width: 100%;text-align: left;transform: scale(0.9,0.9);position: relative;left: -40px;">
+        <a href="https://rapi.link">
+            <img id="logo" src="{{ url_for('mobile.static', filename='img/site_branding/logo_small.png') }}">
+        </a>
+        <span id="slogan">你的云中转站</span>
+    </div>
+
+
+    <div class="rplink-box-type">
+        <span class="rplink-title-type">文件</span>
+        <span class="rplink-title-type-eng layui-badge">Files</span>
+    </div>
+
+    <div item-width="100%" class="hidden">
+        <i class="layui-icon layui-icon-template-1 rplink-large-icon"></i>
+    </div>
+
+    <div class="rplink-box-type">
+        <button class="rplink-btn-normal layui-btn layui-btn-radius layui-btn-primary">
+            <i class="layui-icon layui-icon-template-1 rplink-icon-for-btn" style="top:6px;"></i>
+            <style>
+                    #rplink-span-for-btn-file {
+                        color: #6051e1;
+                        top: -1px;
+                    }
+
+
+
+            </style>
+            <span class="rplink-span-for-btn" id="rplink-span-for-btn-file">选择文件上传</span>
+        </button>
+    </div>
+</div>
+
+<style>
+        #faq {
+            width: 85%;
+            left: 64px;
+            position: relative;
+        }
+
+        .rplink-tl-icon {
+            color: #3f60eb;
+            font-size: 30;
+            left: -9px;
+        }
+
+        .rplink-tl-title {
+            font-size: 32px;
+            padding: 19px;
+            line-height: 14px;
+            border-radius: 9px;
+            background: #5140de;
+        }
+
+        .rplink-tl-text {
+            font-family: noto sans;
+            left: 20px;
+            position: relative;
+            font-size: 30px;
+            line-height: 56px;
+            top: -20px;
+        }
+
+        p {
+            max-height: 999999px;
+        }
+
+
+
+</style>
+
+<div class="rplink-box-type">
+    <ul class="layui-timeline" id="faq">
+        <li class="layui-timeline-item">
+            <i class="layui-icon layui-timeline-axis rplink-tl-icon">&#xe63f;</i>
+            <div class="layui-timeline-content layui-text rplink-tl-text">
+                <span class="layui-timeline-title rplink-tl-title layui-badge">RapiLink有什么用？</span>
+                <p>
+                    你是否有遇到这样尴尬的场景？
+                <ul>
+                    <li>想在电脑和手机间转移文件，但是又不想连线？</li>
+                    <li>不想在别人家里登陆QQ/微信来传输文件？</li>
+                </ul>
+                </p>
+            </div>
+        </li>
+        <li class="layui-timeline-item">
+            <i class="layui-icon layui-timeline-axis rplink-tl-icon">&#xe63f;</i>
+            <div class="layui-timeline-content layui-text rplink-tl-text">
+                <span class="layui-timeline-title rplink-tl-title layui-badge">8月16日</span>
+                <p>杜甫的思想核心是儒家的仁政思想，他有“
+                    <em>致君尧舜上，再使风俗淳</em>”的宏伟抱负。个人最爱的名篇有：</p>
+                <ul>
+                    <li>《登高》</li>
+                    <li>《茅屋为秋风所破歌》</li>
+                </ul>
+            </div>
+        </li>
+
+    </ul>
+</div>
+
+<script src="{{ url_for('mobile.static', filename='js/main.js') }}"></script>
+<link rel="stylesheet" type="text/css" href="{{ url_for('mobile.static', filename='css/main.css') }}">
+
+</body>
+
+<footer>
+    <style>
+        .footer_box {
+            position: absolute;
+            bottom: 0px;
+            text-align: center;
+            width: 100%;
+            height: 94px;
+        }
+
+        #artrix-logo {
+            width: 164px;
+        }
+
+
+
+    </style>
+    <div class="footer_box">
+        <div class="copyright unselective hidden">Copyright © 2018 Artrix Technologies CO.,LTD All rights reserved.
+        </div>
+        <a href="">
+            <img id="artrix-logo"
+                 src="{{ url_for('mobile.static', filename='img/site_branding/artrix-logo-small-purp.png') }}">
+        </a>
+    </div>
+
+</footer>
+
+
+</html>
