@@ -45,8 +45,10 @@ li {
     background-image: linear-gradient(175deg, #6ccdff 0, #13afff 80%, rgb(255, 255, 255) 80.5%);
     background-image: linear-gradient(161deg, #6c11cb 0%, #258cfc 100%);
     height: 520px;
-    box-shadow: 0px 4px 88px #34146725;
-    transition: height 0.65s cubic-bezier(0.2, 1.19, 0.14, 1.16);
+    box-shadow: 0 4px 98px #34146742;
+    transition: height .65s cubic-bezier(.2, 1.19, .14, 1.16);
+    border-bottom-left-radius: 24px;
+    border-bottom-right-radius: 24px;
 }
 
 .hidden {
