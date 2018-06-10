@@ -8,6 +8,10 @@ body {
     overflow: hidden;
 }
 
+li {
+    max-height: 999999px;
+}
+
 .unselective {
     -webkit-touch-callout: none;
     -webkit-user-select: none;
@@ -25,7 +29,7 @@ body {
     position: relative;
 }
 
-.rplink-quote-box{
+.rplink-quote-box {
     padding: 28px;
     margin-top: 20px;
     border-left: none;
