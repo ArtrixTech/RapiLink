@@ -1,13 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b48e428e-e6ff-4082-91c7-18900ef82915" name="Default" comment="[Front]UI change">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/RapiLink.iml" afterPath="$PROJECT_DIR$/.idea/RapiLink.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+    <list default="true" id="b48e428e-e6ff-4082-91c7-18900ef82915" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mobile/static/css/main.css" afterPath="$PROJECT_DIR$/mobile/static/css/main.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mobile/static/js/layui_load.js" afterPath="$PROJECT_DIR$/mobile/static/js/layui_load.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mobile/templates/main_m.html" afterPath="$PROJECT_DIR$/mobile/templates/main_m.html" />
     </list>
     <ignored path="mobile/static/css/old/error_code/404.css" />
     <ignored path="mobile/static/css/old/file_process.css" />
@@ -498,7 +495,14 @@
       <option name="project" value="LOCAL" />
       <updated>1528334608078</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="[Front]UI change">
+      <created>1528789061094</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1528789061094</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TodoView" selected-index="4">
@@ -551,9 +555,9 @@
     <MESSAGE value="[Front]Change Font source to ustclug" />
     <MESSAGE value="[Back Add]Bing image cache flush strategy" />
     <MESSAGE value="[Front]Logic change" />
-    <MESSAGE value="[Front]UI change" />
     <MESSAGE value="[Front]UI change&#10;[Back]Efficiency optimization&#10;[Flask-Gevent]Release mode in remote server" />
-    <option name="LAST_COMMIT_MESSAGE" value="[Front]UI change&#10;[Back]Efficiency optimization&#10;[Flask-Gevent]Release mode in remote server" />
+    <MESSAGE value="[Front]UI change" />
+    <option name="LAST_COMMIT_MESSAGE" value="[Front]UI change" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
