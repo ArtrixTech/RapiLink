@@ -53,6 +53,9 @@
 
     </style>
 
+    <div class="rplink-box-type" id="rplink-header-bg"></div>
+
+
     <script src="{{ url_for('mobile.static', filename='js/layui_load.js') }}"></script>
 
     <div style="width: 100%;text-align: left;transform: scale(0.9,0.9);position: relative;left: -40px;">
@@ -151,8 +154,7 @@
             <div class="layui-timeline-content layui-text rplink-tl-text">
                 <span class="layui-timeline-title rplink-tl-title layui-badge">RapiLink该怎么用？</span>
                 <p>
-                    目前RapiLink支持上传20MB以下的文件，并且支持短链接生成。后期还会加入临时文字存储。
-                    RapiLink目前的限制如下：
+                    目前RapiLink支持上传20MB以下的文件，并且支持短链接生成。后期还会加入临时文字存储。 RapiLink目前的限制如下：
                 <ul>
                     <li>单个文件最大支持20MB</li>
                     <li>暂不支持多文件上传</li>
@@ -160,8 +162,7 @@
                 </ul>
                 上传文件后，您可以输入自己想要的个性化链接，比如
                 <blockquote class="rplink-quote-box" style="padding:28px;">https://rapi.link/hello-rapilink</blockquote>
-                其中，（hello-rapilink）这个部分是您可以自由更改选择的。
-                通过在别的地方(手机/电脑/etc)的浏览器输入这个您设定好的地址，即可访问到您上传的文件/文字/短链接。
+                其中，（hello-rapilink）这个部分是您可以自由更改选择的。 通过在别的地方(手机/电脑/etc)的浏览器输入这个您设定好的地址，即可访问到您上传的文件/文字/短链接。
                 </p>
             </div>
         </li>
@@ -183,10 +184,13 @@
             text-align: center;
             width: 100%;
             height: 94px;
+            background: linear-gradient(to bottom, #ffffff61 0%, #ffffff 100%);
         }
 
         #artrix-logo {
             width: 164px;
+            top: 11px;
+            position: relative;
         }
     </style>
     <div class="footer_box">

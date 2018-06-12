@@ -41,14 +41,33 @@ li {
 }
 
 #rplink-index-header {
-    background-image: linear-gradient(175deg, #9fcee9 0, #80c0d0 80%, rgb(255, 255, 255) 80.5%);
+    /*background-image: linear-gradient(175deg, #9fcee9 0, #80c0d0 80%, rgb(255, 255, 255) 80.5%);
     background-image: linear-gradient(175deg, #6ccdff 0, #13afff 80%, rgb(255, 255, 255) 80.5%);
     background-image: linear-gradient(161deg, #6c11cb 0%, #258cfc 100%);
+    background:white;
     height: 520px;
     box-shadow: 0 4px 98px #34146742;
     transition: height .65s cubic-bezier(.2, 1.19, .14, 1.16);
-    border-bottom-left-radius: 24px;
+    /*border-bottom-left-radius: 24px;
     border-bottom-right-radius: 24px;
+    position: relative;*/
+
+    background: white;
+    height: 520px;
+    /* box-shadow: 0 4px 98px #34146742; */
+    transition: height .65s cubic-bezier(.2, 1.19, .14, 1.16);
+    position: relative;
+    text-align: center;
+}
+#rplink-header-bg {
+    height: 102%;
+    background-image: linear-gradient(161deg, #6c11cb 0%, #258cfc 100%);
+    position: absolute;
+    top: 0;
+    border-radius: 0 0 80% 70%;
+    width: 2000;
+    box-shadow: 0 4px 98px #34146742;
+    left: -486px;
 }
 
 .hidden {
