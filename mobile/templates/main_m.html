@@ -1,13 +1,6 @@
-<html style="overflow-x: hidden;overflow-y: hidden;">
+<html style="overflow-x: hidden;">
 
 <head>
-
-    <script>
-        response.setHeader("Cache-Control", "no-cache");
-        response.setHeader("Pragma", "no-cache");
-        response.setDateHeader("Expires", 0);
-    </script>
-
 
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=8">
@@ -17,7 +10,7 @@
     <meta http-equiv="Cache" content="no-cache">
 
 
-    <title>RapiLink - Your data transition center</title>
+    <title>RapiLink - 你的云中转站</title>
     <link rel="shortcut icon" href="{{ url_for('mobile.static', filename='favicon_small.png') }}">
 
     <link href='https://fonts.googleapis.com/css?family=Noto%20Sans' rel='stylesheet' type='text/css'>
@@ -152,13 +145,13 @@
         <li class="layui-timeline-item">
             <i class="layui-icon layui-timeline-axis rplink-tl-icon">&#xe63f;</i>
             <div class="layui-timeline-content layui-text rplink-tl-text">
-                <span class="layui-timeline-title rplink-tl-title layui-badge">RapiLink该怎么用？</span>
+                <span class="layui-timeline-title rplink-tl-title layui-badge">RapiLink的注意事项？</span>
                 <p>
-                    目前RapiLink支持上传20MB以下的文件，并且支持短链接生成。后期还会加入临时文字存储。 RapiLink目前的限制如下：
+                    目前RapiLink支持上传20MB以下的文件，并且支持短链接生成，后期还会加入临时文字存储。 RapiLink目前的限制如下：
                 <ul>
                     <li>单个文件最大支持20MB</li>
                     <li>暂不支持多文件上传</li>
-                    <li>文件支持保存两小时后，两小时之后会从服务器彻底删除</li>
+                    <li>文件将被服务器加密储存两小时，此后会从服务器彻底永久删除</li>
                 </ul>
                 上传文件后，您可以输入自己想要的个性化链接，比如
                 <blockquote class="rplink-quote-box" style="padding:28px;">https://rapi.link/hello-rapilink</blockquote>

@@ -81,13 +81,21 @@ var gradientFileToLink2 = new gradientColor('#258cfc', '#f7275e', 200);
 function colorToGradient_CSS(col1, col2) {
     return "linear-gradient(161deg, " + col1 + ", " + col2 + ")";
 }
-
+/*
 function change(i) {
     if (i < gradientFileToLink1.length - 1) {
         var bgCSS = colorToGradient_CSS(gradientFileToLink1[i] + " 6%", gradientFileToLink2[i] + " 95%");
         $("#rplink-header-bg").css("background-image", bgCSS);
         i++;
         setTimeout(change, 2, i);
+    }
+}
+*/
+
+function change(i) {
+    if (i < gradientFileToLink1.length - 1) {
+        var bgCSS = colorToGradient_CSS(gradientFileToLink1[i] + " 6%", gradientFileToLink2[i] + " 95%");
+        $("#rplink-header-bg").css("background-image", bgCSS);
     }
 }
 //change(0);
