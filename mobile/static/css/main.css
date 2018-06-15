@@ -61,7 +61,7 @@ li {
 }
 #rplink-header-bg {
     height: 102%;
-    background-image: linear-gradient(161deg, #6c11cb 0%, #258cfc 100%);
+    background-image: linear-gradient(161deg, #6c11cb 6%, #258cfc 95%);
     position: absolute;
     top: 0;
     border-radius: 0 0 80% 70%;

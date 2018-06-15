@@ -1,23 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b48e428e-e6ff-4082-91c7-18900ef82915" name="Default" comment="" />
-    <ignored path="mobile/static/css/old/error_code/404.css" />
-    <ignored path="mobile/static/css/old/file_process.css" />
-    <ignored path="mobile/static/css/old/float_window.css" />
-    <ignored path="mobile/static/css/old/link_process_animation.css" />
-    <ignored path="mobile/static/css/old/main.css" />
-    <ignored path="mobile/static/img/old/float_window/bad.png" />
-    <ignored path="mobile/static/img/old/float_window/finished.png" />
-    <ignored path="mobile/static/img/old/float_window/finished.psd" />
-    <ignored path="mobile/static/img/old/float_window/ok.png" />
-    <ignored path="mobile/static/img/old/site_branding/logo_small.png" />
-    <ignored path="mobile/static/img/old/file.png" />
-    <ignored path="mobile/static/img/old/link.png" />
-    <ignored path="mobile/static/img/old/plane_pink.png" />
-    <ignored path="mobile/static/img/old/plane_white.png" />
-    <ignored path="mobile/static/img/old/text.png" />
-    <ignored path="mobile/static/" />
+    <list default="true" id="b48e428e-e6ff-4082-91c7-18900ef82915" name="Default" comment="[Front]Font Source changed to Google">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/static/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/static/css/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/templates/main_m.html" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/templates/main_m.html" afterDir="false" />
+    </list>
+    <ignored path=".vscode/settings.json" />
+    <ignored path=".vscode/" />
+    <manually-removed-from-ignored>
+      <directory path="mobile/static/" />
+    </manually-removed-from-ignored>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -72,15 +65,28 @@
       <file leaf-file-name="file_process.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mobile/static/js/file_process.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="64">
-              <caret line="4" column="60" selection-start-line="4" selection-start-column="60" selection-end-line="4" selection-end-column="60" />
+            <state relative-caret-position="176">
+              <caret line="11" column="54" lean-forward="true" selection-start-line="11" selection-start-column="54" selection-end-line="11" selection-end-column="54" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="link_process.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="color-thief.min.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/mobile/static/js/utils/color-thief.min.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="96">
+              <caret line="6" column="43" lean-forward="true" selection-start-line="6" selection-start-column="43" selection-end-line="6" selection-end-column="43" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="link_process.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mobile/static/js/link_process.js">
-          <provider selected="true" editor-type-id="text-editor" />
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1568">
+              <caret line="4" column="54" selection-start-line="4" selection-start-column="54" selection-end-line="4" selection-end-column="54" />
+            </state>
+          </provider>
         </entry>
       </file>
       <file leaf-file-name="main.py" pinned="false" current-in-tab="false">
@@ -115,18 +121,6 @@
               <caret line="12" selection-start-line="12" selection-end-line="12" />
               <folding>
                 <element signature="e#0#23#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="async_main_remote.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/async_main_remote.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="128">
-              <caret line="17" column="19" selection-start-line="17" selection-start-column="19" selection-end-line="17" selection-end-column="19" />
-              <folding>
-                <element signature="e#0#25#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -192,36 +186,33 @@
         <subPane>
           <expand>
             <path>
-              <item name="rapilink2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="rapilink2" type="462c0819:PsiDirectoryNode" />
+              <item name="RapiLink" type="b2602c69:ProjectViewProjectNode" />
+              <item name="RapiLink" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="rapilink2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="rapilink2" type="462c0819:PsiDirectoryNode" />
+              <item name="RapiLink" type="b2602c69:ProjectViewProjectNode" />
+              <item name="RapiLink" type="462c0819:PsiDirectoryNode" />
               <item name="mobile" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="rapilink2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="rapilink2" type="462c0819:PsiDirectoryNode" />
+              <item name="RapiLink" type="b2602c69:ProjectViewProjectNode" />
+              <item name="RapiLink" type="462c0819:PsiDirectoryNode" />
               <item name="mobile" type="462c0819:PsiDirectoryNode" />
               <item name="static" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="rapilink2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="rapilink2" type="462c0819:PsiDirectoryNode" />
+              <item name="RapiLink" type="b2602c69:ProjectViewProjectNode" />
+              <item name="RapiLink" type="462c0819:PsiDirectoryNode" />
               <item name="mobile" type="462c0819:PsiDirectoryNode" />
               <item name="static" type="462c0819:PsiDirectoryNode" />
               <item name="js" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="rapilink2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="rapilink2" type="462c0819:PsiDirectoryNode" />
+              <item name="RapiLink" type="b2602c69:ProjectViewProjectNode" />
+              <item name="RapiLink" type="462c0819:PsiDirectoryNode" />
               <item name="mobile" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="rapilink2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="rapilink2" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
               <item name="utils" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -232,7 +223,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Ignored.Files" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -260,7 +251,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.async_main_local">
+  <component name="RunManager" selected="Python.async_main_spec">
     <configuration name="async_main_local" type="PythonConfigurationType" factoryName="Python">
       <module name="RapiLink" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -479,7 +470,14 @@
       <option name="project" value="LOCAL" />
       <updated>1528789061094</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="[Front]Font Source changed to Google">
+      <created>1529060975232</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1529060975232</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TodoView" selected-index="4">
@@ -495,10 +493,10 @@
     <frame x="-8" y="22" width="1936" height="1066" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1390625" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1390625" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32983193" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32912722" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.32912722" />
       <window_info anchor="bottom" id="Python Console" order="7" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -535,17 +533,11 @@
     <MESSAGE value="[Front]Logic change" />
     <MESSAGE value="[Front]UI change&#10;[Back]Efficiency optimization&#10;[Flask-Gevent]Release mode in remote server" />
     <MESSAGE value="[Front]UI change" />
-    <option name="LAST_COMMIT_MESSAGE" value="[Front]UI change" />
+    <MESSAGE value="[Front]Font Source changed to Google" />
+    <option name="LAST_COMMIT_MESSAGE" value="[Front]Font Source changed to Google" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$USER_HOME$/Anaconda3/Lib/os.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="237" selection-start-line="237" selection-end-line="237" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/debugging/pressure_test/pressure_test.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="80">
@@ -951,15 +943,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mobile/static/js/file_process.js">
+    <entry file="file://$PROJECT_DIR$/mobile/static/js/link_process.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="64">
-          <caret line="4" column="60" selection-start-line="4" selection-start-column="60" selection-end-line="4" selection-end-column="60" />
+        <state relative-caret-position="-1568">
+          <caret line="4" column="54" selection-start-line="4" selection-start-column="54" selection-end-line="4" selection-end-column="54" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mobile/static/js/link_process.js">
-      <provider selected="true" editor-type-id="text-editor" />
+    <entry file="file://$PROJECT_DIR$/mobile/static/js/file_process.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="11" column="54" lean-forward="true" selection-start-line="11" selection-start-column="54" selection-end-line="11" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mobile/static/js/utils/color-thief.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="6" column="43" lean-forward="true" selection-start-line="6" selection-start-column="43" selection-end-line="6" selection-end-column="43" />
+        </state>
+      </provider>
     </entry>
   </component>
 </project>
