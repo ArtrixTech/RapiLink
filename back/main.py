@@ -10,6 +10,8 @@ from back.file_process import get_save_location
 
 from bing_image.bing_image import get_bing_url
 
+from utils import cut_string
+
 import json
 
 back_blueprint = Blueprint('back', __name__, subdomain="api")
@@ -160,11 +162,31 @@ def upload():
             resp.headers['Access-Control-Allow-Origin'] = '*'
             return resp
 
+        if len(alias) > 1000:
+            resp = "ALIAS_TOO_LONG"
+            return resp
+
         if file:
             resp = "OK"
+            params = {"ttl": 7200}
+
+            if alias[0] == "$" and "$RPLNK-" in alias:
+
+                commands = cut_string.cut_string(alias, "$RPLNK-", "$")
+                alias = str(alias).replace("$RPLNK-" + commands + "$", "")
+                commands = commands.split(",")
+
+                for command in commands:
+                    command_name, command_data = command.split(":")
+
+                    if command_name == "TTL":
+                        # try:
+                        params["ttl"] = int(command_data)
 
             print("    [FileUpload]Get BatchID:" + batch_id)
             print("    [FileUpload]Get File:" + file.filename)
+            print("    [FileUpload]Alias:" + alias)
+            print("    [FileUpload]Params:" + str(params))
 
             if is_alias_exist(alias):
                 print("    ##[FileUpload]AliasExist!")
@@ -172,7 +194,7 @@ def upload():
             else:
 
                 file.save(get_save_location(file.filename, batch_id))
-                f_link_obj = FileLink(alias, batch_id)
+                f_link_obj = FileLink(alias, batch_id, ttl=params["ttl"])
                 all_files.add(f_link_obj)
                 print("    [FileUpload]File Saved TO " + get_save_location(file.filename, batch_id))
 

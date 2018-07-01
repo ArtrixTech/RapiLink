@@ -103,4 +103,4 @@ def url_visit(alias):
 
             return "None"
     else:
-        return make_response("400")
+        return render_template('error_code/404.html')

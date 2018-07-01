@@ -1,14 +1,8 @@
 from flask import Blueprint
 from flask import render_template
-from flask import request, url_for, send_from_directory, make_response
+from flask import request, url_for, make_response
 import json
 import requests
-import random
-
-from back.main import is_alias_exist, alias_type, all_files
-from back import file_process
-
-from bing_image.bing_image import get_bing_img_small
 
 mobile_blueprint = Blueprint('mobile', __name__, template_folder="templates", static_folder="static", subdomain="m")
 
