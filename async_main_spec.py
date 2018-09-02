@@ -23,7 +23,7 @@ app.debug = True
 
 print(app.url_map)
 
-http_server = WSGIServer(('192.168.0.233', 80), app, handler_class=WebSocketHandler)
+http_server = WSGIServer(('10.0.0.233', 7774), app, handler_class=WebSocketHandler)
 
 
 def start():

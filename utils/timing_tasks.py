@@ -23,15 +23,29 @@ class TimingTask:
 
 
 def upd_bing_links():
+    # Todo:Add Logging system
     # Bug backup: prevent requests in clearing the list to get blank content
+
+    # from logger.log import Logger
+    # debug_logger = Logger()
+
     print("[Bing Image]checkBing...")
     bing_image.all_image_url = ["https://cn.bing.com/az/hprichbg/rb/Liverpool_ZH-CN12418492140_1920x1080.jpg"]
 
     for i in range(-1, 7):
+
         request_url = "https://cn.bing.com/HPImageArchive.aspx?idx=%index%&n=1"
         request_url = request_url.replace("%index%", str(i))
 
-        xml = requests.get(request_url).text
+        try:
+            xml = requests.get(request_url).text
+        except requests.exceptions.ConnectionError as e:
+            # debug_logger.log("!Connection ERROR!", "Warning")
+            # debug_logger.log(e.args, "ConnectionError")
+            print("Bing Page Error")
+        except BaseException as e:
+            print("Bing Other Error")
+            # debug_logger.log(e.args, "Unknown")
 
         result = cut_string(xml, "<urlBase>", "</urlBase>")
         full_url = "https://cn.bing.com" + result + "_1920x1080.jpg"
