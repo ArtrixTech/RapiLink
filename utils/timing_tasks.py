@@ -30,7 +30,7 @@ def upd_bing_links():
     # debug_logger = Logger()
 
     print("[Bing Image]checkBing...")
-    bing_image.all_image_url = ["https://cn.bing.com/az/hprichbg/rb/Liverpool_ZH-CN12418492140_1920x1080.jpg"]
+    bing_image.all_image_url = ["https://cn.bing.com/sa/simg/hpb/NorthMale_EN-US8782628354_1920x1080.jpg"]
 
     for i in range(-1, 7):
 
