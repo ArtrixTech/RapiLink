@@ -20,7 +20,7 @@ class Logger:
             file.write(text)
 
     def log2(self, data, error_type=None):
-        import time, path
+        import time
 
         if isinstance(data, BaseException):
 
@@ -43,3 +43,32 @@ class Logger:
         with open(self._save_location + file_name + ".txt", mode="a") as file:
             print(1)
             file.write(text)
+
+    def log3(self, exception):
+        import time
+
+        if isinstance(exception, BaseException):
+
+            type_text = repr(exception)
+
+            print(type_text)
+
+            file_name = time.strftime("%y%m%d[%H]", time.localtime())
+            text = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()) + ": [" + type_text + "] " + type_text + "\n"
+
+            with open(self._save_location + file_name + ".txt", mode="a") as file:
+                print(1)
+                file.write(text)
+
+        else:
+            raise AttributeError("Error Type Not Correct! String and Exception are allowed.", exception)
+
+
+l = Logger()
+
+try:
+    assert 1 == 2
+
+except AssertionError as e:
+
+    l.log3(e)
