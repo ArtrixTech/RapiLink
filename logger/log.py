@@ -77,7 +77,7 @@ class Logger:
                 content_to_write = content_to_write[0:len(content_to_write) - 3]
 
             with open(self._save_location + file_name + ".txt", mode="a") as file:
-                print(content_to_write)
+                print("[Log-Written] " + content_to_write)
                 file.write(content_to_write)
 
         else:
