@@ -16,7 +16,6 @@ def get_bing_img(full_url):
     if full_url in all_image:
         img = all_image[full_url]
     else:
-
         img = requests.get(full_url).content
         all_image[full_url] = img
 
@@ -26,6 +25,11 @@ def get_bing_img(full_url):
 
 
 def get_bing_img_small(full_url):
+    # Let the server load the low-resolution picture only
+    assert isinstance(full_url, str)
+    if "1920x1080" in full_url:
+        full_url = full_url.replace("1920x1080", "640x480")
+
     if full_url in all_thumbs_pil:
 
         img_pil = all_thumbs_pil[full_url]
