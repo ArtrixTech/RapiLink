@@ -49,10 +49,10 @@ def get_request():
 
     if "api.rapi.link" in url:
         params_json = json.loads(params)
-        print("[Ajax-get]" + url)
+        print("[Front-Proxy] " + url)
 
         if len(params.replace("\"", "")) > 1:
-            print("[Ajax-get]" + params)
+            print("[Front-Proxy] " + params)
 
         try:
             response = requests.get(url, params=params_json, timeout=5).text
@@ -60,17 +60,18 @@ def get_request():
         except requests.ReadTimeout:
             response = "TIMEOUT"
 
+        print("    Response: " + response)
         return response
     return False
 
 
 @front_blueprint.route('/<alias>')
 def url_visit(alias):
-    print("==========Outer Visit:" + alias + "=============")
+    print("[Url-Visit] " + alias)
 
     if is_alias_exist(alias):
-        type = alias_type(alias)
-        if type == "URL":
+        visit_type = alias_type(alias)
+        if visit_type == "URL":
             try:
                 response = requests.get("http://api.rapi.link/get_url", params={"alias": alias}, timeout=5).text
                 print("[url_visit]" + alias + " -> " + response)
@@ -86,13 +87,13 @@ def url_visit(alias):
                 response_page = render_template('error_code/503.html')
 
             return response_page
-        elif type == "FILE":
-            print("[type]File")
+        elif visit_type == "FILE":
+            print("    Type: File")
             import os
 
             batch_id = all_files.get_by_alias(alias)[0].batch_id
             root = file_process.get_location_by_batch_id(batch_id)
-            print(root)
+            print("    Location: " + root)
             for rt, dirs, files in os.walk(root):
                 for file in files:
                     response = make_response(

@@ -12,6 +12,9 @@ def get_bing_img(full_url):
     if full_url in all_image:
         img = all_image[full_url]
     else:
+        assert isinstance(full_url, str)
+        if "1920x1080" in full_url:
+            full_url = full_url.replace("1920x1080", "640x480")
         img = requests.get(full_url).content
         all_image[full_url] = img
 
@@ -54,9 +57,5 @@ all_image_url = ["https://cn.bing.com/az/hprichbg/rb/Liverpool_ZH-CN12418492140_
 
 def get_bing_url():
     # prevent failure when the image is refreshing
-    if len(all_image_url) > 3:
-        result = all_image_url[random.randint(0, 7)]
-    else:
-        result = all_image_url[0]
-
+    result = all_image_url[random.randint(0, len(all_image_url) - 1)]
     return result

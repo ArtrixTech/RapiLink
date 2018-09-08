@@ -6,7 +6,7 @@ import project_blueprints
 
 from threading import Thread
 
-from utils import timing_tasks
+from timing_task import timing_task
 import time
 
 monkey.patch_all()
@@ -34,5 +34,5 @@ tr = Thread(target=start)
 tr.start()
 
 while 1:
-    timing_tasks.check()
-    time.sleep(timing_tasks.check_interval)
+    timing_task.check()
+    time.sleep(timing_task.check_interval)
