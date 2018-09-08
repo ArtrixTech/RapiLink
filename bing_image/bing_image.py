@@ -9,12 +9,14 @@ all_thumbs_pil = {}
 
 
 def get_bing_img(full_url):
+    assert isinstance(full_url, str)
+    if "1920x1080" in full_url:
+        full_url = full_url.replace("1920x1080", "640x480")
+
     if full_url in all_image:
         img = all_image[full_url]
     else:
-        assert isinstance(full_url, str)
-        if "1920x1080" in full_url:
-            full_url = full_url.replace("1920x1080", "640x480")
+
         img = requests.get(full_url).content
         all_image[full_url] = img
 
