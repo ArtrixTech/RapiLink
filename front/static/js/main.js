@@ -16,8 +16,8 @@ var obj = {
 
 function changeFile() {
 
-    obj.file.className = "make_file";
-    obj.link.className = "hidden";
+    obj.file.className = "hidden";
+    obj.link.className = "make_link";
     obj.text.className = "hidden";
 
     obj.link_icon.className = "icon";
@@ -35,8 +35,8 @@ function changeFile() {
 
 function changeLink() {
 
-    obj.file.className = "hidden";
-    obj.link.className = "make_link";
+    obj.file.className = "make_file";
+    obj.link.className = "hidden";
     obj.text.className = "hidden";
 
     obj.file_icon.className = "icon right";
