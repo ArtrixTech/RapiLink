@@ -15,7 +15,7 @@ www_jump_blueprint = Blueprint('jump', __name__, template_folder="templates", st
 
 @www_jump_blueprint.route("/")
 def jump():
-    response_page = render_template('jump.html', target="http://rapi.link")
+    response_page = render_template('link_redirect.html', target="http://rapi.link")
 
     return response_page
 
@@ -78,7 +78,7 @@ def url_visit(alias):
 
                 if not response == "URL_NOT_EXIST":
                     print(response)
-                    response_page = render_template('jump.html', target=response)
+                    response_page = render_template('link_redirect.html', target=response)
                 else:
                     response_page = render_template('error_code/404.html')
                 print("[url_visit]OK")
@@ -103,5 +103,40 @@ def url_visit(alias):
                     return response
 
             return "None"
+    else:
+        return render_template('error_code/404.html')
+
+
+@front_blueprint.route('/rd/<alias>')
+def by_page(alias):
+    print("[Url-Visit] " + alias)
+
+    if is_alias_exist(alias):
+        visit_type = alias_type(alias)
+        if visit_type == "URL":
+            try:
+                response = requests.get("http://api.rapi.link/get_url", params={"alias": alias}, timeout=5).text
+                print("[url_visit]" + alias + " -> " + response)
+
+                if not response == "URL_NOT_EXIST":
+                    print(response)
+                    response_page = render_template('link_redirect.html', target=response)
+                else:
+                    response_page = render_template('error_code/404.html')
+                print("[url_visit]OK")
+
+            except requests.ReadTimeout:
+                response_page = render_template('error_code/503.html')
+
+            return response_page
+        elif visit_type == "FILE":
+            print("    Type: File")
+            import os
+
+            batch_id = all_files.get_by_alias(alias)[0].batch_id
+            root = file_process.get_location_by_batch_id(batch_id)
+            print("    Location: " + root)
+
+            return render_template('file_redirect.html',batch_id)
     else:
         return render_template('error_code/404.html')
