@@ -137,6 +137,6 @@ def by_page(alias):
             root = file_process.get_location_by_batch_id(batch_id)
             print("    Location: " + root)
 
-            return render_template('file_redirect.html',batch_id)
+            return render_template('file_redirect.html', batchID=batch_id)
     else:
         return render_template('error_code/404.html')
