@@ -15,3 +15,4 @@ function changeBG() {
     apiGet("bing_url", "", setBG);
 
 }
+

@@ -1,85 +1,47 @@
-<html>
+</html>
+
+<html style="overflow-x: hidden;overflow-y: hidden;">
 
 <head>
-    <title>RapiLink - 404</title>
-    <link rel="stylesheet" type="text/css" href="{{ url_for('front.static', filename='css/error_code/404.css') }}">
+    <title>RapiLink - Your data transition center</title>
+
+    <link rel="stylesheet" type="text/css" href="{{ url_for('front.static', filename='css/main.css') }}">
+
+    <link rel="shortcut icon" href="{{ url_for('front.static', filename='favicon_small.png') }}">
+
     <link href='https://fonts.googleapis.com/css?family=Work%20Sans' rel='stylesheet' type='text/css'>
 
-    <style>
-        body {
-            width: 100%;
-            margin: 0;
-            overflow: hidden;
-        }
+    <script src="{{ url_for('front.static', filename='js/jquery-3.3.1.min.js') }}"></script>
+    <script src="{{ url_for('front.static', filename='js/utils/color-thief.min.js') }}"></script>
 
-        /* Demo Buttons Style */
+    <script src="{{ url_for('front.static', filename='js/utils/utils.js') }}"></script>
+    <script src="{{ url_for('front.static', filename='js/bing_bg.js') }}"></script>
 
-        .codrops-demos {
-            font-size: 0.8em;
-            text-align: center;
-            position: absolute;
-            z-index: 99;
-            width: 96%;
-        }
+    <link rel="stylesheet" type="text/css" href="{{ url_for('front.static', filename='css/message/bar.css') }}">
+    <script src="{{ url_for('front.static', filename='js/animations/message/bar.js') }}"></script>
 
-        .codrops-demos a {
-            display: inline-block;
-            margin: 0.35em 0.1em;
-            padding: 0.5em 1.2em;
-            outline: none;
-            text-decoration: none;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            font-weight: 700;
-            border-radius: 2px;
-            font-size: 110%;
-            border: 2px solid transparent;
-            color: #fff;
-        }
+    <meta name="batch_id" content="{{batch_id}}">
 
-        .codrops-demos a:hover,
-        .codrops-demos a.current-demo {
-            border-color: #383a3c;
-        }
-    </style>
 </head>
 
-<body>
+<body id="b" style="background-repeat: no-repeat;background-size: 100%;">
 
-    <canvas id="canv"></canvas>
-    <style>
-        #canv {
-            position: absolute;
-            z-index: 0;
-            top: 0;
-            left: 0;
-        }
-    </style>
+    <img id="bgimg" src="" class="hidden" crossorigin="https://cn.bing.com">
 
-    <script src="{{ url_for('front.static', filename='js/animations/stars_no_mouse.js') }}"></script>
+    <script>
+        changeBG();
+    </script>
 
-    <a href="https://rapi.link" class="unselective">
+    <a href="https://rapi.link">
         <img src="{{ url_for('front.static', filename='img/site_branding/logo_small.png') }}" class="logo_small">
     </a>
 
-    <div class="label_404 animation blank unselective" id="label_404">404</div>
-    <div class="label_not_found animation blank unselective" id="label_not_found">Page Not Found</div>
+    <div class="rplnk_oval_box" id="rplnk_foreground_box">
 
-    <script src="{{ url_for('front.static', filename='js/jquery-3.3.1.min.js') }}"></script>
-    <script>
-        function showAnimation() {
-            label_404 = document.getElementById("label_404");
-            label_not_found = document.getElementById("label_not_found");
 
-            label_404.classList.remove("blank");
-            label_not_found.classList.remove("blank");
-        }
-        setTimeout(showAnimation, 100);
-    </script>
 
-    <script>
-        var batchID="{{batch_id}}";
-    </script>
+    </div>
+
 </body>
 
 <footer>
@@ -96,7 +58,6 @@
     </div>
 
 </footer>
-
 
 
 </html>
