@@ -1,4 +1,4 @@
-body{
+body {
 
     width: 100%;
     margin: 0;
@@ -9,42 +9,45 @@ body{
 
 }
 
-.rplnk_oval_box{
+.rplnk_oval_box {
+
+    height: 100%;
+    background: white;
+    top: 520px;
+    border-radius: 80% 80% 0 0;
+    position: fixed;
+    left: -50%;
+    opacity: 0.98;
+    /*
     height: 102%;
-    background-image: white;
+    background: white;
     position: absolute;
     top: 0;
-    border-radius: 0 0 80% 70%;
+    border-radius: 80% 70% 0 0;
     width: 2000;
     box-shadow: 0 4px 98px #34146742;
-    left: -486px;
+    left: -486px;*/
 }
 
-
-
-
-
-
-
-.blank{
+.blank {
     opacity: 0;
-    transform: scale(0.9,0.9);
+    transform: scale(0.9, 0.9);
 }
 
-.animation{
-    transition: transform cubic-bezier(0, 0, 0.43, 0.99) 0.75s,opacity cubic-bezier(0, 0, 0.35, 1.01) 0.75s;
+.animation {
+    transition: transform cubic-bezier(0, 0, 0.43, 0.99) 0.75s, opacity cubic-bezier(0, 0, 0.35, 1.01) 0.75s;
 }
 
 .copyright {
     color: #fadddd;
     font-family: Work Sans;
     font-size: 12px;
-    text-shadow: 0px 3px 31px #e88687cf;
+    /*text-shadow: 0px 3px 31px #e88687cf;*/
     top: -31%;
     position: relative;
 }
 
-.unselective{
+.unselective {
 
     -webkit-touch-callout: none;
     -webkit-user-select: none;
@@ -55,7 +58,7 @@ body{
 
 }
 
-.logo_small{
+.logo_small {
 
     width: 130px;
     left: 28px;
@@ -64,8 +67,8 @@ body{
 
 }
 
-.label_404{
-    
+.label_404 {
+
     color: white;
     font-family: Work Sans;
     font-size: 190;
@@ -75,7 +78,7 @@ body{
 
 }
 
-.label_not_found{
+.label_not_found {
 
     color: white;
     font-family: Work Sans;
@@ -85,4 +88,38 @@ body{
     top: 23%;
     position: relative;
 
+}
+
+body {
+    /*background-image: linear-gradient(-45deg, #FFC796 0%, #FF6B95 100%);*/
+    width: 100%;
+    margin: 0;
+    overflow: hidden;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+::selection {
+    background: rgba(0, 0, 0, 0.116);
+}
+
+.unselective {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.hidden {
+    display: none;
+}
+
+.logo_small {
+    width: 130px;
+    left: 28px;
+    top: 19px;
+    position: absolute;
 }
