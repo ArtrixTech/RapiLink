@@ -9,24 +9,67 @@ body {
 
 }
 
-.rplnk_main_box {
+.rplnk-main-box {
 
     height: 100%;
     background: white;
     top: 520px;
 
     position: fixed;
-    left: -50%;
+    left: -150%;
     opacity: 0.98;
 
     transition: border-radius cubic-bezier(0, 0, 0.43, 0.99) 0.75s, color cubic-bezier(0, 0, 0.43, 0.99) 0.75s, opacity cubic-bezier(0, 0, 0.35, 1.01) 0.75s;
 
 }
 
-.rplnk_oval_box {
-
+.rplnk-oval-box {
     border-radius: 80% 80% 0 0;
-    
+}
+
+.rplnk-large-btn {
+    top: 68;
+    position: relative;
+}
+
+#rplnk-file-type-icon {
+    font-size: 152;
+    color: white;
+    transition: all 0.75s;
+    /*padding: 24px;
+    border-radius: 24px;*/
+    opacity: 0.9;
+}
+
+.rplnk-file-info-box {
+    position: relative;
+    top: 100;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+#rplnk-file-name {
+    font-family: Work Sans, Microsoft Yahei UI Light;
+    font-size: 32px;
+    color: white;
+    position: relative;
+    top: 60px;
+}
+
+.rplnk-file-info-size-badge {
+    background: transparent;
+    color: white;
+    top: -3px;
+    left: 5px;
+    font-family: Work Sans, Microsoft Yahei UI Light;
+}
+
+.rplnk-download-prompt {
+    color: white;
+    font-family: Work Sans;
+    font-weight: 500;
+    position: relative;
+    top: -1px;
 }
 
 .blank {
@@ -40,7 +83,7 @@ body {
 
 .copyright {
     color: #333333;
-    font-family: Work Sans;
+    font-family: Work Sans, Microsoft Yahei UI Light;
     font-size: 12px;
     /*text-shadow: 0px 3px 31px #e88687cf;*/
     top: -31%;

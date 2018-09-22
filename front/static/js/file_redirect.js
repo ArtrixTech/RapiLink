@@ -1,20 +1,100 @@
-function oval_box_resize() {
+function box_resize() {
 
-    $("#rplnk_foreground_box").width(2 * $(window).width());
-    $("#rplnk_foreground_box").css("top", (0.55 * $(window).height()));
+    $("#rplnk-foreground-box").width(4 * $(window).width());
+    $("#rplnk-foreground-box").css("top", (0.79 * $(window).height()));
+    $("#rplnk-download-btn").css("top", (0.05 * $(window).height()));
+    $(".rplnk-file-info-box").css("top", (0.31 * $(window).height()));
 
 
 }
 
+
 function themeColorChange() {
 
-    $("#copyright").css("color", themeColor);
+    $("#footer_copyright").css("color", themeColor);
+    $("#rplnk-download-btn").css("background", themeColor);
+
+    $("#rplnk-download-btn").css("box-shadow", "0px 23px 58px " + themeColorAlpha3.replace("0.79", "0.4").toString());
+    $("#rplnk-file-type-icon").css("text-shadow", "0px 23px 58px " + themeColorAlpha3.replace("0.79", "0.45").toString());
+    $("#rplnk-file-name").css("text-shadow", "0px 14px 36px " + themeColorAlpha3.replace("0.79", "1").toString());
+
+
+}
+
+function fileInfoUpdate() {
+
+    detectFileType();
+    $("#rplnk-file-name").text(file_name);
+    $("#rplnk-download-btn").click(function to_download() {
+        window.location.href = "https://rapi.link/download?batch_id=" + batch_id;
+    })
+
+}
+
+function detectFileType() {
+
+    var deco = file_name.split(".").pop();
+
+    var icon_type = "icon-file";
+
+    switch (deco) {
+
+        case "jpg":
+            icon_type = "icon-image";
+            break;
+        case "png":
+            icon_type = "icon-image";
+            break;
+        case "psd":
+            icon_type = "icon-image";
+            break;
+        case "jpeg":
+            icon_type = "icon-image";
+            break;
+        case "gif":
+            icon_type = "icon-image";
+            break;
+        case "bmp":
+            icon_type = "icon-image";
+            break;
+
+        case "mp4":
+            icon_type = "icon-video";
+            break;
+        case "avi":
+            icon_type = "icon-video";
+            break;
+        case "rmvb":
+            icon_type = "icon-video";
+            break;
+        case "mov":
+            icon_type = "icon-video";
+            break;
+
+        case "mp3":
+            icon_type = "icon-music";
+            break;
+        case "flac":
+            icon_type = "icon-music";
+            break;
+        case "aac":
+            icon_type = "icon-music";
+            break;
+        case "wav":
+            icon_type = "icon-music";
+            break;
+
+    }
+
+    $("#rplnk-file-type-icon").addClass(icon_type);
+
+    //alert(icon_type)
 
 }
 
 var batch_id, info_loaded, file_name, file_size, time_remain, last_refreshed_time;
 
-function analyze_file() {
+function analyze_file(target_function) {
 
     function render_file_info(data) {
 
@@ -24,6 +104,8 @@ function analyze_file() {
         time_remain = data_json["time_remain"]
         info_loaded = true;
         last_refreshed_time = new Date().getTime();
+
+        target_function();
 
         setInterval(update_time_remain, 250)
 
@@ -45,4 +127,19 @@ function analyze_file() {
 
 }
 
-$(window).resize(oval_box_resize);
+function registerEvents() {
+    $(window).resize(box_resize);
+    $("#background-cover").hover(function blur() {
+        $("#background-cover").css("filter", "blur(6px) brightness(60%)");
+    })
+    $("#rplnk-file-info-box").hover(function blur() {
+        $("#background-cover").css("filter", "blur(6px) brightness(60%)");
+    })
+    $("#background-cover").mouseleave(function unBlur() {
+        $("#background-cover").css("filter", "blur(0) brightness(90%)")
+    })
+    $("#rplnk-file-info-box").mouseleave(function unBlur() {
+        $("#background-cover").css("filter", "blur(0) brightness(90%)")
+    })
+
+}

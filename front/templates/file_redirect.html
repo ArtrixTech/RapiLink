@@ -5,9 +5,9 @@
 <head>
     <title>RapiLink - Your data transition center</title>
 
+    <link rel="stylesheet" type="text/css" href="{{ url_for('front.static', filename='layui/css/layui.css') }}">
     <script src="{{ url_for('front.static', filename='js/jquery-3.3.1.min.js') }}"></script>
     <link rel="stylesheet" type="text/css" href="{{ url_for('front.static', filename='css/file_redirect.css') }}">
-    <script src="{{ url_for('front.static', filename='js/file_redirect.js') }}"></script>
 
     <link rel="shortcut icon" href="{{ url_for('front.static', filename='favicon_small.png') }}">
 
@@ -23,31 +23,58 @@
 
     <meta name="batch_id" content="{{batch_id}}">
 
+
+    <script src="{{ url_for('front.static', filename='layui/layui.js') }}"></script>
+
+    <link rel="stylesheet" type="text/css"
+          href="{{ url_for('front.static', filename='iconfont/file_redirect/iconfont.css') }}">
+
+    <script src="{{ url_for('front.static', filename='js/file_redirect.js') }}"></script>
+
+
 </head>
 
-<body id="b" style="background-repeat: no-repeat;background-size: 100%;">
+<body style="background-repeat: no-repeat;background-size: 100%;">
+
+<div id="background-cover"
+     style="transition: all 0.35s;width:100%;height:100%;position:fixed;background-repeat: no-repeat;background-size: 100%;"></div>
 
     <img id="bgimg" src="" class="hidden" crossorigin="https://cn.bing.com">
 
     <script>
         changeBackground();
         fetchColor(themeColorChange);
-        analyze_file();
+        analyze_file(fileInfoUpdate);
     </script>
 
     <a href="https://rapi.link">
         <img src="{{ url_for('front.static', filename='img/site_branding/logo_small.png') }}" class="logo_small">
     </a>
 
-    <div class="rplnk_main_box rplnk_oval_box" id="rplnk_foreground_box">
-       
+<div class="rplink-box rplnk-file-info-box" id="rplnk-file-info-box">
+
+    <i class="iconfont" id="rplnk-file-type-icon"></i>
+    <p id="rplnk-file-name">Loading...</p>
+
+</div>
+
+<div class="rplnk-main-box rplnk-oval-box" id="rplnk-foreground-box">
+
+    <button class="layui-btn layui-btn-radius layui-btn-lg rplnk-large-btn" id="rplnk-download-btn"
+            style="background:white;">
+        <i class="iconfont icon-download" style="color:white;"></i>
+        <span class="rplnk-download-prompt" style="color:white;">Download</span>
+        <span class="layui-badge-rim rplnk-file-info-size-badge">10.63MB</span>
+    </button>
+
 
 
     </div>
 
-    <script>
-        oval_box_resize();
-    </script>
+<script>
+    box_resize();
+    registerEvents();
+</script>
 
 </body>
 
@@ -61,7 +88,9 @@
         }
     </style>
     <div class="footer_box">
-        <div class="copyright unselective animation" id="copyright">Copyright © 2018 Artrix Technologies CO.,LTD All rights
+        <div class="copyright unselective animation" id="footer_copyright">Copyright © 2018 Artrix Technologies CO.,LTD
+            All
+            rights
             reserved.
         </div>
     </div>

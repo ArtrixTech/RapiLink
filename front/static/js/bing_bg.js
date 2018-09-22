@@ -9,7 +9,8 @@ function changeBackground() {
         var model = "url(%rep%)";
         model = model.replace("%rep%", "\"" + url + "\"");
 
-        $("#b").css("background", model);
+        $("body").css("background", model);
+        $("#background-cover").css("background", model);
         $("#bgimg").attr("src", "/bing_img?u=" + url);
 
     }
@@ -62,9 +63,9 @@ function fetchColor(targetFunction) {
         targetFunction();
 
     } catch (err) {
-       // colorThief.image.removeCanvas();
+        // colorThief.image.removeCanvas();
         console.log("Pics are still loading ...")
-        //console.log(err)
+        console.log(err)
 
         setTimeout(fetchColor, 200, targetFunction);
     }
