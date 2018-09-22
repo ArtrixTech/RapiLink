@@ -221,9 +221,11 @@ def upload():
         resp.headers['Access-Control-Allow-Origin'] = '*'
         return resp
 
+
 @back_blueprint.route('/file_info')
 def file_info():
     import os
+    from utils import platform
     batch_id = request.values.get("batch_id")
 
     if batch_id:
@@ -242,9 +244,13 @@ def file_info():
         assert isinstance(file_obj, FileLink)
 
         time_remain = int(file_obj.time_remain())
-        file_size = int(os.path.getsize(root + "\\" + file_name) / 1024)
+
+        if platform.is_linux():
+            file_size = int(os.path.getsize(root + "/" + file_name) / 1024)
+        else:
+            file_size = int(os.path.getsize(root + "\\" + file_name) / 1024)
 
         return json.dumps(
-            {"file_name": file_name, "time_remain": time_remain, "file_size": file_size, "files_count": len(files)})
+            {"file_name": file_name, "time_remain": time_remain, "file_size": file_size, "files_count": files_count})
 
     return json.dumps({"error": "batch_id not provided"})
