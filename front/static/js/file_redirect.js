@@ -166,18 +166,20 @@ function analyze_file(target_function) {
 function blur() {
     $("#background-cover").css("filter", "blur(6px) brightness(60%)");
 }
+function btnShow(){
+    $("#rplnk-download-btn").removeClass("hidden");
+    $("#rplnk-download-btn").addClass("layui-btn");
+    $("#rplnk-download-btn").addClass("layui-btn-lg");
+    $("#rplnk-download-btn").addClass("layui-btn-radius");
+    $("#rplnk-download-btn").addClass("rplnk-large-btn");
+    $("#rplnk-download-btn").addClass("layui-anim-upbit");
+}
 
 function registerEvents() {
     $(window).resize(box_resize);
     document.getElementById("bd").onload = function t() {
-        setTimeout(blur, 250);
-        $("#rplnk-download-btn").removeClass("hidden");
-        $("#rplnk-download-btn").addClass("layui-btn");
-        $("#rplnk-download-btn").addClass("layui-btn-lg");
-        $("#rplnk-download-btn").addClass("layui-btn-radius");
-        $("#rplnk-download-btn").addClass("rplnk-large-btn");
-        $("#rplnk-download-btn").addClass("layui-anim-upbit");
-       
+        setTimeout(blur, 650);
+        setTimeout(btnShow, 450);
     };
     
 
