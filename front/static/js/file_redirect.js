@@ -1,7 +1,7 @@
 function box_resize() {
 
     $("#rplnk-foreground-box").width(4 * $(window).width());
-    $("#rplnk-foreground-box").css("top", (0.78 * $(window).height()));
+    $("#rplnk-foreground-box").css("top", (0.56 * $(window).height()));
     $("#rplnk-download-btn").css("top", (0.06 * $(window).height()));
     $(".rplnk-file-info-box").css("top", (0.2825 * $(window).height()));
 
@@ -10,8 +10,10 @@ function box_resize() {
 
 function themeColorChange() {
 
-    $("#footer_copyright").css("color", themeColor);
-    $("#rplnk-download-btn").css("background", themeColor);
+    $("#rplnk-icon-download").css("color", themeColor);
+    $("#rplnk-download-prompt").css("color", themeColor);
+    $("#rplnk-file-info-size-badge").css("color", themeColor);
+    $("#rplnk-file-info-size-badge").css("border-color", themeColor);
 
     $("#rplnk-download-btn").css("box-shadow", "0px 23px 58px " + themeColorAlpha3.replace("0.79", "0.4").toString());
     $("#rplnk-file-type-icon").css("text-shadow", "0px 23px 58px " + themeColorAlpha3.replace("0.79", "0.4").toString());
@@ -161,19 +163,64 @@ function analyze_file(target_function) {
 
 }
 
+function blur() {
+    $("#background-cover").css("filter", "blur(6px) brightness(60%)");
+}
+
 function registerEvents() {
     $(window).resize(box_resize);
+    document.getElementById("bd").onload = function t() {
+        setTimeout(blur, 250);
+        $("#rplnk-download-btn").removeClass("hidden");
+        $("#rplnk-download-btn").addClass("layui-btn");
+        $("#rplnk-download-btn").addClass("layui-btn-lg");
+        $("#rplnk-download-btn").addClass("layui-btn-radius");
+        $("#rplnk-download-btn").addClass("rplnk-large-btn");
+        $("#rplnk-download-btn").addClass("layui-anim-upbit");
+       
+    };
+    
+
+    /*
     $("#background-cover").hover(function blur() {
         $("#background-cover").css("filter", "blur(6px) brightness(60%)");
     })
     $("#rplnk-file-info-box").hover(function blur() {
         $("#background-cover").css("filter", "blur(6px) brightness(60%)");
     })
+    $("#rplnk-foreground-box").hover(function blur() {
+        $("#background-cover").css("filter", "blur(6px) brightness(60%)");
+    })
+
+    $("#background-cover").mouseUp(function blur() {
+        $("#background-cover").css("filter", "blur(6px) brightness(60%)");
+    })
+    $("#rplnk-file-info-box").mouseUp(function blur() {
+        $("#background-cover").css("filter", "blur(6px) brightness(60%)");
+    })
+    $("#rplnk-foreground-box").mouseUp(function blur() {
+        $("#background-cover").css("filter", "blur(6px) brightness(60%)");
+    })
+
     $("#background-cover").mouseleave(function unBlur() {
         $("#background-cover").css("filter", "blur(0) brightness(90%)")
     })
     $("#rplnk-file-info-box").mouseleave(function unBlur() {
         $("#background-cover").css("filter", "blur(0) brightness(90%)")
     })
+    $("#rplnk-foreground-box").mouseleave(function unBlur() {
+        $("#background-cover").css("filter", "blur(0) brightness(90%)")
+    })
+
+    $("#background-cover").mouseDown(function unBlur() {
+        alert(1)
+        $("#background-cover").css("filter", "blur(0) brightness(90%)")
+    })
+    $("#rplnk-file-info-box").mouseDown(function unBlur() {
+        $("#background-cover").css("filter", "blur(0) brightness(90%)")
+    })
+    $("#rplnk-foreground-box").mouseDown(function unBlur() {
+        $("#background-cover").css("filter", "blur(0) brightness(90%)")
+    })*/
 
 }
