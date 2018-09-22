@@ -23,7 +23,10 @@ function fileInfoUpdate() {
 
     detectFileType();
     $("#rplnk-file-name").text(file_name);
-    $("#rplnk-file-info-size-badge").text(((file_size / 1024).toFixed(2)).toString() + "MB");
+
+    if (file_size >= 900) $("#rplnk-file-info-size-badge").text(((file_size / 1024).toFixed(2)).toString() + "MB");
+    else $("#rplnk-file-info-size-badge").text((file_size.toFixed(2)).toString() + "KB");
+
     $("#rplnk-download-btn").click(function to_download() {
         window.location.href = "http://rapi.link/download?batch_id=" + batch_id;
     })
