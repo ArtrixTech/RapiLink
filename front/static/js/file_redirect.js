@@ -1,7 +1,7 @@
 function box_resize() {
 
     $("#rplnk-foreground-box").width(4 * $(window).width());
-    $("#rplnk-foreground-box").css("top", (0.79 * $(window).height()));
+    $("#rplnk-foreground-box").css("top", (0.78 * $(window).height()));
     $("#rplnk-download-btn").css("top", (0.05 * $(window).height()));
     $(".rplnk-file-info-box").css("top", (0.31 * $(window).height()));
 
@@ -15,9 +15,8 @@ function themeColorChange() {
     $("#rplnk-download-btn").css("background", themeColor);
 
     $("#rplnk-download-btn").css("box-shadow", "0px 23px 58px " + themeColorAlpha3.replace("0.79", "0.4").toString());
-    $("#rplnk-file-type-icon").css("text-shadow", "0px 23px 58px " + themeColorAlpha3.replace("0.79", "0.45").toString());
+    $("#rplnk-file-type-icon").css("text-shadow", "0px 23px 58px " + themeColorAlpha3.replace("0.79", "0.4").toString());
     $("#rplnk-file-name").css("text-shadow", "0px 14px 36px " + themeColorAlpha3.replace("0.79", "1").toString());
-
 
 }
 
@@ -25,8 +24,9 @@ function fileInfoUpdate() {
 
     detectFileType();
     $("#rplnk-file-name").text(file_name);
+    $("#rplnk-file-info-size-badge").text(((file_size / 1024).toFixed(2)).toString() + "MB");
     $("#rplnk-download-btn").click(function to_download() {
-        window.location.href = "https://rapi.link/download?batch_id=" + batch_id;
+        window.location.href = "http://rapi.link/download?batch_id=" + batch_id;
     })
 
 }
@@ -82,6 +82,38 @@ function detectFileType() {
             break;
         case "wav":
             icon_type = "icon-music";
+            break;
+
+        case "doc":
+            icon_type = "icon-office";
+            break;
+        case "docx":
+            icon_type = "icon-office";
+            break;
+        case "xls":
+            icon_type = "icon-office";
+            break;
+        case "xlsx":
+            icon_type = "icon-office";
+            break;
+        case "ppt":
+            icon_type = "icon-office";
+            break;
+        case "pptx":
+            icon_type = "icon-office";
+            break;
+        case "wps":
+            icon_type = "icon-office";
+            break;
+
+        case "exe":
+            icon_type = "icon-exe";
+            break;
+        case "rar":
+            icon_type = "icon-exe";
+            break;
+        case "zip":
+            icon_type = "icon-exe";
             break;
 
     }
