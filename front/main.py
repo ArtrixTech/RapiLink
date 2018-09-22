@@ -7,10 +7,14 @@ import requests
 from back.main import is_alias_exist, alias_type, all_files
 from back import file_process
 
+from logger.log import Logger
+
 from bing_image.bing_image import get_bing_img_small
 
 front_blueprint = Blueprint('front', __name__, template_folder="templates", static_folder="static")
 www_jump_blueprint = Blueprint('jump', __name__, template_folder="templates", static_folder="static", subdomain="www")
+
+debug_logger = Logger(logger_name="frontend_main")
 
 
 @www_jump_blueprint.route("/")
@@ -65,7 +69,7 @@ def get_request():
     return False
 
 
-@front_blueprint.route('/<alias>')
+@front_blueprint.route('/straight/<alias>')
 def url_visit(alias):
     print("[Url-Visit] " + alias)
 
@@ -107,7 +111,7 @@ def url_visit(alias):
         return render_template('error_code/404.html')
 
 
-@front_blueprint.route('/rd/<alias>')
+@front_blueprint.route('/<alias>')
 def url_visit_test(alias):
     print("[Url-Visit] " + alias)
 
@@ -140,3 +144,28 @@ def url_visit_test(alias):
             return render_template('file_redirect.html', batch_id=batch_id)
     else:
         return render_template('error_code/404.html')
+
+
+@front_blueprint.route('/download')
+def download_by_batch_id():
+    import os
+    batch_id = request.values.get("batch_id")
+
+    if batch_id:
+        try:
+            root = file_process.get_file_root(batch_id)
+        except NotADirectoryError as e:
+            debug_logger.log(e)
+            return json.dumps({"error": "batch_id doesn't exist"})
+
+        print("[Backend Download] BatchID = " + batch_id)
+        for rt, dirs, files in os.walk(root):
+            for file in files:
+                response = make_response(
+                    send_from_directory(root, file, as_attachment=True, attachment_filename=file))
+                response.headers["Content-Disposition"] = "attachment; filename={}".format(
+                    file.encode().decode('latin-1'))
+                return response
+
+    return render_template('error_code/404.html')
+    # return json.dumps({"error": "batch_id not provided"})

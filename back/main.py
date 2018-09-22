@@ -167,11 +167,11 @@ def upload():
             return resp
 
         if len(alias) > 1000:
-            resp = "ALIAS_TOO_LONG"
+            resp = json.dumps({"error": "ALIAS_TOO_LONG"})
             return resp
 
         if file:
-            resp = "OK"
+
             params = {"ttl": 7200}
 
             if alias[0] == "$" and "$RPLNK-" in alias:
@@ -193,16 +193,17 @@ def upload():
 
             if is_alias_exist(alias):
                 print("    ##[FileUpload]AliasExist!")
-                resp = "ALIAS_EXIST"
+                resp = json.dumps({"ok": "false", "error": "ALIAS_EXIST"})
             else:
 
                 file.save(get_save_location(file.filename, batch_id))
                 f_link_obj = FileLink(alias, batch_id, ttl=params["ttl"])
                 all_files.add(f_link_obj)
                 print("    [FileUpload]File saved to " + get_save_location(file.filename, batch_id))
+                resp = json.dumps({"ok": "true"})
 
         else:
-            resp = "BAD"
+            resp = json.dumps({"ok": "false", "error": "BAD"})
 
         resp = make_response(resp)
         resp.headers['Access-Control-Allow-Origin'] = '*'
@@ -216,34 +217,9 @@ def upload():
         return resp
 
     else:
-        resp = make_response("503")
+        resp = make_response(json.dumps({"ok": "false", "error": "503 Server Down"}))
         resp.headers['Access-Control-Allow-Origin'] = '*'
-        return "NONE"
-
-
-@back_blueprint.route('/download')
-def download_by_batch_id():
-    import os
-    batch_id = request.values.get("batch_id")
-
-    if batch_id:
-        try:
-            root = file_process.get_file_root(batch_id)
-        except NotADirectoryError as e:
-            debug_logger.log(e)
-            return json.dumps({"error": "batch_id doesn't exist"})
-
-        print("[Backend Download] BatchID = " + batch_id)
-        for rt, dirs, files in os.walk(root):
-            for file in files:
-                response = make_response(
-                    send_from_directory(root, file, as_attachment=True, attachment_filename=file))
-                response.headers["Content-Disposition"] = "attachment; filename={}".format(
-                    file.encode().decode('latin-1'))
-                return response
-
-    return json.dumps({"error": "batch_id not provided"})
-
+        return resp
 
 @back_blueprint.route('/file_info')
 def file_info():

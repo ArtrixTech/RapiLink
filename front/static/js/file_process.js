@@ -162,7 +162,10 @@ function uploadFile() {
             if (result.status != 200) { //error  
                 console.log('Upload Failed!', result.status, result.statusText, result.response);
             } else if (result.readyState == 4) { //finished  
-                if (result.responseText == "OK") {
+
+                var json = JSON.parse(result.responseText);
+
+                if (json["ok"] == "true") {
                     console.log('Upload Succeed', result);
                     onError_File = false;
                     isOnFinish_File = true;
@@ -201,12 +204,12 @@ $("#file_input").bind('change', function () {
     if (files.length > 0) {
 
         var file_size = file.size / (1024 * 1024);
-        var max_size = 20; // Unit: MB
+        var max_size = 100; // Unit: MB
 
         if (file_size > max_size) {
             // Show file sizes
             showMessageBar("msg_bar",
-                "File too big ! Maximium is 20MB, Your file is " + file_size.toFixed(1) + "MB.",
+                "File too big ! Maximium is 100MB, Your file is " + file_size.toFixed(1) + "MB.",
                 "WARNING",
                 3000);
             document.getElementById("file_input").value = "";

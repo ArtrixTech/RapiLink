@@ -132,3 +132,42 @@ print(flask.request.method)
     else:
         print("BAD!!!!!!!!!!!!!!!!")
         return "NONE"
+
+
+
+
+
+
+
+
+
+
+
+
+   <button type="button" class="layui-btn" id="test1" lay-data="{url: 'http://api.rapi.link/upload', accept: 'file'},data: { } }">
+            <i class="layui-icon">&#xe67c;</i>上传图片
+        </button>
+
+        <script>
+            layui.use('upload', function () {
+                var upload = layui.upload;
+
+                //执行实例
+                var uploadInst = upload.render({
+                    elem: '#test1' //绑定元素
+                        ,
+                    url: 'http://api.rapi.link/upload',
+                    data: {
+                        "batch_id": "assdasd",
+                        "alias": "assss"
+                    } //上传接口
+                    ,
+                    done: function (res) {
+                        alert(res)
+                    },
+                    error: function () {
+                        //请求异常回调
+                    }
+                });
+            });
+        </script>
