@@ -1,14 +1,16 @@
 class Logger:
 
-    def __init__(self, location=None):
+    def __init__(self, logger_name="un_classified", location=None):
         from config import config
         import os
         if not location:
             location = config.get_log_location()
 
-        self._save_location = location
+        self._save_location = location + "\\" + logger_name
         if not os.path.exists(self._save_location):
             os.mkdir(self._save_location)
+
+        self.logger_name = logger_name
 
     def log4(self, data, type_text):
         import time
@@ -68,7 +70,7 @@ class Logger:
             except AttributeError:
                 inner_prompts.append("[No more data]")
 
-            file_name = time.strftime("%y%m%d[%H]", time.localtime())
+            file_name = "[" + self.logger_name + "] " + time.strftime("%y%m%d[%H]", time.localtime())
             content_to_write = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()) + ": [ " + type_text + " ] "
 
             if have_inner_prompts:
@@ -78,7 +80,7 @@ class Logger:
 
             with open(self._save_location + file_name + ".txt", mode="a") as file:
                 print("[Log-Written] " + content_to_write)
-                file.write(content_to_write)
+                file.writelines(content_to_write)
 
         else:
             raise AttributeError("Error Type Not Correct! String and Exception are allowed.", exception)

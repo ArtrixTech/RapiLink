@@ -1,15 +1,17 @@
 from flask import Blueprint
 from flask import request
 from flask import make_response
+from flask import send_from_directory, make_response
 
 from back.classes.class_ShortLink import ShortLink, ShortLinkPool
 from back.classes.class_FileLink import FileLink, FileLinkPool
 from back.user_system.user_manager import UserManager, User, Permission
 from back.user_system.classes.behaviors import *
 from back.file_process import get_save_location
+from back import file_process
 
+from logger.log import Logger
 from bing_image.bing_image import get_bing_url
-
 from utils import cut_string
 
 import json
@@ -19,6 +21,8 @@ back_blueprint = Blueprint('back', __name__, subdomain="api")
 all_urls = ShortLinkPool()
 all_files = FileLinkPool()
 user_manager = UserManager()
+
+debug_logger = Logger(logger_name="backend_main")
 
 
 def is_alias_exist(alias):
@@ -180,7 +184,6 @@ def upload():
                     command_name, command_data = command.split(":")
 
                     if command_name == "TTL":
-                        # try:
                         params["ttl"] = int(command_data)
 
             print("    [FileUpload]Get BatchID:" + batch_id)
@@ -196,7 +199,7 @@ def upload():
                 file.save(get_save_location(file.filename, batch_id))
                 f_link_obj = FileLink(alias, batch_id, ttl=params["ttl"])
                 all_files.add(f_link_obj)
-                print("    [FileUpload]File Saved TO " + get_save_location(file.filename, batch_id))
+                print("    [FileUpload]File saved to " + get_save_location(file.filename, batch_id))
 
         else:
             resp = "BAD"
@@ -209,10 +212,63 @@ def upload():
         print("[FileUpload]Handling OPTIONS")
         resp = make_response()
         resp.headers['Access-Control-Allow-Origin'] = '*'
-        print("    [FileUpload]" + str(resp))
+        # print("    [FileUpload]" + str(resp))
         return resp
 
     else:
         resp = make_response("503")
         resp.headers['Access-Control-Allow-Origin'] = '*'
         return "NONE"
+
+
+@back_blueprint.route('/download')
+def download_by_batch_id():
+    import os
+    batch_id = request.values.get("batch_id")
+
+    if batch_id:
+        try:
+            root = file_process.get_file_root(batch_id)
+        except NotADirectoryError as e:
+            debug_logger.log(e)
+            return json.dumps({"error": "batch_id doesn't exist"})
+
+        print("[Backend Download] BatchID = " + batch_id)
+        for rt, dirs, files in os.walk(root):
+            for file in files:
+                response = make_response(
+                    send_from_directory(root, file, as_attachment=True, attachment_filename=file))
+                response.headers["Content-Disposition"] = "attachment; filename={}".format(
+                    file.encode().decode('latin-1'))
+                return response
+
+    return json.dumps({"error": "batch_id not provided"})
+
+
+@back_blueprint.route('/file_info')
+def file_info():
+    import os
+    batch_id = request.values.get("batch_id")
+
+    if batch_id:
+        try:
+            root = file_process.get_file_root(batch_id)
+        except NotADirectoryError as e:
+            debug_logger.log(e)
+            return json.dumps({"error": "batch_id doesn't exist"})
+
+        files = [name for name in os.listdir(root) if os.path.isfile(os.path.join(root, name))]
+        files_count = len(files)
+
+        # First file only, prepared for multi files download
+        file_name = files[0]
+        file_obj = all_files.get_file_obj_by_batch_id(batch_id)[0]
+        assert isinstance(file_obj, FileLink)
+
+        time_remain = int(file_obj.time_remain())
+        file_size = int(os.path.getsize(root + "\\" + file_name) / 1024)
+
+        return json.dumps(
+            {"file_name": file_name, "time_remain": time_remain, "file_size": file_size, "files_count": len(files)})
+
+    return json.dumps({"error": "batch_id not provided"})

@@ -24,10 +24,11 @@ var themeColor = "#00000014",
     themeColorAlpha3 = "#00000014";
 
 function fetchColor(targetFunction) {
+
+    var colorThief = new ColorThief();
+
     try {
 
-
-        var colorThief = new ColorThief();
         var img = document.getElementById("bgimg");
         img.crossOrigin = "https://cn.bing.com";
 
@@ -61,8 +62,9 @@ function fetchColor(targetFunction) {
         targetFunction();
 
     } catch (err) {
+       // colorThief.image.removeCanvas();
         console.log("Pics are still loading ...")
-        console.log(err)
+        //console.log(err)
 
         setTimeout(fetchColor, 200, targetFunction);
     }

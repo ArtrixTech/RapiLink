@@ -32,20 +32,21 @@
     <script>
         changeBackground();
         fetchColor(themeColorChange);
+        analyze_file();
     </script>
 
     <a href="https://rapi.link">
         <img src="{{ url_for('front.static', filename='img/site_branding/logo_small.png') }}" class="logo_small">
     </a>
 
-    <div class="rplnk_oval_box" id="rplnk_foreground_box">
-
+    <div class="rplnk_main_box rplnk_oval_box" id="rplnk_foreground_box">
+       
 
 
     </div>
 
     <script>
-        oval_box_resize()
+        oval_box_resize();
     </script>
 
 </body>
@@ -60,7 +61,7 @@
         }
     </style>
     <div class="footer_box">
-        <div class="copyright unselective" id="copyright">Copyright © 2018 Artrix Technologies CO.,LTD All rights
+        <div class="copyright unselective animation" id="copyright">Copyright © 2018 Artrix Technologies CO.,LTD All rights
             reserved.
         </div>
     </div>

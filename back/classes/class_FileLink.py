@@ -80,7 +80,7 @@ class FileLinkPool:
                 return True
         return False
 
-    def get_by_alias(self, alias):
+    def get_file_obj_by_alias(self, alias):
 
         """
         - Get the ShortLink object by its alias
@@ -94,6 +94,34 @@ class FileLinkPool:
                 return obj, "OK"
         return None, "NOT_EXIST"
 
+    def get_file_obj_by_batch_id(self, batch_id):
+
+        """
+        - Get the ShortLink object by its alias
+        :param batch_id: str-object, the alias of target ShortLink object
+        :return: [0](ShortLink)found ShortLink object, [1](str)Status code
+        """
+
+        assert isinstance(batch_id, str)
+        for obj in self.all_files:
+            if batch_id == obj.batch_id:
+                return obj, "OK"
+        return None, "NOT_EXIST"
+
+    def get_batch_id_by_alias(self, alias):
+        assert isinstance(alias, str)
+        for obj in self.all_files:
+            if alias == obj.alias:
+                return obj.batch_id, "OK"
+        return None, "NOT_EXIST"
+
+    def get_alias_by_batch_id(self, batch_id):
+        assert isinstance(batch_id, str)
+        for obj in self.all_files:
+            if batch_id == obj.batch_id:
+                return obj.alias, "OK"
+        return None, "NOT_EXIST"
+
     def add(self, file_link_obj):
 
         """
@@ -105,7 +133,7 @@ class FileLinkPool:
         if isinstance(file_link_obj, FileLink):
 
             if self.is_exist_by_alias(file_link_obj.alias):
-                obj = self.get_by_alias(file_link_obj.alias)[0]
+                obj = self.get_file_obj_by_alias(file_link_obj.alias)[0]
                 assert isinstance(obj, FileLink)
                 if obj:
                     assert isinstance(obj, FileLink)

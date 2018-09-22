@@ -10,7 +10,7 @@ def upd_bing_links():
     # Bug backup: prevent requests in clearing the list to get blank content
 
     from logger.log import Logger
-    debug_logger = Logger()
+    debug_logger = Logger(logger_name="bing_refresh")
 
     print("[Bing-Image] Start Bing-Image URL Fetching...")
     bing_image.all_image_url = ["https://cn.bing.com/sa/simg/hpb/NorthMale_EN-US8782628354_1920x1080.jpg",

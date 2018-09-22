@@ -1,4 +1,5 @@
-import os, sys
+import os
+import sys
 import shutil
 
 
@@ -27,12 +28,23 @@ def get_save_location(file_name, batch_id):
         return "saved_files\\" + batch_id + "\\" + file_name
 
 
-def get_location_by_batch_id(batch_id):
+def get_file_root(batch_id):
+    """
+    - Return the file directory location by batch_id
+    :param batch_id: Batch ID of the file
+    :return: Directory in the name of this batch_id
+    """
     if "linux" in sys.platform:
-        return "saved_files/" + batch_id
+        if os.path.exists("saved_files/" + batch_id):
+            return "saved_files/" + batch_id
+        else:
+            raise NotADirectoryError("Directory Not Found", "saved_files/" + batch_id)
 
     else:
-        return "saved_files\\" + batch_id
+        if os.path.exists("saved_files\\" + batch_id):
+            return "saved_files\\" + batch_id
+        else:
+            raise NotADirectoryError("Directory Not Found", "saved_files\\" + batch_id)
 
 
 def kill_dir_by_batch_id(batch_id):

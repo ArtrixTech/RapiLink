@@ -91,8 +91,8 @@ def url_visit(alias):
             print("    Type: File")
             import os
 
-            batch_id = all_files.get_by_alias(alias)[0].batch_id
-            root = file_process.get_location_by_batch_id(batch_id)
+            batch_id = all_files.get_file_obj_by_alias(alias)[0].batch_id
+            root = file_process.get_file_root(batch_id)
             print("    Location: " + root)
             for rt, dirs, files in os.walk(root):
                 for file in files:
@@ -108,7 +108,7 @@ def url_visit(alias):
 
 
 @front_blueprint.route('/rd/<alias>')
-def by_page(alias):
+def url_visit_test(alias):
     print("[Url-Visit] " + alias)
 
     if is_alias_exist(alias):
@@ -133,8 +133,8 @@ def by_page(alias):
             print("    Type: File")
             import os
 
-            batch_id = all_files.get_by_alias(alias)[0].batch_id
-            root = file_process.get_location_by_batch_id(batch_id)
+            batch_id = all_files.get_file_obj_by_alias(alias)[0].batch_id
+            root = file_process.get_file_root(batch_id)
             print("    Location: " + root)
 
             return render_template('file_redirect.html', batch_id=batch_id)

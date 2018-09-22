@@ -3,6 +3,10 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+saved_files/
+.idea/
+logs/
+
 # Pycharm
 .idea/
 
