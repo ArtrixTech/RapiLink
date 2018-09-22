@@ -2,9 +2,8 @@ function box_resize() {
 
     $("#rplnk-foreground-box").width(4 * $(window).width());
     $("#rplnk-foreground-box").css("top", (0.78 * $(window).height()));
-    $("#rplnk-download-btn").css("top", (0.05 * $(window).height()));
-    $(".rplnk-file-info-box").css("top", (0.31 * $(window).height()));
-
+    $("#rplnk-download-btn").css("top", (0.06 * $(window).height()));
+    $(".rplnk-file-info-box").css("top", (0.275 * $(window).height()));
 
 }
 
