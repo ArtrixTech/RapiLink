@@ -178,8 +178,8 @@ function btnShow(){
 function registerEvents() {
     $(window).resize(box_resize);
     document.getElementById("bd").onload = function t() {
-        setTimeout(blur, 650);
-        setTimeout(btnShow, 450);
+        setTimeout(blur, 1150);
+        setTimeout(btnShow, 950);
     };
     
 

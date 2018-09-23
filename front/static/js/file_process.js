@@ -198,6 +198,8 @@ function uploadFile() {
 var inUploadProcess = false;
 var isFileFloatWindowFold = true;
 $("#file_input").bind('change', function () {
+
+
     var files = document.getElementById("file_input").files;
     var file = files[0];
     //alert(file);
@@ -217,14 +219,17 @@ $("#file_input").bind('change', function () {
         } else {
             isFileFloatWindowFold = false;
             isHoldFileIconLength = true;
-            updateFloatWindow_File();
-            updateProgressBar();
-
-            $("#file_input_span").text(file.name + " | Click to upload");
 
             // TODO: after finished, set this value to false;
             // Use for preventing double event-trigger
             inUploadProcess = true;
+
+            updateFloatWindow_File();
+            updateProgressBar();
+            fileIconUnhover();
+
+            $("#file_input_span").text(file.name + " | Click to upload");
+
         }
     } else {
         isHoldFileIconLength = false;
@@ -271,7 +276,6 @@ function updateProgressBar() {
     } else {
         if (onError_File) $("#file_icon").css("background", "linear-gradient(120deg, rgb(205, 81, 81) 0%, rgb(232, 99, 75) " + percentInt + "%, " + color + " " + percentInt + "%)");
         else $("#file_icon").css("background", "linear-gradient(120deg, #4b9ae8 0%, rgb(69, 124, 212) " + percentInt + "%, " + color + " " + percentInt + "%)");
-
     }
 
 }
@@ -288,6 +292,7 @@ function fileIconHover() {
 
     if (isHoldFileIconLength) {
         $("#file_icon").css("padding-right", p_right_fully_expand);
+        $("#file_input_span").css("color", "white");
     } else {
         $("#file_icon").css("padding-right", p_right_middle_expand);
     }
@@ -305,6 +310,8 @@ function fileIconUnhover() {
     // Var "isHoldFileIconLength" is in file_process.js
     if (isHoldFileIconLength) {
         $("#file_icon").css("padding-right", p_right_fully_expand);
+        $("#file_input_span").css("color", "white");
+        $("#file_input_span").css("left", "41");
     } else {
         $("#file_icon").css("padding-right", 16);
         $("#file_input_span").css("color", color);
