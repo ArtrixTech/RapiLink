@@ -24,7 +24,8 @@
 
     <script src="{{ url_for('front.static', filename='layui/layui.js') }}"></script>
 
-    <link rel="stylesheet" type="text/css" href="{{ url_for('front.static', filename='iconfont/file_redirect/iconfont.css') }}">
+    <link rel="stylesheet" type="text/css"
+          href="{{ url_for('front.static', filename='iconfont/file_redirect/iconfont.css') }}">
 
     <script src="{{ url_for('front.static', filename='js/file_redirect.js') }}"></script>
 
@@ -33,41 +34,42 @@
 
 <body id="bd" style="background-repeat: no-repeat;background-size: 100%;">
 
-    <div id="background-cover" style="transition: all 0.7s;width:100%;height:100%;position:fixed;background-repeat: no-repeat;background-size: 100%;"></div>
+<div id="background-cover"
+     style="transition: all 0.7s;width:100%;height:100%;position:fixed;background-repeat: no-repeat;background-size: 100%;"></div>
 
-    <img id="bgimg" src="" class="hidden" crossorigin="https://cn.bing.com">
+<img id="bgimg" src="" class="hidden" crossorigin="https://cn.bing.com">
 
-    <script>
-        changeBackground();
-        fetchColor(themeColorChange);
-        analyze_file(fileInfoUpdate);
-    </script>
+<script>
+    changeBackground();
+    fetchColor(themeColorChange);
+    analyze_file(fileInfoUpdate);
+</script>
 
-    <a href="https://rapi.link">
-        <img src="{{ url_for('front.static', filename='img/site_branding/logo_small.png') }}" class="logo_small">
-    </a>
+<a href="https://rapi.link">
+    <img src="{{ url_for('front.static', filename='img/site_branding/logo_small.png') }}" class="logo_small">
+</a>
 
-    <div class="rplink-box rplnk-file-info-box" id="rplnk-file-info-box">
+<div class="rplink-box rplnk-file-info-box" id="rplnk-file-info-box">
 
-        <i class="iconfont rplnk-color-anim" id="rplnk-file-type-icon"></i>
-        <p class="rplnk-color-anim" id="rplnk-file-name">Loading...</p>
+    <i class="iconfont rplnk-color-anim" id="rplnk-file-type-icon"></i>
+    <p class="rplnk-color-anim" id="rplnk-file-name">Loading...</p>
 
-    </div>
+</div>
 
-    <div class="rplnk-main-box rplnk-oval-box rplnk-color-anim" id="rplnk-foreground-box">
+<div class="rplnk-main-box rplnk-oval-box rplnk-color-anim" id="rplnk-foreground-box">
 
-        <button class="hidden layui-anim rplnk-color-anim" id="rplnk-download-btn" style="background:white;">
-            <i class="iconfont icon-download rplnk-color-anim" id="rplnk-icon-download"></i>
-            <span class="rplnk-download-prompt rplnk-color-anim" id="rplnk-download-prompt">Download Now</span>
-            <span class="layui-badge-rim rplnk-file-info-size-badge rplnk-color-anim" id="rplnk-file-info-size-badge">Loading</span>
-        </button>
+    <button class="hidden layui-anim rplnk-color-anim" id="rplnk-download-btn" style="background:white;">
+        <i class="iconfont icon-download rplnk-color-anim" id="rplnk-icon-download"></i>
+        <span class="rplnk-download-prompt rplnk-color-anim" id="rplnk-download-prompt">Download Now</span>
+        <span class="layui-badge-rim rplnk-file-info-size-badge rplnk-color-anim" id="rplnk-file-info-size-badge">Loading</span>
+    </button>
 
-    </div>
+</div>
 
-    <script>
-        boxResize();
-        registerEvents();
-    </script>
+<script>
+    boxResize();
+    registerEvents();
+</script>
 
 </body>
 
@@ -82,10 +84,7 @@
     </style>
     <div class="footer_box">
         <div class="copyright unselective animation rplnk-color-anim" id="footer_copyright">Copyright © 2018 Artrix
-            Technologies CO.,LTD
-            All
-            rights
-            reserved.
+            Technologies CO.,LTD All rights reserved. Background image provided by Bing.
         </div>
     </div>
 
