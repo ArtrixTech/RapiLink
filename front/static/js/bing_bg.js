@@ -6,7 +6,7 @@ function changeBackground() {
     function set(url) {
 
         backgroundLoaded = true;
-        var model = "url(%rep%)";
+        var model = "url(%rep%) 50% 50% /cover";
         model = model.replace("%rep%", "\"" + url + "\"");
 
         $("body").css("background", model);

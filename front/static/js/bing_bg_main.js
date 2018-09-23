@@ -2,7 +2,7 @@ function changeBG() {
 
     function setBG(url) {
 
-        var model = "url(%rep%)";
+        var model = "url(%rep%) 50% 50% /cover";
         model = model.replace("%rep%", "\"" + url + "\"");
 
         $("#b").css("background", model);
