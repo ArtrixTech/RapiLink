@@ -23,7 +23,7 @@ body {
     left: -150%;
     opacity: 0.98;
 
-    transition: border-radius cubic-bezier(0, 0, 0.43, 0.99) 0.75s, color cubic-bezier(0, 0, 0.43, 0.99) 0.75s, opacity cubic-bezier(0, 0, 0.35, 1.01) 0.75s;
+    transition: border-radius cubic-bezier(0, 0, 0.43, 0.99) 0.75s, color cubic-bezier(0, 0, 0.43, 0.99) 0.75s, opacity cubic-bezier(0, 0, 0.35, 1.01) 0.3s;
 
 }
 

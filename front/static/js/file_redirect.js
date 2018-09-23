@@ -1,4 +1,4 @@
-function box_resize() {
+function boxResize() {
 
     $("#rplnk-foreground-box").width(4 * $(window).width());
     $("#rplnk-foreground-box").css("top", (0.56 * $(window).height()));
@@ -28,10 +28,6 @@ function fileInfoUpdate() {
 
     if (file_size >= 900) $("#rplnk-file-info-size-badge").text(((file_size / 1024).toFixed(2)).toString() + "MB");
     else $("#rplnk-file-info-size-badge").text((file_size.toFixed(2)).toString() + "KB");
-
-    $("#rplnk-download-btn").click(function to_download() {
-        window.location.href = "http://rapi.link/download?batch_id=" + batch_id;
-    })
 
 }
 
@@ -124,8 +120,6 @@ function detectFileType() {
 
     $("#rplnk-file-type-icon").addClass(icon_type);
 
-    //alert(icon_type)
-
 }
 
 var batch_id, info_loaded, file_name, file_size, time_remain, last_refreshed_time;
@@ -161,12 +155,17 @@ function analyze_file(target_function) {
         "batch_id": batch_id
     }, render_file_info)
 
+    $("#rplnk-download-btn").click(function toDownload() {
+        window.location.href = "http://rapi.link/download?batch_id=" + batch_id;
+    })
+
 }
 
 function blur() {
     $("#background-cover").css("filter", "blur(6px) brightness(60%)");
 }
-function btnShow(){
+
+function btnShow() {
     $("#rplnk-download-btn").removeClass("hidden");
     $("#rplnk-download-btn").addClass("layui-btn");
     $("#rplnk-download-btn").addClass("layui-btn-lg");
@@ -175,54 +174,30 @@ function btnShow(){
     $("#rplnk-download-btn").addClass("layui-anim-upbit");
 }
 
+function btnHover() {
+    $("#rplnk-foreground-box").css("opacity", "0.85");
+}
+
+function btnUnhover() {
+    $("#rplnk-foreground-box").css("opacity", "1");
+}
+
 function registerEvents() {
-    $(window).resize(box_resize);
+
+    $(window).resize(boxResize);
+
     document.getElementById("bd").onload = function t() {
-        setTimeout(blur, 1150);
-        setTimeout(btnShow, 950);
+        setTimeout(blur, 750);
+        setTimeout(btnShow, 550);
     };
-    
 
-    /*
-    $("#background-cover").hover(function blur() {
-        $("#background-cover").css("filter", "blur(6px) brightness(60%)");
-    })
-    $("#rplnk-file-info-box").hover(function blur() {
-        $("#background-cover").css("filter", "blur(6px) brightness(60%)");
-    })
-    $("#rplnk-foreground-box").hover(function blur() {
-        $("#background-cover").css("filter", "blur(6px) brightness(60%)");
-    })
+    $("#rplnk-download-btn").mouseover(btnHover);
+    $("#rplnk-download-btn").mouseleave(btnUnhover);
 
-    $("#background-cover").mouseUp(function blur() {
-        $("#background-cover").css("filter", "blur(6px) brightness(60%)");
-    })
-    $("#rplnk-file-info-box").mouseUp(function blur() {
-        $("#background-cover").css("filter", "blur(6px) brightness(60%)");
-    })
-    $("#rplnk-foreground-box").mouseUp(function blur() {
-        $("#background-cover").css("filter", "blur(6px) brightness(60%)");
-    })
-
-    $("#background-cover").mouseleave(function unBlur() {
-        $("#background-cover").css("filter", "blur(0) brightness(90%)")
-    })
-    $("#rplnk-file-info-box").mouseleave(function unBlur() {
-        $("#background-cover").css("filter", "blur(0) brightness(90%)")
-    })
-    $("#rplnk-foreground-box").mouseleave(function unBlur() {
-        $("#background-cover").css("filter", "blur(0) brightness(90%)")
-    })
-
-    $("#background-cover").mouseDown(function unBlur() {
-        alert(1)
-        $("#background-cover").css("filter", "blur(0) brightness(90%)")
-    })
-    $("#rplnk-file-info-box").mouseDown(function unBlur() {
-        $("#background-cover").css("filter", "blur(0) brightness(90%)")
-    })
-    $("#rplnk-foreground-box").mouseDown(function unBlur() {
-        $("#background-cover").css("filter", "blur(0) brightness(90%)")
-    })*/
+    $("#rplnk-download-btn").mousedown(btnUnhover);
+    $("#rplnk-download-btn").mouseup(function goDownload() {
+        btnHover();
+        window.location.href = "http://rapi.link/download?batch_id=" + batch_id;
+    });
 
 }
