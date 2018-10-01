@@ -1,7 +1,7 @@
 from flask import Blueprint
 from flask import request
 from flask import make_response
-from flask import send_from_directory, make_response
+from flask import send_from_directory, make_response, send_file
 
 from back.classes.class_ShortLink import ShortLink, ShortLinkPool
 from back.classes.class_FileLink import FileLink, FileLinkPool
@@ -9,12 +9,14 @@ from back.user_system.user_manager import UserManager, User, Permission
 from back.user_system.classes.behaviors import *
 from back.file_process import get_save_location
 from back import file_process
+from back.utils import qr_generator
 
 from logger.log import Logger
 from bing_image.bing_image import get_bing_url
 from utils import cut_string
 
 import json
+from io import BytesIO
 
 back_blueprint = Blueprint('back', __name__, subdomain="api")
 
@@ -254,3 +256,21 @@ def file_info():
             {"file_name": file_name, "time_remain": time_remain, "file_size": file_size, "files_count": files_count})
 
     return json.dumps({"error": "batch_id not provided"})
+
+# http://api.rapi.link/qr_code?url=https://baidu.com&color={%22R%22:51,%22G%22:190,%22B%22:179,%22A%22:255}
+@back_blueprint.route('/qr_code')
+def qr_code():
+    # Color: RGBA
+    url, color = (request.values.get("url"), request.values.get("color"))
+
+    if url and color:
+        color_json = json.loads(color)
+
+        color_tuple = (int(color_json["R"]), int(color_json["G"]), int(color_json["B"]), int(color_json["A"]))
+        save_img_io = BytesIO()
+        qr_generator.gen_qr_code(url, color_tuple).save(save_img_io, format="PNG")
+
+        save_img_io.seek(0)
+
+        return send_file(save_img_io, mimetype='image/png', cache_timeout=0)
+    return json.dumps({"error": "arguments required"})
