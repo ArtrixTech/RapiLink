@@ -6,7 +6,12 @@ class Logger:
         if not location:
             location = config.get_log_location()
 
-        self._save_location = location + "\\" + logger_name
+        self._log_root_path = location
+        self._save_location = self._log_root_path + "\\" + logger_name
+
+        if not os.path.exists(self._log_root_path):
+            os.mkdir(self._log_root_path)
+
         if not os.path.exists(self._save_location):
             os.mkdir(self._save_location)
 
