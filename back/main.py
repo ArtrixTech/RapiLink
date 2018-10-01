@@ -257,6 +257,7 @@ def file_info():
 
     return json.dumps({"error": "batch_id not provided"})
 
+
 # http://api.rapi.link/qr_code?url=https://baidu.com&color={%22R%22:51,%22G%22:190,%22B%22:179,%22A%22:255}
 @back_blueprint.route('/qr_code')
 def qr_code():

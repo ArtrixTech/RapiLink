@@ -2,18 +2,6 @@ import qrcode
 from PIL import Image
 
 
-def targets(x, y):
-    yield (x, y)  # Center
-    yield (x + 1, y)  # Left
-    yield (x - 1, y)  # Right
-    yield (x, y + 1)  # Above
-    yield (x, y - 1)  # Below
-    yield (x + 1, y + 1)  # Above and to the right
-    yield (x + 1, y - 1)  # Below and to the right
-    yield (x - 1, y + 1)  # Above and to the left
-    yield (x - 1, y - 1)  # Below and to the left
-
-
 def replace_color(img, color_be_replaced, color_replacement):
     if isinstance(img, Image.Image):
 
