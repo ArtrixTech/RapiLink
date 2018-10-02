@@ -176,7 +176,9 @@ function uploadFile() {
                     $("#file_whole_link").val("https://rapi.link/" + $("#customize_link_input_file").val());
                     $("#progress_text").text("Finished!");
 
-                    $("#rplnk-qrcode-img").attr("src","http://api.rapi.link/qr_code?&color={%22R%22:51,%22G%22:190,%22B%22:179,%22A%22:255}")
+                    $("#rplnk-qrcode-img").attr("src", "http://api.rapi.link/qr_code?url=" 
+                    + "https://rapi.link/" + $("#customize_link_input_file").val() 
+                    + "&color={%22R%22:"+sourceColor[0]+",%22G%22:"+sourceColor[1]+",%22B%22:"+sourceColor[2]+",\"A\":255}")
 
                 } else {
                     error(result.responseText);
@@ -425,8 +427,8 @@ function aliasAvailable(result) {
         updateFloatWindow_File();
     } else {
         apiGet("alias_available", {
-                alias: $("#customize_link_input_file").val()
-            },
+            alias: $("#customize_link_input_file").val()
+        },
             function (data) {
                 aliasAvailable(data);
             });
@@ -434,3 +436,16 @@ function aliasAvailable(result) {
 
 
 };
+
+function qrcode_show(){
+    $("#rplnk-qrcode-img").removeClass("hidden");
+    $("#rplnk-qrcode-icon").addClass("hidden");
+}
+
+function qrcode_hide(){
+    $("#rplnk-qrcode-img").addClass("hidden");
+    $("#rplnk-qrcode-icon").removeClass("hidden");
+}
+
+$("#rplnk-qrcode-img").click(qrcode_hide)
+$("#rplnk-qrcode-icon").click(qrcode_show)

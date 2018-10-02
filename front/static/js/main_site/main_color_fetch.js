@@ -1,6 +1,7 @@
 var color = "#00000014",
     colorAlpha = "#00000014",
     colorAlpha2 = "#00000014";
+var sourceColor;
 
 function fetchColor(refresh = false) {
     try {
@@ -8,7 +9,7 @@ function fetchColor(refresh = false) {
         var img = document.getElementById("bgimg");
         img.crossOrigin = "https://cn.bing.com";
 
-        var sourceColor = colorThief.getColor(img);
+        sourceColor = colorThief.getColor(img);
         color = "rgb(" + sourceColor + ")";
         var deltaVal = -55,
             deltaVal2 = -10,

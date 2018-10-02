@@ -128,10 +128,25 @@ progress::-webkit-progress-bar { border-radius: 4px; }
     color:black;
     font-size: 24px;
     padding-left: 348px;
-    transition: filter cubic-bezier(0.18, 0.89, 0.32, 1.28) 0.2s;
+    transition: filter cubic-bezier(0.18, 0.89, 0.32, 1.28) 0.2s,display cubic-bezier(0.18, 0.89, 0.32, 1.28) 0.2s;
 
 }  
 
 #rplnk-qrcode-icon:hover{
     filter: brightness(1.12);
 } 
+
+#rplnk-qrcode-img{
+
+    position: relative;
+    width: 58px;
+    top: -30px;
+    left: 190px;
+    transition: filter cubic-bezier(0.18, 0.89, 0.32, 1.28) 0.2s,display cubic-bezier(0.18, 0.89, 0.32, 1.28) 0.2s;
+
+}  
+
+#rplnk-qrcode-img:hover{
+    filter: brightness(1.12);
+} 
+
