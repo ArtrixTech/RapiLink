@@ -175,6 +175,9 @@ function uploadFile() {
 
                     $("#file_whole_link").val("https://rapi.link/" + $("#customize_link_input_file").val());
                     $("#progress_text").text("Finished!");
+
+                    $("#rplnk-qrcode-img").attr("src","http://api.rapi.link/qr_code?&color={%22R%22:51,%22G%22:190,%22B%22:179,%22A%22:255}")
+
                 } else {
                     error(result.responseText);
                     onError_File = true;
@@ -379,7 +382,6 @@ function updateFloatWindow_File() {
 
         $("#file_message_bar_stage1").addClass("hidden");
         $("#file_message_bar_stage2").removeClass("hidden");
-
 
     } else {
 

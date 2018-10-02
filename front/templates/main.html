@@ -19,6 +19,8 @@
     <script src="{{ url_for('front.static', filename='js/main_site/main_color_fetch.js') }}"></script>
     <script src="{{ url_for('front.static', filename='js/main_site/bing_bg_main.js') }}"></script>
 
+    <link rel="stylesheet" type="text/css" href="{{ url_for('front.static', filename='iconfont/file_process/iconfont.css') }}">
+
     <link rel="stylesheet" type="text/css" href="{{ url_for('front.static', filename='css/link_process_animation.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ url_for('front.static', filename='css/message/bar.css') }}">
 
@@ -26,21 +28,21 @@
 
 <body id="b" style="background-repeat: no-repeat;background-size: 100%;">
 
-<img id="bgimg" src="" class="hidden" crossorigin="https://cn.bing.com">
+    <img id="bgimg" src="" class="hidden" crossorigin="https://cn.bing.com">
 
-<script>
+    <script>
         changeBG();
 
-</script>
+    </script>
 
-<script>
+    <script>
         //<canvas id="canv"></canvas>
         //<script src="{{ url_for('front.static', filename='js/animations/stars_no_mouse.js') }}">(/script) - Replace the () with <> Here!!!
 
-</script>
+    </script>
 
 
-<style>
+    <style>
         #canv {
             position: absolute;
             z-index: -1;
@@ -54,6 +56,8 @@
     <a href="https://rapi.link">
         <img src="{{ url_for('front.static', filename='img/site_branding/logo_small.png') }}" class="logo_small">
     </a>
+
+
 
     <div class="background_board"></div>
 
@@ -74,7 +78,7 @@
             <img class="icon" id="file_btn" src="{{ url_for('front.static', filename='img/link.png') }}">
         </a>
         <span class="label_for_btn" id="file_label">Link</span>
-        
+
         <!Block Hidden here>
         <a href="javascript:void(0)" onclick="changeText()" class="btn hidden" style="text-decoration-line: none;">
             <img class="icon" id="text_btn" src="{{ url_for('front.static', filename='img/text.png') }}">
@@ -98,7 +102,8 @@
                 </div>
 
 
-                <div id="file_hover_btn" onclick="uploadFile()" onmousedown="btnMouseDown()" onmouseup="btnMouseUp()" class="hidden"></div>
+                <div id="file_hover_btn" onclick="uploadFile()" onmousedown="btnMouseDown()" onmouseup="btnMouseUp()"
+                    class="hidden"></div>
 
             </div>
 
@@ -107,18 +112,23 @@
 
                 <div id="file_message_bar_stage1" class="">
                     <span class="float_window_label" id="customize_link_label">https://rapi.link/</span>
-                    <input class="customize_link_input" id="customize_link_input_file"
-                           placeholder="<Your Customized link>" onfocus="startTimer2()"
-                           onblur="stopTimer2()">
+                    <input class="customize_link_input" id="customize_link_input_file" placeholder="<Your Customized link>"
+                        onfocus="startTimer2()" onblur="stopTimer2()">
                     <div class="indicator good" id="indicator_file"></div>
                 </div>
 
                 <div id="file_message_bar_stage2" class="hidden">
-                    <span class="float_window_label_2"
-                          id="file_whole_link_label">The Link will be available for 2 hours</span>
+                    <span class="float_window_label_2" id="file_whole_link_label">The Link will be available for 2
+                        hours</span>
                     <input class="link_whole_link_label" id="file_whole_link" readonly="readonly" value="<Whole-Link>"
-                           onclick="this.select();">
+                        onclick="this.select();">
                     <div class="indicator finished" id="indicator_file_finished"></div>
+                    
+                    <div style="width:100%;position:relative;text-align:center;top:-33px;" id="icons-bar">
+                        <i class="iconfont-file-process icon-qrcode" id="rplnk-qrcode-icon"></i>
+                        <img id="rplnk-qrcode-img" src="">
+                    </div>
+
                 </div>
 
 
@@ -133,7 +143,8 @@
             <div class="round_bar bar_config1">
 
                 <input class="link_input" id="link_input" placeholder="https://rapi.link">
-                <div class="link_hover_btn" id="link_hover_btn" onclick="genLink()" onmousedown="btnMouseDown()" onmouseup="btnMouseUp()"></div>
+                <div class="link_hover_btn" id="link_hover_btn" onclick="genLink()" onmousedown="btnMouseDown()"
+                    onmouseup="btnMouseUp()"></div>
 
             </div>
 
@@ -142,14 +153,16 @@
 
                 <div id="f_window_bar1" class="">
                     <span class="float_window_label" id="customize_link_label">https://rapi.link/</span>
-                    <input class="customize_link_input" id="customize_link_input" placeholder="<Your Customized link>" onfocus="startTimer1()"
-                        onblur="stopTimer1()">
+                    <input class="customize_link_input" id="customize_link_input" placeholder="<Your Customized link>"
+                        onfocus="startTimer1()" onblur="stopTimer1()">
                     <div class="indicator good" id="indicator1"></div>
                 </div>
 
                 <div id="f_window_bar2" class="hidden">
-                    <span class="float_window_label_2" id="link_whole_link_label">The Link will be available for 2 hours</span>
-                    <input class="link_whole_link_label" id="link_whole_link" readonly="readonly" value="<Whole-Link>" onclick="this.select();">
+                    <span class="float_window_label_2" id="link_whole_link_label">The Link will be available for 2
+                        hours</span>
+                    <input class="link_whole_link_label" id="link_whole_link" readonly="readonly" value="<Whole-Link>"
+                        onclick="this.select();">
                     <div class="indicator finished" id="indicator2"></div>
                 </div>
 

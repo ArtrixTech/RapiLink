@@ -86,7 +86,7 @@ progress::-webkit-progress-bar { border-radius: 4px; }
 
 #indicator_file_finished {
     position: relative;
-    left: 79.7%;
+    left: 75.8%;
     margin-top: 5.4%;
 }
 
@@ -112,7 +112,7 @@ progress::-webkit-progress-bar { border-radius: 4px; }
     border: none;
     position: absolute;
     border-bottom: none;
-    width: 358px;
+    width: 340px;
     left: 15%;
     height: 26px;
     top: 50%;
@@ -122,3 +122,16 @@ progress::-webkit-progress-bar { border-radius: 4px; }
     font-family: Work Sans, Avenir, Ostrich Sans, Flexo Light, Microsoft Yahei UI Light;
     text-align: center;
 }
+
+#rplnk-qrcode-icon{
+
+    color:black;
+    font-size: 24px;
+    padding-left: 348px;
+    transition: filter cubic-bezier(0.18, 0.89, 0.32, 1.28) 0.2s;
+
+}  
+
+#rplnk-qrcode-icon:hover{
+    filter: brightness(1.12);
+} 

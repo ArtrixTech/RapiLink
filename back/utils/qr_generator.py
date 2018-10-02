@@ -13,8 +13,8 @@ def replace_color(img, color_be_replaced, color_replacement):
                 if px[0] == color_be_replaced[0]:
                     if px == color_be_replaced:
                         img.putpixel((x, y), color_replacement)
-                    else:
-                        img.putpixel((x, y), (255, 255, 255, 255))
+                else:
+                    img.putpixel((x, y), (255, 255, 255, color_replacement[3]))
 
         return img
 

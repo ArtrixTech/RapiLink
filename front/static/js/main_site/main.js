@@ -101,6 +101,7 @@ function colorChange() {
 
     $("#file_whole_link_label").css("color", color);
     $("#file_whole_link").css("color", color);
+    $("#rplnk-qrcode-icon").css("color", color);
 
     $("#file_input_div").css("background-color", "rgba(0,0,0,0)");
 
