@@ -121,6 +121,8 @@ progress::-webkit-progress-bar { border-radius: 4px; }
     color: #f5948f;
     font-family: Work Sans, Avenir, Ostrich Sans, Flexo Light, Microsoft Yahei UI Light;
     text-align: center;
+
+    z-index: 1;
 }
 
 #rplnk-qrcode-icon{
@@ -128,12 +130,13 @@ progress::-webkit-progress-bar { border-radius: 4px; }
     color:black;
     font-size: 24px;
     padding-left: 348px;
-    transition: filter cubic-bezier(0.18, 0.89, 0.32, 1.28) 0.2s,display cubic-bezier(0.18, 0.89, 0.32, 1.28) 0.2s;
-
+    transition: filter cubic-bezier(0.18, 0.89, 0.32, 1.28) 0.4s,display cubic-bezier(0.18, 0.89, 0.32, 1.28) 0.2s;
+    z-index: 0;
+    
 }  
 
 #rplnk-qrcode-icon:hover{
-    filter: brightness(1.12);
+    filter: brightness(1.2);
 } 
 
 #rplnk-qrcode-img{
@@ -142,7 +145,8 @@ progress::-webkit-progress-bar { border-radius: 4px; }
     width: 58px;
     top: -30px;
     left: 190px;
-    transition: filter cubic-bezier(0.18, 0.89, 0.32, 1.28) 0.2s,display cubic-bezier(0.18, 0.89, 0.32, 1.28) 0.2s;
+    transition: filter cubic-bezier(0.18, 0.89, 0.32, 1.28) 0.4s,display cubic-bezier(0.18, 0.89, 0.32, 1.28) 0.2s;
+    z-index: 0;
 
 }  
 
