@@ -1,4 +1,7 @@
 from gevent import monkey
+
+monkey.patch_all()
+
 from gevent.pywsgi import WSGIServer
 from geventwebsocket.handler import WebSocketHandler
 from flask import Flask
@@ -9,8 +12,6 @@ from threading import Thread
 from timing_task import timing_task
 import time
 
-monkey.patch_all()
-
 app = project_blueprints.bind_blueprints(Flask(__name__, static_folder="", static_url_path=None))
 app.url_map.default_subdomain = ''
 app.config.update({
@@ -19,11 +20,9 @@ app.config.update({
 })
 app.debug = True
 
-# app.run(host="45.76.102.168", port=80)
-
 print(app.url_map)
 
-http_server = WSGIServer(('10.0.0.233', 7774), app, handler_class=WebSocketHandler)
+http_server = WSGIServer(('10.0.0.233', 8866), app, handler_class=WebSocketHandler)
 
 
 def start():

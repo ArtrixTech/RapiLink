@@ -20,8 +20,6 @@ app.config.update({
 })
 app.debug = False
 
-# app.run(host="45.76.102.168", port=80)
-
 print(app.url_map)
 
 http_server = WSGIServer(('45.76.102.168', 80), app, handler_class=WebSocketHandler)
