@@ -1,6 +1,6 @@
-function LangDetector() { }
+function Lango() { }
 
-LangDetector.prototype.init = function i() {
+Lango.prototype.init = function i() {
 
     // Detect if the JQuery.cookie is exist
     function loadScript(loc) {
@@ -11,11 +11,25 @@ LangDetector.prototype.init = function i() {
     }
     !window.jQuery && loadScript("static/js/jquery-3.3.1.min.js");
     !window.jQuery.cookie && loadScript("static/js/jquery.cookie.js");
-    
+
 }
 
-LangDetector.prototype.getLang = function get() {
+Lango.prototype.lang_zh_cn=0;
+Lango.prototype.lang_en_us=1;
 
-    
+Lango.prototype.strToLang=function stl(str){
+
+    if (str=="ZH_CN")return lango.lang_zh_cn;
+    if (str=="EN_US")return lango.lang_en_us;
+
+    return lango.lang_zh_cn;
+
+}
+
+
+Lango.prototype.getLang = function get() {
+
+    var langFromCookie=$.cookie('lango_site_language');
+    if (langFromCookie) return this.strToLang(langFromCookie);
 
 }
