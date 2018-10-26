@@ -98,7 +98,11 @@ Lango.prototype.getLanguage = function () {
         console.log("Got Language[From Cookie]:" + this.language);
     }
     else {
-        this.getLangByGeoInfo();
+        if (this.Settings.autoDetectLanguageByCountryCode) this.getLangByGeoInfo();
+        else {
+            this.language = this.Settings.defualtLanguage;
+            console.log("Got Language[From Default Language]:" + this.language);
+        }
     }
 
 }
