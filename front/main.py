@@ -34,6 +34,11 @@ def bing_img():
 def hello():
     print(front_blueprint.root_path)
     return render_template('old/main.html')
+    
+
+@front_blueprint.route('/lango')
+def lango():
+    return render_template('lango_test.html')
 
 
 @front_blueprint.route('/')

@@ -1,0 +1,28 @@
+<html style="overflow-x: hidden;overflow-y: hidden;">
+
+<head>
+
+    <title>RapiLink - Your data transition center</title>
+
+    <script src="{{ url_for('front.static', filename='js/jquery-3.3.1.min.js') }}"></script>
+    <script src="{{ url_for('front.static', filename='js/jquery.cookie.js') }}"></script>
+    <script src="{{ url_for('front.static', filename='js/utils/lango.js') }}"></script>
+
+</head>
+
+<body>
+
+    <span lang_id="title">HelloWorld!</span>
+    <span lang_id="t2">HelloWorld!</span>
+    <span>HelloWorld!</span>
+
+    <script>
+
+        var l = new Lango();
+        l.init();
+
+    </script>
+</body>
+
+
+</html>
