@@ -9,16 +9,49 @@
     <script src="{{ url_for('front.static', filename='js/utils/lango.js') }}"></script>
 
     <link href="https://fonts.googleapis.com/css?family=Noto%20Sans" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Work%20Sans" rel="stylesheet" type="text/css">
 
+    <link rel="stylesheet" type="text/css" href="{{ url_for('front.static', filename='langotemp/iconfont/iconfont.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ url_for('front.static', filename='css/lango/lango.css') }}">
 
 </head>
 
 <body>
 
+    <a href="https://rapi.link">
+        <img src="{{ url_for('front.static', filename='img/site_branding/logo_small.png') }}" class="artrix_small">
+    </a>
+
     <div id="header">
-        <img src="{{ url_for('front.static', filename='langotemp/lango_logo.png') }}" class="logo_small">
-        <p lango_id="slogan" id="slogan">Lightweight i18n engine.</p>
+
+        <div style="left: 150px;position: relative;">
+            <div style="width: 100%;position: absolute;text-align: right;">
+                <i class="iconfont icon-earth" id="icon_earth"></i>
+            </div>
+            <img src="{{ url_for('front.static', filename='langotemp/lango_logo.png') }}" class="logo_small">
+            <div id="slogan_block">
+                <span lango_id="slogan1" id="slogan1">Lightweight</span>
+                <span lango_id="slogan2" id="slogan2">i18n engine.</span>
+            </div>
+
+
+
+        </div>
+
+
+
+
+
+    </div>
+
+
+
+    <div class="main_box">
+
+        <span lango_id="title">Content1!</span>
+        <span lango_id="test">Content2!</span>
+        <span>HelloWorld!</span>
+
     </div>
 
     <script>
@@ -29,14 +62,6 @@
 
 
     </script>
-
-    <div class="main_box">
-
-        <span lango_id="title">Content1!</span>
-        <span lango_id="test">Content2!</span>
-        <span>HelloWorld!</span>
-
-    </div>
 
 </body>
 

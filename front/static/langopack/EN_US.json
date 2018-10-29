@@ -4,8 +4,11 @@
         "title": {
             "text": "Lango.js"
         },
-        "slogan": {
-            "text": "Lightweight i18n engine."
+        "slogan1": {
+            "text": "Lightweight"
+        },
+        "slogan2": {
+            "text": " i18n engine."
         },
         "test": {
             "states": {

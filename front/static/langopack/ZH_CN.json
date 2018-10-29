@@ -3,9 +3,12 @@
     "contents": {
         "title": {
             "text": "Lango.js"
+        },  
+        "slogan1": {
+            "text": "轻量级"
         },
-        "slogan": {
-            "text": "轻量级网页国际化引擎"
+        "slogan2": {
+            "text": "网页国际化引擎"
         },
         "test": {
             "states": {

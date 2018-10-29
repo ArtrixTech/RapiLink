@@ -226,8 +226,8 @@ Lango.prototype.rerender = function () {
             var states = translateContent.states;
 
             // TODO: Parse the css part.
-            if (states) item.text(states[this.stateList[langoID]].text);
-            else item.text(translateContent.text);
+            if (states) item.html(states[that.stateList[langoID]].text.replace(" ", "&nbsp;"));
+            else item.html(translateContent.text.replace(" ", "&nbsp;"));
 
         }
     }
@@ -258,8 +258,8 @@ Lango.prototype.translate = function (lang) {
                     var states = translateContent.states;
 
                     // TODO: Parse the css part.
-                    if (states) item.text(states[that.stateList[langoID]].text);
-                    else item.text(translateContent.text);
+                    if (states) item.html(states[that.stateList[langoID]].text.replace(" ", "&nbsp;"));
+                    else item.html(translateContent.text.replace(" ", "&nbsp;"));
 
                 }
             }
