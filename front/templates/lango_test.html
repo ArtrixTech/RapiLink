@@ -1,4 +1,4 @@
-<html style="overflow-x: hidden;overflow-y: hidden;">
+<html style="overflow-x: hidden;">
 
 <head>
 
@@ -8,19 +8,18 @@
     <script src="{{ url_for('front.static', filename='js/jquery.cookie.js') }}"></script>
     <script src="{{ url_for('front.static', filename='js/utils/lango.js') }}"></script>
 
+    <link href="https://fonts.googleapis.com/css?family=Noto%20Sans" rel="stylesheet" type="text/css">
+
     <link rel="stylesheet" type="text/css" href="{{ url_for('front.static', filename='css/lango/lango.css') }}">
 
 </head>
 
 <body>
 
-    <a href="https://lango.artrix.tech">
+    <div id="header">
         <img src="{{ url_for('front.static', filename='langotemp/lango_logo.png') }}" class="logo_small">
-    </a>
-
-    <span lango_id="title">Content1!</span>
-    <span lango_id="test">Content2!</span>
-    <span>HelloWorld!</span>
+        <p lango_id="slogan" id="slogan">Lightweight i18n engine.</p>
+    </div>
 
     <script>
 
@@ -31,9 +30,14 @@
 
     </script>
 
-    <div id="main_box">
-        
+    <div class="main_box">
+
+        <span lango_id="title">Content1!</span>
+        <span lango_id="test">Content2!</span>
+        <span>HelloWorld!</span>
+
     </div>
+
 </body>
 
 
