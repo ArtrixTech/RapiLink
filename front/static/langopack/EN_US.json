@@ -1,28 +1,28 @@
 {
-    "language": "ZH_CN",
+    "language": "EN_US",
     "contents": {
         "title": {
             "text": "Lango.js"
         },
         "slogan": {
-            "text": "轻量级网页国际化引擎"
+            "text": "Lightweight i18n engine."
         },
         "test": {
             "states": {
                 "default": {
-                    "text": "当前处于默认状态",
+                    "text": "Now I'm in the default state.",
                     "css": {
                         "left": "0px"
                     }
                 },
                 "state1": {
-                    "text": "当前处于状态1",
+                    "text": "Now I'm in the state1.",
                     "css": {
                         "left": "100px"
                     }
                 },
                 "state2": {
-                    "text": "当前处于状态2",
+                    "text": "Now I'm in the state2.",
                     "css": {
                         "left": "0px"
                     }

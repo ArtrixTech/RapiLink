@@ -8,9 +8,15 @@
     <script src="{{ url_for('front.static', filename='js/jquery.cookie.js') }}"></script>
     <script src="{{ url_for('front.static', filename='js/utils/lango.js') }}"></script>
 
+    <link rel="stylesheet" type="text/css" href="{{ url_for('front.static', filename='css/lango/lango.css') }}">
+
 </head>
 
 <body>
+
+    <a href="https://lango.artrix.tech">
+        <img src="{{ url_for('front.static', filename='langotemp/lango_logo.png') }}" class="logo_small">
+    </a>
 
     <span lango_id="title">Content1!</span>
     <span lango_id="test">Content2!</span>
@@ -19,12 +25,15 @@
     <script>
 
         var l = new Lango();
-        l.Settings.languagePackRoot="{{ url_for('front.static', filename='langopack/') }}";
+        l.Settings.languagePackRoot = "{{ url_for('front.static', filename='langopack/') }}";
         l.init();
 
 
-
     </script>
+
+    <div id="main_box">
+        
+    </div>
 </body>
 
 

@@ -149,7 +149,8 @@ Lango.prototype.loadLanguagePack = function (lang, callback) {
                 if (!isJsonObject(result)) this.langContents = JSON.parse(result);
                 else this.langContents = result;
 
-                if (this.langContents.language == this.language) {
+                if (this.langContents.language == lang) {
+                    this.language = this.langContents.language;
                     this.langContents = this.langContents.contents;
                     this.langPackLoaded = true;
                     this.langPackLanguage = this.langContents.language;
@@ -160,7 +161,7 @@ Lango.prototype.loadLanguagePack = function (lang, callback) {
             },
             error: function (XHR, status, errorThrown) {
                 if (XHR.status == "404") throw Error = "Language pack [" + lang + "] is not exist.";
-                throw Error = "[Unknown Error] StatusCode:"+XHR.status+" | StatusText:"+status;
+                throw Error = "[Unknown Error] StatusCode:" + XHR.status + " | StatusText:" + status;
             }
         });
 
@@ -171,13 +172,18 @@ Lango.prototype.loadLanguagePack = function (lang, callback) {
 Lango.prototype.updateTranslateItemList = function () {
 
     var that = this;
-    $("span").each(function () {
+
+    function processItem() {
         var langoID = $(this).attr("lango_id");
         if (langoID) {
             that.translateItemList[langoID] = $(this);
             if (!that.stateList[langoID]) that.stateList[langoID] = "default";
         }
-    });
+    }
+
+    $("span").each(processItem);
+    $("div").each(processItem);
+
 
 }
 
@@ -193,6 +199,33 @@ Lango.prototype.setState = function (langoID, state) {
         } else throw ReferenceError = "This element " + "[" + langoID + "] doesn't exist.";
     } else throw ReferenceError = "Language pack is not loaded.";
 }
+
+
+// TODO: Add css parsing part to finish this module.
+Lango.prototype.rerender = function () {
+
+    this.updateTranslateItemList();
+
+    for (key in this.translateItemList) {
+
+        var item = this.translateItemList[key];
+
+        var langoID = item.attr("lango_id");
+        var translateContent = this.langContents[langoID];
+
+        if (translateContent) {
+
+            var states = translateContent.states;
+
+            // TODO: Parse the css part.
+            if (states) item.text(states[this.stateList[langoID]].text);
+            else item.text(translateContent.text);
+
+        }
+    }
+
+}
+
 
 Lango.prototype.translate = function (lang) {
 
