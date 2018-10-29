@@ -1,4 +1,4 @@
-function Lango() {}
+function Lango() { }
 
 
 Lango.prototype.Languages = {
@@ -60,12 +60,13 @@ Lango.prototype.init = function () {
     this.langPackLanguage = undefined;
 
     // Detect if the JQuery.cookie is exist
+    // TODO: Add a script loading location property
     function loadScript(loc) {
         var newScript = document.createElement("script");
         newScript.setAttribute("type", "text/javascript");
         newScript.setAttribute("src", loc);
         document.body.appendChild(newScript);
-    }!window.jQuery && loadScript("jquery-3.3.1.min.js");
+    } !window.jQuery && loadScript("jquery-3.3.1.min.js");
     !window.jQuery.cookie && loadScript("jquery.cookie.js");
 
     this.getLanguage();
@@ -90,7 +91,6 @@ Lango.prototype.getLangByGeoInfo = function (callback) {
             this.languageDetected = true;
 
             console.log("Got Language:" + this.language);
-
             $.cookie('lango_site_language', this.language, {
                 path: '/'
             });
@@ -103,6 +103,7 @@ Lango.prototype.getLangByGeoInfo = function (callback) {
 
 Lango.prototype.getLanguage = function () {
 
+    // TODO: Judge if the ip has changed and change the language by it.
     var langFromCookie = $.cookie('lango_site_language');
     if (langFromCookie) {
         this.language = langFromCookie;
@@ -125,8 +126,17 @@ Lango.prototype.loadLanguagePack = function (lang, callback) {
     var baseLoc = this.Settings.languagePackRoot;
     baseLoc += lang + ".json";
 
-    // If the langPack have been loaded, just active the callback function.
-    if (this.langPackLoaded && this.langPackLanguage == lang) callback(this.langPackLoaded);
+    function isJsonObject(str) {
+        try {
+            JSON.parse(str);
+        } catch (e) {
+            return true;
+        }
+        return false;
+    }
+
+    // If the langPack was loaded, just active the callback function.
+    if (this.langPackLoaded && this.langPackLanguage == lang) callback(this, this.langPackLoaded);
     else {
 
         this.langPackLoaded = false;
@@ -136,15 +146,21 @@ Lango.prototype.loadLanguagePack = function (lang, callback) {
             context: this,
             success: function (result) {
 
-                this.langContents = JSON.parse(result);
+                if (!isJsonObject(result)) this.langContents = JSON.parse(result);
+                else this.langContents = result;
+
                 if (this.langContents.language == this.language) {
                     this.langContents = this.langContents.contents;
                     this.langPackLoaded = true;
                     this.langPackLanguage = this.langContents.language;
 
                     callback(this, this.langPackLoaded);
-                } else throw Error = Error("Language pack is not correct.[" + this.language + "]");
+                } else throw Error = "Language pack is not correct.[" + this.language + "]";
 
+            },
+            error: function (XHR, status, errorThrown) {
+                if (XHR.status == "404") throw Error = "Language pack [" + lang + "] is not exist.";
+                throw Error = "[Unknown Error] StatusCode:"+XHR.status+" | StatusText:"+status;
             }
         });
 
@@ -173,15 +189,15 @@ Lango.prototype.setState = function (langoID, state) {
             if (states) {
                 this.stateList[langoID] = state;
                 return state
-            } else throw Error = Error("[" + langoID + "] This element doesn't contain a \"state\" property.");
-        } else throw Error = Error("[" + langoID + "] This element doesn't exist.");
-    } else throw Error = Error("Language pack not loaded.");
+            } else throw ReferenceError = "This element" + "[" + langoID + "]  doesn't contain a \"state\" property.";
+        } else throw ReferenceError = "This element " + "[" + langoID + "] doesn't exist.";
+    } else throw ReferenceError = "Language pack is not loaded.";
 }
 
 Lango.prototype.translate = function (lang) {
 
     function parseCSS(object, cssList) {
-
+        // TODO: Finish this module.
     }
 
     if (this.isLangExist(lang)) {
@@ -200,6 +216,7 @@ Lango.prototype.translate = function (lang) {
 
                     var states = translateContent.states;
 
+                    // TODO: Parse the css part.
                     if (states) item.text(states[that.stateList[langoID]].text);
                     else item.text(translateContent.text);
 
@@ -209,6 +226,6 @@ Lango.prototype.translate = function (lang) {
 
         this.loadLanguagePack(lang, doTranslate);
 
-    } else throw Error = Error("Input language is not in support list.")
+    } else throw TypeError = "Input language is not in support list.";
 
 }
