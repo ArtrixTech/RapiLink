@@ -190,12 +190,6 @@ Lango.prototype.updateTranslateItemList = function () {
     var that = this;
 
     function processItem() {
-
-        // TODO: Add recursive children check
-
-        //alert($(this).children().length)
-        //if($(this).children().length>1)$(this).each(processItem)
-        //;
         var langoID = $(this).attr("lango_id");
         if (langoID) {
             that.translateItemList[langoID] = $(this);

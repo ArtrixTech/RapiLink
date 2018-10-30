@@ -14,6 +14,9 @@
     <link rel="stylesheet" type="text/css" href="{{ url_for('front.static', filename='langotemp/iconfont/iconfont.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ url_for('front.static', filename='css/lango/lango.css') }}">
 
+    <link rel="stylesheet" type="text/css" href="{{ url_for('front.static', filename='langotemp/prism-edited.css') }}">
+
+
 </head>
 
 <body>
@@ -39,16 +42,32 @@
 
 
 
-    <div class="main_box">
+    <div class="main_box" style="text-align:center;">
 
         <div class="lango_describe_block" style="text-align: left;position: relative;">
             <i class="iconfont icon-settings" id="icon_settings"></i>
-            <span lango_id="usage">Usage</span>
+            <span lango_id="usage" class="title_small">Usage</span>
         </div>
 
-        <span lango_id="title">Content1!</span>
-        <span lango_id="test">Content2!</span>
-        <span>HelloWorld!</span>
+        <pre class="brush:javascript;"style="width:80%;margin-left: auto;margin-right: auto;position: relative;top:100;overflow: hidden;">
+            <code class="language-css">
+    Lango.prototype.setState = function (langoID, state) {
+    if (this.langPackLoaded) {
+        var translateContent = this.langContents[langoID];
+        if (translateContent) {
+            var states = translateContent.states;
+            if (states) {
+                this.stateList[langoID] = state;
+                return state
+            } else throw ReferenceError = "This element" + "[" + langoID + "]  doesn't contain a \"state\" property.";
+        } else throw ReferenceError = "This element " + "[" + langoID + "] doesn't exist.";
+    } else throw ReferenceError = "Language pack is not loaded.";
+            </code>
+        </pre>
+
+        <span lango_id="title" class="hidden">Content1!</span>
+        <span lango_id="test" class="hidden">Content2!</span>
+        <span class="hidden">HelloWorld!</span>
 
     </div>
 
@@ -60,6 +79,8 @@
 
 
     </script>
+
+    <script src="{{ url_for('front.static', filename='langotemp/prism.js') }}"></script>
 
 </body>
 

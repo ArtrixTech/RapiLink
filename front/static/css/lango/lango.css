@@ -4,10 +4,15 @@ body{
     text-align: center;
     margin: 0;
 }
+.hidden{
+    display: none;
+}
 
 .lango_describe_block{
-
-    width: 100%;
+    text-align: left;
+    position: relative;
+    left: 140px;
+    top: 55px;
 
 }
 
@@ -20,11 +25,18 @@ body{
     text-shadow: 0px 75px 92px #f16995;
 }
 
+.title_small{
+    color: #a3a3a3;
+    font-size: 34px;
+    font-weight: 100;
+    font-family: Work Sans,Microsoft Yahei UI Light,Sans, Avenir, Ostrich Sans, Flexo Light;
+    position: relative;
+    bottom: 11px;
+}
+
 #icon_settings{
-    color: #fb97a9;
-    font-size: 80px;
-    right: -20px;
-   
+    color: #888888;
+    font-size: 56px;
     position: relative;
 }
 
