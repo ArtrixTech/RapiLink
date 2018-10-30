@@ -21,6 +21,8 @@ Lango.prototype.stateList = {};
 // CountryCode -> Languages Object
 Lango.prototype.RegionDefaultLanguages = {
     CN: "ZH_CN", // Chinese
+    HK: "ZH_CN", // Chinese - Hongkong,
+    TW: "ZH_CN", // Chinese - Taiwan
     US: "EN_US", // English - United States
     JP: "JA_JP", // Japanese - Japan
     KR: "KO_KR", // Korean - Korea
@@ -76,28 +78,42 @@ Lango.prototype.init = function () {
 Lango.prototype.getLangByGeoInfo = function (callback) {
 
     var geoInfoURL = "http://ip-api.com/json/?fields=countryCode,query";
+    var geoInfoURLHttps = "https://ipapi.co/country";
 
-    $.ajax({
-        url: geoInfoURL,
-        context: this, // Use "context" to send the this object
-        success: function (result) {
+    function process(that) {
+        console.log("Got CountryCode:" + that.countryCode);
 
-            this.countryCode = result.countryCode;
-            console.log("Got CountryCode:" + this.countryCode);
+        if (that.isRegionExist(that.countryCode)) that.language = that.RegionDefaultLanguages[that.countryCode];
+        else that.language = that.Settings.defualtLanguage;
 
-            if (this.isRegionExist(this.countryCode)) this.language = this.RegionDefaultLanguages[this.countryCode];
-            else this.language = this.Settings.defualtLanguage;
+        that.languageDetected = true;
 
-            this.languageDetected = true;
+        console.log("Got Language:" + that.language);
+        $.cookie('lango_site_language', that.language, {
+            path: '/'
+        });
+        that.translate(that.language);
+    }
 
-            console.log("Got Language:" + this.language);
-            $.cookie('lango_site_language', this.language, {
-                path: '/'
-            });
-            this.translate(this.language);
-
-        }
-    });
+    if (document.location.protocol == "https:") {
+        $.ajax({
+            url: geoInfoURLHttps,
+            context: this, // Use "context" to send the this object
+            success: function (result) {
+                this.countryCode = result;
+                process(this);
+            }
+        });
+    } else {
+        $.ajax({
+            url: geoInfoURL,
+            context: this, // Use "context" to send the this object
+            success: function (result) {
+                this.countryCode = result.countryCode;
+                process(this);
+            }
+        });
+    }
 
 }
 
