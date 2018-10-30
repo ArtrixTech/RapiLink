@@ -2,7 +2,7 @@ body{
     /*background-image: linear-gradient(to right, #b8cbb8 0%, #b8cbb8 0%, #b465da 0%, #cf6cc9 33%, #ee609c 66%, #ee609c 100%);*/
     background-image: linear-gradient(-96deg, #fb97a9 0%, #fe5196 100%);
     text-align: center;
-    margin: 0;
+    margin: 0 auto;
 }
 .hidden{
     display: none;
@@ -11,9 +11,8 @@ body{
 .lango_describe_block{
     text-align: left;
     position: relative;
-    left: 140px;
+    margin-left: 140px;
     top: 55px;
-
 }
 
 #icon_earth{
