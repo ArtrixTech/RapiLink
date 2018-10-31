@@ -1,5 +1,4 @@
-function Lango() { }
-
+function Lango() {}
 
 Lango.prototype.Languages = {
     lang_zh_cn: "ZH_CN", // Chinese
@@ -68,7 +67,7 @@ Lango.prototype.init = function () {
         newScript.setAttribute("type", "text/javascript");
         newScript.setAttribute("src", loc);
         document.body.appendChild(newScript);
-    } !window.jQuery && loadScript("jquery-3.3.1.min.js");
+    }!window.jQuery && loadScript("jquery-3.3.1.min.js");
     !window.jQuery.cookie && loadScript("jquery.cookie.js");
 
     this.getLanguage();
@@ -192,7 +191,8 @@ Lango.prototype.updateTranslateItemList = function () {
     function processItem() {
         var langoID = $(this).attr("lango_id");
         if (langoID) {
-            that.translateItemList[langoID] = $(this);
+            if (!that.translateItemList[langoID]) that.translateItemList[langoID] = [];
+            that.translateItemList[langoID].push($(this));
             if (!that.stateList[langoID]) that.stateList[langoID] = "default";
         }
     }
@@ -226,24 +226,21 @@ Lango.prototype.rerender = function () {
 
     for (key in this.translateItemList) {
 
-        var item = this.translateItemList[key];
+        for (index in that.translateItemList[key]) {
 
-        var langoID = item.attr("lango_id");
-        var translateContent = this.langContents[langoID];
+            var item = that.translateItemList[key][index];
+            var langoID = item.attr("lango_id");
+            var translateContent = that.langContents[langoID];
 
-        if (translateContent) {
-
-            var states = translateContent.states;
-
-            // TODO: Parse the css part.
-            if (states) item.html(states[that.stateList[langoID]].text.replace(" ", "&nbsp;"));
-            else item.html(translateContent.text.replace(" ", "&nbsp;"));
-
+            if (translateContent) {
+                var states = translateContent.states;
+                if (states) item.html(states[that.stateList[langoID]].text.replace(" ", "&nbsp;"));
+                else item.html(translateContent.text.replace(" ", "&nbsp;"));
+            }
         }
     }
 
 }
-
 
 Lango.prototype.translate = function (lang) {
 
@@ -258,19 +255,20 @@ Lango.prototype.translate = function (lang) {
         function doTranslate(that, loaded) {
             for (key in that.translateItemList) {
 
-                var item = that.translateItemList[key];
+                for (index in that.translateItemList[key]) {
 
-                var langoID = item.attr("lango_id");
-                var translateContent = that.langContents[langoID];
+                    var item = that.translateItemList[key][index];
+                    var langoID = item.attr("lango_id");
+                    var translateContent = that.langContents[langoID];
 
-                if (translateContent) {
+                    if (translateContent) {
 
-                    var states = translateContent.states;
+                        var states = translateContent.states;
 
-                    // TODO: Parse the css part.
-                    if (states) item.html(states[that.stateList[langoID]].text.replace(" ", "&nbsp;"));
-                    else item.html(translateContent.text.replace(" ", "&nbsp;"));
-
+                        // TODO: Parse the css part.
+                        if (states) item.html(states[that.stateList[langoID]].text.replace(" ", "&nbsp;"));
+                        else item.html(translateContent.text.replace(" ", "&nbsp;"));
+                    }
                 }
             }
         }

@@ -7,6 +7,9 @@
     <script src="{{ url_for('front.static', filename='js/jquery-3.3.1.min.js') }}"></script>
     <script src="{{ url_for('front.static', filename='js/jquery.cookie.js') }}"></script>
     <script src="{{ url_for('front.static', filename='langotemp/lango.js') }}"></script>
+    <script src="{{ url_for('front.static', filename='js/utils/anime.min.js') }}"></script>
+    <script src="{{ url_for('front.static', filename='js/utils/showdown.min.js') }}"></script>
+
 
     <link href="https://fonts.googleapis.com/css?family=Noto%20Sans" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Work%20Sans" rel="stylesheet" type="text/css">
@@ -27,7 +30,7 @@
 
     <div id="header">
 
-        <div style="left: 150px;position: relative;">
+        <div style="left: 180px;position: relative;">
             <div style="width: 100%;position: absolute;text-align: right;">
                 <i class="iconfont icon-earth" id="icon_earth"></i>
             </div>
@@ -47,15 +50,18 @@
         <div class="lango_describe_block" style="text-align: left;position: relative;">
             <i class="iconfont icon-settings" id="icon_settings"></i>
             <span lango_id="usage" class="title_small">Usage</span>
+            <span lango_id="usage" class="title_small">Usage</span>
         </div>
 
-        <pre class="brush:javascript;"style="width:80%;margin-left: auto;margin-right: auto;position: relative;top:100;overflow: hidden;">
+       
+
+        <pre class="brush:javascript;"style="width:64%;margin-left: auto;margin-right: auto;position: relative;top:120;overflow: hidden;">
             <code class="language-javascript">
-<script>
+
     var lango = new Lango();
     lango.Settings.languagePackRoot = "/your_language_pack_directory";
     lango.init();
-</script></code>
+</code>
         </pre>
 
         <span lango_id="title" class="hidden">Content1!</span>
