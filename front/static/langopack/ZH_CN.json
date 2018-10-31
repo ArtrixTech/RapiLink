@@ -10,6 +10,9 @@
         "slogan2": {
             "text": "网页国际化引擎"
         },
+        "usage": {
+            "text": "使用方法"
+        },
         "test": {
             "states": {
                 "default": {

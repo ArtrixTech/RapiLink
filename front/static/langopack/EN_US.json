@@ -10,6 +10,9 @@
         "slogan2": {
             "text": " i18n engine."
         },
+        "usage": {
+            "text": "Usage"
+        },
         "test": {
             "states": {
                 "default": {

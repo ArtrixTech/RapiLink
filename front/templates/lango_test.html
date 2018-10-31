@@ -50,19 +50,12 @@
         </div>
 
         <pre class="brush:javascript;"style="width:80%;margin-left: auto;margin-right: auto;position: relative;top:100;overflow: hidden;">
-            <code class="language-css">
-    Lango.prototype.setState = function (langoID, state) {
-    if (this.langPackLoaded) {
-        var translateContent = this.langContents[langoID];
-        if (translateContent) {
-            var states = translateContent.states;
-            if (states) {
-                this.stateList[langoID] = state;
-                return state
-            } else throw ReferenceError = "This element" + "[" + langoID + "]  doesn't contain a \"state\" property.";
-        } else throw ReferenceError = "This element " + "[" + langoID + "] doesn't exist.";
-    } else throw ReferenceError = "Language pack is not loaded.";
-            </code>
+            <code class="language-javascript">
+<script>
+    var lango = new Lango();
+    lango.Settings.languagePackRoot = "/your_language_pack_directory";
+    lango.init();
+</script></code>
         </pre>
 
         <span lango_id="title" class="hidden">Content1!</span>
