@@ -48,21 +48,43 @@
     <div class="main_box" style="text-align:center;overflow: hidden;">
 
         <div class="lango_describe_block" style="text-align: left;position: relative;">
-            <i class="iconfont icon-settings" id="icon_settings"></i>
-            <span lango_id="usage" class="title_small">Usage</span>
-            <span lango_id="usage" class="title_small">Usage</span>
+            <div class="lango_describe_block" style="top: 55px;margin-left: 12%;position: relative;">
+                <i class="iconfont icon-settings" id="icon_settings"></i>
+                <span lango_id="usage" class="title_small">Usage</span>
+            </div>
+
+
+            <pre class="brush:javascript;" style="width:64%;margin-left: auto;margin-right: auto;position: relative;margin-top: 120;overflow: hidden;">
+                <code class="language-javascript">
+    
+        var lango = new Lango();
+        lango.Settings.languagePackRoot = "/your_language_pack_directory";
+        lango.init();
+    </code>
+            </pre>
+
         </div>
 
-       
+        <div class="lango_describe_block" style="text-align: left;position: relative;">
+            <div class="lango_describe_block" style="top: 55px;margin-left: 12%;position: relative;">
+                <i class="iconfont icon-settings" id="icon_settings"></i>
+                <span lango_id="usage" class="title_small">Usage</span>
+            </div>
 
-        <pre class="brush:javascript;"style="width:64%;margin-left: auto;margin-right: auto;position: relative;top:120;overflow: hidden;">
-            <code class="language-javascript">
 
-    var lango = new Lango();
-    lango.Settings.languagePackRoot = "/your_language_pack_directory";
-    lango.init();
-</code>
-        </pre>
+            <pre class="brush:javascript;" style="width:64%;margin-left: auto;margin-right: auto;position: relative;margin-top: 120;overflow: hidden;">
+                    <code class="language-javascript">
+        
+            var lango = new Lango();
+            lango.Settings.languagePackRoot = "/your_language_pack_directory";
+            lango.init();
+        </code>
+                </pre>
+
+        </div>
+
+
+
 
         <span lango_id="title" class="hidden">Content1!</span>
         <span lango_id="test" class="hidden">Content2!</span>
@@ -71,12 +93,9 @@
     </div>
 
     <script>
-
         var l = new Lango();
         l.Settings.languagePackRoot = "{{ url_for('front.static', filename='langopack/') }}";
         l.init();
-
-
     </script>
 
     <script src="{{ url_for('front.static', filename='langotemp/prism.js') }}"></script>
