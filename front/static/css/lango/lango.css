@@ -1,12 +1,37 @@
 body{
     /*background-image: linear-gradient(to right, #b8cbb8 0%, #b8cbb8 0%, #b465da 0%, #cf6cc9 33%, #ee609c 66%, #ee609c 100%);*/
-    background-image: linear-gradient(-96deg, #fb97a9 0%, #fe5196 100%);
-    text-align: center;
+    /*background-image: linear-gradient(-96deg, #fb97a9 0%, #fe5196 100%);
+    text-align: center;s
+    margin: 0 auto;
+    overflow-y: hidden;*/
+}
+
+body{
+    background: url(/static/langotemp/bg2.png) no-repeat top center;
+    /* width: 100%; */
+    /* min-width: 1200px; */
+    /* background: url(c1152188.png) no-repeat top center; */
+    background-size: 100% 888px;
+    /* opacity: 0; */
+    transition: opacity .3s;
+    overflow-x: hidden;
     margin: 0 auto;
     overflow-y: hidden;
+    background-position-y: -17em;
 }
 .hidden{
     display: none;
+}
+
+#lango_big_bg {
+    color: white;
+    opacity: 0.2;
+    font-family: sans-serif;
+    font-weight: 1000;
+    font-size: 14.6em;
+    position: absolute;
+    margin-left: 0.4em;
+    margin-top: 1em;
 }
 
 .lango_describe_block{
@@ -20,7 +45,7 @@ body{
     right: -20px;
     top: -180px;
     position: relative;
-    text-shadow: 0px 75px 92px #f16995;
+  /*  text-shadow: 0px 75px 92px #f16995;*/
 }
 
 .title_small{
@@ -83,10 +108,10 @@ body{
 }
 
 .main_box{
-    background: white;
+ /* background: white; */
     width: 100%;
     height: 1200;
     position: absolute;
-    top: 76%;
-    box-shadow: 0px 15px 92px #d86087;
+    top: 39em;
+    /* box-shadow: 0px 15px 92px #313131; */
 }

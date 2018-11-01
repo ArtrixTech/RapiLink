@@ -19,19 +19,21 @@
 
     <link rel="stylesheet" type="text/css" href="{{ url_for('front.static', filename='langotemp/prism-edited.css') }}">
 
-
 </head>
 
 <body>
+
 
     <a href="https://rapi.link">
         <img src="{{ url_for('front.static', filename='img/site_branding/logo_small.png') }}" class="artrix_small">
     </a>
 
+    <span id="lango_big_bg" class="hidden">internationalization</span>
+
     <div id="header">
 
         <div style="left: 180px;position: relative;">
-            <div style="width: 100%;position: absolute;text-align: right;">
+            <div class="hidden" style="width: 100%;position: absolute;text-align: right;">
                 <i class="iconfont icon-earth" id="icon_earth"></i>
             </div>
             <img src="{{ url_for('front.static', filename='langotemp/lango_logo.png') }}" class="logo_small">
