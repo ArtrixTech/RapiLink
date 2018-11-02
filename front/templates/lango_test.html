@@ -33,7 +33,7 @@
     <div id="header">
 
         <div style="left: 180px;position: relative;">
-            <div class="hidden" style="width: 100%;position: absolute;text-align: right;">
+            <div class="" style="width: 100%;position: absolute;text-align: right;opacity: 0.1;">
                 <i class="iconfont icon-earth" id="icon_earth"></i>
             </div>
             <img src="{{ url_for('front.static', filename='langotemp/lango_logo.png') }}" class="logo_small">
@@ -48,6 +48,12 @@
 
 
     <div class="main_box" style="text-align:center;overflow: hidden;">
+
+        <div class="lango_describe_block" style="height: 200px; text-align: center;">
+            <div class="left_quote quote">“</div>
+            <span class="hidden" style="position:relative;">Lango is a very powerful i18n engine.</span>
+            <div class="right_quote quote">”</div>
+        </div>
 
         <div class="lango_describe_block" style="text-align: left;position: relative;">
             <div class="lango_describe_block" style="top: 55px;margin-left: 12%;position: relative;">

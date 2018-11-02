@@ -17,7 +17,7 @@ body{
     overflow-x: hidden;
     margin: 0 auto;
     overflow-y: hidden;
-    background-position-y: -17em;
+    background-position-y: -20em;
 }
 .hidden{
     display: none;
@@ -39,9 +39,29 @@ body{
     position: relative;
 }
 
+.quote{
+    position: absolute;
+    z-index: 2;
+    margin-top: 88px;
+    width: 100%;
+    height: 100px;
+    font-size: 72px;
+    font-family: PingFangSC-Medium;
+    font-weight: 500;
+    color: #e4e4e4;
+    line-height: 100px;
+}
+
+.left_quote{
+  /*  margin-left: 222px;*/
+}
+.right_quote{
+  /*  margin-right: 222px;*/
+}
+
 #icon_earth{
     color: white;
-    font-size: 1020px;
+    font-size: 530pt;
     right: -20px;
     top: -180px;
     position: relative;
@@ -69,7 +89,7 @@ body{
 }
 
 .logo_small {
-    width: 470px;
+    width: 28rem;
 }
 
 
@@ -87,9 +107,8 @@ body{
 
 #slogan1{
     color:white;
-    font-size: 42;
+    font-size: 2.6em;
     font-weight: 800;
-
     font-family:  Work Sans,Microsoft Yahei UI Light,Sans, Avenir, Ostrich Sans, Flexo Light;
 }
 
@@ -102,7 +121,7 @@ body{
 #header{
     margin-left: auto;
     margin-right: auto;
-    top: 24%;
+    top: 11rem;
     position: relative;
     text-align: left;
 }
@@ -112,6 +131,6 @@ body{
     width: 100%;
     height: 1200;
     position: absolute;
-    top: 39em;
+    top: 36rem;
     /* box-shadow: 0px 15px 92px #313131; */
 }
