@@ -1,0 +1,38 @@
+.lango-langselector .icon-earth {
+
+    color: black;
+    font-size: 22px;
+    position: relative;
+}
+.lango-langselector .lang-span {
+
+    color: black;
+    font-size: 14px;
+    position: relative;
+    top: -4px;
+}
+
+.lango-langselector{
+
+    display: inline-block;
+    direction: ltr;
+    position: relative;
+    width:auto;
+
+
+}
+.nav-langselector{
+    top: 8px;
+    padding: 20px;
+}
+
+.unselective{
+
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+}

@@ -4,6 +4,15 @@
         "title": {
             "text": "Lango.js"
         },  
+        "nav-home": {
+            "text": "主页"
+        },  
+        "nav-github": {
+            "text": "GitHub"
+        },  
+        "nav-docs": {
+            "text": "文档"
+        },  
         "slogan1": {
             "text": "轻量级"
         },
