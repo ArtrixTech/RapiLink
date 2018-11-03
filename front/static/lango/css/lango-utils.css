@@ -8,7 +8,7 @@
 .lango-langselector .lang-span {
 
     color: black;
-    font-size: 14px;
+    font-size: 0.9rem;
     position: relative;
     top: -4px;
 }
@@ -35,6 +35,7 @@
 .nav-langselector {
     top: 8px;
     padding: 20px;
+    width: 6.2em;
 }
 
 .unselective {
@@ -50,7 +51,6 @@
 
 .lango-icon-nation {
     font-size: 22px;
-
     width: 1em;
     height: 1em;
     vertical-align: -0.15em;

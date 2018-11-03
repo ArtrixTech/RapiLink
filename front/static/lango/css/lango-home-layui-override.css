@@ -10,6 +10,11 @@
     color: #000;
 }
 
+
+.layui-nav .layui-this a{
+   color: #6c2d50!important;
+}
+
 .layui-nav {
     background: rgba(255, 255, 255, 0);
     top: 21px;
@@ -22,7 +27,7 @@
 .layui-nav .layui-this:after,
 .layui-nav-bar,
 .layui-nav-tree .layui-nav-itemed:after {
-    background-color: gray;
+    background-color: #6c2d50;
     height: 2px;
 }
 
