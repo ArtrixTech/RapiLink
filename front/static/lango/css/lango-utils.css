@@ -4,6 +4,7 @@
     font-size: 22px;
     position: relative;
 }
+
 .lango-langselector .lang-span {
 
     color: black;
@@ -12,21 +13,31 @@
     top: -4px;
 }
 
-.lango-langselector{
+.lango-langselector {
 
     display: inline-block;
     direction: ltr;
     position: relative;
-    width:auto;
-
-
+    width: auto;
 }
-.nav-langselector{
+
+
+.lango-langlist {
+    direction: ltr;
+    position: fixed;
+    width: 104px;
+    background: whitesmoke;
+    border-bottom: 2px solid #d4d4d4;
+    direction: rtl;
+    padding: 5px;
+}
+
+.nav-langselector {
     top: 8px;
     padding: 20px;
 }
 
-.unselective{
+.unselective {
 
     -webkit-touch-callout: none;
     -webkit-user-select: none;
@@ -34,5 +45,16 @@
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+
+}
+
+.lango-icon-nation {
+    font-size: 22px;
+
+    width: 1em;
+    height: 1em;
+    vertical-align: -0.15em;
+    fill: currentColor;
+    overflow: hidden;
 
 }

@@ -13,6 +13,10 @@ body {
     display: none;
 }
 
+.hidden-opacity {
+    opacity: 0;
+}
+
 .lango-banner {
     background: url(/static/lango/img/bg3.jpg) 50% 50% / cover;
     left: 6rem;
@@ -97,7 +101,7 @@ body {
 .artrix_small {
     width: 102px;
     left: 42px;
-    top: 28px;
+    top: 32px;
     position: absolute;
     filter: brightness(0);
 }
@@ -148,7 +152,7 @@ body {
 }
 
 .lango-anim-fast {
-    animation-duration: .3s;
+    animation-duration: .2s;
 }
 
 .lango-transition-slow {
