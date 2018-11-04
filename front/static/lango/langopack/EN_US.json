@@ -4,6 +4,15 @@
         "title": {
             "text": "Lango.js"
         },
+        "nav-home": {
+            "text": "Home"
+        },  
+        "nav-github": {
+            "text": "GitHub"
+        },  
+        "nav-docs": {
+            "text": "Documents"
+        },  
         "slogan1": {
             "text": "Lightweight"
         },
@@ -12,6 +21,18 @@
         },
         "usage": {
             "text": "Usage"
+        },
+        "lango_overview": {
+            "text": "Lango is a powerful but lightweight i18n engine."
+        },
+        "jsonbased": {
+            "text": "Based on JSON"
+        },
+        "cssadjust": {
+            "text": "CSS Adjustable"
+        },
+        "statesedit": {
+            "text": "States Editable"
         },
         "test": {
             "states": {
