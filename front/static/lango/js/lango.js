@@ -10,14 +10,6 @@ Lango.prototype.Languages = {
     lang_ru_ru: "RU_RU" // Russian - Russia
 };
 
-Lango.prototype.countryCode = undefined;
-Lango.prototype.language = undefined;
-Lango.prototype.langContents = undefined;
-Lango.prototype.languageDetected = undefined;
-
-Lango.prototype.translateItemList = {};
-Lango.prototype.stateList = {};
-
 // CountryCode -> Languages Object
 Lango.prototype.RegionDefaultLanguages = {
     CN: "ZH_CN", // Chinese
@@ -39,8 +31,16 @@ Lango.prototype.LanguageDescriptions = {
     "KO_KR": "한국어", // Korean - Korea
     "ES_US": "Español", // Spanish - United States
     "ES_ES": "Español", // Spanish - Spanish
-    "RU_RU": "Русский"
+    "RU_RU": "Русский" // Russian - Russia
 };
+
+Lango.prototype.countryCode = undefined;
+Lango.prototype.language = undefined;
+Lango.prototype.langContents = undefined;
+Lango.prototype.languageDetected = undefined;
+
+Lango.prototype.translateItemList = {};
+Lango.prototype.stateList = {};
 
 Lango.prototype.Settings = {
     autoDetectLanguageByCountryCode: true,
@@ -50,19 +50,15 @@ Lango.prototype.Settings = {
 };
 
 Lango.prototype.isLangExist = function (lang) {
-
     for (key in this.Languages)
         if (this.Languages[key] == lang) return true;
     return false;
-
 }
 
 Lango.prototype.isRegionExist = function (region) {
-
     for (key in this.RegionDefaultLanguages)
         if (region == key) return true;
     return false;
-
 }
 
 Lango.prototype.init = function (callback) {
@@ -110,25 +106,27 @@ Lango.prototype.getLangByGeoInfo = function (callback) {
 
     }
 
+    var successCallback, urlDest;
+    
     if (document.location.protocol == "https:") {
-        $.ajax({
-            url: geoInfoURLHttps,
-            context: this, // Use "context" to send the this object
-            success: function (result) {
-                this.countryCode = result;
-                process(this);
-            }
-        });
+        successCallback = function (result) {
+            this.countryCode = result;
+            process(this);
+        };
+        urlDest = geoInfoURLHttps;
     } else {
-        $.ajax({
-            url: geoInfoURL,
-            context: this, // Use "context" to send the this object
-            success: function (result) {
-                this.countryCode = result.countryCode;
-                process(this);
-            }
-        });
+        successCallback = function (result) {
+            this.countryCode = result.countryCode;
+            process(this);
+        };
+        urlDest = geoInfoURL;
     }
+
+    $.ajax({
+        url: urlDest,
+        context: this, // Use "context" to send the this object
+        success: successCallback
+    });
 
 }
 
