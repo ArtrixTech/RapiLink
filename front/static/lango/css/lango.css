@@ -21,7 +21,7 @@ body {
     background: url(/static/lango/img/bg3.jpg) 50% 50% / cover;
     left: 6rem;
     position: relative;
-    padding: 90px;
+    padding: 120px 90px;
     box-shadow: 0px 30px 103px #d4d4d4;
 }
 
@@ -192,12 +192,11 @@ body {
 
 }
 
-.lango-feature-icon-block{
-
-    width:10rem;
-    height:9rem;
+.lango-feature-icon-block {
+    width: 16rem;
+    height: 9rem;
     display: inline-block;
-    padding:3rem;
+    padding: 3rem 0.5rem;
 }
 
 .lango-feature-span{
