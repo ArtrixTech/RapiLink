@@ -11,7 +11,7 @@ from logger.log import Logger
 
 from bing_image.bing_image import get_bing_img_small
 
-front_blueprint = Blueprint('front', __name__, template_folder="templates", static_folder="static")
+front_blueprint = Blueprint('front', __name__, template_folder="templates", static_folder="static", subdomain="")
 www_jump_blueprint = Blueprint('jump', __name__, template_folder="templates", static_folder="static", subdomain="www")
 
 debug_logger = Logger(logger_name="frontend_main")

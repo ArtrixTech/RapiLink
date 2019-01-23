@@ -1,0 +1,230 @@
+body {
+    background: white;
+    background-size: 100% 888px;
+    transition: opacity .3s;
+    overflow-x: hidden;
+    margin: 0 auto;
+    overflow-y: hidden;
+    background-position-y: -20em;
+    font-family: Work Sans, Microsoft Yahei UI Light, Sans, Avenir, Ostrich Sans, Flexo Light;
+}
+
+.hidden {
+    display: none;
+}
+
+.hidden-opacity {
+    opacity: 0;
+}
+
+.lango-banner {
+    background: url(/static/lango/img/bg3.jpg) 50% 50% / cover;
+    left: 6rem;
+    position: relative;
+    padding: 120px 90px;
+    box-shadow: 0px 30px 103px #d4d4d4;
+}
+
+#lango_overview {
+    position: relative;
+    padding: 78px;
+    color: #888888;
+    font-size: 28;
+    font-weight: 100;
+    font-family: Work Sans, Microsoft Yahei UI Light, Sans, Avenir, Ostrich Sans, Flexo Light;
+}
+
+#lango_big_bg {
+    color: white;
+    opacity: 0.2;
+    font-family: sans-serif;
+    font-weight: 1000;
+    font-size: 14.6em;
+    position: absolute;
+    margin-left: 0.4em;
+    margin-top: 1em;
+}
+
+.lango_describe_block {
+    text-align: left;
+    position: relative;
+}
+
+.quote {
+    position: absolute;
+    z-index: 2;
+    margin-top: -12px;
+    /* width: 100%; */
+    height: 100px;
+    font-size: 72px;
+    font-family: PingFangSC-Medium;
+    font-weight: 500;
+    color: #e4e4e4;
+    line-height: 100px;
+}
+
+
+#icon_earth {
+    color: white;
+    font-size: 530pt;
+    right: -20px;
+    top: -180px;
+    position: relative;
+    /*  text-shadow: 0px 75px 92px #f16995;*/
+}
+
+.title_small {
+    color: #a3a3a3;
+    font-size: 34px;
+    font-weight: 100;
+    font-family: Work Sans, Microsoft Yahei UI Light, Sans, Avenir, Ostrich Sans, Flexo Light;
+    position: relative;
+    bottom: 11px;
+}
+
+#icon_settings {
+    color: #888888;
+    font-size: 56px;
+    position: relative;
+}
+
+#icon_settings2 {
+    color: #888888;
+    font-size: 56px;
+    position: relative;
+}
+
+.logo_small {
+    width: 29rem;
+}
+
+.artrix_small {
+    width: 102px;
+    left: 42px;
+    top: 32px;
+    position: absolute;
+    filter: brightness(0);
+}
+
+#slogan_block {
+    top: 10px;
+    position: relative;
+}
+
+#slogan1 {
+    color: white;
+    font-size: 2.6em;
+    font-weight: 800;
+    font-family: Work Sans, Microsoft Yahei UI Light, Sans, Avenir, Ostrich Sans, Flexo Light;
+}
+
+#slogan2 {
+    color: white;
+    font-size: 28;
+    font-family: Work Sans, Microsoft Yahei UI Light, Sans, Avenir, Ostrich Sans, Flexo Light;
+}
+
+#header {
+    margin-left: auto;
+    margin-right: auto;
+    top: 6rem;
+    position: relative;
+    text-align: left;
+}
+
+.main_box {
+    /* background: white; */
+    width: 1260px;
+    height: 1200;
+    width: 100%;
+    /* margin-left: 1000; */
+    /* margin-right: 1000; */
+    position: relative;
+    margin: 0 auto;
+    top: 12rem;
+    /* box-shadow: 0px 15px 92px #313131; */
+}
+
+/* Animations */
+
+.lango-anim-slow {
+    animation-duration: .8s;
+}
+
+.lango-anim-mid {
+    animation-duration: .5s;
+}
+
+.lango-anim-fast {
+    animation-duration: .2s;
+}
+
+.lango-transition-slow {
+    transition: all 0.8s;
+}
+
+.lango-transition-mid {
+    transition: all 0.5s;
+}
+
+.lango-transition-fast {
+    transition: all 0.3s;
+}
+
+/* Feature Describe */
+.lango-feature-icon {
+
+    color: gray;
+    font-size: 7.5em;
+    position: relative;
+
+}
+
+.lango-feature-div {
+
+    background: url(/static/lango/img/bg-mid.jpg) 50% 50% / cover;
+    background: #f9f9f9;
+
+    position: relative;
+    width: 100%;
+
+    margin-top: 5rem;
+
+}
+
+.lango-feature-icon-block {
+    width: 16rem;
+    height: 9rem;
+    display: inline-block;
+    padding: 3rem 0.5rem;
+}
+
+.lango-feature-span{
+    color:gray;
+    font-size: 1.3em;
+    display: block;
+    position: relative;
+    top: 0.2rem;
+}
+
+#icon-css {
+    color: gray;
+}
+
+#icon-json {
+    color: gray;
+}
+
+#icon-adjust {
+    color: gray;
+}
+
+#box-css {
+}
+
+#box-json {
+    margin-top: 0;
+}
+
+#box-adjust {
+}

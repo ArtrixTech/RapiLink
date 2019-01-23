@@ -1,0 +1,187 @@
+<html style="overflow-x: hidden;overflow-y: hidden;">
+
+<head>
+    <title>RapiLink - Your data transition center</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('front.static', filename='css/old/main.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('front.static', filename='css/old/float_window.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('front.static', filename='css/old/file_process.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('front.static', filename='css/old/link_process_animation.css') }}">
+
+    <link href='https://fonts.googleapis.com/css?family=Work%20Sans' rel='stylesheet' type='text/css'>
+
+
+</head>
+
+<body id="b">
+
+    <canvas id="canv"></canvas>
+    <script src="{{ url_for('front.static', filename='js/old/animations/stars_no_mouse.js') }}"></script>
+
+    <style>
+        #canv {
+            position: absolute;
+            z-index: -1;
+            /*top: -5%;
+            left: -2%;
+            width: 102%;
+            height: 102%;*/
+        }
+    </style>
+
+    <a href="https://rapi.link">
+        <img src="{{ url_for('front.static', filename='img/old/site_branding/logo_small.png') }}" class="logo_small">
+    </a>
+
+    <div class="background_board"></div>
+
+    <div class="title" onfocus="linkFloatWindowFold()">
+        <span class="large unselective">Short</span>
+        <span class="small unselective"> link generator</span>
+    </div>
+
+    <div class="icons" onfocus="linkFloatWindowFold()">
+
+
+        <a href="javascript:void(0)" onclick="changeLink()" class="btn" style="text-decoration-line: none;">
+            <img class="icon_selected" id="link_btn" src="{{ url_for('front.static', filename='img/old/link.png') }}">
+        </a>
+        <span class="label_for_btn" id="link_label">Link</span>
+
+        <a href="javascript:void(0)" onclick="changeFile()" class="btn" style="text-decoration-line: none;">
+            <img class="icon" id="file_btn" src="{{ url_for('front.static', filename='img/old/file.png') }}">
+        </a>
+        <span class="label_for_btn" id="file_label">File</span>
+
+        <a href="javascript:void(0)" onclick="changeText()" class="btn" style="text-decoration-line: none;">
+            <img class="icon" id="text_btn" src="{{ url_for('front.static', filename='img/old/text.png') }}">
+        </a>
+        <span class="label_for_btn" id="text_label">Text</span>
+
+
+    </div>
+
+    <div class="func_areas">
+
+
+        <div class="make_link" id="link">
+            <!links>
+
+            <div class="round_bar bar_config1">
+
+                <input class="link_input" id="link_input" placeholder="https://rapi.link">
+                <div class="link_hover_btn" id="link_hover_btn" onclick="genLink()" onmousedown="btnMouseDown()" onmouseup="btnMouseUp()"></div>
+
+            </div>
+
+
+            <div class="float_window float_window_config_link f_good" id="link_gen_window">
+
+                <div id="f_window_bar1" class="">
+                    <span class="float_window_label" id="customize_link_label">https://rapi.link/</span>
+                    <input class="customize_link_input" id="customize_link_input" placeholder="<Your Customized link>" onfocus="startTimer1()"
+                        onblur="stopTimer1()">
+                    <div class="indicator good" id="indicator1"></div>
+                </div>
+
+                <div id="f_window_bar2" class="hidden">
+                    <span class="float_window_label_2" id="link_whole_link_label">The Link will be available for 2 hours</span>
+                    <input class="link_whole_link_label" id="link_whole_link" readonly="readonly" value="<Whole-Link>" onclick="this.select();">
+                    <div class="indicator finished" id="indicator2"></div>
+                </div>
+
+
+            </div>
+            <div class="round_bar bar_config2 hidden" id="link_gen_bar">
+                <input class="bar_input bar_input_config2" id="round_bar_input2">
+            </div>
+
+
+        </div>
+
+        <div class="hidden" id="file">
+
+            <div class="round_bar bar_config1">
+
+                <div id="file_input_div">
+                    <script>
+                        function clickTheUploadInput() {
+                            document.getElementById("file_input").click();
+                        }
+                    </script>
+                    <span id="file_input_span" class="unselective" onclick="clickTheUploadInput()">Select File</span>
+                    <input type="file" id="file_input">
+                </div>
+                <button onclick="uploadFile()" id="upload_btn">UPLOAD</button>
+                <span id="progress_text">0</span>
+
+                <!<input class="link_input" id="link_input" placeholder="https://rapi.link">>
+                <div class="link_hover_btn" id="link_hover_btn" onclick="genLink()" onmousedown="btnMouseDown()" onmouseup="btnMouseUp()"></div>
+
+            </div>
+
+
+            <div class="float_window float_window_config_link f_good" id="link_gen_window">
+
+                <div id="f_window_bar1" class="">
+                    <span class="float_window_label" id="customize_link_label">https://rapi.link/</span>
+                    <input class="customize_link_input" id="customize_link_input" placeholder="<Your Customized link>" onfocus="startTimer1()"
+                        onblur="stopTimer1()">
+                    <div class="indicator good" id="indicator1"></div>
+                </div>
+
+                <div id="f_window_bar2" class="hidden">
+                    <span class="float_window_label_2" id="link_whole_link_label">The Link will be available for 2 hours</span>
+                    <input class="link_whole_link_label" id="link_whole_link" readonly="readonly" value="<Whole-Link>" onclick="this.select();">
+                    <div class="indicator finished" id="indicator2"></div>
+                </div>
+
+
+            </div>
+            <div class="round_bar bar_config2 hidden" id="link_gen_bar">
+                <input class="bar_input bar_input_config2" id="round_bar_input2">
+            </div>
+
+
+        </div>
+
+        <div class="hidden" id="text">
+            <input class="text_input">
+        </div>
+
+    </div>
+
+    <script src="{{ url_for('front.static', filename='js/old/jquery-3.3.1.min.js') }}"></script>
+    <script src="{{ url_for('front.static', filename='js/old/main.js') }}"></script>
+
+    <script src="{{ url_for('front.static', filename='js/old/link_process_new.js') }}"></script>
+    <script src="{{ url_for('front.static', filename='js/old/animations/link_process_animation.js') }}"></script>
+
+    <script src="{{ url_for('front.static', filename='js/old/file_process.js') }}"></script>
+
+    <script src="{{ url_for('front.static', filename='js/old/utils/utils.js') }}"></script>
+    <script>
+        changeLink();
+    </script>
+
+
+
+
+</body>
+
+<footer>
+    <style>
+        .footer_box {
+            position: absolute;
+            bottom: 28px;
+            text-align: center;
+            width: 100%;
+        }
+    </style>
+    <div class="footer_box">
+        <div class="copyright unselective">Copyright © 2018 Artrix Technologies CO.,LTD All rights reserved.</div>
+    </div>
+
+</footer>
+
+
+</html>

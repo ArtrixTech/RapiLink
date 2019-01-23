@@ -1,0 +1,60 @@
+{
+    "language": "ZH_CN",
+    "contents": {
+        "title": {
+            "text": "Lango.js"
+        },  
+        "nav-home": {
+            "text": "主页"
+        },  
+        "nav-github": {
+            "text": "GitHub"
+        },  
+        "nav-docs": {
+            "text": "文档"
+        },  
+        "slogan1": {
+            "text": "轻量级"
+        },
+        "slogan2": {
+            "text": "网页国际化引擎"
+        },
+        "usage": {
+            "text": "使用方法"
+        },
+        "lango_overview": {
+            "text": "Lango是一款强大却轻量的网页国际化引擎."
+        },
+        "jsonbased": {
+            "text": "基于JSON"
+        },
+        "cssadjust": {
+            "text": "可单独调节CSS"
+        },
+        "statesedit": {
+            "text": "基于状态动态翻译"
+        },
+        "test": {
+            "states": {
+                "default": {
+                    "text": "当前处于默认状态",
+                    "css": {
+                        "left": "0px"
+                    }
+                },
+                "state1": {
+                    "text": "当前处于状态1",
+                    "css": {
+                        "left": "100px"
+                    }
+                },
+                "state2": {
+                    "text": "当前处于状态2",
+                    "css": {
+                        "left": "0px"
+                    }
+                }
+            }
+        }
+    }
+}

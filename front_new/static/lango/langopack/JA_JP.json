@@ -1,0 +1,60 @@
+{
+  "language": "JA_JP",
+  "contents": {
+    "title": {
+      "text": "Lango.js"
+    },
+    "nav-home": {
+      "text": "\u30db\u30fc\u30e0\u30da\u30fc\u30b8"
+    },
+    "nav-github": {
+      "text": "GitHub"
+    },
+    "nav-docs": {
+      "text": "\u30c9\u30ad\u30e5\u30e1\u30f3\u30c8"
+    },
+    "slogan1": {
+      "text": "\u8efd\u91cf"
+    },
+    "slogan2": {
+      "text": "Web\u30da\u30fc\u30b8\u56fd\u969b\u5316\u30a8\u30f3\u30b8\u30f3"
+    },
+    "usage": {
+      "text": "\u4f7f\u7528\u65b9\u6cd5"
+    },
+    "lango_overview": {
+      "text": "Lango\u306f\u3001\u5f37\u529b\u3067\u306f\u3042\u308b\u304c\u8efd\u91cf\u306eWeb\u30da\u30fc\u30b8\u56fd\u969b\u5316\u30a8\u30f3\u30b8\u30f3\u3067\u3059\u3002"
+    },
+    "jsonbased": {
+      "text": "JSON\u306b\u57fa\u3065\u3044\u3066"
+    },
+    "cssadjust": {
+      "text": "\u500b\u5225\u306b\u8abf\u6574\u53ef\u80fd\u306aCSS"
+    },
+    "statesedit": {
+      "text": "\u72b6\u614b\u306b\u57fa\u3065\u304f\u52d5\u7684\u306a\u7ffb\u8a33"
+    },
+    "test": {
+      "states": {
+        "default": {
+          "text": "\u73fe\u5728\u3001\u30c7\u30d5\u30a9\u30eb\u30c8\u72b6\u614b",
+          "css": {
+            "left": "0px"
+          }
+        },
+        "state1": {
+          "text": "\u73fe\u5728\u306e\u72b6\u614b1",
+          "css": {
+            "left": "100px"
+          }
+        },
+        "state2": {
+          "text": "\u73fe\u5728\u306e\u72b6\u614b2",
+          "css": {
+            "left": "0px"
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,60 @@
+{
+    "language": "EN_US",
+    "contents": {
+        "title": {
+            "text": "Lango.js"
+        },
+        "nav-home": {
+            "text": "Home"
+        },  
+        "nav-github": {
+            "text": "GitHub"
+        },  
+        "nav-docs": {
+            "text": "Documents"
+        },  
+        "slogan1": {
+            "text": "Lightweight"
+        },
+        "slogan2": {
+            "text": " i18n engine."
+        },
+        "usage": {
+            "text": "Usage"
+        },
+        "lango_overview": {
+            "text": "Lango is a powerful but lightweight i18n engine."
+        },
+        "jsonbased": {
+            "text": "Based on JSON"
+        },
+        "cssadjust": {
+            "text": "CSS Adjustable"
+        },
+        "statesedit": {
+            "text": "States Editable"
+        },
+        "test": {
+            "states": {
+                "default": {
+                    "text": "Now I'm in the default state.",
+                    "css": {
+                        "left": "0px"
+                    }
+                },
+                "state1": {
+                    "text": "Now I'm in the state1.",
+                    "css": {
+                        "left": "100px"
+                    }
+                },
+                "state2": {
+                    "text": "Now I'm in the state2.",
+                    "css": {
+                        "left": "0px"
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,92 @@
+<html style="overflow-x: hidden;overflow-y: hidden;">
+
+<head>
+    <title>RapiLink File Download</title>
+
+    <link rel="stylesheet" type="text/css" href="{{ url_for('front.static', filename='layui/css/layui.css') }}">
+    <script src="{{ url_for('front.static', filename='js/jquery-3.3.1.min.js') }}"></script>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('front.static', filename='css/file_redirect.css') }}">
+
+    <link rel="shortcut icon" href="{{ url_for('front.static', filename='favicon_small.png') }}">
+
+    <link href='https://fonts.googleapis.com/css?family=Work%20Sans' rel='stylesheet' type='text/css'>
+
+    <script src="{{ url_for('front.static', filename='js/utils/color-thief.min.js') }}"></script>
+
+    <script src="{{ url_for('front.static', filename='js/utils/utils.js') }}"></script>
+    <script src="{{ url_for('front.static', filename='js/bing_bg.js') }}"></script>
+
+    <link rel="stylesheet" type="text/css" href="{{ url_for('front.static', filename='css/message/bar.css') }}">
+    <script src="{{ url_for('front.static', filename='js/animations/message/bar.js') }}"></script>
+
+    <meta name="batch_id" content="{{batch_id}}">
+
+
+    <script src="{{ url_for('front.static', filename='layui/layui.js') }}"></script>
+
+    <link rel="stylesheet" type="text/css"
+          href="{{ url_for('front.static', filename='iconfont/file_redirect/iconfont.css') }}">
+
+    <script src="{{ url_for('front.static', filename='js/file_redirect.js') }}"></script>
+
+
+</head>
+
+<body id="bd" style="background-repeat: no-repeat;background-size: 100%;">
+
+<div id="background-cover"
+     style="transition: all 0.7s;width:100%;height:100%;position:fixed;background-repeat: no-repeat;background-size: 100%;"></div>
+
+<img id="bgimg" src="" class="hidden" crossorigin="https://cn.bing.com">
+
+<script>
+    changeBackground();
+    fetchColor(themeColorChange);
+    analyze_file(fileInfoUpdate);
+</script>
+
+<a href="https://rapi.link">
+    <img src="{{ url_for('front.static', filename='img/site_branding/logo_small.png') }}" class="logo_small">
+</a>
+
+<div class="rplink-box rplnk-file-info-box" id="rplnk-file-info-box">
+
+    <i class="iconfont rplnk-color-anim" id="rplnk-file-type-icon"></i>
+    <p class="rplnk-color-anim" id="rplnk-file-name">Loading...</p>
+
+</div>
+
+<div class="rplnk-main-box rplnk-oval-box rplnk-color-anim" id="rplnk-foreground-box">
+
+    <button class="hidden layui-anim rplnk-color-anim" id="rplnk-download-btn" style="background:white;">
+        <i class="iconfont icon-download rplnk-color-anim" id="rplnk-icon-download"></i>
+        <span class="rplnk-download-prompt rplnk-color-anim" id="rplnk-download-prompt">Download Now</span>
+        <span class="layui-badge-rim rplnk-file-info-size-badge rplnk-color-anim" id="rplnk-file-info-size-badge">Loading</span>
+    </button>
+
+</div>
+
+<script>
+    boxResize();
+    registerEvents();
+</script>
+
+</body>
+
+<footer>
+    <style>
+        .footer_box {
+            position: absolute;
+            bottom: 28px;
+            text-align: center;
+            width: 100%;
+        }
+    </style>
+    <div class="footer_box">
+        <div class="copyright unselective animation rplnk-color-anim" id="footer_copyright">Copyright © 2018 Artrix Technologies. Backgrounds provided by Bing.</div>
+    </div>
+
+</footer>
+
+
+</html>

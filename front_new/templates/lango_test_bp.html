@@ -1,0 +1,115 @@
+<html style="overflow-x: hidden;">
+
+<head>
+
+    <title>RapiLink - Your data transition center</title>
+
+    <script src="{{ url_for('front.static', filename='js/jquery-3.3.1.min.js') }}"></script>
+    <script src="{{ url_for('front.static', filename='js/jquery.cookie.js') }}"></script>
+    <script src="{{ url_for('front.static', filename='langotemp/lango.js') }}"></script>
+    <script src="{{ url_for('front.static', filename='js/utils/anime.min.js') }}"></script>
+    <script src="{{ url_for('front.static', filename='js/utils/showdown.min.js') }}"></script>
+
+
+    <link href="https://fonts.googleapis.com/css?family=Noto%20Sans" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Work%20Sans" rel="stylesheet" type="text/css">
+
+    <link rel="stylesheet" type="text/css" href="{{ url_for('front.static', filename='langotemp/iconfont/iconfont.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('front.static', filename='css/lango/lango.css') }}">
+
+    <link rel="stylesheet" type="text/css" href="{{ url_for('front.static', filename='langotemp/prism-edited.css') }}">
+
+</head>
+
+<body>
+
+
+    <a href="https://rapi.link">
+        <img src="{{ url_for('front.static', filename='img/site_branding/logo_small.png') }}" class="artrix_small">
+    </a>
+
+    <span id="lango_big_bg" class="hidden">internationalization</span>
+
+    <div id="header">
+
+        <div style="left: 180px;position: relative;">
+            <div class="" style="width: 100%;position: absolute;text-align: right;opacity: 0.1;">
+                <i class="iconfont icon-earth" id="icon_earth"></i>
+            </div>
+            <img src="{{ url_for('front.static', filename='langotemp/lango_logo.png') }}" class="logo_small">
+            <div id="slogan_block">
+                <span lango_id="slogan1" id="slogan1">Lightweight</span>
+                <span lango_id="slogan2" id="slogan2">i18n engine.</span>
+            </div>
+        </div>
+
+    </div>
+
+
+
+    <div class="main_box" style="text-align:center;overflow: hidden;">
+
+        <div class="lango_describe_block" style="height: 200px; text-align: center;margin-top:88px;">
+            <span class="left_quote quote">“</span>
+            <span id="lango_overview" lango_id="lango_overview">Lango is a very powerful i18n engine.</span>
+            <span class="right_quote quote">”</span>
+        </div>
+
+
+        <div class="lango_describe_block" style="text-align: left;position: relative;">
+            <div class="lango_describe_block" style="top: 55px;margin-left: 12%;position: relative;">
+                <i class="iconfont icon-settings" id="icon_settings"></i>
+                <span lango_id="usage" class="title_small">Usage</span>
+            </div>
+
+
+            <pre class="brush:javascript;" style="width:64%;margin-left: auto;margin-right: auto;position: relative;margin-top: 120;overflow: hidden;">
+                <code class="language-javascript">
+    
+        var lango = new Lango();
+        lango.Settings.languagePackRoot = "/your_language_pack_directory";
+        lango.init();
+    </code>
+            </pre>
+
+        </div>
+
+        <div class="lango_describe_block" style="text-align: left;position: relative;">
+            <div class="lango_describe_block" style="top: 55px;margin-left: 12%;position: relative;">
+                <i class="iconfont icon-settings" id="icon_settings"></i>
+                <span lango_id="usage" class="title_small">Usage</span>
+            </div>
+
+
+            <pre class="brush:javascript;" style="width:64%;margin-left: auto;margin-right: auto;position: relative;margin-top: 120;overflow: hidden;">
+                    <code class="language-javascript">
+        
+            var lango = new Lango();
+            lango.Settings.languagePackRoot = "/your_language_pack_directory";
+            lango.init();
+        </code>
+                </pre>
+
+        </div>
+
+
+
+
+        <span lango_id="title" class="hidden">Content1!</span>
+        <span lango_id="test" class="hidden">Content2!</span>
+        <span class="hidden">HelloWorld!</span>
+
+    </div>
+
+    <script>
+        var l = new Lango();
+        l.Settings.languagePackRoot = "{{ url_for('front.static', filename='langopack/') }}";
+        l.init();
+    </script>
+
+    <script src="{{ url_for('front.static', filename='langotemp/prism.js') }}"></script>
+
+</body>
+
+
+</html>

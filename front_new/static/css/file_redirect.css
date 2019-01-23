@@ -1,0 +1,175 @@
+body {
+
+    width: 100%;
+    margin: 0;
+    overflow: hidden;
+
+    background: white;
+    text-align: center;
+
+}
+
+.rplnk-color-anim {
+    transition: color cubic-bezier(0, 0, 0.43, 0.99) 0.8s,box-shadow cubic-bezier(0, 0, 0.43, 0.99) 0.8s,text-shadow cubic-bezier(0, 0, 0.43, 0.99) 0.8s;
+}
+
+.rplnk-main-box {
+
+    height: 100%;
+    /*background: white;*/
+    top: 520px;
+
+    position: fixed;
+    left: -150%;
+    opacity: 0.98;
+
+    transition: border-radius cubic-bezier(0, 0, 0.43, 0.99) 0.75s, color cubic-bezier(0, 0, 0.43, 0.99) 0.75s, opacity cubic-bezier(0, 0, 0.35, 1.01) 0.3s;
+
+}
+
+.rplnk-oval-box {
+    border-radius: 80% 80% 0 0;
+}
+
+.rplnk-large-btn {
+    top: 68;
+    position: relative;
+}
+
+
+
+#rplnk-file-type-icon {
+    font-size: 196;
+    color: white;
+    transition: all 0.75s;
+    /*padding: 24px;
+    border-radius: 24px;*/
+    opacity: 0.9;
+}
+
+.rplnk-file-info-box {
+    position: relative;
+    top: 100;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+#rplnk-file-name {
+    font-family: Work Sans, Microsoft Yahei UI Light;
+    font-size: 34px;
+    color: white;
+    position: relative;
+    top: 0px;
+}
+
+.rplnk-file-info-size-badge {
+    background: transparent;
+    color: white;
+    top: -3px;
+    left: 5px;
+    font-family: Work Sans, Microsoft Yahei UI Light;
+    border-color: white;
+}
+
+.rplnk-download-prompt {
+    color: white;
+    font-family: Work Sans;
+    font-weight: 500;
+    position: relative;
+    top: -1px;
+}
+
+.blank {
+    opacity: 0;
+    transform: scale(0.9, 0.9);
+}
+
+.animation {
+    transition: transform cubic-bezier(0, 0, 0.43, 0.99) 0.75s, color cubic-bezier(0, 0, 0.43, 0.99) 0.75s, opacity cubic-bezier(0, 0, 0.35, 1.01) 0.75s;
+}
+
+.copyright {
+    color: #FFFFFF;
+    font-family: Work Sans, Microsoft Yahei UI Light;
+    font-size: 12px;
+    /*text-shadow: 0px 3px 31px #e88687cf;*/
+    top: -31%;
+    position: relative;
+}
+
+.unselective {
+
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+}
+
+.logo_small {
+
+    width: 130px;
+    left: 28px;
+    top: 19px;
+    position: absolute;
+
+}
+
+.label_404 {
+
+    color: white;
+    font-family: Work Sans;
+    font-size: 190;
+    text-shadow: 0px 34px 43px #e88687a6;
+    top: 25%;
+    position: relative;
+
+}
+
+.label_not_found {
+
+    color: white;
+    font-family: Work Sans;
+    font-size: 39px;
+    font-weight: bold;
+    text-shadow: 0px 34px 43px #e88687a6;
+    top: 23%;
+    position: relative;
+
+}
+
+body {
+    /*background-image: linear-gradient(-45deg, #FFC796 0%, #FF6B95 100%);*/
+    width: 100%;
+    margin: 0;
+    overflow: hidden;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+::selection {
+    background: rgba(0, 0, 0, 0.116);
+}
+
+.unselective {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.hidden {
+    display: none;
+}
+
+.logo_small {
+    width: 130px;
+    left: 28px;
+    top: 19px;
+    position: absolute;
+}
