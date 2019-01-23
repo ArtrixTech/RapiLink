@@ -84,9 +84,24 @@ def add_url():
         if "http://" not in target and "https://" not in target and "ftp://" not in target:
             target = "http://" + target
 
+        params = {"ttl": 7200}
+
+        if alias[0] == "$" and "$RPLNK-" in alias:
+
+            commands = cut_string.cut_string(alias, "$RPLNK-", "$")
+            alias = str(alias).replace("$RPLNK-" + commands + "$", "")
+            commands = commands.split(",")
+
+            for command in commands:
+                command_name, command_data = command.split(":")
+
+                if command_name == "TTL":
+                    params["ttl"] = int(command_data)
+
         # Inner exception values:
         # [0](str)Status code, "OK" -> Ok, "ALIAS_EXIST" -> Error:The alias is exist in the pool
-        result = all_urls.add(ShortLink(alias, target, 7200))
+        
+        result = all_urls.add(ShortLink(alias, target, params["ttl"]))
         print("[add_url]" + str(all_urls.get_by_alias(alias)[0]) + " -> " + target)
         return result
 
