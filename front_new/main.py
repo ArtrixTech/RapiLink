@@ -1,17 +1,38 @@
 from flask import Blueprint
-from flask import render_template
 from flask import request, url_for, send_from_directory, make_response
 import json
 import requests
+import flask
 
 from back.main import is_alias_exist, alias_type, all_files
 from back import file_process
+
+from utils import router_gen
 
 from logger.log import Logger
 
 from bing_image.bing_image import get_bing_img_small
 
-front_new_blueprint = Blueprint('front_new', __name__, template_folder="templates", static_folder="static",subdomain="new")
+front_new_blueprint = Blueprint('front_new', __name__, template_folder="templates", static_folder="static",
+                                subdomain="")
+
+
+def render_decorate(path_prefix):
+    def decorate(func):
+        def dec_func(*args, **kw):
+            arg_list = list(args)
+            arg_list[0] = path_prefix + str(arg_list[0])
+            arg_tuple = tuple(arg_list)
+            return func(*arg_tuple, **kw)
+
+        return dec_func
+
+    return decorate
+
+
+@render_decorate("front_new/")
+def render_template(template_name_or_list, **context):
+    return flask.render_template(template_name_or_list, **context)
 
 
 @front_new_blueprint.route('/bing_img')
@@ -24,7 +45,7 @@ def bing_img():
 def hello():
     print(front_new_blueprint.root_path)
     return render_template('old/main.html')
-    
+
 
 @front_new_blueprint.route('/lango')
 def lango():
@@ -39,29 +60,28 @@ def main():
     elif "http" not in img:
         img = url_for('front.static', filename='img/backgrounds/' + str(img) + ".jpg")
 
-    return render_template('main.html', img_url=img)
+    return render_template('index.html', img_url=img)
 
 
 @front_new_blueprint.route('/get')
 def get_request():
     url, params = request.args.get("url"), request.args.get("params")
 
-    if "api.rapi.link" in url:
-        params_json = json.loads(params)
-        print("[Front-Proxy] " + url)
+    params_json = json.loads(params)
+    print("[Front-Proxy] " + url)
 
-        if len(params.replace("\"", "")) > 1:
-            print("[Front-Proxy] " + params)
+    if len(params.replace("\"", "")) > 1:
+        print("[Front-Proxy] " + params)
 
-        try:
-            response = requests.get(url, params=params_json, timeout=5).text
+    try:
+        print(router_gen.get_real_location("http", "api", url))
+        response = requests.get(router_gen.get_real_location("http", "api", url), params=params_json, timeout=5).text
 
-        except requests.ReadTimeout:
-            response = "TIMEOUT"
+    except requests.ReadTimeout:
+        response = "TIMEOUT"
 
-        print("    Response: " + response)
-        return response
-    return False
+    print("    Response: " + response)
+    return response
 
 
 @front_new_blueprint.route('/straight/<alias>')
@@ -72,7 +92,8 @@ def url_visit(alias):
         visit_type = alias_type(alias)
         if visit_type == "URL":
             try:
-                response = requests.get("http://api.rapi.link/get_url", params={"alias": alias}, timeout=5).text
+                response = requests.get(router_gen.get_real_location("http", "api", "/get_url"),
+                                        params={"alias": alias}, timeout=5).text
                 print("[url_visit]" + alias + " -> " + response)
 
                 if not response == "URL_NOT_EXIST":
@@ -114,12 +135,14 @@ def url_visit_test(alias):
         visit_type = alias_type(alias)
         if visit_type == "URL":
             try:
-                response = requests.get("http://api.rapi.link/get_url", params={"alias": alias}, timeout=5).text
+                response = requests.get(router_gen.get_real_location("http", "api", "/get_url"),
+                                        params={"alias": alias}, timeout=5).text
                 print("[url_visit]" + alias + " -> " + response)
 
                 if not response == "URL_NOT_EXIST":
-                    print(response)
+                    print("RRR" + response)
                     response_page = render_template('link_redirect.html', target=response)
+                    print(response_page)
                 else:
                     response_page = render_template('error_code/404.html')
                 print("[url_visit]OK")

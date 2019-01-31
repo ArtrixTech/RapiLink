@@ -426,7 +426,7 @@ function aliasAvailable(result) {
         }
         updateFloatWindow_File();
     } else {
-        apiGet("alias_available", {
+        apiGet("/alias_available", {
             alias: $("#customize_link_input_file").val()
         },
             function (data) {

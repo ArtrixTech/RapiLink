@@ -182,7 +182,7 @@ function genLink() {
 
     if (ok) {
         if (!business_obj.link_input.value == "" && !business_obj.customize_link_input.value == "") {
-            apiGet("add_url",
+            apiGet("/add_url",
                 { alias: business_obj.customize_link_input.value, target: business_obj.link_input.value },
                 function (data) {
                     if (data == "OK") {
@@ -207,7 +207,7 @@ function isLinkAvailable(result) {
         else { ok = false; }
         updAllState();
     } else {
-        apiGet("alias_available",
+        apiGet("/alias_available",
             { alias: business_obj.customize_link_input.value },
             function (data) {
                 isLinkAvailable(data);

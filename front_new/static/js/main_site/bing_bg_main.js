@@ -12,7 +12,7 @@ function changeBG() {
 
     }
 
-    apiGet("bing_url", "", setBG);
+    apiGet("/bing_url", "", setBG);
 
 }
 
@@ -30,7 +30,7 @@ function changeBackgound_fileRedirect() {
 
     }
 
-    apiGet("bing_url", "", setBG);
+    apiGet("/bing_url", "", setBG);
 
 }
 

@@ -1,6 +1,9 @@
 LOG_LOCATION_WIN = "logs\\"
 LOG_LOCATION_LINUX = "logs/"
 
+DOMAIN = "rapi.link"
+USE_HTTPS = False
+
 
 def get_log_location():
     from utils import platform

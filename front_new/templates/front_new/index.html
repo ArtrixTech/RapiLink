@@ -3,26 +3,26 @@
 <head>
     <title>New RapiLink - Your data transition center</title>
 
-    <link rel="stylesheet" type="text/css" href="{{ url_for('front.static', filename='css/main.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ url_for('front.static', filename='css/float_window.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ url_for('front.static', filename='css/file_process.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('front_new.static', filename='css/main.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('front_new.static', filename='css/float_window.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('front_new.static', filename='css/file_process.css') }}">
 
-    <link rel="shortcut icon" href="{{ url_for('front.static', filename='favicon_small.png') }}">
+    <link rel="shortcut icon" href="{{ url_for('front_new.static', filename='favicon_small.png') }}">
 
     <link href='https://fonts.googleapis.com/css?family=Work%20Sans' rel='stylesheet' type='text/css'>
 
 
-    <script src="{{ url_for('front.static', filename='js/jquery-3.3.1.min.js') }}"></script>
-    <script src="{{ url_for('front.static', filename='js/utils/color-thief.min.js') }}"></script>
+    <script src="{{ url_for('front_new.static', filename='js/jquery-3.3.1.min.js') }}"></script>
+    <script src="{{ url_for('front_new.static', filename='js/utils/color-thief.min.js') }}"></script>
 
-    <script src="{{ url_for('front.static', filename='js/utils/utils.js') }}"></script>
-    <script src="{{ url_for('front.static', filename='js/main_site/main_color_fetch.js') }}"></script>
-    <script src="{{ url_for('front.static', filename='js/main_site/bing_bg_main.js') }}"></script>
+    <script src="{{ url_for('front_new.static', filename='js/utils/utils.js') }}"></script>
+    <script src="{{ url_for('front_new.static', filename='js/main_site/main_color_fetch.js') }}"></script>
+    <script src="{{ url_for('front_new.static', filename='js/main_site/bing_bg_main.js') }}"></script>
 
-    <link rel="stylesheet" type="text/css" href="{{ url_for('front.static', filename='iconfont/file_process/iconfont.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('front_new.static', filename='iconfont/file_process/iconfont.css') }}">
 
-    <link rel="stylesheet" type="text/css" href="{{ url_for('front.static', filename='css/link_process_animation.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ url_for('front.static', filename='css/message/bar.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('front_new.static', filename='css/link_process_animation.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('front_new.static', filename='css/message/bar.css') }}">
 
 </head>
 
@@ -37,7 +37,7 @@
 
     <script>
         //<canvas id="canv"></canvas>
-        //<script src="{{ url_for('front.static', filename='js/animations/stars_no_mouse.js') }}">(/script) - Replace the () with <> Here!!!
+        //<script src="{{ url_for('front_new.static', filename='js/animations/stars_no_mouse.js') }}">(/script) - Replace the () with <> Here!!!
 
     </script>
 
@@ -54,7 +54,7 @@
     </style>
 
     <a href="https://rapi.link">
-        <img src="{{ url_for('front.static', filename='img/site_branding/logo_small.png') }}" class="logo_small">
+        <img src="{{ url_for('front_new.static', filename='img/site_branding/logo_small.png') }}" class="logo_small">
     </a>
 
 
@@ -70,18 +70,18 @@
 
 
         <a href="javascript:void(0)" onclick="changeLink()" class="btn" style="text-decoration-line: none;">
-            <img class="icon_selected" id="link_btn" src="{{ url_for('front.static', filename='img/file.png') }}">
+            <img class="icon_selected" id="link_btn" src="{{ url_for('front_new.static', filename='img/file.png') }}">
         </a>
         <span class="label_for_btn" id="link_label">File</span>
 
         <a href="javascript:void(0)" onclick="changeFile()" class="btn" style="text-decoration-line: none;">
-            <img class="icon" id="file_btn" src="{{ url_for('front.static', filename='img/link.png') }}">
+            <img class="icon" id="file_btn" src="{{ url_for('front_new.static', filename='img/link.png') }}">
         </a>
         <span class="label_for_btn" id="file_label">Link</span>
 
         <!Block Hidden here>
         <a href="javascript:void(0)" onclick="changeText()" class="btn hidden" style="text-decoration-line: none;">
-            <img class="icon" id="text_btn" src="{{ url_for('front.static', filename='img/text.png') }}">
+            <img class="icon" id="text_btn" src="{{ url_for('front_new.static', filename='img/text.png') }}">
         </a>
         <span class="label_for_btn" id="text_label">Text</span>
 
@@ -95,7 +95,7 @@
             <div class="round_bar bar_config1">
 
                 <div id="file_input_div">
-                    <img id="file_icon" src="{{ url_for('front.static', filename='img/file.png') }}">
+                    <img id="file_icon" src="{{ url_for('front_new.static', filename='img/file.png') }}">
                     <span id="file_input_span" class="unselective">Select File</span>
                     <span id="progress_text" style="opacity: 0;">0.0MB/s</span>
                     <input type="file" id="file_input">
@@ -180,11 +180,11 @@
 
     </div>
 
-    <script src="{{ url_for('front.static', filename='js/main_site/main.js') }}"></script>
-    <script src="{{ url_for('front.static', filename='js/main_site/link_process_new.js') }}"></script>
-    <script src="{{ url_for('front.static', filename='js/animations/link_process_animation.js') }}"></script>
-    <script src="{{ url_for('front.static', filename='js/main_site/file_process.js') }}"></script>
-    <script src="{{ url_for('front.static', filename='js/animations/message/bar.js') }}"></script>
+    <script src="{{ url_for('front_new.static', filename='js/main_site/main.js') }}"></script>
+    <script src="{{ url_for('front_new.static', filename='js/main_site/link_process_new.js') }}"></script>
+    <script src="{{ url_for('front_new.static', filename='js/animations/link_process_animation.js') }}"></script>
+    <script src="{{ url_for('front_new.static', filename='js/main_site/file_process.js') }}"></script>
+    <script src="{{ url_for('front_new.static', filename='js/animations/message/bar.js') }}"></script>
 
 
     <script>

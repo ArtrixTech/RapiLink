@@ -15,7 +15,7 @@ function changeBackground() {
 
     }
 
-    apiGet("bing_url", "", set);
+    apiGet("/bing_url", "", set);
 
 }
 

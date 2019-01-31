@@ -151,7 +151,7 @@ function analyze_file(target_function) {
     }
 
     batch_id = $('meta[name="batch_id"]').attr("content")
-    apiGet("file_info", {
+    apiGet("/file_info", {
         "batch_id": batch_id
     }, render_file_info)
 

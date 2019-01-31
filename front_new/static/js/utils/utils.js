@@ -1,7 +1,7 @@
 function apiGet(apiLocation, params, recallFunction) {
 
     $.get("/get", {
-            url: "http://api.rapi.link/" + apiLocation,
+            url: apiLocation,
             params: JSON.stringify(params)
         },
         recallFunction)
