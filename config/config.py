@@ -1,7 +1,7 @@
 LOG_LOCATION_WIN = "logs\\"
 LOG_LOCATION_LINUX = "logs/"
 
-DOMAIN = "rapi.link"
+DOMAIN = "test.rapi.link"
 USE_HTTPS = False
 
 

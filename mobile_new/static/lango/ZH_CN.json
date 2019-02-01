@@ -1,6 +1,8 @@
 {
     "language": "ZH_CN",
     "contents": {
-        
+        "cap": {
+            "text": "选择一个文件。"
+        }
     }
 }

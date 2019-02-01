@@ -5,6 +5,8 @@
 body {
     padding: 58px;
     padding-top: 64px;
+    font-family: Noto Sans S Chinese;
+    overflow: hidden;
 }
 
 #logo {
@@ -13,7 +15,10 @@ body {
     margin-left: -12px;
 }
 
-.rplink-btn{
+@window-height: 0;
+@paging-bar-height: 42px;
+@paging-bar-initial-y: 0;
+.rplink-btn {
     width: 22rem;
     height: 6rem;
     background: transparent;
@@ -25,18 +30,52 @@ body {
     position: relative;
 }
 
-#rplink-cap-top {
+.rplink-btn-icon {
+    font-size: 52px !important;
+    top: 2px;
+    position: relative;
+}
+
+.rplink-paging-icon {
+    font-size: @paging-bar-height  !important;
+    position: relative;
+    color: white;
+}
+
+.rplink-btn-span {
+    bottom: 3px;
+    position: relative;
+    padding-left: 8px;
+}
+
+.rplink-cap-top {
     color: white;
     font-family: Noto Sans S Chinese;
     font-weight: 400;
     font-size: 7rem;
     position: relative;
     padding-top: 240px;
+    text-shadow: 0px 40px 98px #0000006e;
 }
 
-#rplink-cap-box {
+.rplink-cap-box {
     position: relative;
     width: 100%;
     text-align: left;
     margin-left: 10px;
+}
+
+.rplink-paging-bar {
+    position: fixed;
+    opacity: 0.7;
+    &.horizontal {
+        width: 100%;
+        top: 42%;
+    }
+    &.vertical {}
+}
+
+// Animations
+.swiper-wrapper {
+    transition-timing-function: cubic-bezier(0.24, -0.01, 0, 0.96);
 }

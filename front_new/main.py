@@ -140,7 +140,6 @@ def url_visit_test(alias):
                 print("[url_visit]" + alias + " -> " + response)
 
                 if not response == "URL_NOT_EXIST":
-                    print("RRR" + response)
                     response_page = render_template('link_redirect.html', target=response)
                     print(response_page)
                 else:
