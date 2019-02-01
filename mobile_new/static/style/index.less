@@ -127,7 +127,7 @@ body {
     border-radius: none;
     border-bottom-right-radius: 16px;
     border-top-right-radius: 16px;
-    font-size: 72px;
+    font-size: 54px;
     color: @primary-text-color;
     border: none;
     font-family: Work Sans, Noto Sans, Microsoft Yahei UI Light;
@@ -136,10 +136,15 @@ body {
         position: relative;
         float: right;
         width: @link-input-width;
+        padding-left: 24px;
     }
 }
 
 // Animations
 .swiper-wrapper {
     transition-timing-function: cubic-bezier(0.24, -0.01, 0, 0.96);
+}
+
+.rplink-anime-normal{
+    transition: all 0.3s cubic-bezier(0.3, 0.01, 0.26, 1.01);
 }

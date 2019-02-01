@@ -27,8 +27,12 @@ $("#file_uploader").bind('change', function () {
         }
     } else {
         showMessageBar("msg_bar",
-        "You didn't select any file.",
-        "GOOD",
-        3000);
+            "You didn't select any file.",
+            "GOOD",
+            3000);
     }
+});
+
+$(window).resize(function () {
+    setTimeout(setLinkInputWidth, 128);
 });

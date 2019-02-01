@@ -2,11 +2,18 @@ function getUnixTimeStamp() {
     return Math.round(new Date().getTime() / 1000);
 }
 
+
+
 function uploadProcess(files) {
+
+
+
     var file = files[0];
     //alert(file.name.gblen())
     $("#chosen_filename").text("" + file.name + "");
     $('#rplink_upload_step2').removeClass('hidden');
+
+    setLinkInputWidth(); // This function is for UI setups.
     HorizontalSwiper_Main.update();
     setTimeout("HorizontalSwiper_Main.slideNext();", 128);
 }

@@ -45,3 +45,11 @@ String.prototype.gblen = function () {
     }
     return len;
 }
+
+function setLinkInputWidth() {
+    var left_x = parseInt($('#rplink_link_prefix_span').innerWidth());
+    var right_x = parseInt($('#rplink_link_input_box').innerWidth());
+    less.modifyVars({
+        '@link-input-width': right_x - left_x - 64,
+    });
+}

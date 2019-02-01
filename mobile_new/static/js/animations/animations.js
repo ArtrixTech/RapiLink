@@ -44,4 +44,7 @@ $(document).ready(function () {
             prevEl: '.layui-icon-left',
         }
     });
+
+
 });
+
