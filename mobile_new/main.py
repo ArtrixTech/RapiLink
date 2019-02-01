@@ -1,5 +1,9 @@
 from flask import Blueprint
 from flask import request, url_for, make_response
+
+from utils import router_gen
+from bing_image.bing_image import get_bing_img_small
+
 import json
 import requests
 import flask
@@ -28,29 +32,34 @@ def render_template(template_name_or_list, **context):
 
 @mobile_new_blueprint.route('/')
 def main():
-
     response = make_response(render_template('index.html'))
     response.headers["Cache-Control"] = "no-cache"
     response.headers["Pragma"] = "no-cache"
     return response
 
 
+@mobile_new_blueprint.route('/bing_img')
+def bing_img():
+    url = request.args.get("u")
+    return get_bing_img_small(url)
+
+
 @mobile_new_blueprint.route('/get')
 def get_request():
     url, params = request.args.get("url"), request.args.get("params")
 
-    if "api.rapi.link" in url:
-        params_json = json.loads(params)
-        print("[Ajax-get]" + url)
+    params_json = json.loads(params)
+    print("[Front-Proxy] " + url)
 
-        if len(params.replace("\"", "")) > 1:
-            print("[Ajax-get]" + params)
+    if len(params.replace("\"", "")) > 1:
+        print("[Front-Proxy] " + params)
 
-        try:
-            response = requests.get(url, params=params_json, timeout=5).text
+    try:
+        print(router_gen.get_real_location("http", "api", url))
+        response = requests.get(router_gen.get_real_location("http", "api", url), params=params_json, timeout=5).text
 
-        except requests.ReadTimeout:
-            response = "TIMEOUT"
+    except requests.ReadTimeout:
+        response = "TIMEOUT"
 
-        return response
-    return False
+    print("    Response: " + response)
+    return response
