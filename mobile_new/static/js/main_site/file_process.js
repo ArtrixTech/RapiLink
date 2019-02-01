@@ -2,6 +2,15 @@ function getUnixTimeStamp() {
     return Math.round(new Date().getTime() / 1000);
 }
 
+function uploadProcess(files) {
+    var file = files[0];
+    //alert(file.name.gblen())
+    $("#chosen_filename").text("" + file.name + "");
+    $('#rplink_upload_step2').removeClass('hidden');
+    HorizontalSwiper_Main.update();
+    setTimeout("HorizontalSwiper_Main.slideNext();", 128);
+}
+
 function uploadFile(files) {
 
     function error(input) {
@@ -73,9 +82,9 @@ function uploadFile(files) {
                     $("#file_whole_link").val("https://rapi.link/" + $("#customize_link_input_file").val());
                     $("#progress_text").text("Finished!");
 
-                    $("#rplnk-qrcode-img").attr("src", "http://api.rapi.link/qr_code?url=" 
-                    + "https://rapi.link/" + $("#customize_link_input_file").val() 
-                    + "&color={%22R%22:"+sourceColor[0]+",%22G%22:"+sourceColor[1]+",%22B%22:"+sourceColor[2]+",\"A\":255}")
+                    $("#rplnk-qrcode-img").attr("src", "http://api.rapi.link/qr_code?url=" +
+                        "https://rapi.link/" + $("#customize_link_input_file").val() +
+                        "&color={%22R%22:" + sourceColor[0] + ",%22G%22:" + sourceColor[1] + ",%22B%22:" + sourceColor[2] + ",\"A\":255}")
 
                 } else {
                     error(result.responseText);

@@ -10,29 +10,26 @@
     <meta http-equiv="Cache" content="no-cache">
 
 
-    <title>RapiLink - 你的云中转站</title>
+    <title>RapiLink - 全能的文件分享平台</title>
+
+    <script src="{{ url_for('mobile_new.static', filename='js/jquery-3.3.1.min.js') }}"></script>
+    <script src="{{ url_for('mobile_new.static', filename='js/jquery.cookie.js') }}"></script>
+
     <link rel="shortcut icon" href="{{ url_for('mobile_new.static', filename='favicon_small.png') }}">
 
     <link rel="stylesheet" type="text/css" href="{{ url_for('mobile_new.static', filename='layui/css/layui.css') }}">
     <link rel="stylesheet/less" type="text/css" href="{{ url_for('mobile_new.static', filename='style/index.less') }}">
-    <link rel="stylesheet" type="text/css" href="{{ url_for('mobile_new.static', filename='style/message/bar.css') }}">
+    <link rel="stylesheet/less" type="text/css" href="{{ url_for('mobile_new.static', filename='style/message/bar.less') }}">
 
     <script src="{{ url_for('mobile_new.static', filename='js/less.min.js') }}"></script>
+    <script src="{{ url_for('mobile_new.static', filename='js/utils/color-thief.min.js') }}"></script>
+    <script src="{{ url_for('mobile_new.static', filename='js/utils/utils.js') }}"></script>
+    <script src="{{ url_for('mobile_new.static', filename='js/lango.js') }}"></script>
 
     <link rel="stylesheet" type="text/css" href="{{ url_for('mobile_new.static', filename='style/fonts/noto_sans.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ url_for('mobile_new.static', filename='style/fonts/work_sans.css') }}">
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.4.6/css/swiper.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.4.6/css/swiper.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.4.6/js/swiper.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.4.6/js/swiper.min.js"></script>
-
-    <script src="{{ url_for('mobile_new.static', filename='js/jquery-3.3.1.min.js') }}"></script>
-    <script src="{{ url_for('mobile_new.static', filename='js/jquery.cookie.js') }}"></script>
-    <script src="{{ url_for('mobile_new.static', filename='layui/layui.js') }}"></script>
-
-    <script src="{{ url_for('mobile_new.static', filename='js/lango.js') }}"></script>
-    <script src="{{ url_for('mobile_new.static', filename='js/utils/utils.js') }}"></script>
+    <script src="{{ url_for('mobile_new.static', filename='js/animations/message/bar.js') }}"></script>
     <script src="{{ url_for('mobile_new.static', filename='js/main_site/bing_background.js') }}"></script>
     <script src="{{ url_for('mobile_new.static', filename='js/main_site/bing_color_fetch.js') }}"></script>
     <script src="{{ url_for('mobile_new.static', filename='js/main_site/file_process.js') }}"></script>
@@ -59,9 +56,6 @@
 
         <div class="rplink-box-type" id="rplink-header-bg"></div>
 
-
-        <script src="{{ url_for('mobile_new.static', filename='js/layui_load.js') }}"></script>
-
         <div style="width: 100%;text-align: left;position: relative;">
             <a href="https://rapi.link">
                 <img class="layui-anim layui-anim-fadein" id="logo" src="{{ url_for('mobile_new.static', filename='img/site_branding/logo_small.png') }}">
@@ -76,7 +70,7 @@
         <div class="swiper-wrapper">
 
             <div class="rplink-cap-box swiper-slide">
-                <div class="swiper-container-horizontal">
+                <div class="swiper-container-horizontal help">
                     <div class="swiper-wrapper">
 
                         <div class="rplink-cap-box swiper-slide">
@@ -98,7 +92,7 @@
             </div>
 
             <div class="rplink-cap-box swiper-slide">
-                <div class="swiper-container-horizontal">
+                <div class="swiper-container-horizontal main">
                     <div class="swiper-wrapper">
 
                         <div class="rplink-cap-box swiper-slide">
@@ -110,9 +104,17 @@
                             </button>
                         </div>
 
-                        <div class="rplink-cap-box swiper-slide hidden">
-                            <p lango_id="chosen_filename" class="rplink-cap-top"></p>
+                        <div class="rplink-cap-box swiper-slide hidden" id="rplink_upload_step2">
 
+                            <p lango_id="shortlink_input" class="rplink-cap-top" id="shortlink_input" style="font-size: 3.1rem;">输入您的专属链接</p>
+                            <p class="rplink-cap" id="chosen_filename" style="font-size:6.4rem;"></p>
+
+                            <div class="rplink-input-box link-input">
+                                
+                                <span id="rplink_link_prefix_span">https://rapi.link/</span>
+                                <input class="rplink-input link-input" style="display:inline-block;">
+
+                            </div>
                         </div>
 
                     </div>
@@ -129,10 +131,16 @@
     </div>
 
 
-
-
     <script src="{{ url_for('mobile_new.static', filename='js/main_site/events.js') }}"></script>
     <script src="{{ url_for('mobile_new.static', filename='js/animations/animations.js') }}"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.4.6/css/swiper.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.4.6/css/swiper.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.4.6/js/swiper.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.4.6/js/swiper.min.js"></script>
+
+
+    <script src="{{ url_for('mobile_new.static', filename='layui/layui.js') }}"></script>
 
 </body>
 

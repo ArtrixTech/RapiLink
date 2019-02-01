@@ -2,6 +2,17 @@
     display: none;
 }
 
+p {
+    word-wrap: break-word;
+}
+
+hr {
+    height: 6px;
+    margin: 30px 0;
+    border: 0;
+    clear: both;
+}
+
 body {
     padding: 58px;
     padding-top: 64px;
@@ -48,6 +59,7 @@ body {
     padding-left: 8px;
 }
 
+@primary-shadow-color: #00000008;
 .rplink-cap-top {
     color: white;
     font-family: Noto Sans S Chinese;
@@ -55,14 +67,23 @@ body {
     font-size: 7rem;
     position: relative;
     padding-top: 240px;
-    text-shadow: 0px 40px 98px #0000006e;
+    text-shadow: 0px 40px 98px @primary-shadow-color;
+}
+
+.rplink-cap {
+    color: white;
+    font-family: Noto Sans S Chinese;
+    font-weight: 400;
+    font-size: 7rem;
+    position: relative;
+    padding-top: 24px;
+    text-shadow: 0px 40px 98px @primary-shadow-color;
 }
 
 .rplink-cap-box {
     position: relative;
     width: 100%;
-    text-align: left;
-    margin-left: 10px;
+    text-align: left; //margin-left: 10px;
 }
 
 .rplink-paging-bar {
@@ -73,6 +94,49 @@ body {
         top: 42%;
     }
     &.vertical {}
+}
+
+#rplink_link_prefix_span {
+    display: inline-block;
+    padding: 17px;
+    font-size: 60px;
+    padding-left: 26px;
+    padding-right: 0px;
+}
+
+@primary-text-color: #424242;
+.rplink-input-box {
+    background: transparent;
+    border: 4px solid white;
+    border-radius: 16px;
+    color: white;
+    font-size: 72px;
+    font-family: Work Sans, Noto Sans, Microsoft Yahei UI Light;
+    overflow: hidden;
+    &.link-input {
+        height: 106px;
+        top: 38px;
+        position: relative;
+        opacity: 0.9;
+    }
+}
+
+@link-input-width: 400px;
+.rplink-input {
+    background: white;
+    border-radius: none;
+    border-bottom-right-radius: 16px;
+    border-top-right-radius: 16px;
+    font-size: 72px;
+    color: @primary-text-color;
+    border: none;
+    font-family: Work Sans, Noto Sans, Microsoft Yahei UI Light;
+    &.link-input {
+        height: 106px;
+        position: relative;
+        float: right;
+        width: @link-input-width;
+    }
 }
 
 // Animations

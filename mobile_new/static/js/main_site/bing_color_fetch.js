@@ -6,7 +6,7 @@ var sourceColor;
 function fetchColor(refresh = false) {
     try {
         var colorThief = new ColorThief();
-        var img = document.getElementById("bgimg");
+        var img = document.getElementById("bingbg_temp");
         img.crossOrigin = "https://cn.bing.com";
 
         sourceColor = colorThief.getColor(img);
@@ -32,13 +32,17 @@ function fetchColor(refresh = false) {
             "," + ((sourceColor[1] + deltaVal3) >= 0 ? (sourceColor[1] + deltaVal3) : 0) +
             "," + ((sourceColor[2] + deltaVal3) >= 0 ? (sourceColor[2] + deltaVal3) : 0) +
             ",0.79)";
-        console.log("Fetch Succeed")
-        console.log(colorAlpha);
+        console.log("Color fetch succeed. " + colorAlpha);
 
-        if (refresh) colorChange();
+        less.modifyVars({
+            '@primary-text-color': colorAlpha3,
+            '@primary-shadow-color': colorAlpha,
+        })
+        // TODO : GO ON IT
+        //if (refresh) colorChange();
 
     } catch (err) {
-        console.log("Fetch Error.Retry")
+        console.log("Fetch Error, picture may on loading, retrying...")
         setTimeout(fetchColor, 250, refresh);
     }
 }

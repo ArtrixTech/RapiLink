@@ -1,22 +1,22 @@
 function showMessageBar(id, message, message_type, hideDelay = 3000) {
 
-  var barHeight = 30;
+  var barHeight = 68;
 
   var barObject = "<div id=\"" + id + "\" class=\"message_bar\"></div>";
   var textObject = "<span id=\"bar_text\" \"class=\"message_bar_text\">" + message + "</span>";
   $("body").prepend(barObject);
   $("#" + id).prepend(textObject);
 
-  $("#" + id).css("height", 30);
+  $("#" + id).css("height", barHeight);
   //alert($("#bar_text").width())
-  $("#" + id).css("width", $("#bar_text").width() + 50);
+  $("#" + id).css("width", $("#bar_text").width() + 128);
 
 
   if (message_type == "GOOD") {
 
     var barColor = "rgb(46, 176, 243)";
     $("#" + id).css("background", barColor);
-    $("#" + id).css("border-bottom", "2px solid white");
+    $("#" + id).css("border-bottom", "3px solid white");
 
   }
 
@@ -24,7 +24,7 @@ function showMessageBar(id, message, message_type, hideDelay = 3000) {
 
     var barColor = "rgb(220, 67, 67)";
     $("#" + id).css("background", barColor);
-    $("#" + id).css("border-bottom", "2px solid white");
+    $("#" + id).css("border-bottom", "3px solid white");
 
   }
 
