@@ -1,39 +1,3 @@
-/*
-$('.media')[0].ondragover = function(ev) {
-    var oEvent = ev || window.event;
-    $('h3')[0].innerHTML = '松开鼠标后开始上传';
-    // 注意禁止浏览器默认事件      
-    oEvent.preventDefault();
-}
-// 离开目标区域
-$('.media')[0].ondragleave = function(ev) {
-    var oEvent = ev || window.event;
-    $('h3')[0].innerHTML = '拖拉文件到虚线框内上传';
-    // 注意禁止浏览器默认事件
-    oEvent.preventDefault();
-}
-// 目标文件落在目标区域
-$('.media')[0].ondrop = function(ev) {
-    var oEvent = ev || window.event;
-    // 获取预览区域 生成预览
-    var oPreview = document.createElement('div');
-    var oProgress = document.createElement('progress');
-    oProgress.setAttribute('max',100);
-    oProgress.setAttribute('value',0);
-    // 生成不同的id 方便上传进度实时预览
-    var rstr = randomStr();
-    oPreview.setAttribute('class' , 'madia_upload_preview');
-    oPreview.setAttribute('id' , 'madia_upload_preview_' + rstr);
-    oPreview.appendChild(oProgress);
-    $('.media_upload').appendChild(oPreview);
-    // 获取form对象
-    var oForm = $('form')[0];
-    // 获取文件对象
-    var oFile = oEvent.dataTransfer;
-    
-    
-    oEvent.preventDefault();
-}*/
 var lastLoaded = 0;
 var lastTime = 0;
 
