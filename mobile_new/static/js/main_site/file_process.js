@@ -5,9 +5,6 @@ function getUnixTimeStamp() {
 
 
 function uploadProcess(files) {
-
-
-
     var file = files[0];
     //alert(file.name.gblen())
     $("#chosen_filename").text("" + file.name + "");
