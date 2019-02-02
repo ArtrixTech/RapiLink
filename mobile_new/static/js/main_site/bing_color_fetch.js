@@ -34,10 +34,13 @@ function fetchColor(refresh = false) {
             ",0.79)";
         console.log("Color fetch succeed. " + colorAlpha);
 
-        less.modifyVars({
-            '@primary-text-color': colorAlpha3,
-            '@primary-shadow-color': colorAlpha,
-        })
+        setTimeout(() => {
+            lessmgr.modifyVars({
+                '@primary-text-color': colorAlpha3,
+                '@primary-shadow-color': colorAlpha,
+            })
+        }, 100)
+
         // TODO : GO ON IT
         //if (refresh) colorChange();
 

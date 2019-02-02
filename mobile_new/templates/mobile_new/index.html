@@ -19,11 +19,27 @@
 
     <link rel="stylesheet" type="text/css" href="{{ url_for('mobile_new.static', filename='layui/css/layui.css') }}">
     <link rel="stylesheet/less" type="text/css" href="{{ url_for('mobile_new.static', filename='style/index.less') }}">
-    <link rel="stylesheet/less" type="text/css" href="{{ url_for('mobile_new.static', filename='style/message/bar.less') }}">
+
+    <script>
+        less = {
+          env: "development",
+
+          async: false,
+          fileAsync: false,
+          poll: 1000,
+          globalVars: {
+            var1: '"string value"',
+            var2: 'regular value'
+          },
+          useFileCache: true
+        };
+    </script>
 
     <script src="{{ url_for('mobile_new.static', filename='js/less.min.js') }}"></script>
     <script src="{{ url_for('mobile_new.static', filename='js/utils/color-thief.min.js') }}"></script>
     <script src="{{ url_for('mobile_new.static', filename='js/utils/utils.js') }}"></script>
+    <script src="{{ url_for('mobile_new.static', filename='js/utils/less-var-manager.js') }}"></script>
+
     <script src="{{ url_for('mobile_new.static', filename='js/lango.js') }}"></script>
 
     <link rel="stylesheet" type="text/css" href="{{ url_for('mobile_new.static', filename='style/fonts/noto_sans.css') }}">
@@ -43,10 +59,12 @@
 
     <script>
         changeBackground();
+        var lessmgr=new LessManager();
+        lessmgr.init();
         var lango = new Lango();
         lango.Settings.languagePackRoot = "/static/lango";
         lango.init();
-        less.modifyVars({
+        lessmgr.modifyVars({
             '@window-height': $(document).height()
         });
     </script>
