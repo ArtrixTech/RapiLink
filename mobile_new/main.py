@@ -55,11 +55,10 @@ def get_request():
         print("[Front-Proxy] " + params)
 
     try:
-        print(router_gen.get_real_location("http", "api", url))
         response = requests.get(router_gen.get_real_location("http", "api", url), params=params_json, timeout=5).text
 
     except requests.ReadTimeout:
-        response = "TIMEOUT"
+        response = "{'error':'true','exception':'timeout'}"
 
     print("    Response: " + response)
     return response

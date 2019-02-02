@@ -4,6 +4,8 @@ from io import BytesIO
 from flask import send_file
 from PIL import Image
 
+from bing_image.bing_image_class import BingImage
+
 all_image = {}
 all_thumbs_pil = {}
 
@@ -58,10 +60,10 @@ def get_bing_img_small(full_url):
     return send_file(save_img_io, mimetype='image/png', cache_timeout=0)
 
 
-all_image_url = ["https://cn.bing.com/az/hprichbg/rb/Liverpool_ZH-CN12418492140_1920x1080.jpg"]
+all_image_meta = []
 
 
 def get_bing_url():
     # prevent failure when the image is refreshing
-    result = all_image_url[random.randint(0, len(all_image_url) - 1)]
+    result = all_image_meta[random.randint(0, len(all_image_meta) - 1)].url
     return result

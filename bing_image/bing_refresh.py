@@ -4,6 +4,7 @@ import random
 
 from utils.cut_string import cut_string
 from bing_image import bing_image
+from bing_image.bing_image_class import BingImage
 
 
 def upd_bing_links():
@@ -13,48 +14,56 @@ def upd_bing_links():
     debug_logger = Logger(logger_name="bing_refresh")
 
     print("[Bing-Image] Start Bing-Image URL Fetching...")
-    bing_image.all_image_url = ["https://cn.bing.com/sa/simg/hpb/NorthMale_EN-US8782628354_1920x1080.jpg",
-                                "https://cn.bing.com/az/hprichbg/rb/RoyalOntarioMuseum_JA-JP10362892998_1920x1080.jpg"]
 
-    for i in range(-1, 7):
+    from encoder import XML2Dict
+    xml = XML2Dict()
 
-        request_url = "https://cn.bing.com/HPImageArchive.aspx?idx=%index%&n=1"
-        request_url = request_url.replace("%index%", str(i))
+    def fetch():
 
+        bing_image.all_image_meta = [
+            BingImage("https://cn.bing.com/az/hprichbg/rb/WindmillLighthouse_JA-JP3858962830_1920x1080.jpg",
+                      "暂无图片说明", "https://bing.com"),
+            BingImage("https://cn.bing.com/az/hprichbg/rb/WinterLynx_ZH-CN7158207296_1920x1080.jpg",
+                      "波希米亚摩拉维亚高地的猞猁，捷克 (© sduben/Getty Images Plus)",
+                      "https://www.bing.com/search?q=%E7%8C%9E%E7%8C%81&form=hpcapt&mkt=zh-cn")]
+
+        request_url_1 = "https://cn.bing.com/HPImageArchive.aspx?idx=-1&n=9"
+        request_url_2 = "https://cn.bing.com/HPImageArchive.aspx?idx=7&n=9"
+
+        result1 = xml.parse(requests.get(request_url_1).text)
+        result2 = xml.parse(requests.get(request_url_2).text)
+
+        all_img_json = result1["images"]["image"]
+        for item in result2["images"]["image"]:
+            all_img_json.append(item)
+
+        index = 0
+
+        for now_img in all_img_json:
+            description = str(now_img["copyright"]).replace("b'", "").replace("'", "")
+            copyright_link = str(now_img["copyrightlink"]).replace("b'", "").replace("'", "")
+            url_base = str(now_img["urlBase"]).replace("b'", "").replace("'", "")
+            full_image_url = "https://cn.bing.com" + url_base + "_1920x1080.jpg"
+
+            img = BingImage(full_image_url, description, copyright_link)
+            bing_image.all_image_meta.append(img)
+
+            print("    [0" + str(index) + "] " + full_image_url)
+            index += 1
+
+        bing_image.all_image_meta.pop(0)
+        bing_image.all_image_meta.pop(1)
+
+    try:
+        fetch()
+    except requests.exceptions.ConnectionError as e:
         try:
+            # On error, re-fetch.
+            fetch()
+        except requests.exceptions.ConnectionError as e2:
+            print("[Bing-Image] Fetching BingImage failed due to ConnectionError.")
 
-            xml = requests.get(request_url).text
-            result = cut_string(xml, "<urlBase>", "</urlBase>")
-
-        # Firstly the exception capturing program will trigger this type of exception.
-        except requests.exceptions.ConnectionError as e:
-
-            # If ConnectionError happens, retry fetching for once.
-            debug_logger.log(e)
-            try:
-                xml = requests.get(request_url).text
-                result = cut_string(xml, "<urlBase>", "</urlBase>")
-            except requests.exceptions.ConnectionError as e2:
-                debug_logger.log(e2)
-                result = "az/hprichbg/rb/RoundBales_JA-JP8640987726"
-                print("[Bing-Image] Fetching Bing NO." + str(i - 1) + " Failed due to ConnectionError.")
-
-        except BaseException as e:
-            debug_logger.log(e)
-            result = "az/hprichbg/rb/RoundBales_JA-JP8640987726"
-            print("[Bing-Image] Fetching Bing NO." + str(i - 1) + " Failed due to other error.")
-
-        full_url = "https://cn.bing.com" + result + "_1920x1080.jpg"
-        print("    [0" + str(i + 1) + "] " + full_url)
-        bing_image.all_image_url.append(full_url)
-
-        # Delay 0.4-2s to prevent Anti-Grabbing Block
-        time.sleep(random.randint(4, 20) / 10)
-
-    # Pop the pre-added pictures, ensure the pictures added are the fresh ones.
-    bing_image.all_image_url.pop(0)
-    bing_image.all_image_url.pop(1)
-    print("[Bing-Image] Refreshed. Picture Count: " + str(len(bing_image.all_image_url)))
+    print("[Bing-Image] Refreshed. Picture Count: " + str(len(bing_image.all_image_meta)))
 
 
 def flush_bing_img_cache():
