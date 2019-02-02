@@ -1,6 +1,71 @@
+var id = {
+    cusLinkInput: "#rplink_link_input",
+};
+
+var isCusLinkAvailable_File = false; // When updating the form, check if the input is blank.
+
 function getUnixTimeStamp() {
     return Math.round(new Date().getTime() / 1000);
 }
+
+function checkCusLinkAvailability(isresult) {
+
+    function getResponse(data) {
+        isCusLinkAvailable_File = (data == "OK");
+    }
+
+    apiGet("/alias_available", {
+            alias: $(id.cusLinkInput).val()
+        },
+        function (data) {
+            getResponse(data);
+        });
+
+};
+
+function CusLinkWatcher() {
+
+    this.cusLinkTimer = NaN;
+    this.lastCusLink = "";
+    this.onCusLinkChange = () => {
+        if ($(id.cusLinkInput).val() != lastCusLink) {
+            lastCusLink = $(id.cusLinkInput).val();
+            checkCusLinkAvailability();
+        }
+    };
+    this.start = () => {
+        var that = this;
+        this.cusLinkTimer = self.setInterval(() => {
+            that.onCusLinkChange();
+        }, 1000, this);
+    };
+    this.stop = () => {
+        window.clearInterval(cusLinkTimer);
+    };
+
+}
+/*
+CusLinkWatcher.prototype.cusLinkTimer = NaN;
+CusLinkWatcher.prototype.lastCusLink = "";
+CusLinkWatcher.prototype.onCusLinkChange = () => {
+    alert(1)
+    if ($(id.cusLinkInput).val() != lastCusLink) {
+        lastCusLink = $(id.cusLinkInput).val();
+        //aliasAvailable(false);
+    }
+}
+CusLinkWatcher.prototype.start = () => {
+    alert(this)
+    var that = this;
+    this.cusLinkTimer = self.setInterval(() => {
+        //alert(that)
+        that.onCusLinkChange();
+    }, 1000, this);
+}
+CusLinkWatcher.prototype.stop = () => {
+    window.clearInterval(cusLinkTimer);
+}*/
+var cusLinkWatcher = new CusLinkWatcher();
 
 
 
@@ -13,6 +78,7 @@ function uploadProcess(files) {
     setLinkInputWidth(); // This function is for UI setups.
     HorizontalSwiper_Main.update();
     setTimeout("HorizontalSwiper_Main.slideNext();", 128);
+    setTimeout("$('#rplink_link_input').focus();", 1000);
 }
 
 function uploadFile(files) {

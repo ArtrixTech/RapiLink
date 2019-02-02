@@ -140,9 +140,9 @@ function uploadFile() {
                     $("#file_whole_link").val("https://rapi.link/" + $("#customize_link_input_file").val());
                     $("#progress_text").text("Finished!");
 
-                    $("#rplnk-qrcode-img").attr("src", "http://api.rapi.link/qr_code?url=" 
-                    + "https://rapi.link/" + $("#customize_link_input_file").val() 
-                    + "&color={%22R%22:"+sourceColor[0]+",%22G%22:"+sourceColor[1]+",%22B%22:"+sourceColor[2]+",\"A\":255}")
+                    $("#rplnk-qrcode-img").attr("src", "http://api.rapi.link/qr_code?url=" +
+                        "https://rapi.link/" + $("#customize_link_input_file").val() +
+                        "&color={%22R%22:" + sourceColor[0] + ",%22G%22:" + sourceColor[1] + ",%22B%22:" + sourceColor[2] + ",\"A\":255}")
 
                 } else {
                     error(result.responseText);
@@ -383,30 +383,25 @@ function updateFloatWindow_File() {
 function aliasAvailable(result) {
 
     if (result) {
-        if (result == "OK") {
-            isAliasAvailable_File = true;
-        } else {
-            isAliasAvailable_File = false;
-        }
+        isAliasAvailable_File = (result == "OK");
         updateFloatWindow_File();
     } else {
         apiGet("/alias_available", {
-            alias: $("#customize_link_input_file").val()
-        },
+                alias: $("#customize_link_input_file").val()
+            },
             function (data) {
                 aliasAvailable(data);
             });
     }
 
-
 };
 
-function qrcode_show(){
+function qrcode_show() {
     $("#rplnk-qrcode-img").removeClass("hidden");
     $("#rplnk-qrcode-icon").addClass("hidden");
 }
 
-function qrcode_hide(){
+function qrcode_hide() {
     $("#rplnk-qrcode-img").addClass("hidden");
     $("#rplnk-qrcode-icon").removeClass("hidden");
 }

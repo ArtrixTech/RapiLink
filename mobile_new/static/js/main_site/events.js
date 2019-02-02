@@ -36,3 +36,8 @@ $("#file_uploader").bind('change', function () {
 $(window).resize(function () {
     setTimeout(setLinkInputWidth, 128);
 });
+
+$(id.cusLinkInput).change(()=>{
+    checkCusLinkAvailability();
+})
+

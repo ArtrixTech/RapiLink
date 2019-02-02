@@ -47,12 +47,13 @@ $(document).ready(function () {
             }
         });
 
-        setInterval("HorizontalSwiper_Help.update();",1680);
-        setInterval("HorizontalSwiper_Main.update();",1680);
-        setInterval("VerticalSwiper.update();",1680);
-
     }
 
     setTimeout(work, 128);
-    
+    setTimeout(updateSwiper, 400);
+    setTimeout(updateSwiper, 800);
+    setTimeout(updateSwiper, 1200);
+    setTimeout(updateSwiper, 1600);
+    setTimeout(updateSwiper, 2000);
+
 });

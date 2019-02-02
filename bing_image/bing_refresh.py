@@ -7,6 +7,8 @@ from bing_image import bing_image
 from bing_image.bing_image_class import BingImage
 
 
+# Important: Plz install "XML2DICT" from pip first.
+
 def upd_bing_links():
     # Bug backup: prevent requests in clearing the list to get blank content
 
