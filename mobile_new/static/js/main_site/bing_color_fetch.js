@@ -38,6 +38,7 @@ function fetchColor(refresh = false) {
             lessmgr.modifyVars({
                 '@primary-text-color': colorAlpha3,
                 '@primary-shadow-color': colorAlpha,
+                '@indicator-color-file': colorAlpha3,
             })
         }, 100)
 

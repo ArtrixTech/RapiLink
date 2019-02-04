@@ -17,8 +17,8 @@ hr {
 }
 
 body {
-    padding: 58px;
-    padding-top: 64px;
+    padding: @body-padding;
+    padding-top: @body-padding + 6px;
     font-family: Noto Sans S Chinese;
     overflow: hidden;
 }
@@ -28,7 +28,6 @@ body {
     position: relative;
     margin-left: -12px;
 }
-
 
 .rplink-btn {
     width: 22rem;
@@ -90,10 +89,12 @@ body {
 .rplink-paging-bar {
     position: fixed;
     opacity: 0.7;
+
     &.horizontal {
         width: 100%;
         top: 42%;
     }
+
     &.vertical {}
 }
 
@@ -114,6 +115,7 @@ body {
     font-size: 72px;
     font-family: Work Sans, Noto Sans, Microsoft Yahei UI Light;
     overflow: hidden;
+
     &.link-input {
         height: 106px;
         top: 38px;
@@ -131,6 +133,7 @@ body {
     color: @primary-text-color;
     border: none;
     font-family: Work Sans, Noto Sans, Microsoft Yahei UI Light;
+
     &.link-input {
         height: 106px;
         position: relative;
@@ -140,11 +143,57 @@ body {
     }
 }
 
+.rplink-indicator-bar {
+    position: relative;
+    width: convert(@window-width, px) - 2 * @body-padding;
+    text-align: left;
+    padding-top: 240px;
+    color: @primary-text-color;
+}
+
+.rplink-indicator-badge {
+    padding: 1.2rem;
+    padding-left: 0.8rem;
+    padding-right: 0.8rem;
+    background: white;
+    border-radius: 14px;
+
+    left: 0.9rem;
+    top: -0.4rem;
+}
+
+.rplink-indicator-icon {
+    font-size: 2.1rem;
+    color: @indicator-color-file;
+}
+
+#file_cus_link_indicator_span {
+    color: @indicator-color-file;
+}
+
 // Animations
 .swiper-wrapper {
     transition-timing-function: cubic-bezier(0.24, -0.01, 0, 0.96);
 }
 
-.rplink-anime-normal{
+.rplink-anime-normal {
     transition: all 0.3s cubic-bezier(0.3, 0.01, 0.26, 1.01);
+}
+
+
+svg {
+    width: 30px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%) translateX(-50%);
+    left: 50%;
+    right: 0;
+}
+
+.check {
+    fill: none;
+    stroke: #FFFFFF;
+    stroke-width: 3;
+    stroke-linecap: round;
+    stroke-linejoin: round;
 }

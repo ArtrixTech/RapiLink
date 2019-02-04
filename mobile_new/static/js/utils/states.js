@@ -17,29 +17,33 @@ function States() {
 
     this.setState = (stateName, value) => {
 
-        if (this.states.hasOwnProperty(stateName)) this.states[stateName] = value;
-        else throw Error = "State unexist or unbound.";
+        if (this.states.hasOwnProperty(stateName)) {
 
-        var toCall = [];
-        for (key in this.elements) {
-            var relatedStates = this.elements[key];
-            if (this.contains(relatedStates, stateName)) toCall.push(key) // Only push element name
-        }
+            if (this.states[stateName] != value) { // Only call function when value changes.
 
-        for (index in toCall) {
+                this.states[stateName] = value;
+                var toCall = [];
+                for (key in this.elements) {
+                    var relatedStates = this.elements[key];
+                    if (this.contains(relatedStates, stateName)) toCall.push(key) // Only push element name.
+                }
 
-            var elementName = toCall[index]
+                for (index in toCall) {
 
-            function throwErr(errMsg) {
-                throw Error = "State set failed due to '" + errMsg + "'.";
+                    var elementName = toCall[index]
+
+                    function throwErr(errMsg) {
+                        throw Error = "State set failed due to '" + errMsg + "'.";
+                    }
+                    if (this.updateFunctions.hasOwnProperty(elementName)) {
+                        var callFunc = this.updateFunctions[elementName];
+                        if (typeof callFunc === "function") callFunc();
+                        else throwErr("Element[" + elementName + "]'s update function is not a function.");
+                    }else throwErr("Element[" + elementName + "] didn't bind with an update function.");
+                }
             }
 
-            if (this.updateFunctions.hasOwnProperty(elementName)) {
-                var callFunc = this.updateFunctions[elementName];
-                if (typeof callFunc === "function") callFunc();
-                else throwErr("Element[" + elementName + "]'s update function is not a function.");
-            }
-        }
+        } else throw Error = "State unexist or unbound.";
 
     };
 

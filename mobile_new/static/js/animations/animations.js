@@ -3,6 +3,7 @@ $(document).ready(function () {
 
     function work() {
         VerticalSwiper = new Swiper('.swiper-container-vertical', {
+            parallax : true,
             direction: 'vertical',
             loop: false,
             initialSlide: 1,
@@ -20,9 +21,11 @@ $(document).ready(function () {
         });
 
         HorizontalSwiper_Main = new Swiper('.swiper-container-horizontal.main', {
+            parallax : true,
             direction: 'horizontal',
             loop: false,
             initialSlide: 0,
+            parallax : true,
             fadeEffect: {
                 crossFade: true,
             },
@@ -34,6 +37,7 @@ $(document).ready(function () {
         });
 
         HorizontalSwiper_Help = new Swiper('.swiper-container-horizontal.help', {
+            parallax : true,
             direction: 'horizontal',
             loop: false,
             initialSlide: 0,
@@ -57,3 +61,5 @@ $(document).ready(function () {
     setTimeout(updateSwiper, 2000);
 
 });
+
+

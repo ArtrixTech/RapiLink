@@ -37,7 +37,13 @@ $(window).resize(function () {
     setTimeout(setLinkInputWidth, 128);
 });
 
-$(id.cusLinkInput).change(()=>{
+$(id.cusLinkInput).change(() => {
     checkCusLinkAvailability();
 })
 
+var winInitialHeight = $(window).height();
+$(window).resize(function () {
+    var nowHeight = $(this).height();
+    if (winInitialHeight - nowHeight > 100) state.setState("keyboard_pop", true)
+    else state.setState("keyboard_pop", false)
+});

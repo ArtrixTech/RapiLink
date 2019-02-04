@@ -1,5 +1,6 @@
 var id = {
     cusLinkInput: "#rplink_link_input",
+    cusLinkIndicatorSpan: "#file_cus_link_indicator_span",
 };
 
 var isCusLinkAvailable_File = false; // When updating the form, check if the input is blank.
@@ -11,7 +12,7 @@ function getUnixTimeStamp() {
 function checkCusLinkAvailability(isresult) {
 
     function getResponse(data) {
-        isCusLinkAvailable_File = (data == "OK");
+        state.setState("cusLinkAvailable_file", (data == "OK"));
     }
 
     apiGet("/alias_available", {
