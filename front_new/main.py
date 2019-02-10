@@ -54,13 +54,7 @@ def lango():
 
 @front_new_blueprint.route('/')
 def main():
-    img = request.args.get("img")
-    if img == "" or not img:
-        img = url_for('front.static', filename="img/backgrounds/4.jpg")
-    elif "http" not in img:
-        img = url_for('front.static', filename='img/backgrounds/' + str(img) + ".jpg")
-
-    return render_template('index.html', img_url=img)
+    return render_template('index.html', img_url="")
 
 
 @front_new_blueprint.route('/get')
