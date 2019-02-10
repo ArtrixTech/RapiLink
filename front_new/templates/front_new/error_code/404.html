@@ -2,7 +2,7 @@
 
 <head>
     <title>RapiLink - 404</title>
-    <link rel="stylesheet" type="text/css" href="{{ url_for('front.static', filename='css/error_code/404.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('front_new.static', filename='css/error_code/404.css') }}">
     <link href='https://fonts.googleapis.com/css?family=Work%20Sans' rel='stylesheet' type='text/css'>
 
     <style>
@@ -56,16 +56,16 @@
         }
     </style>
 
-    <script src="{{ url_for('front.static', filename='js/animations/stars_no_mouse.js') }}"></script>
+    <script src="{{ url_for('front_new.static', filename='js/animations/stars_no_mouse.js') }}"></script>
 
     <a href="https://rapi.link" class="unselective">
-        <img src="{{ url_for('front.static', filename='img/site_branding/logo_small.png') }}" class="logo_small">
+        <img src="{{ url_for('front_new.static', filename='img/site_branding/logo_small.png') }}" class="logo_small">
     </a>
 
     <div class="label_404 animation blank unselective" id="label_404">404</div>
     <div class="label_not_found animation blank unselective" id="label_not_found">Page Not Found</div>
 
-    <script src="{{ url_for('front.static', filename='js/jquery-3.3.1.min.js') }}"></script>
+    <script src="{{ url_for('front_new.static', filename='js/jquery-3.3.1.min.js') }}"></script>
     <script>
         function showAnimation() {
             label_404 = document.getElementById("label_404");
