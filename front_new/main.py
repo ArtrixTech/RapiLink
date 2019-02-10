@@ -13,7 +13,7 @@ from logger.log import Logger
 
 from bing_image.bing_image import get_bing_img_small
 
-front_new_blueprint = Blueprint('front_new', __name__, template_folder="templates", static_folder="static",
+front_new_blueprint = Blueprint('front', __name__, template_folder="templates", static_folder="static",
                                 subdomain="")
 
 
