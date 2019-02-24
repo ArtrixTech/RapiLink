@@ -62,102 +62,112 @@
 </head>
 
 <body style="background-repeat: no-repeat;background-size: 100%;">
-
-    <img id="bingbg_temp" src="" class="hidden" crossorigin="https://cn.bing.com">
-
-    <script>
-        changeBackground();
-        var lessmgr=new LessManager();
-        lessmgr.init();
-        var lango = new Lango();
-        lango.Settings.languagePackRoot = "/static/lango";
-        lango.init();
-        lessmgr.modifyVars({
-            '@window-height': $(document).height(),
-            '@window-width': $(document).width()
-        });
-
-      
-    </script>
-
-    <div id="rplink-index-header">
-
-        <div class="rplink-box-type" id="rplink-header-bg"></div>
-
-        <div style="width: 100%;text-align: left;position: relative;">
-            <a href="https://m.rapi.link">
-                <img class="layui-anim layui-anim-fadein" id="logo" src="{{ url_for('mobile_new.static', filename='img/site_branding/logo_small.png') }}">
-            </a>
-            <span class="layui-anim layui-anim-fadein hidden" id="slogan">你的云中转站</span>
-        </div>
-
-    </div>
-
     <div class="swiper-container" id="swiper_container_vertical" style="">
 
-        <div class="swiper-wrapper">
+        <script>
+            changeBackground();
+            var lessmgr=new LessManager();
+            var lango = new Lango();
+            lessmgr.init();
+            lango.Settings.languagePackRoot = "/static/lango";
+            lango.init();
+            
+            lessmgr.modifyVars({
+                '@window-height': $(document).height(),
+                '@window-width': $(document).width()
+            });
+        </script>
 
-            <div class="rplink-cap-box swiper-slide">
-                <div class="swiper-container help" id="swiper_container_horizontal_help">
-                    <div class="swiper-wrapper">
 
-                        <div class="rplink-cap-box swiper-slide">
-                            <p lango_id="cap" class="rplink-cap-top">你好，这里是RapiLink</p>
-                        </div>
 
-                        <div class="rplink-cap-box swiper-slide">
-                            <p lango_id="cap" class="rplink-cap-top">RapiLink是一个全能的文件分享平台</p>
-                        </div>
 
-                    </div>
+        <div id="rplink_index_header">
+            <img id="bingbg_temp" src="" class="hidden" crossorigin="https://cn.bing.com">
+            <div class="rplink-box-type" id="rplink-header-bg"></div>
 
-                    <div class="rplink-paging-bar horizontal">
-                        <i class="layui-icon layui-icon-left rplink-paging-icon"></i>
-                        <i class="layui-icon layui-icon-right rplink-paging-icon" style="float:right;"></i>
-                    </div>
-
-                </div>
+            <div style="width: 100%;text-align: left;position: relative;">
+                <a href="https://m.rapi.link">
+                    <img class="layui-anim layui-anim-fadein" id="logo" src="{{ url_for('mobile_new.static', filename='img/site_branding/logo_small.png') }}">
+                </a>
+                <span class="layui-anim layui-anim-fadein hidden" id="slogan">你的云中转站</span>
             </div>
 
-            <div class="rplink-cap-box swiper-slide">
-                <div class="swiper-container main" id="swiper_container_horizontal_main">
-                    <div class="swiper-wrapper">
+        </div>
 
-                        <div class="rplink-cap-box swiper-slide">
-                            <p lango_id="select_file" class="rplink-cap-top">选择一个文件。</p>
-                            <button class="layui-btn rplink-btn" id="rplink-upload-btn">
-                                <i class="layui-icon layui-icon-upload rplink-btn-icon"></i>
-                                <span class="rplink-btn-span">点击上传</span>
-                                <input type="file" id="file_uploader" class="layui-btn rplink-btn hidden">
-                            </button>
-                        </div>
 
-                        <div class="rplink-cap-box swiper-slide hidden" id="rplink_upload_step2">
-                            <div class="rplink-indicator-bar">
 
-                                <span lango_id="shortlink_input" class="rplink-cap" id="shortlink_input" style="font-size: 3.2rem;">输入您的专属链接</span>
-                                <span class="layui-badge rplink-indicator-badge">
-                                    <span class="rplink-cap" id="file_cus_link_indicator_span" style="font-size: 2.2rem;font-weight: 500;">链接可用</span>
-                                    <i class="layui-icon layui-icon-ok rplink-indicator-icon"></i>
-                                </span>
+        <div class="swiper-wrapper" id="vertical_wrapper">
+
+            <div class="swiper-slide">
+                <div class="rplink-cap-box vertical-slide-with-padding">
+                    <div class="swiper-container help" id="swiper_container_horizontal_help">
+                        <div class="swiper-wrapper">
+
+                            <div class="rplink-cap-box swiper-slide swiper-slide-horizontal">
+                                <p lango_id="cap" class="rplink-cap-top">你好，这里是RapiLink</p>
                             </div>
 
-                            <p class="rplink-cap" id="chosen_filename" style="font-size:6.4rem;"></p>
-
-                            <div class="rplink-input-box link-input" id="rplink_link_input_box">
-                                <span id="rplink_link_prefix_span">https://rapi.link/</span>
-                                <input class="rplink-input link-input rplink-anime-normal" id="rplink_link_input" style="display:inline-block;">
+                            <div class="rplink-cap-box swiper-slide swiper-slide-horizontal">
+                                <p lango_id="cap" class="rplink-cap-top">RapiLink是一个全能的文件分享平台</p>
                             </div>
-
 
                         </div>
 
+                        <div class="rplink-paging-bar horizontal" style="padding:58px;width:-webkit-fill-available;">
+                            <i class="layui-icon layui-icon-left rplink-paging-icon"></i>
+                            <i class="layui-icon layui-icon-right rplink-paging-icon" style="float:right;"></i>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="swiper-slide">
+
+                <div class="rplink-cap-box vertical-slide-with-padding">
+                    <div class="swiper-container main" id="swiper_container_horizontal_main">
+                        <div class="swiper-wrapper">
+
+                            <! Add class 'swiper-slide-horizontal' in all horizontal slides.>
+                            <div class="rplink-cap-box swiper-slide swiper-slide-horizontal">
+                                <p lango_id="select_file" class="rplink-cap-top">选择一个文件。</p>
+                                <button class="layui-btn rplink-btn" id="rplink-upload-btn">
+                                    <i class="layui-icon layui-icon-upload rplink-btn-icon"></i>
+                                    <span class="rplink-btn-span">点击上传</span>
+                                    <input type="file" id="file_uploader" class="layui-btn rplink-btn hidden">
+                                </button>
+                            </div>
+
+                            <div class="rplink-cap-box swiper-slide hidden swiper-slide-horizontal" id="rplink_upload_step2">
+
+                                <div class="rplink-indicator-bar">
+                                    <span lango_id="shortlink_input" class="rplink-cap" id="shortlink_input" style="font-size: 3.2rem;">输入您的专属链接</span>
+                                    <span class="layui-badge rplink-indicator-badge">
+                                        <span class="rplink-cap" id="file_cus_link_indicator_span" style="font-size: 2.2rem;font-weight: 500;">链接可用</span>
+                                        <i class="layui-icon layui-icon-ok rplink-indicator-icon"></i>
+                                    </span>
+                                </div>
+
+                                <p class="rplink-cap" id="chosen_filename" style="font-size:6.4rem;"></p>
+
+                                <div class="rplink-input-box link-input" id="rplink_link_input_box">
+                                    <span id="rplink_link_prefix_span">https://rapi.link/</span>
+                                    <input class="rplink-input link-input rplink-anime-normal" id="rplink_link_input"
+                                        style="display:inline-block;">
+                                </div>
+
+
+                            </div>
+
+                        </div>
+
+                        <div class="rplink-paging-bar horizontal hidden" style="top: 142%;">
+                            <i class="layui-icon layui-icon-left rplink-paging-icon"></i>
+                            <i class="layui-icon layui-icon-right rplink-paging-icon" style="float:right;"></i>
+                        </div>
                     </div>
 
-                    <div class="rplink-paging-bar horizontal hidden" style="top: 142%;">
-                        <i class="layui-icon layui-icon-left rplink-paging-icon"></i>
-                        <i class="layui-icon layui-icon-right rplink-paging-icon" style="float:right;"></i>
-                    </div>
                 </div>
             </div>
 
@@ -166,7 +176,7 @@
     </div>
 
     <script src="{{ url_for('mobile_new.static', filename='js/animations/animations.js') }}"></script>
-    
+
     <script src="{{ url_for('mobile_new.static', filename='layui/layui.js') }}"></script>
     <script src="{{ url_for('mobile_new.static', filename='js/main_site/events.js') }}"></script>
 

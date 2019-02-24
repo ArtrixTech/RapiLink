@@ -17,11 +17,39 @@ hr {
 }
 
 body {
-    padding: @body-padding;
-    padding-top: @body-padding + 6px;
+    //padding: @body-padding;
+    //padding-top: @body-padding + 6px;
     font-family: Noto Sans S Chinese;
     overflow: hidden;
 }
+
+// Containers
+
+
+#rplink_index_header {
+    padding: @body-padding;
+    padding-bottom: 0;
+    padding-top: @body-padding + 6px;
+}
+
+
+.vertical-slide-with-padding {
+    width: auto !important;
+    overflow: visible !important;
+}
+
+.swiper-slide.swiper-slide-horizontal {
+    padding: @body-padding;
+    width: -webkit-fill-available !important;
+    padding-top: 0;
+}
+
+#rplink_upload_step2{
+    padding-top: 240px;
+}
+
+
+// -- End Containers
 
 #logo {
     width: 360px;
@@ -143,7 +171,7 @@ body {
     }
 }
 
-.rplink-indicator-bar {
+.rplink-1icator-bar {
     position: relative;
     width: convert(@window-width, px) - 2 * @body-padding;
     text-align: left;
