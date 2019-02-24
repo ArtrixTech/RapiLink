@@ -27,8 +27,7 @@
           fileAsync: false,
           poll: 1000,
           globalVars: {
-            var1: '"string value"',
-            var2: 'regular value'
+         
           },
           useFileCache: true
         };
@@ -56,6 +55,9 @@
     <script src="{{ url_for('mobile_new.static', filename='js/main_site/bing_color_fetch.js') }}"></script>
     <script src="{{ url_for('mobile_new.static', filename='js/main_site/file_process.js') }}"></script>
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.4.6/css/swiper.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.4.6/js/swiper.min.js"></script>
+
 
 </head>
 
@@ -74,6 +76,8 @@
             '@window-height': $(document).height(),
             '@window-width': $(document).width()
         });
+
+      
     </script>
 
     <div id="rplink-index-header">
@@ -89,12 +93,12 @@
 
     </div>
 
-    <div class="swiper-container-vertical" style="">
+    <div class="swiper-container" id="swiper_container_vertical" style="">
 
         <div class="swiper-wrapper">
 
             <div class="rplink-cap-box swiper-slide">
-                <div class="swiper-container-horizontal help">
+                <div class="swiper-container help" id="swiper_container_horizontal_help">
                     <div class="swiper-wrapper">
 
                         <div class="rplink-cap-box swiper-slide">
@@ -116,7 +120,7 @@
             </div>
 
             <div class="rplink-cap-box swiper-slide">
-                <div class="swiper-container-horizontal main">
+                <div class="swiper-container main" id="swiper_container_horizontal_main">
                     <div class="swiper-wrapper">
 
                         <div class="rplink-cap-box swiper-slide">
@@ -161,12 +165,10 @@
 
     </div>
 
-    <script src="{{ url_for('mobile_new.static', filename='layui/layui.js') }}"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.4.6/css/swiper.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.4.6/js/swiper.min.js"></script>
-
-    <script src="{{ url_for('mobile_new.static', filename='js/main_site/events.js') }}"></script>
     <script src="{{ url_for('mobile_new.static', filename='js/animations/animations.js') }}"></script>
+    
+    <script src="{{ url_for('mobile_new.static', filename='layui/layui.js') }}"></script>
+    <script src="{{ url_for('mobile_new.static', filename='js/main_site/events.js') }}"></script>
 
 </body>
 
