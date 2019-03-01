@@ -4,7 +4,6 @@ $("#rplink-upload-btn").click(function () {
 
 $("#file_uploader").bind('change', function () {
 
-
     var files = document.getElementById("file_uploader").files;
 
     if (files.length > 0) {
@@ -32,12 +31,11 @@ $("#file_uploader").bind('change', function () {
             3000);
     }
 });
-
 $(window).resize(function () {
     setTimeout(setLinkInputWidth, 128);
 });
 
-$(id.cusLinkInput).change(() => {
+$(id.cusLinkInput).keyup(() => {
     checkCusLinkAvailability();
 })
 
@@ -47,3 +45,18 @@ $(window).resize(function () {
     if (winInitialHeight - nowHeight > 100) state.setState("keyboard_pop", true)
     else state.setState("keyboard_pop", false)
 });
+
+// States Here
+
+state.bindElementUpdateFunction("availabilityIndicator", () => {
+
+    if (state.getState("cusLinkAvailable_file")) $(id.cusLinkIndicatorSpan).text("链接可用")
+    else {
+        $(id.cusLinkIndicatorSpan).text("链接无效")
+        $(id.cusLinkIndicator).css('animation', '.8s shake');
+        $(id.cusLinkIndicator)[0].addEventListener("animationend", function () {
+            $(this).css("animation", "");
+        });
+    }
+
+})

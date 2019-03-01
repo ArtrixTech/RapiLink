@@ -14,6 +14,7 @@
 
     <script src="{{ url_for('mobile_new.static', filename='js/jquery-3.3.1.min.js') }}"></script>
     <script src="{{ url_for('mobile_new.static', filename='js/jquery.cookie.js') }}"></script>
+    <script src="{{ url_for('mobile_new.static', filename='js/main_site/global_vars.js') }}"></script>
 
     <link rel="shortcut icon" href="{{ url_for('mobile_new.static', filename='favicon_small.png') }}">
 
@@ -143,7 +144,7 @@
 
                                 <div class="rplink-indicator-bar">
                                     <span lango_id="shortlink_input" class="rplink-cap" id="shortlink_input" style="font-size: 3.2rem;">输入您的专属链接</span>
-                                    <span class="layui-badge rplink-indicator-badge">
+                                    <span class="layui-badge rplink-indicator-badge" id="rplink_indicator_badge">
                                         <span class="rplink-cap" id="file_cus_link_indicator_span" style="font-size: 2.2rem;font-weight: 500;">链接可用</span>
                                         <i class="layui-icon layui-icon-ok rplink-indicator-icon"></i>
                                     </span>
