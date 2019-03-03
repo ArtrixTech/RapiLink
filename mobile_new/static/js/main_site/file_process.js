@@ -11,7 +11,7 @@ function checkCusLinkAvailability() {
     }
 
     apiGet("/alias_available", {
-            alias: $(id.cusLinkInput).val()
+            alias: $(id.cusLinkInput_File).val()
         },
         function (data) {
             getResponse(data);
@@ -25,7 +25,7 @@ function CusLinkWatcher() {
     this.lastCusLink = "";
     this.onCusLinkChange = () => {
         if ($(id.cusLinkInput).val() != lastCusLink) {
-            lastCusLink = $(id.cusLinkInput).val();
+            lastCusLink = $(id.cusLinkInput_File).val();
             checkCusLinkAvailability();
         }
     };

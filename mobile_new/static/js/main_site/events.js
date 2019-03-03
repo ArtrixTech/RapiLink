@@ -35,11 +35,11 @@ $(window).resize(function () {
     setTimeout(setLinkInputWidth, 128);
 });
 
-$(id.cusLinkInput).keyup(() => {
+$(id.cusLinkInput_File).keyup(() => {
     checkCusLinkAvailability();
 })
 
-$(id.cusLinkInput).focus(() => {
+$(id.cusLinkInput_File).focus(() => {
     checkCusLinkAvailability();
 })
 
@@ -56,24 +56,30 @@ state.bindElementUpdateFunction("availabilityIndicator", () => {
 
     if (state.getState("cusLinkAvailable_file")) {
 
-        $(id.cusLinkIndicator).css("animation", "");
-        $(id.cusLinkIndicator).css("border", "3px solid white");
+        $(id.cusLinkIndicator_File).css("animation", "");
+        //$(id.cusLinkIndicator_File).css("border", "3px solid white");
 
-        $(id.cusLinkIndicatorSpan).text("链接可用");
-        $(id.cusLinkIndicatorSpan).css("color", lessmgr.getVar("@primary-text-color"));
-        $(id.cusLinkIndicatorIcon).css("color", lessmgr.getVar("@primary-text-color"));
+        $(id.cusLinkIndicatorSpan_File).text("链接可用");
+        $(id.cusLinkIndicatorSpan_File).css("color", lessmgr.getVar("@primary-text-color"));
+        $(id.cusLinkIndicatorIcon_File).css("color", lessmgr.getVar("@primary-text-color"));
+        $(id.cusLinkIndicatorIcon_File).removeClass("layui-icon-close");
+        $(id.cusLinkIndicatorIcon_File).addClass("layui-icon-ok");
 
         //$(id.cusLinkInputBox_File).css("border", "4px solid white");
 
 
     } else {
 
-        $(id.cusLinkIndicator).css('animation', '0.9s shake infinite alternate');
-        $(id.cusLinkIndicator).css("border", "3px solid rgb(255, 82, 103)");
+        $(id.cusLinkIndicator_File).css('animation', '0.9s shake infinite alternate');
+        //$(id.cusLinkIndicator_File).css("border", "3px solid rgb(255, 82, 103)");
 
-        $(id.cusLinkIndicatorSpan).text("链接无效")
-        $(id.cusLinkIndicatorSpan).css("color", "rgb(255, 82, 103)");
-        $(id.cusLinkIndicatorIcon).css("color", "rgb(255, 82, 103)");
+        $(id.cusLinkIndicatorSpan_File).text("链接无效")
+        $(id.cusLinkIndicatorSpan_File).css("color", "rgb(255, 82, 103)");
+        $(id.cusLinkIndicatorIcon_File).css("color", "rgb(255, 82, 103)");
+        $(id.cusLinkIndicatorIcon_File).addClass("layui-icon-close");
+        $(id.cusLinkIndicatorIcon_File).removeClass("layui-icon-ok");
+
+        
 
         //$(id.cusLinkInputBox_File).css("border", "4px solid rgb(255, 82, 103)");
 
