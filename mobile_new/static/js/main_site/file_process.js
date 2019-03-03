@@ -4,7 +4,7 @@ function getUnixTimeStamp() {
     return Math.round(new Date().getTime() / 1000);
 }
 
-function checkCusLinkAvailability(isresult) {
+function checkCusLinkAvailability() {
 
     function getResponse(data) {
         state.setState("cusLinkAvailable_file", (data == "OK"));
