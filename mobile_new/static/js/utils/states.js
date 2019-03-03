@@ -39,7 +39,7 @@ function States() {
                         var callFunc = this.updateFunctions[elementName];
                         if (typeof callFunc === "function") callFunc();
                         else throwErr("Element[" + elementName + "]'s update function is not a function.");
-                    }else throwErr("Element[" + elementName + "] didn't bind with an update function.");
+                    } else throwErr("Element[" + elementName + "] didn't bind with an update function.");
                 }
             }
 
@@ -59,6 +59,13 @@ function States() {
             if (!this.contains(this.elements[elementName], stateName)) this.elements[elementName].push(stateName);
         } else this.elements[elementName] = [stateName];
     };
+
+    this.setDefaultStateValue = (stateName, value) => {
+
+        if (this.states.hasOwnProperty(stateName)) this.states[stateName] = value;
+        else throw Error("State '" + stateName + "' doesn't exist.")
+
+    }
 
 
 }

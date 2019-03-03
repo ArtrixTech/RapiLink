@@ -39,6 +39,10 @@ $(id.cusLinkInput).keyup(() => {
     checkCusLinkAvailability();
 })
 
+$(id.cusLinkInput).focus(() => {
+    checkCusLinkAvailability();
+})
+
 var winInitialHeight = $(window).height();
 $(window).resize(function () {
     var nowHeight = $(this).height();
