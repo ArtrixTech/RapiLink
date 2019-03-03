@@ -50,13 +50,29 @@ $(window).resize(function () {
 
 state.bindElementUpdateFunction("availabilityIndicator", () => {
 
-    if (state.getState("cusLinkAvailable_file")) $(id.cusLinkIndicatorSpan).text("链接可用")
-    else {
+    if (state.getState("cusLinkAvailable_file")) {
+
+        $(id.cusLinkIndicator).css("animation", "");
+        $(id.cusLinkIndicator).css("border", "3px solid white");
+
+        $(id.cusLinkIndicatorSpan).text("链接可用");
+        $(id.cusLinkIndicatorSpan).css("color", lessmgr.getVar("@primary-text-color"));
+        $(id.cusLinkIndicatorIcon).css("color", lessmgr.getVar("@primary-text-color"));
+
+        //$(id.cusLinkInputBox_File).css("border", "4px solid white");
+
+
+    } else {
+
+        $(id.cusLinkIndicator).css('animation', '0.9s shake infinite alternate');
+        $(id.cusLinkIndicator).css("border", "3px solid rgb(255, 82, 103)");
+
         $(id.cusLinkIndicatorSpan).text("链接无效")
-        $(id.cusLinkIndicator).css('animation', '.8s shake');
-        $(id.cusLinkIndicator)[0].addEventListener("animationend", function () {
-            $(this).css("animation", "");
-        });
+        $(id.cusLinkIndicatorSpan).css("color", "rgb(255, 82, 103)");
+        $(id.cusLinkIndicatorIcon).css("color", "rgb(255, 82, 103)");
+
+        //$(id.cusLinkInputBox_File).css("border", "4px solid rgb(255, 82, 103)");
+
     }
 
 })

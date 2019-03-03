@@ -10,3 +10,9 @@ LessManager.prototype.modifyVars = (vars) => {
         less.modifyVars(this.allVars);
     }
 }
+
+LessManager.prototype.getVar = (inputKey) => {
+    for (key in this.allVars)
+        if (inputKey == key) return this.allVars[key];
+    throw Error("No such var name '" + inputKey + "'")
+}

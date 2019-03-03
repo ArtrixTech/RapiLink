@@ -45,7 +45,7 @@ body {
     padding-top: 0;
 }
 
-#rplink_upload_step2{
+#rplink_upload_step2 {
     padding-top: 240px;
 }
 
@@ -151,6 +151,9 @@ body {
         position: relative;
         opacity: 0.9;
     }
+
+    transition: all 0.45s;
+
 }
 
 .rplink-input {
@@ -172,34 +175,43 @@ body {
     }
 }
 
-.rplink-1icator-bar {
-    position: relative;
+
+.rplink-indicator-bar {
+    /* position: relative;
     width: convert(@window-width, px) - 2 * @body-padding;
     text-align: left;
     padding-top: 240px;
-    color: @primary-text-color;
+    color: @primary-text-color;*/
 }
 
 .rplink-indicator-badge {
     opacity: 0.9;
 
-    padding: 1.2rem;
+    padding: 1rem;
     padding-left: 0.8rem;
     padding-right: 0.8rem;
     background: white;
     border-radius: 14px;
+    border: 3px solid white;
 
     left: 0.9rem;
-    top: -0.4rem;
+    top: -0.5rem;
+    
+    transition: all 0.45s;
 }
 
 .rplink-indicator-icon {
     font-size: 2.1rem;
     color: @indicator-color-file;
+    transition: all 0.75s;
 }
+
+// Item customize
 
 #file_cus_link_indicator_span {
     color: @indicator-color-file;
+    transition: all 0.75s;
+
 }
 
 // Animations
