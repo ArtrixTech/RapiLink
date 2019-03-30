@@ -31,6 +31,7 @@ $("#file_uploader").bind('change', function () {
             3000);
     }
 });
+
 $(window).resize(function () {
     setTimeout(setLinkInputWidth, 128);
 });
