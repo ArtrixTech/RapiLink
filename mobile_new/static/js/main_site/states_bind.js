@@ -1,3 +1,5 @@
-state.bindStateWithElement("cusLinkAvailable_file", "availabilityIndicator")
-state.bindStateWithElement("keyboard_pop", "availabilityIndicator");
-state.setDefaultStateValue("cusLinkAvailable_file", true);
+state.bindStateWithElement("cusLinkAvailable_file", "availabilityIndicator_file")
+state.bindStateWithElement("keyboard_pop", "availabilityIndicator_file");
+state.bindStateWithElement("cusLinkInputEmpty_file", "availabilityIndicator_file")
+
+state.setDefaultStateValue("cusLinkAvailable_file", false);

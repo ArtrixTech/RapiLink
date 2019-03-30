@@ -6,6 +6,11 @@
     display: none;
 }
 
+.anime-hidden{
+    transition: opacity 0.45s !important;
+    opacity: 0 !important;
+}
+
 p {
     word-wrap: break-word;
 }
@@ -14,34 +19,36 @@ hr {
     height: 6px;
     margin: 30px 0;
     border: 0;
-    clear: both;
+    clear : both;
 }
 
 body {
-    //padding: @body-padding;
+    //padding    : @body-padding;
     //padding-top: @body-padding + 6px;
-    font-family: Noto Sans S Chinese;
-    overflow: hidden;
+    font-family  : Noto Sans S Chinese;
+    overflow     : hidden;
 }
+
+
 
 // Containers
 
 
 #rplink_index_header {
-    padding: @body-padding;
+    padding       : @body-padding;
     padding-bottom: 0;
-    padding-top: @body-padding + 6px;
+    padding-top   : @body-padding + 6px;
 }
 
 
 .vertical-slide-with-padding {
-    width: auto !important;
+    width   : auto !important;
     overflow: visible !important;
 }
 
 .swiper-slide.swiper-slide-horizontal {
-    padding: @body-padding;
-    width: -webkit-fill-available !important;
+    padding    : @body-padding;
+    width      : -webkit-fill-available !important;
     padding-top: 0;
 }
 
@@ -49,107 +56,114 @@ body {
     padding-top: 240px;
 }
 
+.rplink-background-box {
+    width   : 100%;
+    height  : 100%;
+    position: fixed;
+    display : none;
+}
+
 
 // -- End Containers
 
 #logo {
-    width: 360px;
-    position: relative;
+    width      : 360px;
+    position   : relative;
     margin-left: -12px;
 }
 
 .rplink-btn {
-    width: 22rem;
-    height: 6rem;
-    background: transparent;
-    color: white;
-    font-size: 2rem;
-    border: 5px solid #ffffff;
+    width        : 22rem;
+    height       : 6rem;
+    background   : transparent;
+    color        : white;
+    font-size    : 2rem;
+    border       : 5px solid #ffffff;
     border-radius: 14px;
-    top: 30px;
-    position: relative;
+    top          : 30px;
+    position     : relative;
 }
 
 .rplink-btn-icon {
     font-size: 52px !important;
-    top: 2px;
-    position: relative;
+    top      : 2px;
+    position : relative;
 }
 
 .rplink-paging-icon {
     font-size: @paging-bar-height  !important;
-    position: relative;
-    color: white;
+    position : relative;
+    color    : white;
 }
 
 .rplink-btn-span {
-    bottom: 3px;
-    position: relative;
+    bottom      : 3px;
+    position    : relative;
     padding-left: 8px;
 }
 
 
 .rplink-cap-top {
-    color: white;
+    color      : white;
     font-family: Noto Sans S Chinese;
     font-weight: 400;
-    font-size: 7rem;
-    position: relative;
+    font-size  : 7rem;
+    position   : relative;
     padding-top: 240px;
     text-shadow: 0px 40px 98px @primary-shadow-color;
 }
 
 .rplink-cap {
-    color: white;
+    color      : white;
     font-family: Noto Sans S Chinese;
     font-weight: 400;
-    font-size: 7rem;
-    position: relative;
+    font-size  : 7rem;
+    position   : relative;
     padding-top: 24px;
     text-shadow: 0px 40px 98px @primary-shadow-color;
 }
 
 .rplink-cap-box {
-    position: relative;
-    width: 100%;
+    position  : relative;
+    width     : 100%;
     text-align: left; //margin-left: 10px;
 }
 
 .rplink-paging-bar {
     position: fixed;
-    opacity: 0.7;
+    opacity : 0.7;
 
     &.horizontal {
         width: 100%;
-        top: 42%;
+        top  : 42%;
     }
 
     &.vertical {}
 }
 
 #rplink_link_prefix_span {
-    display: inline-block;
-    padding: 17px;
-    font-size: 60px;
-    padding-left: 26px;
+    display      : inline-block;
+    padding      : 17px;
+    font-size    : 60px;
+    padding-left : 26px;
     padding-right: 0px;
 }
 
 
 .rplink-input-box {
-    background: transparent;
-    border: 4px solid white;
+    background   : transparent;
+    border       : 4px solid white;
     border-radius: 16px;
-    color: white;
-    font-size: 72px;
-    font-family: Work Sans, Noto Sans, Microsoft Yahei UI Light;
-    overflow: hidden;
+    color        : white;
+    font-size    : 72px;
+    font-family  : Work Sans, Noto Sans, Microsoft Yahei UI Light;
+    overflow     : hidden;
 
     &.link-input {
-        height: 106px;
-        top: 38px;
+        height  : 106px;
+        top     : 38px;
         position: relative;
-        opacity: 0.9;
+        opacity : 0.9;
     }
 
     transition: all 0.45s;
@@ -157,20 +171,20 @@ body {
 }
 
 .rplink-input {
-    background: white;
-    border-radius: none;
+    background                : white;
+    border-radius             : none;
     border-bottom-right-radius: 16px;
-    border-top-right-radius: 16px;
-    font-size: 54px;
-    color: @primary-text-color;
-    border: none;
-    font-family: Work Sans, Noto Sans, Microsoft Yahei UI Light;
+    border-top-right-radius   : 16px;
+    font-size                 : 54px;
+    color                     : @primary-text-color;
+    border                    : none;
+    font-family               : Work Sans, Noto Sans, Microsoft Yahei UI Light;
 
     &.link-input {
-        height: 106px;
-        position: relative;
-        float: right;
-        width: @link-input-width;
+        height      : 106px;
+        position    : relative;
+        float       : right;
+        width       : @link-input-width;
         padding-left: 24px;
     }
 }
@@ -178,38 +192,38 @@ body {
 
 .rplink-indicator-bar {
     /* position: relative;
-    width: convert(@window-width, px) - 2 * @body-padding;
-    text-align: left;
+    width      : convert(@window-width, px) - 2 * @body-padding;
+    text-align : left;
     padding-top: 240px;
-    color: @primary-text-color;*/
+    color      : @primary-text-color;*/
 }
 
 .rplink-indicator-badge {
     opacity: 0.9;
 
-    padding: 1rem;
-    padding-left: 0.8rem;
+    padding      : 1rem;
+    padding-left : 0.8rem;
     padding-right: 0.8rem;
-    background: white;
+    background   : white;
     border-radius: 14px;
-    border: 3px solid white;
+    border       : 3px solid white;
 
     left: 0.9rem;
-    top: -0.5rem;
-    
+    top : -0.5rem;
+
     transition: all 0.45s;
 }
 
 .rplink-indicator-icon {
-    font-size: 2.1rem;
-    color: @indicator-color-file;
+    font-size : 2.1rem;
+    color     : @indicator-color-file;
     transition: all 0.45s;
 }
 
 // Item customize
 
 #rplink_cus_link_indicator_span_file {
-    color: @indicator-color-file;
+    color     : @indicator-color-file;
     transition: all 0.45s;
 
 }
@@ -225,18 +239,18 @@ body {
 
 
 svg {
-    width: 30px;
-    position: absolute;
-    top: 50%;
+    width    : 30px;
+    position : absolute;
+    top      : 50%;
     transform: translateY(-50%) translateX(-50%);
-    left: 50%;
-    right: 0;
+    left     : 50%;
+    right    : 0;
 }
 
 .check {
-    fill: none;
-    stroke: #FFFFFF;
-    stroke-width: 3;
-    stroke-linecap: round;
+    fill           : none;
+    stroke         : #FFFFFF;
+    stroke-width   : 3;
+    stroke-linecap : round;
     stroke-linejoin: round;
 }

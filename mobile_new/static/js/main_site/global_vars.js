@@ -4,4 +4,5 @@ var id = {
     cusLinkIndicatorIcon_File: "#rplink_cus_link_indicator_icon_file",
     cusLinkIndicator_File: "#rplink_indicator_badge",
     cusLinkInputBox_File: "#rplink_link_input_box_file",
+    sliderUploadPage:"#rplink_upload_step3",
 };

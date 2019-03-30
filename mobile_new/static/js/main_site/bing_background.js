@@ -6,6 +6,8 @@ function changeBackground() {
         model = model.replace("%rep%", "\"" + url + "\"");
 
         $("body").css("background", model);
+        $(".rplink-background-box").css("background", model);
+
         $("#bingbg_temp").attr("src", "/bing_img?u=" + url);
         
         fetchColor(true);
