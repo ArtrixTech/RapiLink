@@ -59,8 +59,8 @@ $(window).resize(function () {
 
 state.bindElementUpdateFunction("availabilityIndicator_file", () => {
 
-    var linkAvailable=state.getState("cusLinkAvailable_file");
-    var linkEmpty=state.getState("cusLinkInputEmpty_file");
+    var linkAvailable = state.getState("cusLinkAvailable_file");
+    var linkEmpty = state.getState("cusLinkInputEmpty_file");
 
     if (linkAvailable) {
 
@@ -75,8 +75,11 @@ state.bindElementUpdateFunction("availabilityIndicator_file", () => {
         $(id.cusLinkIndicatorIcon_File).addClass("layui-icon-ok");
 
         // Slider page update
-        if (!linkEmpty) $(id.sliderUploadPage).removeClass("hidden");
-        HorizontalSwiper_Main.update();
+        if (!linkEmpty) {
+            $(id.sliderUploadPage).removeClass("hidden");
+            HorizontalSwiper_Main.update();
+            $(id.cusLinkIndicator_File).removeClass("anime-hidden");
+        }
 
         //$(id.cusLinkInputBox_File).css("border", "4px solid white");
 
@@ -106,9 +109,7 @@ state.bindElementUpdateFunction("availabilityIndicator_file", () => {
         $(id.sliderUploadPage).addClass("hidden");
         HorizontalSwiper_Main.update();
     }
-    else {
-        $(id.cusLinkIndicator_File).removeClass("anime-hidden");
-    }
+
 
 })
 
